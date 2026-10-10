@@ -10,7 +10,7 @@ Environment secrets: `FTP_HOST`, `FTP_USER`, `FTP_PASSWORD`, `FTP_REMOTE`. Crede
 
 ## Server behavior
 
-The pipeline downloads and hashes managed server files before changing anything. On the first run, `production-baseline.json` establishes the verified migration state. Later runs use `.qdnco-deploy-state.json` in the domain directory, **outside public_html**. A mismatch indicates out-of-band changes and stops the run. New files cannot overwrite untracked remote files. File removal from site/ fails rather than silently deleting server content.
+The pipeline downloads and hashes managed server files through three read-only FTPS sessions before changing anything. Writes are serial. On the first run, `production-baseline.json` establishes the verified migration state. Later runs use `.qdnco-deploy-state.json` in the domain directory, **outside public_html**. A mismatch indicates out-of-band changes and stops the run. New files cannot overwrite untracked remote files. File removal from site/ fails rather than silently deleting server content.
 
 Changed files are backed up outside public_html under `.qdnco-deploy-backups/<commit>-<attempt>/`, uploaded to temporary names, verified by SHA-256, then renamed. HTML follows assets; the root homepage is switched last. Deployment is atomic per file, not across the entire site. Ordinary upload/verification failures restore files already switched. A runner termination or network outage may require manual recovery from the retained backups. Backups are retained; review storage periodically.
 

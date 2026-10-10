@@ -1,4 +1,5 @@
 """Verified, non-deleting FTPS deployment with drift protection and rollback."""
+from concurrent.futures import ThreadPoolExecutor
 import ftplib
 import io
 import json
@@ -92,16 +93,32 @@ def main():
     ftp = connect()
     old_state = get(ftp, state_path, optional=True)
     previous = json.loads(old_state)['files'] if old_state else json.loads(Path('ci/production-baseline.json').read_text())
+    ftp.quit()
     actual, originals = {}, {}
-    for i, name in enumerate(sorted(set(previous) | set(desired))):
-        safe_path(name)
-        data = get(ftp, root + '/' + name, optional=True)
-        actual[name] = digest(data) if data is not None else None
-        if actual[name] != desired.get(name):
-            originals[name] = data
-        if i % 50 == 0:
-            print(f'Checked {i} remote files', flush=True)
+    names = sorted(set(previous) | set(desired))
+    def inspect_shard(shard):
+        reader = connect()
+        results = []
+        try:
+            for i, name in enumerate(shard):
+                safe_path(name)
+                data = get(reader, root + '/' + name, optional=True)
+                value = digest(data) if data is not None else None
+                results.append((name, value, data if value != desired.get(name) else None))
+                if (i + 1) % 25 == 0:
+                    print(f'Verification worker checked {i + 1}/{len(shard)} files', flush=True)
+        finally:
+            reader.quit()
+        return results
+    # Three independent read-only sessions bound round-trip latency. Writes stay serial.
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        for results in pool.map(inspect_shard, [names[i::3] for i in range(3)]):
+            for name, value, data in results:
+                actual[name] = value
+                if value != desired.get(name):
+                    originals[name] = data
     changes = plan(desired, previous, actual)
+    ftp = connect()
     print(f'Drift checks passed; {len(changes)} files to update', flush=True)
     if '--dry-run' in sys.argv:
         ftp.quit()
