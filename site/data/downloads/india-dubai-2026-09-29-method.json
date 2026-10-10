@@ -1,0 +1,363 @@
+{
+ "snapshot": "2026-09-29",
+ "country": "IN",
+ "collector": "public Meta Ad Library web pages via headless Chrome (puppeteer-core), no login",
+ "source_sha256": "698bcf1a0510e2ffa4c7b452f361875bcf0f1f074aa61b8d33e8e467844877dc",
+ "terms": [
+  [
+   "corridor",
+   "dubai property"
+  ],
+  [
+   "corridor",
+   "property in dubai"
+  ],
+  [
+   "corridor",
+   "dubai apartment"
+  ],
+  [
+   "corridor",
+   "dubai real estate"
+  ],
+  [
+   "corridor",
+   "invest in dubai"
+  ],
+  [
+   "corridor",
+   "dubai off plan"
+  ],
+  [
+   "corridor",
+   "golden visa dubai"
+  ],
+  [
+   "corridor",
+   "dubai property expo"
+  ],
+  [
+   "corridor",
+   "flat in dubai"
+  ],
+  [
+   "corridor",
+   "dubai villa"
+  ],
+  [
+   "corridor",
+   "emaar"
+  ],
+  [
+   "corridor",
+   "damac"
+  ],
+  [
+   "corridor",
+   "sobha dubai"
+  ],
+  [
+   "corridor",
+   "binghatti"
+  ]
+ ],
+ "collection_log": [
+  {
+   "side": "corridor",
+   "term": "dubai property",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=dubai%20property&search_type=keyword_unordered&media_type=all",
+   "results_label": "1,700",
+   "cards_captured": 96,
+   "seconds": 36
+  },
+  {
+   "side": "corridor",
+   "term": "property in dubai",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=property%20in%20dubai&search_type=keyword_unordered&media_type=all",
+   "results_label": "17,000",
+   "cards_captured": 112,
+   "seconds": 40
+  },
+  {
+   "side": "corridor",
+   "term": "dubai apartment",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=dubai%20apartment&search_type=keyword_unordered&media_type=all",
+   "results_label": "490",
+   "cards_captured": 114,
+   "seconds": 40
+  },
+  {
+   "side": "corridor",
+   "term": "dubai real estate",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=dubai%20real%20estate&search_type=keyword_unordered&media_type=all",
+   "results_label": "1,500",
+   "cards_captured": 134,
+   "seconds": 39
+  },
+  {
+   "side": "corridor",
+   "term": "invest in dubai",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=invest%20in%20dubai&search_type=keyword_unordered&media_type=all",
+   "results_label": "19,000",
+   "cards_captured": 101,
+   "seconds": 38
+  },
+  {
+   "side": "corridor",
+   "term": "dubai off plan",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=dubai%20off%20plan&search_type=keyword_unordered&media_type=all",
+   "results_label": "30,000",
+   "cards_captured": 96,
+   "seconds": 41
+  },
+  {
+   "side": "corridor",
+   "term": "golden visa dubai",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=golden%20visa%20dubai&search_type=keyword_unordered&media_type=all",
+   "results_label": "610",
+   "cards_captured": 120,
+   "seconds": 40
+  },
+  {
+   "side": "corridor",
+   "term": "dubai property expo",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=dubai%20property%20expo&search_type=keyword_unordered&media_type=all",
+   "results_label": "230",
+   "cards_captured": 91,
+   "seconds": 37
+  },
+  {
+   "side": "corridor",
+   "term": "flat in dubai",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=flat%20in%20dubai&search_type=keyword_unordered&media_type=all",
+   "results_label": "16,000",
+   "cards_captured": 82,
+   "seconds": 41
+  },
+  {
+   "side": "corridor",
+   "term": "dubai villa",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=dubai%20villa&search_type=keyword_unordered&media_type=all",
+   "results_label": "310",
+   "cards_captured": 128,
+   "seconds": 40
+  },
+  {
+   "side": "corridor",
+   "term": "emaar",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=emaar&search_type=keyword_unordered&media_type=all",
+   "results_label": "560",
+   "cards_captured": 93,
+   "seconds": 36
+  },
+  {
+   "side": "corridor",
+   "term": "damac",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=damac&search_type=keyword_unordered&media_type=all",
+   "results_label": "390",
+   "cards_captured": 135,
+   "seconds": 38
+  },
+  {
+   "side": "corridor",
+   "term": "sobha dubai",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=sobha%20dubai&search_type=keyword_unordered&media_type=all",
+   "results_label": "320",
+   "cards_captured": 109,
+   "seconds": 40
+  },
+  {
+   "side": "corridor",
+   "term": "binghatti",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=binghatti&search_type=keyword_unordered&media_type=all",
+   "results_label": "230",
+   "cards_captured": 116,
+   "seconds": 40
+  }
+ ],
+ "raw_card_rows": 1527,
+ "unique_ads": 934,
+ "relevant_ads": 521,
+ "advertisers": 216,
+ "relevance_rule": {
+  "property": "apartment|villa|townhouse|penthouse|studio|bedroom|\\b\\d\\s?(br|bhk|bed)\\b|off[- ]?plan|property|properties|real\\s+estate|freehold|residence|residential|plot|\\bflats?\\b(?!\\s*(₹|rs\\.?|inr|\\d|off|discount|\\d+%))",
+  "transaction": "\\bbuy|invest|\\bown\\b|owning|for\\s+sale|price|starting|from\\s+(aed|inr|₹|rs)|payment|handover|reserve|booking|launch|\\brent|register|units?\\s+(available|left)|roi|yield|golden\\s+visa|down\\s*payment|installment|mortgage|expo|visit",
+  "dubai": "dubai|\\buae\\b|abu\\s*dhabi|emirates|sharjah|ras\\s+al|jvc|business\\s+bay|marina|downtown|palm\\s+jumeirah|emaar|damac|sobha|binghatti|danube|aldar|nakheel|meraas|ellington|azizi|samana",
+  "exclude": "roof\\s*(seal\\w*|leak\\w*|repair\\w*|waterproof\\w*)|waterproofing|lip\\s+filler|botox|cosmetic|beauty\\s+salon|\\bclinic\\b|cleaning\\s+service|laundry|\\bmovers\\b|pest\\s+control|furniture\\s+(store|shop)|visa\\s+(agent|consultan\\w*|services?)\\b(?!.*(property|apartment|villa))|flight|tour\\s+package|holiday\\s+package|hotel|salon|beauty|facial|waxing|makeup"
+ },
+ "coding_rule": "regex over library-card ad text only; image/video text not read, so shares are floors",
+ "revisions": [
+  "after a spot-check on 29 Sep 2026: beauty/salon ads excluded; \"flat\" no longer matches discounts (\"flat ₹100 off\"); permit code narrowed to explicit permit wording (bare \"DLD\"/\"RERA\" matched fee waivers and Indian RERA projects); zero-down code fixed so \"20% down\" no longer matches"
+ ],
+ "questions": {
+  "price_inr": "₹\\s?[\\d.,]+|\\binr\\s?[\\d.,]+|\\brs\\.?\\s?[\\d.,]+|[\\d.,]+\\s?(lakh|lac|crore|cr)\\b",
+  "price_aed": "\\baed\\s?[\\d.,]+|[\\d.,]+\\s?(k|m|mn|million)?\\s?aed\\b|\\bdhs?\\s?[\\d.,]+",
+  "price_usd": "\\$\\s?[\\d.,]+|\\busd\\s?[\\d.,]+",
+  "payment_plan": "payment\\s*plan|\\b\\d{1,2}\\s?/\\s?\\d{1,2}\\b|post[- ]?handover|on\\s+handover|instal+ments?|\\b1\\s?%\\s*(monthly|per month)|emi",
+  "handover_date": "handover|completion\\s+(in|by|q)|\\bq[1-4]\\s?20\\d\\d|ready\\s+to\\s+move",
+  "golden_visa": "golden\\s+visa",
+  "yield_or_roi": "\\d+(\\.\\d+)?\\s?%\\s*(roi|return|returns|rental\\s+yield|yield|net\\s+yield|annual|capital\\s+appreciation)|\\broi\\s+(of\\s+)?(up\\s+to\\s+)?\\d+",
+  "guaranteed": "guarantee\\w*\\s+(\\w+\\s+){0,2}(return|roi|rent\\w*|yield|income|profit)|assured\\s+(return|rent\\w*|income)|fixed\\s+(return|roi|income)",
+  "tax_free": "tax[- ]?free|zero\\s+(income\\s+)?tax|no\\s+(income|property)\\s+tax",
+  "permit_dld": "trakheesi|madmoun|\\bpermit\\s*(no\\.?|number|#)?\\s*[:#-]?\\s*\\d{4,}|advertising\\s+permit|rera\\s+permit|dld\\s+permit",
+  "nri_mention": "\\bnri\\b|non[- ]resident|indians?\\s+(abroad|in\\s+(the\\s+)?(uae|gulf|dubai))|overseas\\s+indian",
+  "indian_buyer": "\\bindia\\b|\\bindians?\\b",
+  "tax_remit_loan": "\\blrs\\b|remit\\w*|\\bfema\\b|\\brbi\\b|home\\s+loan|mortgage|\\bloan\\b|financ\\w*",
+  "expo_event": "expo|exhibition|property\\s+show|roadshow|event|seminar|meet\\s+(us|the\\s+developer)|visit\\s+us\\s+at",
+  "whatsapp": "whats\\s?app|wa\\.me",
+  "hindi_script": "[ऀ-ॿ]",
+  "other_indic_script": "[ঀ-෿]",
+  "zero_down": "\\b(zero|no|0\\s?%)\\s*down\\s*payment|without\\s+(any\\s+)?down\\s*payment"
+ },
+ "codes": {
+  "price_inr": {
+   "ads": 163,
+   "ads_share": 0.313,
+   "advertisers": 73,
+   "advertisers_share": 0.338
+  },
+  "price_aed": {
+   "ads": 92,
+   "ads_share": 0.177,
+   "advertisers": 51,
+   "advertisers_share": 0.236
+  },
+  "price_usd": {
+   "ads": 11,
+   "ads_share": 0.021,
+   "advertisers": 6,
+   "advertisers_share": 0.028
+  },
+  "payment_plan": {
+   "ads": 379,
+   "ads_share": 0.727,
+   "advertisers": 160,
+   "advertisers_share": 0.741
+  },
+  "handover_date": {
+   "ads": 80,
+   "ads_share": 0.154,
+   "advertisers": 44,
+   "advertisers_share": 0.204
+  },
+  "golden_visa": {
+   "ads": 109,
+   "ads_share": 0.209,
+   "advertisers": 48,
+   "advertisers_share": 0.222
+  },
+  "yield_or_roi": {
+   "ads": 25,
+   "ads_share": 0.048,
+   "advertisers": 14,
+   "advertisers_share": 0.065
+  },
+  "guaranteed": {
+   "ads": 8,
+   "ads_share": 0.015,
+   "advertisers": 3,
+   "advertisers_share": 0.014
+  },
+  "tax_free": {
+   "ads": 34,
+   "ads_share": 0.065,
+   "advertisers": 13,
+   "advertisers_share": 0.06
+  },
+  "permit_dld": {
+   "ads": 11,
+   "ads_share": 0.021,
+   "advertisers": 4,
+   "advertisers_share": 0.019
+  },
+  "nri_mention": {
+   "ads": 3,
+   "ads_share": 0.006,
+   "advertisers": 3,
+   "advertisers_share": 0.014
+  },
+  "indian_buyer": {
+   "ads": 46,
+   "ads_share": 0.088,
+   "advertisers": 28,
+   "advertisers_share": 0.13
+  },
+  "tax_remit_loan": {
+   "ads": 8,
+   "ads_share": 0.015,
+   "advertisers": 8,
+   "advertisers_share": 0.037
+  },
+  "expo_event": {
+   "ads": 137,
+   "ads_share": 0.263,
+   "advertisers": 48,
+   "advertisers_share": 0.222
+  },
+  "whatsapp": {
+   "ads": 42,
+   "ads_share": 0.081,
+   "advertisers": 26,
+   "advertisers_share": 0.12
+  },
+  "hindi_script": {
+   "ads": 0,
+   "ads_share": 0.0,
+   "advertisers": 0,
+   "advertisers_share": 0.0
+  },
+  "other_indic_script": {
+   "ads": 4,
+   "ads_share": 0.008,
+   "advertisers": 4,
+   "advertisers_share": 0.019
+  },
+  "zero_down": {
+   "ads": 12,
+   "ads_share": 0.023,
+   "advertisers": 3,
+   "advertisers_share": 0.014
+  }
+ },
+ "city_mentions_ads": {
+  "Mumbai": 19,
+  "Delhi NCR": 37,
+  "Bengaluru": 15,
+  "Hyderabad": 22,
+  "Pune": 13,
+  "Ahmedabad": 23,
+  "Chennai": 7,
+  "Kolkata": 4,
+  "Chandigarh": 5,
+  "Kochi / Kerala": 4,
+  "Surat": 10,
+  "Jaipur": 2,
+  "Lucknow": 15,
+  "Indore": 0,
+  "Goa": 4
+ },
+ "run_age_days": {
+  "n": 520,
+  "median": 13,
+  "over_90": 41
+ },
+ "search": {
+  "collected": "2026-09-29",
+  "autocomplete_endpoint": "suggestqueries.google.com client=firefox hl=en gl=in",
+  "queries_run": 130,
+  "unique_suggestions": 1014,
+  "theme_rules": {
+   "Price and budget, often in rupees": "rupee|\\binr\\b|crore|lakh|\\bprice|\\bcost|cheap|under\\s+\\d|budget|affordable",
+   "Renting out, yield and returns": "\\brent|yield|\\broi\\b|return|income|profit",
+   "Residency and Golden Visa": "golden visa|residency|residence visa|investor visa|citizenship|\\bvisa\\b",
+   "Loans, instalments and down payment": "loan|mortgage|\\bemi\\b|install?ment|down payment|finance",
+   "Is it safe or worth it": "\\bsafe|scam|fraud|risk|worth|good investment|bubble|crash|drop",
+   "Tax, remittance and rules for Indians": "\\btax|\\blrs\\b|\\brbi\\b|fema|remit|rules|\\blaw\\b|legal|can indian|can nri|for indian|from india|indian",
+   "Off-plan and new launches": "off plan|off-plan|new launch|under construction|pre launch",
+   "Property expos in Indian cities": "expo|exhibition|property show",
+   "Areas and communities in Dubai": "marina|downtown|business bay|jvc|palm|dubai hills|creek|dubai south|jumeirah|mbr|deira|al barsha|international city"
+  },
+  "trends_note": "Google Trends, India, past 12 months, relative interest 0–100 by state; one query was rate-limited and is absent.",
+  "source_sha256": "eee7a9abaa3eeb959866f599bb8f6ee310dd1fa834206f22ea98a4a43a8920dd"
+ }
+}

@@ -1,0 +1,395 @@
+{
+ "snapshot": "2026-09-26",
+ "country": "AE",
+ "active_status": "active",
+ "collector": "public Meta Ad Library web pages via headless Chrome (puppeteer-core), no login",
+ "source_sha256": "1d0edb6ad7ed25cd1c0059d50a36cae9a890861db6919d6cf5e7ac33105cec97",
+ "raw_card_rows": 2204,
+ "terms": [
+  [
+   "buy",
+   "off plan dubai"
+  ],
+  [
+   "buy",
+   "dubai apartments payment plan"
+  ],
+  [
+   "buy",
+   "dubai property investment"
+  ],
+  [
+   "buy",
+   "villa dubai"
+  ],
+  [
+   "buy",
+   "business bay apartments"
+  ],
+  [
+   "buy",
+   "JVC apartments"
+  ],
+  [
+   "buy",
+   "dubai marina apartment"
+  ],
+  [
+   "buy",
+   "golden visa property"
+  ],
+  [
+   "buy",
+   "handover dubai"
+  ],
+  [
+   "buy",
+   "dubai real estate"
+  ],
+  [
+   "sell",
+   "real estate leads dubai"
+  ],
+  [
+   "sell",
+   "leads for real estate agents"
+  ],
+  [
+   "sell",
+   "real estate marketing agency dubai"
+  ],
+  [
+   "sell",
+   "lead generation real estate"
+  ],
+  [
+   "sell",
+   "real estate CRM dubai"
+  ],
+  [
+   "sell",
+   "property leads UAE"
+  ]
+ ],
+ "collection_log": [
+  {
+   "side": "buy",
+   "term": "off plan dubai",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=off%20plan%20dubai&search_type=keyword_unordered&media_type=all",
+   "results_label": "31,000",
+   "cards_captured": 163,
+   "seconds": 38
+  },
+  {
+   "side": "buy",
+   "term": "dubai apartments payment plan",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=dubai%20apartments%20payment%20plan&search_type=keyword_unordered&media_type=all",
+   "results_label": "810",
+   "cards_captured": 186,
+   "seconds": 38
+  },
+  {
+   "side": "buy",
+   "term": "dubai property investment",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=dubai%20property%20investment&search_type=keyword_unordered&media_type=all",
+   "results_label": "1,200",
+   "cards_captured": 220,
+   "seconds": 38
+  },
+  {
+   "side": "buy",
+   "term": "villa dubai",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=villa%20dubai&search_type=keyword_unordered&media_type=all",
+   "results_label": "2,900",
+   "cards_captured": 249,
+   "seconds": 38
+  },
+  {
+   "side": "buy",
+   "term": "business bay apartments",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=business%20bay%20apartments&search_type=keyword_unordered&media_type=all",
+   "results_label": "55",
+   "cards_captured": 52,
+   "seconds": 40
+  },
+  {
+   "side": "buy",
+   "term": "JVC apartments",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=JVC%20apartments&search_type=keyword_unordered&media_type=all",
+   "results_label": "76",
+   "cards_captured": 66,
+   "seconds": 39
+  },
+  {
+   "side": "buy",
+   "term": "dubai marina apartment",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=dubai%20marina%20apartment&search_type=keyword_unordered&media_type=all",
+   "results_label": "150",
+   "cards_captured": 146,
+   "seconds": 38
+  },
+  {
+   "side": "buy",
+   "term": "golden visa property",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=golden%20visa%20property&search_type=keyword_unordered&media_type=all",
+   "results_label": "280",
+   "cards_captured": 173,
+   "seconds": 39
+  },
+  {
+   "side": "buy",
+   "term": "handover dubai",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=handover%20dubai&search_type=keyword_unordered&media_type=all",
+   "results_label": "1,700",
+   "cards_captured": 214,
+   "seconds": 39
+  },
+  {
+   "side": "buy",
+   "term": "dubai real estate",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=dubai%20real%20estate&search_type=keyword_unordered&media_type=all",
+   "results_label": "3,700",
+   "cards_captured": 201,
+   "seconds": 41
+  },
+  {
+   "side": "sell",
+   "term": "real estate leads dubai",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=real%20estate%20leads%20dubai&search_type=keyword_unordered&media_type=all",
+   "results_label": "220",
+   "cards_captured": 173,
+   "seconds": 38
+  },
+  {
+   "side": "sell",
+   "term": "leads for real estate agents",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=leads%20for%20real%20estate%20agents&search_type=keyword_unordered&media_type=all",
+   "results_label": "280",
+   "cards_captured": 158,
+   "seconds": 38
+  },
+  {
+   "side": "sell",
+   "term": "real estate marketing agency dubai",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=real%20estate%20marketing%20agency%20dubai&search_type=keyword_unordered&media_type=all",
+   "results_label": "45",
+   "cards_captured": 37,
+   "seconds": 41
+  },
+  {
+   "side": "sell",
+   "term": "lead generation real estate",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=lead%20generation%20real%20estate&search_type=keyword_unordered&media_type=all",
+   "results_label": "73",
+   "cards_captured": 65,
+   "seconds": 40
+  },
+  {
+   "side": "sell",
+   "term": "real estate CRM dubai",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=real%20estate%20CRM%20dubai&search_type=keyword_unordered&media_type=all",
+   "results_label": "53",
+   "cards_captured": 47,
+   "seconds": 40
+  },
+  {
+   "side": "sell",
+   "term": "property leads UAE",
+   "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=AE&q=property%20leads%20UAE&search_type=keyword_unordered&media_type=all",
+   "results_label": "60",
+   "cards_captured": 54,
+   "seconds": 38
+  }
+ ],
+ "coding_rule": "regex over library-card ad text only; image/video text not read, so shares are lower bounds",
+ "questions": {
+  "buy": {
+   "permit_in_text": "trakheesi|madmoun|\\bpermit\\s*(no\\.?|number|#)?\\s*[:#-]?\\s*\\d{4,}|\\bDLD\\s*permit|advertis\\w*\\s+permit",
+   "orn_brn_in_text": "\\b(ORN|BRN)\\s*[:#-]?\\s*\\d{3,}",
+   "price_aed": "\\bAED\\s?[\\d.,]+|[\\d.,]+\\s?(k|m|mn|million)?\\s?AED\\b|\\bdhs?\\s?[\\d.,]+",
+   "payment_plan": "payment\\s*plan|\\b\\d{1,2}\\s?/\\s?\\d{1,2}\\b|post[- ]?handover|on\\s+handover|instal+ments?|\\b1\\s?%\\s*(monthly|per month)",
+   "handover_date": "handover|completion\\s+(in|by|q)|\\bQ[1-4]\\s?20\\d\\d|ready\\s+to\\s+move|move[- ]in\\s+ready",
+   "guaranteed_return": "guarantee\\w*\\s+(\\w+\\s+){0,2}(return|roi|rent\\w*|yield|income|profit)|assured\\s+(return|rent\\w*|income)|fixed\\s+(return|roi|income)",
+   "yield_or_roi_figure": "\\d+(\\.\\d+)?\\s?%\\s*(roi|return|returns|rental\\s+yield|yield|net\\s+yield|annual\\s+return|capital\\s+appreciation)|\\broi\\s+(of\\s+)?(up\\s+to\\s+)?\\d+",
+   "golden_visa": "golden\\s+visa",
+   "india_reference": "\\bindia\\b|\\bindians?\\b|\\bNRI\\b|₹|\\bINR\\b|\\brupees?\\b|mumbai|delhi|bangalore|bengaluru|hyderabad|pune|chennai|kolkata|ahmedabad",
+   "whatsapp": "whats\\s?app|wa\\.me",
+   "arabic_script": "[؀-ۿ]",
+   "cyrillic_script": "[Ѐ-ӿ]",
+   "devanagari_script": "[ऀ-ॿ]"
+  },
+  "sell": {
+   "price_per_lead": "(AED|\\$|USD|dhs?)\\s?[\\d.,]+\\s*(/|per)\\s*lead|[\\d.,]+\\s?(AED|\\$|USD)\\s*(/|per)\\s*lead|cost\\s+per\\s+lead\\s+(of|at|from|under|below)\\s",
+   "any_price": "\\bAED\\s?[\\d.,]+|[\\d.,]+\\s?AED\\b|\\$\\s?[\\d.,]+|\\bUSD\\s?[\\d.,]+",
+   "guarantee": "guarantee\\w*|assured|or\\s+(your\\s+)?money\\s+back|refund",
+   "exclusive_leads": "exclusive\\s+leads?|not\\s+shared|never\\s+(re)?sold",
+   "qualified_claim": "qualified|verified|genuine|serious\\s+buyers?|high[- ]intent",
+   "lead_volume_claim": "\\b\\d[\\d,]*\\+?\\s*(leads|enquiries|inquiries)\\b",
+   "free_offer": "\\bfree\\b\\s*(trial|audit|consult\\w*|strategy|leads?|demo)|\\bfree\\b",
+   "trakheesi_mention": "trakheesi|madmoun|permit",
+   "india_reference": "\\bindia\\b|\\bindians?\\b|\\bNRI\\b|₹|\\bINR\\b|\\brupees?\\b|mumbai|delhi|bangalore|bengaluru|hyderabad|pune|chennai|kolkata|ahmedabad"
+  }
+ },
+ "counts": {
+  "buy": {
+   "unique_ads": 1402,
+   "ads_with_text": 1401,
+   "advertisers": 424,
+   "run_age_days": {
+    "n": 983,
+    "median": 25,
+    "over_90": 117,
+    "over_180": 42
+   }
+  },
+  "sell": {
+   "unique_ads": 331,
+   "ads_with_text": 329,
+   "advertisers": 150,
+   "run_age_days": {
+    "n": 267,
+    "median": 9,
+    "over_90": 26,
+    "over_180": 7
+   }
+  }
+ },
+ "shares": {
+  "buy": {
+   "permit_in_text": {
+    "ads": 27,
+    "ads_share": 0.027,
+    "advertisers": 10,
+    "advertisers_share": 0.024
+   },
+   "orn_brn_in_text": {
+    "ads": 14,
+    "ads_share": 0.014,
+    "advertisers": 2,
+    "advertisers_share": 0.005
+   },
+   "price_aed": {
+    "ads": 495,
+    "ads_share": 0.503,
+    "advertisers": 229,
+    "advertisers_share": 0.54
+   },
+   "payment_plan": {
+    "ads": 403,
+    "ads_share": 0.41,
+    "advertisers": 204,
+    "advertisers_share": 0.481
+   },
+   "handover_date": {
+    "ads": 258,
+    "ads_share": 0.262,
+    "advertisers": 146,
+    "advertisers_share": 0.344
+   },
+   "guaranteed_return": {
+    "ads": 7,
+    "ads_share": 0.007,
+    "advertisers": 5,
+    "advertisers_share": 0.012
+   },
+   "yield_or_roi_figure": {
+    "ads": 6,
+    "ads_share": 0.006,
+    "advertisers": 6,
+    "advertisers_share": 0.014
+   },
+   "golden_visa": {
+    "ads": 104,
+    "ads_share": 0.106,
+    "advertisers": 59,
+    "advertisers_share": 0.139
+   },
+   "india_reference": {
+    "ads": 24,
+    "ads_share": 0.024,
+    "advertisers": 10,
+    "advertisers_share": 0.024
+   },
+   "whatsapp": {
+    "ads": 115,
+    "ads_share": 0.117,
+    "advertisers": 74,
+    "advertisers_share": 0.175
+   },
+   "arabic_script": {
+    "ads": 20,
+    "ads_share": 0.02,
+    "advertisers": 10,
+    "advertisers_share": 0.024
+   },
+   "cyrillic_script": {
+    "ads": 1,
+    "ads_share": 0.001,
+    "advertisers": 1,
+    "advertisers_share": 0.002
+   },
+   "devanagari_script": {
+    "ads": 0,
+    "ads_share": 0.0,
+    "advertisers": 0,
+    "advertisers_share": 0.0
+   }
+  },
+  "sell": {
+   "price_per_lead": {
+    "ads": 0,
+    "ads_share": 0.0,
+    "advertisers": 0,
+    "advertisers_share": 0.0
+   },
+   "any_price": {
+    "ads": 34,
+    "ads_share": 0.127,
+    "advertisers": 20,
+    "advertisers_share": 0.133
+   },
+   "guarantee": {
+    "ads": 3,
+    "ads_share": 0.011,
+    "advertisers": 3,
+    "advertisers_share": 0.02
+   },
+   "exclusive_leads": {
+    "ads": 2,
+    "ads_share": 0.007,
+    "advertisers": 1,
+    "advertisers_share": 0.007
+   },
+   "qualified_claim": {
+    "ads": 89,
+    "ads_share": 0.333,
+    "advertisers": 47,
+    "advertisers_share": 0.313
+   },
+   "lead_volume_claim": {
+    "ads": 1,
+    "ads_share": 0.004,
+    "advertisers": 1,
+    "advertisers_share": 0.007
+   },
+   "free_offer": {
+    "ads": 32,
+    "ads_share": 0.12,
+    "advertisers": 20,
+    "advertisers_share": 0.133
+   },
+   "trakheesi_mention": {
+    "ads": 1,
+    "ads_share": 0.004,
+    "advertisers": 1,
+    "advertisers_share": 0.007
+   },
+   "india_reference": {
+    "ads": 12,
+    "ads_share": 0.045,
+    "advertisers": 5,
+    "advertisers_share": 0.033
+   }
+  }
+ }
+}

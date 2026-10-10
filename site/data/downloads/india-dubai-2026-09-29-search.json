@@ -1,0 +1,546 @@
+{
+ "collected": "2026-09-29",
+ "autocomplete_endpoint": "suggestqueries.google.com client=firefox hl=en gl=in",
+ "queries_run": 130,
+ "unique_suggestions": 1014,
+ "theme_rules": {
+  "Price and budget, often in rupees": "rupee|\\binr\\b|crore|lakh|\\bprice|\\bcost|cheap|under\\s+\\d|budget|affordable",
+  "Renting out, yield and returns": "\\brent|yield|\\broi\\b|return|income|profit",
+  "Residency and Golden Visa": "golden visa|residency|residence visa|investor visa|citizenship|\\bvisa\\b",
+  "Loans, instalments and down payment": "loan|mortgage|\\bemi\\b|install?ment|down payment|finance",
+  "Is it safe or worth it": "\\bsafe|scam|fraud|risk|worth|good investment|bubble|crash|drop",
+  "Tax, remittance and rules for Indians": "\\btax|\\blrs\\b|\\brbi\\b|fema|remit|rules|\\blaw\\b|legal|can indian|can nri|for indian|from india|indian",
+  "Off-plan and new launches": "off plan|off-plan|new launch|under construction|pre launch",
+  "Property expos in Indian cities": "expo|exhibition|property show",
+  "Areas and communities in Dubai": "marina|downtown|business bay|jvc|palm|dubai hills|creek|dubai south|jumeirah|mbr|deira|al barsha|international city"
+ },
+ "themes": {
+  "Price and budget, often in rupees": {
+   "count": 131,
+   "examples": [
+    "apartment for sale in dubai price",
+    "buy a flat in dubai cheap",
+    "buy a flat in dubai price",
+    "buy apartment in dubai cheap",
+    "buy house in dubai cheap",
+    "buy house in dubai cost",
+    "buy house in dubai price",
+    "buy property in dubai cheap",
+    "buy property in dubai cost",
+    "buying apartment in dubai cost",
+    "cheapest flat in dubai",
+    "dubai apartment average price"
+   ]
+  },
+  "Renting out, yield and returns": {
+   "count": 54,
+   "examples": [
+    "buy property in dubai and rent it",
+    "buy property in dubai to rent",
+    "buy rental property in dubai",
+    "buying property in dubai to rent out",
+    "dubai apartment average rent",
+    "dubai apartment daily rent",
+    "dubai apartment downtown rent",
+    "dubai apartment on rent",
+    "dubai apartment price rent",
+    "dubai apartment yearly rent",
+    "dubai apartment yield",
+    "dubai apartments weekly rent"
+   ]
+  },
+  "Residency and Golden Visa": {
+   "count": 46,
+   "examples": [
+    "buy property in dubai and get golden visa",
+    "buy property in dubai and get residency",
+    "buy property in dubai and get visa",
+    "buy property in dubai for golden visa",
+    "buy property in dubai get us residency green card",
+    "buy property in dubai golden visa",
+    "buy property in dubai to get residency",
+    "buy property in dubai visa",
+    "buying property in dubai and residency",
+    "buying property in dubai and visa",
+    "buying property in dubai gives residency",
+    "buying property in dubai residence visa"
+   ]
+  },
+  "Loans, instalments and down payment": {
+   "count": 20,
+   "examples": [
+    "buy apartment in dubai on installments",
+    "buy apartment in dubai without down payment",
+    "buy property in dubai on installments",
+    "buy property in dubai on loan",
+    "buy property in dubai with loan",
+    "buy property in dubai with mortgage",
+    "buy property in dubai with zero down payment",
+    "buy property in dubai without down payment",
+    "buy studio apartment in dubai on installments",
+    "can indian buy property in dubai on loan",
+    "dubai apartment emi",
+    "dubai flat emi"
+   ]
+  },
+  "Is it safe or worth it": {
+   "count": 35,
+   "examples": [
+    "buying property in dubai is worth",
+    "buying property in dubai worth it",
+    "dubai apartment prices drop",
+    "dubai property bubble",
+    "dubai property crash",
+    "dubai property crash 2026",
+    "dubai property good investment",
+    "dubai property market crash",
+    "dubai property market crash 2026",
+    "dubai property price crash",
+    "dubai property prices drop",
+    "dubai property scams"
+   ]
+  },
+  "Tax, remittance and rules for Indians": {
+   "count": 86,
+   "examples": [
+    "buy property in dubai as indian",
+    "buy property in dubai for indians",
+    "buy property in dubai from india",
+    "buying property in dubai from india tax",
+    "buying property in dubai tax",
+    "can an indian buy house in dubai",
+    "can any indian buy property in dubai",
+    "can indian buy a flat in dubai",
+    "can indian buy apartment in dubai",
+    "can indian buy commercial property in dubai",
+    "can indian buy house in dubai",
+    "can indian buy property in dubai on loan"
+   ]
+  },
+  "Off-plan and new launches": {
+   "count": 18,
+   "examples": [
+    "buy apartment in dubai under construction",
+    "buy property in dubai off plan",
+    "buy property off plan in dubai to sell",
+    "dubai apartment off plan",
+    "dubai off plan",
+    "dubai off plan leads",
+    "dubai off plan map",
+    "dubai off plan mortgage",
+    "dubai off plan news",
+    "dubai off plan payment plans",
+    "dubai off plan project status",
+    "dubai off plan projects"
+   ]
+  },
+  "Property expos in Indian cities": {
+   "count": 15,
+   "examples": [
+    "dubai expo apartments",
+    "dubai property exhibition",
+    "dubai property expo",
+    "dubai property expo 2026",
+    "dubai property expo 2026 dates",
+    "dubai property expo bangalore",
+    "dubai property expo bangalore 2026",
+    "dubai property expo chennai",
+    "dubai property expo chennai 2026",
+    "dubai property expo delhi",
+    "dubai property expo in hyderabad",
+    "dubai property expo today"
+   ]
+  },
+  "Areas and communities in Dubai": {
+   "count": 63,
+   "examples": [
+    "apartment for sale in dubai business bay",
+    "apartment for sale in dubai downtown",
+    "apartment for sale in dubai hills",
+    "apartment for sale in dubai south",
+    "buy a flat in dubai marina",
+    "buy apartment in dubai business bay",
+    "buy apartment in dubai creek harbour",
+    "buy apartment in dubai hills",
+    "buy apartment in dubai jvc",
+    "buy apartment in jumeirah dubai",
+    "buy house in dubai jumeirah",
+    "buy house in jvc dubai"
+   ]
+  }
+ },
+ "trends_state_interest": {
+  "property in dubai": [
+   [
+    "Delhi",
+    100
+   ],
+   [
+    "Haryana",
+    88
+   ],
+   [
+    "Goa",
+    64
+   ],
+   [
+    "Maharashtra",
+    61
+   ],
+   [
+    "Karnataka",
+    59
+   ],
+   [
+    "Chandigarh",
+    55
+   ],
+   [
+    "Punjab",
+    50
+   ],
+   [
+    "Telangana",
+    50
+   ],
+   [
+    "Kerala",
+    44
+   ],
+   [
+    "Gujarat",
+    42
+   ],
+   [
+    "Tamil Nadu",
+    42
+   ],
+   [
+    "Jammu and Kashmir",
+    37
+   ],
+   [
+    "Uttar Pradesh",
+    33
+   ],
+   [
+    "Uttarakhand",
+    31
+   ],
+   [
+    "West Bengal",
+    29
+   ],
+   [
+    "Rajasthan",
+    27
+   ],
+   [
+    "Madhya Pradesh",
+    27
+   ],
+   [
+    "Himachal Pradesh",
+    24
+   ],
+   [
+    "Assam",
+    22
+   ],
+   [
+    "Jharkhand",
+    22
+   ],
+   [
+    "Andhra Pradesh",
+    20
+   ],
+   [
+    "Odisha",
+    18
+   ],
+   [
+    "Bihar",
+    18
+   ],
+   [
+    "Chhattisgarh",
+    16
+   ]
+  ],
+  "dubai golden visa": [
+   [
+    "Delhi",
+    100
+   ],
+   [
+    "Chandigarh",
+    96
+   ],
+   [
+    "Haryana",
+    77
+   ],
+   [
+    "Karnataka",
+    74
+   ],
+   [
+    "Telangana",
+    70
+   ],
+   [
+    "Punjab",
+    66
+   ],
+   [
+    "Maharashtra",
+    62
+   ],
+   [
+    "Kerala",
+    55
+   ],
+   [
+    "Jammu and Kashmir",
+    48
+   ],
+   [
+    "Tamil Nadu",
+    48
+   ],
+   [
+    "Gujarat",
+    40
+   ],
+   [
+    "Uttar Pradesh",
+    37
+   ],
+   [
+    "Rajasthan",
+    29
+   ],
+   [
+    "West Bengal",
+    29
+   ],
+   [
+    "Andhra Pradesh",
+    29
+   ],
+   [
+    "Madhya Pradesh",
+    22
+   ],
+   [
+    "Jharkhand",
+    22
+   ],
+   [
+    "Bihar",
+    18
+   ],
+   [
+    "Odisha",
+    14
+   ],
+   [
+    "Assam",
+    11
+   ]
+  ]
+ },
+ "trends_related": {
+  "property in dubai (top)": [
+   [
+    "buy property in dubai",
+    "100"
+   ],
+   [
+    "buy dubai property",
+    "99"
+   ],
+   [
+    "dubai property news",
+    "71"
+   ],
+   [
+    "property to buy in dubai",
+    "60"
+   ],
+   [
+    "dubai real estate",
+    "59"
+   ],
+   [
+    "property market in dubai",
+    "52"
+   ],
+   [
+    "dubai property market",
+    "51"
+   ],
+   [
+    "property prices in dubai",
+    "50"
+   ],
+   [
+    "dubai property prices",
+    "49"
+   ],
+   [
+    "property in dubai for sale",
+    "46"
+   ],
+   [
+    "dubai property for sale",
+    "45"
+   ],
+   [
+    "time in dubai",
+    "39"
+   ],
+   [
+    "rent property in dubai",
+    "37"
+   ],
+   [
+    "dubai property investment",
+    "34"
+   ],
+   [
+    "property investment in dubai",
+    "34"
+   ],
+   [
+    "how to buy property in dubai",
+    "27"
+   ],
+   [
+    "buying property in dubai",
+    "25"
+   ],
+   [
+    "property for rent in dubai",
+    "23"
+   ],
+   [
+    "commercial property in dubai",
+    "22"
+   ],
+   [
+    "inr to aed",
+    "22"
+   ],
+   [
+    "can i buy property in dubai",
+    "14"
+   ],
+   [
+    "property finder",
+    "12"
+   ],
+   [
+    "property finder dubai",
+    "12"
+   ],
+   [
+    "danube",
+    "10"
+   ],
+   [
+    "can indian buy property in dubai",
+    "10"
+   ]
+  ],
+  "property in dubai": [
+   [
+    "ai news today",
+    "Breakout"
+   ],
+   [
+    "openai news today",
+    "Breakout"
+   ],
+   [
+    "dubai property prices drop",
+    "Breakout"
+   ],
+   [
+    "markets news today",
+    "Breakout"
+   ],
+   [
+    "dubai property news",
+    "+1,400%"
+   ],
+   [
+    "property market in dubai",
+    "+400%"
+   ],
+   [
+    "dubai property market",
+    "+400%"
+   ],
+   [
+    "time in dubai",
+    "+250%"
+   ],
+   [
+    "dubai property prices",
+    "+250%"
+   ],
+   [
+    "dubai map",
+    "+200%"
+   ],
+   [
+    "gold rate in dubai",
+    "+200%"
+   ],
+   [
+    "property prices in dubai",
+    "+200%"
+   ],
+   [
+    "dubai real estate",
+    "+50%"
+   ],
+   [
+    "commercial property in dubai",
+    "+40%"
+   ]
+  ],
+  "dubai golden visa (top)": [
+   [
+    "dubai golden visa cost",
+    "100"
+   ],
+   [
+    "dubai golden visa benefits",
+    "69"
+   ],
+   [
+    "dubai golden visa eligibility",
+    "48"
+   ],
+   [
+    "dubai golden visa for indians",
+    "33"
+   ]
+  ],
+  "dubai golden visa": [
+   [
+    "dubai golden visa eligibility",
+    "+110%"
+   ],
+   [
+    "dubai golden visa cost",
+    "+60%"
+   ]
+  ]
+ },
+ "trends_note": "Google Trends, India, past 12 months, relative interest 0–100 by state; one query was rate-limited and is absent.",
+ "source_sha256": "eee7a9abaa3eeb959866f599bb8f6ee310dd1fa834206f22ea98a4a43a8920dd"
+}

@@ -1,0 +1,54 @@
+User-agent: *
+Allow: /
+
+# Public research surfaces. Redundant under "Allow: /" above and listed
+# explicitly so the important paths are legible to a human reading this file.
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /answers/
+Allow: /data/
+Allow: /compare/
+Allow: /areas/
+Allow: /glossary/
+Allow: /guides/
+Allow: /seo/
+Allow: /legal/
+
+# Answer engines & AI crawlers — explicitly welcomed for AEO/GEO visibility.
+# LLM-facing site map:  https://qdnco.com/llms.txt
+# Full corpus, one file: https://qdnco.com/llms-full.txt
+# Original research:     https://qdnco.com/data/
+# Extended SEO/AEO/GEO corpus: https://qdnco.com/seo/
+# Last updated: 2026-09-05
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+Sitemap: https://qdnco.com/sitemap.xml

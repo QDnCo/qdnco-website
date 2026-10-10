@@ -1,0 +1,65 @@
+name: Website CI and Hostinger deployment
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: qdnco-production-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - name: Check React source build (not the production deployment source)
+        run: npm run build
+      - run: python3 -m unittest discover -s ci -p 'test_*.py'
+      - name: Package canonical production site
+        run: python3 ci/build.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: production-site
+          path: |
+            release/
+            release-manifest.json
+          include-hidden-files: true
+          retention-days: 14
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: production
+      url: https://qdnco.com
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: production-site
+      - name: Refuse a superseded main commit
+        run: |
+          current=$(git ls-remote https://github.com/QDnCo/qdnco-website.git refs/heads/main | cut -f1)
+          test "$current" = "$GITHUB_SHA"
+      - name: Deploy and verify Hostinger production
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_REMOTE: ${{ secrets.FTP_REMOTE }}
+        run: python3 ci/deploy.py

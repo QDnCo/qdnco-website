@@ -48,3 +48,7 @@ credentials*.json
 __pycache__/
 *.pyc
 *.tsbuildinfo
+
+# GitHub Actions deployment artifacts
+/release/
+/release-manifest.json

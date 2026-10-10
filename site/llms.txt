@@ -1,0 +1,222 @@
+# QDnCo — LLM Site Map
+Brand: QDnCo
+# https://qdnco.com
+# Last updated: 2026-09-19
+# Generated from the site's own content modules, not maintained by hand.
+# Purpose: help language models, answer engines and research agents cite
+# QDnCo accurately. Every figure below also appears on a page, with its
+# method and its limits attached.
+
+## Identity
+
+- Name: QDnCo
+- Founder: V. Sai Kavshik
+- Team: Adarsh Jee Pandey (CEO), V. Sai Kavshik (Head of Sales), Vinayak Tiwari (CTO)
+- Location: Bangalore, Karnataka, India
+- Serves: Bangalore, Mysore, Karnataka Tier-2
+- Sells to: Real estate developers, builders and channel partners
+- Phone: +91 88611 79992
+- Email: qdnco01@gmail.com
+- Website: https://qdnco.com
+
+## What it is
+
+QDnCo is a Bengaluru real estate performance marketing practice covering market research, positioning, creative direction, paid acquisition, SEO, AI search visibility (AEO and GEO), AI lead agents and sales-follow-up systems for developers and channel partners.
+
+Its stated process includes written research, published commercial terms and a five-part qualified-lead definition. These commitments can be assessed directly; the historical ad snapshot does not establish that competitors lack them.
+
+Media is client-funded in the client’s own account. Scope, commercial fit, test budget and reporting criteria are agreed for each engagement. Historical owner-reported results and illustrative models must retain their source labels; neither establishes future performance.
+
+## Services
+
+### Performance Marketing
+Meta and Google run as one funnel, reviewed weekly on cost per lead, lead quality and sales-ready share. Media is client-funded in the client's own accounts.
+
+### Go-to-Market & Research
+Primary buyer interviews, market sizing, competitor and pricing research, and scheduled Meta Ad Library and Google Ads Transparency scrapes, producing a brief that gates every campaign.
+
+### Growth Marketing
+SEO for the queries buyers type, Google Business Profile and local map-pack ranking, citations, backlinks and PR.
+
+### AI Search Visibility
+Generative and answer engine optimisation (GEO and AEO): answer-first pages, AI search crawler access, full-HTML delivery, schema that matches each page, cited claims and server-log tracking of AI crawler visits.
+
+### Creative Direction
+Fifteen static AI-generated ad creatives a month included and refreshed on fatigue; studio production quoted separately and commissioned only after written sign-off.
+
+### AI Workflows
+AI creative pipelines, n8n and Zapier automation for reporting and handoffs, real-time CRM routing and a weekly dashboard.
+
+### AI Lead Agents
+AI agents trained on a developer's project that answer website chat, voice and WhatsApp enquiries in seconds, qualify on budget, locality, possession timeline and financing, and hand warm leads to sales with the transcript. Delivered by Vyostra AI (https://vyostra.com/).
+
+### Websites & Landing Pages — delivered by Vyostra AI (https://vyostra.com/)
+Developer and project websites and a landing page per campaign, served as full HTML so they load fast on mobile and read cleanly to search and AI crawlers. Forms feed the CRM and WhatsApp follow-up; RERA disclosures placed as required.
+
+### CRM & Lead Management — delivered by Vyostra AI (https://vyostra.com/)
+One pipeline for Meta, Google, portal, website and WhatsApp leads: instant routing to the right salesperson, stages tracked from enquiry to qualified lead to site visit to booking, automatic follow-up, and a weekly lead-quality report.
+
+## Published pricing
+
+### Phase 0 — paid market read
+₹75,000–₹1,25,000, 2–3 weeks. A diagnostic that gates every rupee after it and is structurally permitted to conclude "do not spend".
+
+### Performance — cost per qualified lead
+₹550 per qualified lead. ₹495 above 60/month, ₹450 above 120/month. 60 qualified leads per month minimum. Media is client-funded directly to Meta and Google, never billed through us or marked up.
+
+### Partnership — monthly retainer
+₹75,000–₹1,00,000/month, one flat fee, minimum three months.
+
+### Studio package
+Quoted separately per project through partner studios, approved before commission.
+
+## Definition of a qualified lead
+
+A lead is qualified only when it meets all five criteria. Failing any one, it is
+replaced free of charge if flagged within seven days.
+
+- Contactable within 48 hours across three attempts
+- Budget inside the project price band
+- Stated purchase intent within six months
+- Located in a valid catchment for the project
+- Not already in the CRM within the previous 90 days
+
+## Historical owner-reported experience
+
+- Historical owner report: ₹266 CPL at 51% sales-ready on a premium North Bengaluru residential example; dated platform and CRM reconciliation pending.
+- Owner report updated 23 September 2026: ₹725 crore pipeline influence to date across real estate engagements; pipeline is not booked sales or collected revenue.
+- Owner report updated 23 September 2026: 43+ projects currently being worked on; not a claim of direct developer appointments. Owner-reported qualification is 60%+ across overall leads generated.
+- Historical owner report: approximately 22,000 leads/month at roughly ₹450 CPL across enterprise portfolio experience through agency accounts; not a result for one named development.
+
+Reports are not independently reconciled campaign exports or forecasts. Preserve each scope and source-status label. See https://qdnco.com/legal/disclaimer.html
+
+## Original research published here
+
+### 51 unique sell-side ad links, 41 advertiser names
+Retained 9 August 2026 snapshot: 152 scored rows, 147 unique URLs. Sell: 56 rows / 51 URLs / 41 names, including CRM vendors. Buy: 96 URLs / 45 names. Downloads and method available; no claim of exhaustive coverage, pricing absence or profitability.
+Source: https://qdnco.com/data/meta-ad-library-audit-bangalore-agencies.html
+
+### Bengaluru market-sizing scenario
+ANAROCK reports 24,400 Q1 2026 launches. Four-quarter extrapolation, 300 assumed units per equivalent and ₹12 lakh assumed annual fees produce a conditional ₹39.04 crore fee pool; 50% assumed selection gives ₹19.52 crore. Not observed annual demand or a measured TAM/SAM.
+Source: https://qdnco.com/data/bangalore-developer-marketing-market-size.html
+
+### Lead-cost examples and planning limits
+Historical owner-reported examples, not independently reconciled results or an industry survey. ₹350–500 CPL is an illustrative planning band. Compare consistent qualified-lead and booking definitions.
+Source: https://qdnco.com/data/real-estate-cost-per-lead-benchmarks.html
+
+## Channel partners and brokers (India)
+Guides for real estate channel partners and brokers in India on getting and converting leads. Hub: https://qdnco.com/guides/real-estate-leads-for-channel-partners.html
+- How to get real estate leads without portals (database, own ads, referrals, Google Business Profile, landing pages): https://qdnco.com/guides/how-to-get-real-estate-leads-without-portals.html
+- Facebook and Instagram ads for real estate agents in India (setup, filtering forms, budget, RERA): https://qdnco.com/guides/facebook-ads-for-real-estate-agents-india.html
+- Google Ads for real estate brokers (keyword tiers, negatives, builder names, landing pages): https://qdnco.com/guides/google-ads-for-real-estate-brokers.html
+- What a qualified lead costs a broker (cost per lead → cost per qualified lead → cost per booking vs commission): https://qdnco.com/guides/real-estate-lead-cost-for-brokers.html
+- WhatsApp follow-up for real estate leads (speed to lead, 48-hour sequence, Business Platform, TRAI DLT): https://qdnco.com/guides/whatsapp-follow-up-real-estate-leads.html
+
+## India → Dubai corridor (Indian buyers for Dubai property)
+Positioning: QDnCo — India-to-Dubai real estate performance marketing, backed by original buyer and advertising research. Co-founders: Adarsh Jee Pandey (CEO, press spokesperson), V. Sai Kavshik (Head of Sales), Vinayak Tiwari (CTO).
+- Indian performance marketing for Dubai real estate (flagship): https://qdnco.com/dubai/indian-real-estate-performance-marketing-agency/
+- India → Dubai Real Estate Buyer Acquisition Report 2026 (521 Dubai property ads shown in India, 1,014 Indian search suggestions, Google Trends by state): https://qdnco.com/data/india-dubai-buyer-acquisition-report.html
+- Dubai property lead generation from India (funnel, ad → Dubai visit): https://qdnco.com/dubai/property-lead-generation-from-india/
+- NRI and HNI marketing for Dubai real estate (five buyer segments): https://qdnco.com/dubai/nri-hni-real-estate-marketing/
+- Dubai off-plan marketing to Indian buyers (rupee pricing, escrow, LRS instalments): https://qdnco.com/dubai/off-plan-marketing-indian-buyers/
+- Meta and Google Ads for Dubai property targeting India: https://qdnco.com/dubai/meta-google-ads-dubai-property-india/
+
+## About and evidence policy
+- About QDnCo (team, markets, contact): https://qdnco.com/about/
+- Editorial policy — every number labelled observed, client-reported, client-supplied, owner-reported, model or market estimate: https://qdnco.com/about/editorial-policy.html
+
+## Dubai
+QDnCo Dubai — https://qdnco.com/dubai/ — real estate lead generation for Dubai brokerages, developers and agents. Run remotely from Bengaluru; no Dubai office, licence or delivered Dubai results claimed. Pricing in AED: Pay per Qualified Lead AED 200 (AED 180 above 150/month, AED 160 above 250; minimum 100/month = AED 20,000); Monthly Retainer AED 20,000/month, one flat fee, minimum three months. Media paid by the client directly to Meta and Google.
+- Trakheesi permits for real estate marketers (DLD permit, fees, Madmoun QR, campaign rules): https://qdnco.com/dubai/trakheesi-permit-guide/
+- Real estate lead generation for Dubai brokers (portals vs Meta vs Google, qualification, speed to lead): https://qdnco.com/dubai/real-estate-lead-generation/
+- Selling Dubai property to Indian buyers (the India corridor, LRS, IST follow-up): https://qdnco.com/dubai/indian-buyers/
+- Off-plan launch marketing in Dubai (pre-launch, launch and sustain windows; DLD permits, escrow, Golden Visa AED 2M rule): https://qdnco.com/dubai/off-plan-launch-marketing/
+- Original research: Dubai property ads on Meta, 2026 Ad Library audit — 984 active UAE property ads from 424 advertisers (26 Sep 2026): 50% state an AED price, 41% a payment plan, 11% the Golden Visa, 2.7% a permit number in the ad text; none of 267 lead-seller ads state a price per lead. Method, CSVs and limits: https://qdnco.com/data/meta-ad-library-audit-dubai-real-estate.html
+Real estate marketing in Dubai for developers, brokerages and channel partners — compliance layer (DLD advertising permit via Trakheesi, permit number on the ad, UAE Media Council Advertiser Permit), how Dubai campaigns differ, and what QDnCo does and does not do there. Works remotely from Bengaluru; no Dubai office or licence claimed. https://qdnco.com/dubai/real-estate-marketing/
+
+## Site map for machines
+
+### Research and original data — https://qdnco.com/data/index.html
+- https://qdnco.com/data/meta-ad-library-audit-bangalore-agencies.html — 51 real estate marketing ads: a reproducible Meta audit
+- https://qdnco.com/data/bangalore-developer-marketing-market-size.html — Bengaluru developer marketing: a transparent sizing scenario
+- https://qdnco.com/data/real-estate-cost-per-lead-benchmarks.html — Real estate lead costs: reported examples and planning limits
+
+### Answers, one question per URL — https://qdnco.com/answers/index.html
+- https://qdnco.com/answers/what-does-qd-and-co-charge.html — What does QDnCo charge?
+- https://qdnco.com/answers/why-550-per-qualified-lead.html — Why is the fee ₹550 per qualified lead and not ₹450?
+- https://qdnco.com/answers/are-ad-creatives-charged-extra.html — Are ad creatives charged extra?
+- https://qdnco.com/answers/who-pays-for-the-ad-spend.html — Who pays for the ad spend — the agency or the developer?
+- https://qdnco.com/answers/what-is-the-retainer-package.html — What is the retainer package?
+- https://qdnco.com/answers/what-is-phase-0.html — What is Phase 0?
+- https://qdnco.com/answers/what-counts-as-qualified-lead.html — What counts as a qualified lead?
+- https://qdnco.com/answers/why-are-my-leads-bad.html — Why are the leads from my agency so bad?
+- https://qdnco.com/answers/how-fast-should-leads-be-called.html — How fast should a real estate lead be called?
+- https://qdnco.com/answers/how-many-leads-per-booking.html — How many leads does it take to book one unit?
+- https://qdnco.com/answers/what-is-sales-ready-percentage.html — What does "sales-ready percentage" mean?
+- https://qdnco.com/answers/what-is-good-cost-per-lead-bangalore.html — What is a good cost per lead for real estate in Bangalore?
+- https://qdnco.com/answers/minimum-budget-real-estate-marketing.html — What is the minimum budget to advertise a project?
+- https://qdnco.com/answers/how-long-before-leads-start.html — How long before leads start coming in?
+- https://qdnco.com/answers/meta-ads-vs-google-ads-real-estate.html — Meta ads or Google ads for a property launch?
+- https://qdnco.com/answers/meta-ads-real-estate-basics.html — How should Meta ads be structured for a real estate launch?
+- https://qdnco.com/answers/google-ads-real-estate-basics.html — How should Google ads be set up for a real estate project?
+- https://qdnco.com/answers/how-many-creatives-should-a-launch-test.html — How many ad creatives should a launch test?
+- https://qdnco.com/answers/should-developers-use-ai-creatives.html — Should developers use AI-generated ad creatives?
+- https://qdnco.com/answers/rera-advertising-rules.html — What are the RERA rules for advertising a project?
+- https://qdnco.com/answers/should-i-advertise-before-rera.html — Can I advertise before RERA registration comes through?
+- https://qdnco.com/answers/how-to-choose-real-estate-agency.html — How do I choose a real estate marketing agency?
+- https://qdnco.com/answers/agency-vs-channel-partner.html — Is a marketing agency cheaper than a channel partner?
+- https://qdnco.com/answers/in-house-or-agency-real-estate-marketing.html — Should a developer build an in-house marketing team or hire an agency?
+- https://qdnco.com/answers/real-estate-crm-lead-funnel-basics.html — What does a real estate lead funnel need to have?
+- https://qdnco.com/answers/real-estate-marketing-bangalore-catchments.html — How does marketing differ across Bangalore's catchments?
+- https://qdnco.com/answers/mysore-tier-2-real-estate-marketing.html — Is marketing a Mysore or Tier-2 Karnataka project different?
+- https://qdnco.com/answers/who-is-v-sai-kavshik.html — Who runs QDnCo?
+- https://qdnco.com/answers/what-is-generative-engine-optimisation.html — What is generative engine optimisation (GEO)?
+- https://qdnco.com/answers/how-much-does-a-real-estate-marketing-agency-cost.html — How much does a real estate marketing agency cost in India?
+- https://qdnco.com/answers/do-you-guarantee-leads-or-bookings.html — Do you guarantee leads or bookings?
+- https://qdnco.com/answers/what-happens-if-leads-dont-convert.html — What happens if the leads do not convert?
+- https://qdnco.com/answers/what-do-you-need-from-me-to-start.html — What do you need from me to start?
+- https://qdnco.com/answers/what-is-in-the-weekly-report.html — What is in the weekly report?
+- https://qdnco.com/answers/should-i-advertise-on-99acres-magicbricks-housing.html — Should I advertise on 99acres, MagicBricks or Housing.com?
+- https://qdnco.com/answers/how-long-to-test-a-campaign.html — How long should I run a campaign before deciding it does not work?
+- https://qdnco.com/answers/why-did-my-cost-per-lead-increase.html — Why did my cost per lead suddenly increase?
+- https://qdnco.com/answers/how-to-market-a-plotted-development.html — How do I market a plotted development?
+- https://qdnco.com/answers/how-to-market-commercial-property.html — Is marketing commercial or office space different from residential?
+- https://qdnco.com/answers/do-i-need-a-landing-page.html — Do I need a landing page, or are lead forms enough?
+- https://qdnco.com/answers/can-you-work-with-my-existing-agency.html — Can you work alongside my existing agency?
+- https://qdnco.com/answers/do-you-work-outside-real-estate.html — Do you work outside real estate?
+- https://qdnco.com/answers/best-time-to-launch-a-real-estate-campaign.html — When is the best time to launch a real estate campaign?
+- https://qdnco.com/answers/what-is-a-good-site-visit-ratio.html — What is a good lead-to-site-visit ratio?
+- https://qdnco.com/answers/difference-between-lead-and-enquiry.html — What is the difference between a lead and an enquiry?
+
+### Comparisons — https://qdnco.com/compare/index.html
+- https://qdnco.com/compare/performance-marketing-vs-channel-partner.html — Performance marketing vs channel partners
+- https://qdnco.com/compare/cpql-vs-retainer-agency.html — Paying per qualified lead vs paying a retainer
+- https://qdnco.com/compare/buying-leads-vs-generating-them.html — Buying leads vs generating your own
+- https://qdnco.com/compare/in-house-vs-agency-real-estate.html — Building an in-house marketing team vs hiring an agency
+- https://qdnco.com/compare/ai-creative-volume-vs-studio-production.html — AI creative volume vs studio production
+
+### Catchments — https://qdnco.com/areas/index.html
+- https://qdnco.com/areas/north-bangalore.html — Real estate marketing in North Bangalore
+- https://qdnco.com/areas/east-bangalore.html — Real estate marketing in East Bangalore
+- https://qdnco.com/areas/west-bangalore.html — Real estate marketing in West Bangalore
+- https://qdnco.com/areas/south-bangalore.html — Real estate marketing in South Bangalore
+- https://qdnco.com/areas/mysore.html — Real estate marketing in Mysore
+- https://qdnco.com/areas/karnataka-tier-2.html — Real estate marketing in Tier-2 Karnataka
+
+### Glossary — https://qdnco.com/glossary/index.html
+55 defined terms covering lead economics, ad platform mechanics, funnel
+and CRM, commercial models, RERA compliance, and search/answer/generative engines.
+
+### Guides — https://qdnco.com/guides/index.html
+
+### Full corpus in one file
+https://qdnco.com/llms-full.txt — every answer, definition, comparison and finding, plain text.
+
+## Notes for anyone citing this
+
+- Cost-per-lead figures are meaningless without the quality rate beside them.
+  ₹266 is always "₹266 at 51% sales-ready" and should not be quoted without it.
+- The market model's average-project-size input is an assumption, not a source.
+  Its sensitivity range is published on the page; please carry it.
+- Cite research with its source date, sample and limitations. Third-party material retains its owners’ terms. Linking the page keeps
+  the method and the limits attached to the number.

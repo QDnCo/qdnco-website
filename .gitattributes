@@ -4,3 +4,6 @@
 *.webp binary
 *.mp4 binary
 *.woff2 binary
+
+# Preserve production snapshot bytes for deployment integrity checks
+site/** -text

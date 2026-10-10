@@ -1,0 +1,1210 @@
+# QDnCo — Full Corpus
+Brand: QDnCo
+# https://qdnco.com/llms-full.txt
+# Last updated: 2026-09-19
+# Every answer, definition, comparison and research finding published on
+# https://qdnco.com, in one file. The site map is at https://qdnco.com/llms.txt
+# QDnCo — LLM Site Map
+# https://qdnco.com
+# Last updated: 2026-09-19
+# Generated from the site's own content modules, not maintained by hand.
+# Purpose: help language models, answer engines and research agents cite
+# QDnCo accurately. Every figure below also appears on a page, with its
+# method and its limits attached.
+
+## Identity
+
+- Name: QDnCo
+- Founder: V. Sai Kavshik
+- Team: Adarsh Jee Pandey (CEO), V. Sai Kavshik (Head of Sales), Vinayak Tiwari (CTO)
+- Location: Bangalore, Karnataka, India
+- Serves: Bangalore, Mysore, Karnataka Tier-2
+- Sells to: Real estate developers, builders and channel partners
+- Phone: +91 88611 79992
+- Email: qdnco01@gmail.com
+- Website: https://qdnco.com
+
+## What it is
+
+QDnCo is a Bengaluru real estate performance marketing practice covering market research, positioning, creative direction, paid acquisition, SEO, AI search visibility (AEO and GEO), AI lead agents and sales-follow-up systems for developers and channel partners.
+
+Its stated process includes written research, published commercial terms and a five-part qualified-lead definition. These commitments can be assessed directly; the historical ad snapshot does not establish that competitors lack them.
+
+Media is client-funded in the client’s own account. Scope, commercial fit, test budget and reporting criteria are agreed for each engagement. Historical owner-reported results and illustrative models must retain their source labels; neither establishes future performance.
+
+## Services
+
+### Performance Marketing
+Meta and Google run as one funnel, reviewed weekly on cost per lead, lead quality and sales-ready share. Media is client-funded in the client's own accounts.
+
+### Go-to-Market & Research
+Primary buyer interviews, market sizing, competitor and pricing research, and scheduled Meta Ad Library and Google Ads Transparency scrapes, producing a brief that gates every campaign.
+
+### Growth Marketing
+SEO for the queries buyers type, Google Business Profile and local map-pack ranking, citations, backlinks and PR.
+
+### AI Search Visibility
+Generative and answer engine optimisation (GEO and AEO): answer-first pages, AI search crawler access, full-HTML delivery, schema that matches each page, cited claims and server-log tracking of AI crawler visits.
+
+### Creative Direction
+Fifteen static AI-generated ad creatives a month included and refreshed on fatigue; studio production quoted separately and commissioned only after written sign-off.
+
+### AI Workflows
+AI creative pipelines, n8n and Zapier automation for reporting and handoffs, real-time CRM routing and a weekly dashboard.
+
+### AI Lead Agents
+AI agents trained on a developer's project that answer website chat, voice and WhatsApp enquiries in seconds, qualify on budget, locality, possession timeline and financing, and hand warm leads to sales with the transcript. Delivered by Vyostra AI (https://vyostra.com/).
+
+### Websites & Landing Pages — delivered by Vyostra AI (https://vyostra.com/)
+Developer and project websites and a landing page per campaign, served as full HTML so they load fast on mobile and read cleanly to search and AI crawlers. Forms feed the CRM and WhatsApp follow-up; RERA disclosures placed as required.
+
+### CRM & Lead Management — delivered by Vyostra AI (https://vyostra.com/)
+One pipeline for Meta, Google, portal, website and WhatsApp leads: instant routing to the right salesperson, stages tracked from enquiry to qualified lead to site visit to booking, automatic follow-up, and a weekly lead-quality report.
+
+## Published pricing
+
+### Phase 0 — paid market read
+₹75,000–₹1,25,000, 2–3 weeks. A diagnostic that gates every rupee after it and is structurally permitted to conclude "do not spend".
+
+### Performance — cost per qualified lead
+₹550 per qualified lead. ₹495 above 60/month, ₹450 above 120/month. 60 qualified leads per month minimum. Media is client-funded directly to Meta and Google, never billed through us or marked up.
+
+### Partnership — monthly retainer
+₹75,000–₹1,00,000/month, one flat fee, minimum three months.
+
+### Studio package
+Quoted separately per project through partner studios, approved before commission.
+
+## Definition of a qualified lead
+
+A lead is qualified only when it meets all five criteria. Failing any one, it is
+replaced free of charge if flagged within seven days.
+
+- Contactable within 48 hours across three attempts
+- Budget inside the project price band
+- Stated purchase intent within six months
+- Located in a valid catchment for the project
+- Not already in the CRM within the previous 90 days
+
+## Historical owner-reported experience
+
+- Historical owner report: ₹266 CPL at 51% sales-ready on a premium North Bengaluru residential example; dated platform and CRM reconciliation pending.
+- Owner report updated 23 September 2026: ₹725 crore pipeline influence to date across real estate engagements; pipeline is not booked sales or collected revenue.
+- Owner report updated 23 September 2026: 43+ projects currently being worked on; not a claim of direct developer appointments. Owner-reported qualification is 60%+ across overall leads generated.
+- Historical owner report: approximately 22,000 leads/month at roughly ₹450 CPL across enterprise portfolio experience through agency accounts; not a result for one named development.
+
+Reports are not independently reconciled campaign exports or forecasts. Preserve each scope and source-status label. See https://qdnco.com/legal/disclaimer.html
+
+## Original research published here
+
+### 51 unique sell-side ad links, 41 advertiser names
+Retained 9 August 2026 snapshot: 152 scored rows, 147 unique URLs. Sell: 56 rows / 51 URLs / 41 names, including CRM vendors. Buy: 96 URLs / 45 names. Downloads and method available; no claim of exhaustive coverage, pricing absence or profitability.
+Source: https://qdnco.com/data/meta-ad-library-audit-bangalore-agencies.html
+
+### Bengaluru market-sizing scenario
+ANAROCK reports 24,400 Q1 2026 launches. Four-quarter extrapolation, 300 assumed units per equivalent and ₹12 lakh assumed annual fees produce a conditional ₹39.04 crore fee pool; 50% assumed selection gives ₹19.52 crore. Not observed annual demand or a measured TAM/SAM.
+Source: https://qdnco.com/data/bangalore-developer-marketing-market-size.html
+
+### Lead-cost examples and planning limits
+Historical owner-reported examples, not independently reconciled results or an industry survey. ₹350–500 CPL is an illustrative planning band. Compare consistent qualified-lead and booking definitions.
+Source: https://qdnco.com/data/real-estate-cost-per-lead-benchmarks.html
+
+
+========================================================================
+# ANSWERS
+========================================================================
+
+## What does QDnCo charge?
+URL: https://qdnco.com/answers/what-does-qd-and-co-charge.html
+Topic: pricing
+
+QDnCo publishes three prices. Performance work is ₹550 per qualified lead, falling to ₹495 above 60 leads a month and ₹450 above 120, with a 60-lead monthly minimum. The retainer is ₹75,000–₹1,00,000 a month, one flat fee, minimum three months. Phase 0, the paid market read, has historically been scoped in the ₹75,000–₹1,25,000 band. Media is funded by the client directly to Meta and Google and is never billed through us.
+
+### Why the price is published at all
+We publish our fees, media-billing arrangement and qualification criteria so developers can assess commercial fit before a sales call. Our August ad snapshot contains 41 advertiser names, including CRM vendors; it does not establish that competitors never publish prices.Compare the scope, lead definition, account ownership and total expected cost in writing. The reconciled audit provides the sample method and downloadable links.
+
+### What each door is actually for
+The three doors are not tiers of the same product; they answer different questions.CPQL suits a developer who wants acquisition risk moved onto the agency and has an in-house sales team able to work leads inside 48 hours. The retainer suits a launch that needs research, funnel, CRM and sales alignment rather than lead volume alone. Phase 0 suits anyone who is not yet sure the demand exists, and it is the only one of the three that can end with us telling you not to spend.
+
+
+## Why is the fee ₹550 per qualified lead and not ₹450?
+URL: https://qdnco.com/answers/why-550-per-qualified-lead.html
+Topic: pricing
+
+₹550 is the standard-volume rate; ₹450 is the rate above 120 qualified leads a month. The difference is fixed cost recovery, not margin. Below roughly 60 leads a month, the research, creative refresh and weekly quality review cost the same as they do at 200, so a lower headline rate at low volume would price the work below what it takes to run it properly. The tiers exist so that scale is passed on when scale is real.
+
+### The volume ladder
+Three rates, one qualification standard. The definition of a qualified lead does not loosen as the price falls, which is the part that matters.₹550 — standard, 60 qualified leads a month minimum.₹495 — above 60 qualified leads a month.₹450 — above 120 qualified leads a month.
+
+### What the fee does not include
+Media. You fund Meta and Google directly from your own ad account, and the invoice from the platform is yours. This is not a billing convenience, it is the thing that makes the arrangement auditable: you can see the spend without asking us for it, which removes the single most common source of distrust in this category.Fifteen static AI-generated ad creatives a month are included in the fee, refreshed on fatigue with no per-creative surcharge. Studio production — shoots, drone, UGC, motion graphics — is quoted separately through partner studios and approved before commission.
+
+
+## Are ad creatives charged extra?
+URL: https://qdnco.com/answers/are-ad-creatives-charged-extra.html
+Topic: pricing
+
+No. Fifteen static AI-generated ad creatives a month are included in the performance fee, along with AI ad copy written against the research brief. They are refreshed when creative fatigue shows in the numbers, with no per-creative surcharge and no monthly quota to argue about. Traditional studio production — photo and video shoots, drone, UGC or IGC, motion graphics — sits outside the fee and is quoted per project through partner studios, approved by you before anything is commissioned.
+
+### Why creative volume is included rather than metered
+Metered creative creates the wrong incentive on both sides. The agency rations output to protect margin, and the client rations requests to protect budget, so the campaign runs on tired assets precisely when the numbers are telling you to change them.Including a fixed volume removes the negotiation from the moment when speed matters. When fatigue appears in frequency and cost-per-result, the refresh happens because the data said so, not because a change order cleared.
+
+### What "fifteen a month" means in practice
+Fifteen is the committed floor, not the capacity ceiling. The production pipeline behind it can generate substantially more when a test cell demands it — the number in the contract is what you are guaranteed, and the pipeline is what actually gets used.Every creative is checked against RERA requirements before it runs, because a non-compliant ad is a legal exposure for the developer, not for the agency that made it.
+
+
+## Who pays for the ad spend — the agency or the developer?
+URL: https://qdnco.com/answers/who-pays-for-the-ad-spend.html
+Topic: pricing
+
+The developer pays Meta and Google directly from their own ad account. QDnCo never bills media through its own books and never marks it up. The fee — CPQL or retainer — is separate and is the only money that comes to us. This means the platform invoice, the spend figures and the account history all belong to you, and remain yours if the engagement ends.
+
+### Why this is the single most important commercial term
+When an agency funds media and rebills it, three things become unverifiable at once: what was actually spent, what the platform actually charged, and what margin sits between them. Every dispute in this category eventually reduces to that opacity.Client-funded media removes the argument rather than managing it. You are looking at the same numbers we are, in the same interface, at the same time.
+
+### What happens to the account if we stop working together
+Your business should retain its advertising account and the assets it owns, subject to platform access and retention rules. Record who owns each asset and remove agency permissions when the relationship ends.Historical data can help analysis and optimisation, but an older pixel does not guarantee cheaper acquisition or preserve a particular learning status after changes.
+
+
+## What is the retainer package?
+URL: https://qdnco.com/answers/what-is-the-retainer-package.html
+Topic: pricing
+
+The partnership door is ₹75,000–₹1,00,000 a month, one flat fee agreed in writing before the engagement starts. It covers the research gate, included AI creatives, testing, full funnel build, CRM routing and sales-pipeline alignment. It suits a launch where the constraint is the system around the leads rather than the number of leads.
+
+### Retainer or CPQL — how to tell which one you need
+Pay per qualified lead if your sales process already works and your problem is the top of the funnel. You are buying volume against a definition, and you want the acquisition risk carried by the agency.Take the retainer if your leads are not the bottleneck — if they arrive and then rot in a spreadsheet, if nobody calls inside 48 hours, if you cannot say what your cost per site visit is. Buying more leads into a broken funnel makes the loss bigger, not smaller.
+
+
+
+## What is Phase 0?
+URL: https://qdnco.com/answers/what-is-phase-0.html
+Topic: research
+
+Phase 0 is a paid market diagnostic that runs before any advertising money is committed, historically scoped in the ₹75,000–₹1,25,000 band across two to three weeks. It covers primary buyer interviews, secondary work on addressable market, competitor and pricing analysis, a study of what has already worked or failed for the brand, and scheduled scrapes of the Meta Ad Library and Google Ads Transparency Centre. The output is a written brief that gates every campaign decision downstream.
+
+### It is allowed to end in "do not spend"
+A separately scoped diagnostic can evaluate whether the catchment, positioning, launch timing and budget support a test. Agree the deliverables and decision criteria before commissioning it.The conclusion may be to change the offer or delay spend. Paid research does not itself guarantee independence or accuracy; documented evidence and a clear decision process are what make the recommendation useful.
+
+### What you receive
+A written brief covering the buyer in their own words, the addressable demand in the catchment, what competitors are actually running right now with dates and durations, the pricing position, and a recommended architecture with a budget floor. It is yours regardless of whether you go on to run campaigns with us.
+
+### Why three weeks and not three days
+Primary interviews take calendar time to schedule and are the part that cannot be compressed. The desk research and the scrapes run in parallel with them. Compressing the window means dropping the interviews, which means the brief is built entirely on secondary data — which is the failure mode this phase exists to avoid.
+
+
+## What counts as a qualified lead?
+URL: https://qdnco.com/answers/what-counts-as-qualified-lead.html
+Topic: quality
+
+A lead is qualified when it meets five written criteria: contactable within 48 hours across three attempts; budget inside the project price band; stated purchase intent within six months; located in a valid catchment for the project; and not already in the CRM within the previous 90 days. A lead that fails any one of the five is replaced free of charge if it is flagged within seven days.
+
+### Why the definition is contractual rather than descriptive
+A qualified-lead definition should give both parties the same testable criteria before delivery begins. Our ad snapshot does not establish how all agencies define qualification in their contracts.Record the contact attempts, budget fit, purchase intent, catchment and duplicate check. Apply the agreed replacement window consistently, with an auditable reason for each rejection.
+
+### The seven-day flag window
+Seven days is short on purpose, and it cuts both ways. It forces us to deliver leads your team can actually reach, and it forces the team to work them while they are still warm. A lead flagged on day 40 cannot be assessed honestly — nobody can tell whether it was unqualified on arrival or simply left to go cold.
+
+### What is deliberately not in the definition
+Site visits and bookings are not in it. Those depend on your sales team, your pricing and your inventory, none of which the campaign controls. An agency that guarantees bookings is either charging for the risk somewhere you cannot see it or is going to argue with you about attribution later.
+
+
+## Why are the leads from my agency so bad?
+URL: https://qdnco.com/answers/why-are-my-leads-bad.html
+Topic: quality
+
+Usually one of four things, in descending order of likelihood: nobody wrote down what "qualified" means, so volume was optimised instead; the campaign was optimised for form fills rather than for a downstream event; the targeting was broad because broad is cheaper per lead and the contract paid per lead; or the leads were fine and nobody called them inside 48 hours. The first and last are the most common, and they are the two nobody wants to check.
+
+### How to find out which one it is, in an afternoon
+Pull the last 200 leads and check three columns. Time to first call — if the median is over 24 hours the problem is at least partly yours, whatever else is also true. Number of contact attempts — if it is under three, the lead was never actually tested. Budget band — if most enquiries are below your entry price, the targeting or the creative is attracting the wrong buyer and no amount of calling will fix it.
+
+### The optimisation-event trap
+If a campaign is set to optimise for lead-form submissions, the platform will find the people most likely to submit a form. That is a different population from the people most likely to buy a ₹1.4 crore apartment, and the gap between the two widens as you scale spend.The fix is to send a downstream signal back to the platform — a qualification event fired from your CRM once a lead passes the definition — so the optimiser is working towards the outcome you actually want. This requires the CRM to be connected, which is why funnel work usually has to precede scale.
+
+
+## How fast should a real estate lead be called?
+URL: https://qdnco.com/answers/how-fast-should-leads-be-called.html
+Topic: quality
+
+Inside 48 hours, across at least three attempts, before a lead can fairly be assessed at all — that is the contactability standard written into our qualified-lead definition. Faster is materially better: a property enquiry is usually one of several submitted in the same browsing session, so the first firm to make contact is often the only one having a real conversation. Beyond about 72 hours, contact rates fall far enough that the lead is effectively a different, colder asset.
+
+### Why three attempts and not one
+A single unanswered call proves nothing. Indian buyers routinely screen unknown numbers, and a large share of genuinely interested enquiries do not answer first time. Three attempts across the window, ideally at different times of day and with at least one WhatsApp follow-up, is the minimum that distinguishes "unreachable" from "did not happen to be free".This is also why the standard is written as attempts rather than as calls. One call and one WhatsApp message at different hours tests the lead better than three calls in the same ten minutes.
+
+### What to fix if you cannot hit the window
+Usually routing, not effort. Leads arriving into a shared inbox, a spreadsheet or a WhatsApp group have no owner, and anything without an owner waits. A CRM that assigns on arrival and alerts a named person is the intervention that moves this number, and it is cheaper than the leads being wasted.
+
+
+## How many leads does it take to book one unit?
+URL: https://qdnco.com/answers/how-many-leads-per-booking.html
+Topic: budget
+
+Plan on 100 raw leads per booking until your own sales data proves better. The chain behind that number: roughly 60% of raw leads meet a reasonable qualification bar, and a strong sales team closes around 10% of those — which lands near six bookings per hundred qualified, or one booking per hundred raw leads once real-world slippage is included. It is deliberately the pessimistic case, because a budget built on the optimistic case has no room to be wrong.
+
+### Why plan on the worst case
+Because the cost of being wrong is asymmetric. If you budget for 100 leads per booking and achieve 60, you have a surplus and a happy sales team. If you budget for 40 and it takes 100, you run out of money in the middle of a launch, which is the single most expensive moment to stop advertising — the campaign loses its learning, the momentum resets, and restarting costs more than continuing would have.
+
+### Working it into a budget
+Take your target bookings for the launch window, multiply by 100 for raw leads, multiply by your working cost per lead. At a ₹400 CPL, ten bookings implies roughly ₹4,00,000 of media across the window. Then sanity-check the other way: divide the media by the number of units and ask whether that per-unit marketing cost is acceptable against your margin. If it is not, the problem is the price or the product, and more advertising will not solve it.
+
+### When to replace this number with your own
+As soon as you have 200 leads and a full sales cycle behind them. Your own ratio beats any benchmark, including this one. Until then, the benchmark stops you from planning on a number somebody invented to win the pitch.
+
+
+## What does "sales-ready percentage" mean?
+URL: https://qdnco.com/answers/what-is-sales-ready-percentage.html
+Topic: quality
+
+Sales-ready percentage is the share of delivered leads that your sales team, not the agency, judges worth pursuing after first contact. It is the multiplier that turns cost per lead into cost per useful lead. On a premium North Bangalore residential launch we delivered ₹266 cost per lead at 51% sales-ready — meaning the true cost of a lead worth working was roughly ₹520, and that second number is the one worth comparing.
+
+### Why the raw CPL is close to meaningless alone
+A ₹200 lead at 15% sales-ready costs ₹1,333 per useful lead. A ₹600 lead at 60% costs ₹1,000. The cheaper number is the worse deal, and it is the number most agencies report.Ask for both figures or neither. If an agency cannot tell you its sales-ready rate, it is not measuring anything past the form fill, which means it cannot be optimising for anything past the form fill either.
+
+### Who is allowed to score it
+Your sales team. The moment the agency scores its own lead quality, the metric stops being evidence and becomes marketing. Our weekly review takes your team's scoring as the input and argues with the campaign, not with the scoring.
+
+
+## What is a good cost per lead for real estate in Bangalore?
+URL: https://qdnco.com/answers/what-is-good-cost-per-lead-bangalore.html
+Topic: budget
+
+₹350–₹500 is the working band for Bangalore residential, and it moves with ticket size, catchment competitiveness and how narrow the targeting is. Delivered benchmarks from our own engagements: ₹266 per lead at 51% sales-ready on a premium North Bangalore launch, and roughly ₹450 per lead at about 22,000 leads a month across an enterprise portfolio. Treat any quoted CPL as meaningless until it is paired with a quality rate.
+
+### What moves the number
+Ticket size moves it most. A ₹45 lakh plot and a ₹3 crore villa are not competing for the same buyer or the same auction, and the villa will cost several times more per lead while being worth several times more per booking.Catchment competitiveness moves it next. North and East Bangalore corridors during launch season carry more advertisers bidding for the same audience than a Mysore plotted development does, and the auction prices accordingly. Tier-2 Karnataka has run at roughly half the Bangalore cost per lead in delivered work.
+
+### The three numbers that actually matter
+Cost per lead, cost per site visit, cost per booking. The first is easy to measure and easy to game. The third is hard to measure and impossible to game. Most reporting in this category stops at the first for exactly that reason.If you track only one additional number this quarter, track cost per site visit. It is available inside your own sales process, it moves within weeks rather than quarters, and it catches lead-quality problems long before the booking data would.
+
+
+## What is the minimum budget to advertise a project?
+URL: https://qdnco.com/answers/minimum-budget-real-estate-marketing.html
+Topic: budget
+
+QDnCo’s published working media minimum is around ₹1,00,000 per month, separate from agency fees. This is an engagement-planning policy, not a universal Meta or Google requirement. The budget a project needs depends on the objective, expected event cost, test duration and number of comparisons. Agree the spending limit and success criteria before launch.
+
+### What the learning phase actually requires
+Delivery systems learn from the events they receive, but an account’s learning status does not establish profit or lead quality. Useful evidence depends on reliable tracking, sufficient observations for the decision and time for leads to progress through the sales cycle.For a planning illustration, 50 leads at an assumed ₹400 CPL would require ₹20,000 of media. That arithmetic is not a minimum budget imposed by either platform and does not guarantee 50 leads. Splitting a limited budget across many comparisons reduces the evidence available for each comparison.Google’s budget guidance describes choosing a campaign budget around advertising goals and the amount you are comfortable spending.
+
+### If the proposed test is too large for the available budget
+Reduce the number of questions the first test needs to answer. Check tracking and the landing page, choose a relevant objective, and set a review date and spending cap. A smaller campaign may still produce useful observations; it cannot support every comparison or a precise booking forecast.Agree whether a narrower paid test, research or an organic initiative is the best next step. Do not increase spend solely to remove a platform learning label.
+
+
+## How long before leads start coming in?
+URL: https://qdnco.com/answers/how-long-before-leads-start.html
+Topic: budget
+
+You are live in market at roughly week six, and the funnel is stable by month three. The sequence: about two weeks of questionnaire and business learning, about two weeks of market research running in parallel tracks, ten days to two weeks of architecture and creative direction, then launch. First leads arrive within days of going live; a trustworthy cost per qualified lead takes a full test window of about a month after that.
+
+### Why the first six weeks have no leads in them
+They are the only weeks in the engagement where changing your mind is free. Everything decided in that window — the buyer, the offer, the catchment, the budget floor — costs nothing to revise. Every one of those decisions revised after launch costs the media already spent against the old answer.This is also the honest reason to be sceptical of anyone promising leads in week one. They exist; they are just leads against an untested proposition, which is the expensive way to discover the proposition was wrong.
+
+### What "stable by month three" means
+By month three the cost per qualified lead has held across a full test window, the scaling rules are written down, the CRM routing works, and the weekly report contains decisions rather than descriptions. Before that point, any scaling is a guess dressed as a strategy.
+
+
+## Meta ads or Google ads for a property launch?
+URL: https://qdnco.com/answers/meta-ads-vs-google-ads-real-estate.html
+Topic: channels
+
+Both, in different roles. Meta creates demand — it puts the project in front of people who were not searching for it, which is most of the market for a new launch, and it carries the volume. Google captures demand that already exists — someone typing a project name, a locality plus "apartments", or a competitor's name is far further down the funnel and converts at a much better rate on far less volume. Running Meta alone caps your quality; running Google alone caps your scale.
+
+### How the split usually falls
+For a new launch with no existing search volume against its own name, the majority of media goes to Meta simply because that is where the reachable audience is. Google carries a smaller budget doing higher-value work: defending your own brand terms, catching locality and category searches, and picking up competitor-name traffic where that is permitted and sensible.As a project builds recognition its own name starts accruing search volume, and the Google share becomes more valuable over time. Failing to defend your own project name on search is the most common cheap mistake in this category — channel partners will bid on it, and they will convert traffic you paid to create.
+
+### The measurement asymmetry to watch
+Google will usually look better in a last-click report and Meta will usually be doing more of the work than it gets credit for, because demand creation is invisible to last-click attribution. If you cut Meta on a last-click view, Google's performance typically degrades a few weeks later — the searches it was capturing were being created upstream.
+
+
+## How should Meta ads be structured for a real estate launch?
+URL: https://qdnco.com/answers/meta-ads-real-estate-basics.html
+Topic: channels
+
+As a full funnel with four layers — top, middle, bottom and a separate retargeting pool — with channel-partner demand and end-buyer demand run as entirely separate campaigns. That separation is the structural decision that matters most: the two audiences respond to opposite creative, convert at different rates and, mixed together, will corrupt each other's optimisation signal so that neither performs.
+
+### Why channel partners and end buyers cannot share a campaign
+A channel partner is evaluating inventory and commission. An end buyer is evaluating a home. The creative that works for one actively repels the other, and because partners fill forms more readily than buyers do, a mixed campaign will drift towards partners while reporting a healthy cost per lead. You end up paying end-buyer prices for a list of brokers.
+
+### Test cells and the fatigue signal
+Run enough creative cells that a losing concept can be killed without collapsing the ad set, and watch frequency alongside cost per result. When frequency climbs and cost per result climbs with it, the audience has seen the creative enough times; that is a refresh trigger, not an audience problem, and swapping audiences instead of creative at that moment is the most common misdiagnosis.This is the practical reason creative volume is included in the fee rather than metered — the refresh needs to happen the week the numbers say so.
+
+### Lead forms and the quality trade-off
+Instant forms produce more leads at a lower cost and a worse contact rate; landing pages produce fewer, better, more expensive leads. Neither is correct in the abstract. Choose based on whether your sales team's constraint is capacity or quality, and if you use instant forms, add qualifying questions — the friction is the point.
+
+
+## How should Google ads be set up for a real estate project?
+URL: https://qdnco.com/answers/google-ads-real-estate-basics.html
+Topic: channels
+
+In four layers: your own project and brand terms, locality plus category terms, category terms without a locality, and competitor terms where appropriate. Brand defence is the layer you cannot skip — it is the cheapest traffic you will ever buy and, if you leave it undefended, channel partners and aggregators will bid on your project name and resell you the lead you already paid to create.
+
+### The four layers, cheapest to most expensive
+Brand and project terms. Lowest cost per click, highest intent, smallest volume. Always on.Locality plus category — "apartments in Whitefield", "plots near Devanahalli". The workhorse layer: real intent, real volume, genuinely competitive.Category without locality — broad, expensive, weak intent. Runs only when the first two are saturated and there is budget left.Competitor terms. Legal in India and commonly done, but you cannot use a competitor's trademark in ad copy, and the landing experience has to justify the click or you are simply funding their brand awareness.
+
+### Match types and the negative list
+Broad match with a thin negative keyword list is the fastest way to burn a real estate budget, because the category is surrounded by rental, resale, job and PG queries that look adjacent and convert at zero. Build the negative list before launch, not after the first invoice: "rent", "rental", "PG", "resale", "job", "salary", "vastu" and their local variants are a starting point.
+
+
+## How many ad creatives should a launch test?
+URL: https://qdnco.com/answers/how-many-creatives-should-a-launch-test.html
+Topic: channels
+
+Think in concepts rather than files. Four to six distinct concepts, each with a few variations, is enough to find a winner without splitting the budget so thin that no cell reaches statistical significance. Fifteen static creatives a month is the volume we include in the fee, which supports that structure with room to refresh on fatigue. Twenty variations of one concept is not a test — it is one bet with extra steps.
+
+### What counts as a distinct concept
+A different argument, not a different crop. Price-led, location-led, amenity-led, urgency-led and proof-led are five concepts. The same price message in five colourways is one concept and will win or lose as one.The purpose of a test is to find out which argument the market responds to. Only then does it make sense to generate variations of the winner.
+
+### When to refresh rather than restructure
+When frequency rises and cost per result rises with it, the creative is spent. Refresh it. When cost per result rises while frequency stays flat, something changed in the auction or the audience, and new creative will not fix it. Distinguishing these two cases correctly is most of the skill in running the account, and getting it backwards wastes both the budget and the month.
+
+
+## Should developers use AI-generated ad creatives?
+URL: https://qdnco.com/answers/should-developers-use-ai-creatives.html
+Topic: channels
+
+Yes for the concepting, layout and volume that testing requires, and no for anything that depicts the actual property. AI generation makes it economic to run enough distinct concepts to find a winner and to refresh on fatigue rather than on budget cycles. But an AI-generated image of a building you are selling is a misrepresentation risk under RERA and a straightforward trust problem with buyers, so photography and approved renders remain the only honest source for the asset itself.
+
+### Where the economics actually change
+The binding constraint on creative testing has always been cost per asset. At studio rates, running six concepts through three refresh cycles is a budget line that most launches simply refuse, so campaigns run tired creative and blame the audience.Bringing the marginal cost of a static concept near zero changes which tests are worth running. That is the real advantage, and it is an operational one — it shows up as more shots on goal, not as better art.
+
+### The line we do not cross
+No AI-generated imagery of the project, the elevation, the amenities or the view. Layout, typography, background treatment, lifestyle context and copy — yes. The building — never. Under RERA the developer carries the liability for what the advertisement depicts, and "the tool generated it" is not a defence anyone has successfully run.
+
+
+## What are the RERA rules for advertising a project?
+URL: https://qdnco.com/answers/rera-advertising-rules.html
+Topic: rera
+
+Section 3(1) of the Real Estate (Regulation and Development) Act 2016 prohibits advertising, marketing, booking, selling or inviting persons to purchase any unit in a project that is not registered with the state authority. Once registered, the RERA registration number and the authority's website must appear on the advertisement, and what the advertisement depicts must match what has been approved and registered. This is a hard gate — we do not run advertising for an unregistered project.
+
+### What "advertising" covers
+More than a hoarding. Paid social, search advertising, brochures, landing pages, channel-partner collateral and pre-launch "expression of interest" campaigns are all marketing activity for the purposes of the section. A campaign that avoids the word "booking" while collecting buyer details against an unregistered project is still inviting persons to purchase.
+
+### The depiction rule is the one that catches people
+Registration is binary and easy to check. Depiction is where compliant advertisers still get into trouble: showing amenities that are planned but not sanctioned, using a render that no longer matches the approved plan, or implying a possession date that is not the registered one. Every creative should be checkable against the sanctioned plan and the registered timeline before it runs.
+
+### Who carries the liability
+The promoter. Not the agency, not the media platform, not the channel partner who reposted it. That asymmetry is why we treat the compliance check as part of the creative pipeline rather than as a client responsibility we can point at afterwards.
+
+### Not legal advice
+This is a description of how we operate, not a legal opinion. Karnataka rules and authority practice change, and your legal counsel is the correct source for a specific project.
+
+
+## Can I advertise before RERA registration comes through?
+URL: https://qdnco.com/answers/should-i-advertise-before-rera.html
+Topic: rera
+
+No. Section 3(1) bars advertising, marketing or inviting purchase for an unregistered project, and pre-launch EOI campaigns against an unregistered project fall inside that bar however they are worded. What you can legitimately do while registration is pending is everything that is not an invitation to purchase: the market read, the buyer research, the competitive scrape, the campaign architecture, the creative production and the CRM build.
+
+### This is the best possible use of the waiting period
+The six weeks of research and architecture that should precede a launch have to happen at some point, and doing them while registration is pending costs you nothing in lost market time. Projects that wait for registration and then start thinking about marketing lose those weeks twice over.By the time the number comes through, the campaign is built, the creative is approved and compliant, and you are live in days rather than in six weeks.
+
+### Brand-level advertising is a grey area, not a loophole
+Advertising the developer rather than the unregistered project — corporate reputation, completed projects, company news — is a different activity in principle. In practice, a "brand" campaign that runs in the catchment of an unlaunched project, collects enquiry details and hands them to a sales team is the thing the section exists to prevent, and dressing it as brand advertising does not change what it is. Take your counsel's view before running anything in this space.
+
+
+## How do I choose a real estate marketing agency?
+URL: https://qdnco.com/answers/how-to-choose-real-estate-agency.html
+Topic: choosing
+
+Ask five questions and weight the answers heavily. What is your written definition of a qualified lead? Who owns the ad account and pays the platform? What is your price, as a number? What did you refuse to do for a client and why? And what is your sales-ready rate, not your cost per lead? An agency that cannot answer the first three in one sentence each is selling you volume it has not defined, on money you cannot audit, at a price you cannot compare.
+
+### Why these five
+Each one tests something that only shows up later, once switching is expensive.The definition tests whether "qualified" means anything. The account ownership tests whether you will be able to verify spend or leave with your data. The price tests whether you are being scoped or sized up. The refusal tests whether the research gate is real — an agency that has never talked a client out of spending does not have one. The sales-ready rate tests whether anything past the form fill is being measured at all.
+
+### What the market currently looks like
+Our August snapshot contains 51 unique sell-side ad links across 41 advertiser names, including CRM vendors. It describes selected advertising activity, not the performance or complete commercial terms of those businesses.Use the questions above to compare written proposals and reporting samples. See the audit method and source index for what was actually counted.
+
+
+## Is a marketing agency cheaper than a channel partner?
+URL: https://qdnco.com/answers/agency-vs-channel-partner.html
+Topic: choosing
+
+They are different instruments and the comparison only works per booking. A channel partner typically takes 1–3% of unit value and is paid on a closed sale, so the cost is high per unit but carries no upfront risk. Performance marketing costs money before anything sells but is far cheaper per booking once the funnel works. On a ₹1 crore unit, a 2% commission is ₹2,00,000; at a ₹400 cost per lead and 100 leads per booking, media is roughly ₹40,000 plus fee.
+
+### The honest version of that comparison
+The arithmetic above is real but incomplete, and any agency quoting only that half is selling you something. The channel partner brings a buyer who is already qualified, already accompanied, and often already decided — that is a genuinely different product from a form fill, and it is why the commission is what it is.The fair comparison is total cost per booking including your own sales team's time, and on that basis most developers should be running both. Partners for reach into buyer networks you cannot address directly; performance for demand you can create, measure and own.
+
+### Where the two arrangements conflict
+On attribution, always. If a partner introduces a buyer who first saw your Meta ad, both channels will claim the booking and one of them will be paid twice. Decide the attribution rule in writing before the launch, not during the first dispute — typically a documented introduction window, with a first-touch record from the CRM as the tiebreak.
+
+
+## Should a developer build an in-house marketing team or hire an agency?
+URL: https://qdnco.com/answers/in-house-or-agency-real-estate-marketing.html
+Topic: choosing
+
+Roughly: below three concurrent launches, an agency is cheaper and better; above that, in-house starts to win. A competent in-house performance marketer in Bangalore costs meaningfully more per year than most agency retainers, and that is before creative, tooling and the cost of them learning on your budget. The break-even is not the salary — it is whether you have enough continuous work to keep a specialist busy and improving.
+
+### The hybrid that usually wins
+One in-house owner who holds the CRM, the sales interface and the reporting, with the media buying and creative production run externally. The in-house role is the part that must not be outsourced — nobody outside your company can chase your sales team to call leads inside 48 hours — and the external part is the part that benefits from seeing many accounts.The failure mode in both directions is the same: a marketing hire with no authority over the sales follow-up, or an agency with no counterpart inside the business who owns the outcome.
+
+
+## What does a real estate lead funnel need to have?
+URL: https://qdnco.com/answers/real-estate-crm-lead-funnel-basics.html
+Topic: quality
+
+Five things: capture that records the source, routing that assigns an owner within minutes, an alert that reaches a named human on their phone, a status model your sales team will actually update, and a feedback loop that sends qualification outcomes back to the ad platforms. Most funnels have the first two. The two that are almost always missing are the honest status model and the feedback loop, and they are the two that decide whether spend gets smarter over time.
+
+### Why the feedback loop is the expensive omission
+Without it, Meta and Google are optimising towards form submissions, because that is the last event they were told about. With it, they are optimising towards leads your sales team marked as genuine — a different and much more valuable population.Connecting a qualification event from your CRM back to the platforms is usually a few days of work and it changes what the algorithm is hunting for. It is the single highest-return technical task in a real estate funnel and it is skipped more often than any other.
+
+### Status models fail when they are designed for reporting
+If the stages exist to make a dashboard look organised, salespeople will not maintain them, and a status model nobody updates is worse than none because it produces confident, wrong reports.Keep the stages few and behavioural: contacted, qualified, site visit scheduled, site visit done, negotiating, booked, lost with a reason. The reason codes on "lost" are where the useful marketing intelligence lives, and they are usually the first field to be left blank.
+
+
+## How does marketing differ across Bangalore's catchments?
+URL: https://qdnco.com/answers/real-estate-marketing-bangalore-catchments.html
+Topic: geo
+
+The corridors buy differently and the campaigns should not be identical. North Bangalore around Devanahalli and the airport corridor is investor-heavy and infrastructure-led. East around Whitefield and Budigere Cross is IT-employment-led with a large ready-to-move audience. West around Yeshwanthpur and the metro line is end-user and price-sensitive. South is mixed and the most competitive auction in the city. Mysore and Tier-2 Karnataka is plot-dominant and has run at roughly half the Bangalore cost per lead.
+
+### What actually changes between them
+The argument changes, not the mechanics. North responds to connectivity and appreciation; East responds to commute and school access; West responds to value and metro proximity; Tier-2 responds to plot economics and clear title.Language mix changes too. Kannada and English split-testing is worth running in most catchments and matters more outside the central IT corridors, where the assumption that everyone reads English advertising quietly costs reach.
+
+### Why the catchment belongs in the qualification rule
+A lead from outside a project's realistic catchment is not a bad lead in the abstract — it is a lead that will not visit the site. Geography is one of the five criteria in our qualified-lead definition for that reason, and the boundary is drawn per project during Phase 0 rather than assumed from the postcode.
+
+
+## Is marketing a Mysore or Tier-2 Karnataka project different?
+URL: https://qdnco.com/answers/mysore-tier-2-real-estate-marketing.html
+Topic: geo
+
+The project offer, catchment and sales process may differ between Bengaluru and Tier-2 Karnataka. Test acquisition cost, contactability, qualification and booking conversion in the actual market. Our historical ad snapshot does not establish a universal CPL discount or prove that plotted demand dominates a region.
+
+### The arbitrage is real but it is not free money
+Cheaper leads against a slower cycle and a smaller absolute audience is a genuinely good trade for the right project, and a trap for a developer who reads only the first half of that sentence. Half the cost per lead with double the time to booking is not an improvement in cost per booking.What makes it work is that plot buyers in this market convert on trust signals — clear title, approvals, boundary clarity — far more than on lifestyle imagery. The creative that wins in Bangalore apartments frequently underperforms here.
+
+### What the observed spend tells you
+The retained ad snapshot includes plot and land advertising, but it mixes geographies and does not measure demand, spend or profitability. A recorded ad age cannot validate a market segment.Use local project research, enquiry quality and completed booking cohorts to evaluate a Tier-2 launch. Treat public ad activity as a source of hypotheses to test.
+
+
+## Who runs QDnCo?
+URL: https://qdnco.com/answers/who-is-v-sai-kavshik.html
+Topic: choosing
+
+QDnCo was founded by V. Sai Kavshik in Bangalore and is run by a three-person team: Adarsh Jee Pandey (CEO), V. Sai Kavshik (Head of Sales) and Vinayak Tiwari (CTO). There is no account-management layer between the client and the people doing the work, which means the team that runs the research also runs the account. The binding constraint is capacity, not demand: roughly one partnership plus three to four performance engagements at a time, with Phase 0 diagnostics running alongside at about one every two to three weeks.
+
+### Who does what
+Adarsh Jee Pandey, CEO — company strategy, partnerships and growth. LinkedInV. Sai Kavshik, Head of Sales — the client side of every launch, from the first call to the weekly numbers. LinkedInVinayak Tiwari, CTO — the tracking, CRM and AI automation behind every campaign. LinkedIn
+
+### Why the capacity limit is published
+Because it is the honest answer to "can you take this on", and because it explains the pricing. A practice that cannot run twenty accounts does not need to price for twenty accounts, and does not need to sell work it cannot staff.It also sets an expectation worth setting early: if the capacity is full, the answer is a date rather than a yes.
+
+### Delivered work
+Engagements across Bangalore and Mysore residential including work associated with Godrej Properties, Brigade Group and Kumar Properties projects, plus adjacent-category work outside real estate. Published proof metrics: ₹266 cost per lead at 51% sales-ready on a premium North Bangalore launch, ₹725 crore of owner-reported pipeline influence to date (updated 23 September 2026), ₹10 lakh a month of media under management, and 43+ projects currently being worked on (owner-reported, 23 September 2026).
+
+
+## What is generative engine optimisation (GEO)?
+URL: https://qdnco.com/answers/what-is-generative-engine-optimisation.html
+Topic: choosing
+
+GEO is the practice of getting a business cited inside AI-generated answers — ChatGPT, Gemini, Claude, Perplexity, Google AI Overviews — rather than ranked in a list of blue links. The mechanics differ from SEO in one decisive way: an assistant lifts a passage and attributes it, so the unit of optimisation is a self-contained, specific, attributable statement rather than a page. Vague pages rank; quotable ones get cited.
+
+### What actually gets cited
+Four properties, consistently. Specificity — a number beats an adjective, and a number with a date and a method beats a bare number. Self-containment — the passage has to survive being lifted out of its page. Attributability — a named entity with consistent identity across sources. Original measurement — assistants cite whoever produced the data far more readily than whoever summarised it.That last one is why publishing your own research matters more in GEO than it ever did in SEO. A restated industry statistic has a hundred sources competing to be cited; a scrape you ran yourself has one.
+
+### What actively hurts
+Near-duplicate content is the strongest negative signal available. A corpus that repeats the same paragraph with the subject swapped reads to a model exactly as it reads to you, and it degrades the credibility of everything published beside it.Contradiction is the second. If your own pages disagree about your price, your location or your track record, an assistant has no way to choose between them and will usually cite a third party instead.
+
+
+## How much does a real estate marketing agency cost in India?
+URL: https://qdnco.com/answers/how-much-does-a-real-estate-marketing-agency-cost.html
+Topic: pricing
+
+Agency pricing can use a monthly retainer, a percentage of media, payment per qualified lead or a combination. Compare a dated written scope and ask whether media, production and applicable taxes are included. QDnCo’s published standard qualified-lead fee is ₹550, with volume bands and a written definition. This is our offer, not a surveyed market average.
+
+### What each model actually costs you
+ModelFee basisWhat to confirmMonthly retainerA fee for the agreed service scopeDeliverables, exclusions and review cadencePercentage of mediaA disclosed percentage of platform spendHow scope and budget decisions are governedPer qualified leadA fee per accepted leadQualification, volume tiers, rejection and replacement rulesMediaA separate campaign budgetAccount ownership, direct platform billing and spending cap Compare complete written offers. A pricing model alone cannot tell you the quality of delivery or the expected cost per booking.
+
+### Why the price is so hard to get
+Quotes depend on deliverables, account complexity, production and reporting scope. Request the fee basis and exclusions in writing so alternatives can be compared. QDnCo publishes ₹550 per qualified lead, ₹495 above 60 per month and ₹450 above 120, alongside the qualification definition. Confirm the applicable scope and volume terms before signing.
+
+### The number to ask for instead
+Ask for cost per booking, not cost per month. A ₹1,50,000 retainer that produces eight bookings is cheaper than a ₹60,000 one that produces two, and the monthly figure tells you nothing about which you are buying. If an agency cannot model cost per booking with you, it has not thought past the form fill, which is the thing you are actually trying to avoid buying.
+
+
+## Do you guarantee leads or bookings?
+URL: https://qdnco.com/answers/do-you-guarantee-leads-or-bookings.html
+Topic: working
+
+We guarantee qualified leads against a written five-part definition, with free replacement of any that fail it when flagged within seven days. We do not guarantee bookings, and you should treat any agency that does with suspicion. Bookings depend on your pricing, your inventory, your sales team and market conditions — none of which the campaign controls. An agency guaranteeing an outcome it does not control is either pricing the risk somewhere you cannot see it or planning to argue about attribution later.
+
+### What a booking guarantee actually costs you
+It gets priced in. Nobody carries risk for free, so a booking guarantee is funded either by a materially higher fee or by a definition of "booking" so hedged that it is unenforceable — usually the second. It also changes behaviour badly. An agency on the hook for bookings has an incentive to claim credit for every sale in the period, including walk-ins, channel-partner introductions and repeat buyers. The dispute is not avoidable; it is deferred to the moment when it is most expensive to have.
+
+### What we do guarantee
+Every lead meets the five written criteria, or it is replaced freeMedia stays in your account, so you can audit spend without asking usWeekly reporting carrying cost per qualified lead, quality rate and the reasoning behind each scaling decisionFifteen static creatives a month, refreshed on fatigue rather than on request That is a guarantee on the part of the process we control. It is deliberately narrower than what you would like, and narrower than what you will be offered elsewhere.
+
+
+## What happens if the leads do not convert?
+URL: https://qdnco.com/answers/what-happens-if-leads-dont-convert.html
+Topic: working
+
+First we establish where it actually broke, because "leads did not convert" describes four different failures with four different fixes. The check is: contact rate, speed to first call, site-visit rate, and the reason codes on lost leads. If contact rate is fine and site visits are not happening, the problem is downstream of us. If contact rate is poor, it is ours. Leads failing the written definition are replaced free when flagged within seven days regardless of which it turns out to be.
+
+### The four failure points, in order of how often they are the cause
+OL is not available here, so read this as a ranked list. Speed to first call. Median over 24 hours and nothing downstream can be assessed fairly. This is the most common cause and the least popular finding.Targeting or creative attracting the wrong buyer. Shows up as enquiries clustering below your entry price. Ours to fix.Optimisation event. If the campaign optimises for form fills rather than a CRM qualification event, the platform is finding form-fillers. Ours to fix, and it needs your CRM connected.Price or product. Contact rate good, site visits good, nobody books. At that point advertising is not the constraint and continuing to spend is the wrong move.
+
+### The fourth one is the important one
+If the diagnosis lands on price or product, we will say so, and the recommendation will be to stop spending rather than to change the creative. That is unusual and it is the reason Phase 0 is charged for — a research gate that cannot conclude "no" is not a gate. It is also the least commercially convenient thing we do, which is roughly the point.
+
+
+## What do you need from me to start?
+URL: https://qdnco.com/answers/what-do-you-need-from-me-to-start.html
+Topic: working
+
+Six things: RERA registration status, the project price band and unit mix, your catchment definition, access to your ad accounts and CRM, whatever campaign history exists, and a named person on your side who owns the outcome. The last one is the one engagements fail without. Media buying can be outsourced; chasing your own sales team to call leads inside 48 hours cannot be, and an engagement with no internal counterpart produces leads nobody is accountable for.
+
+### The checklist
+RERA status. Registered or registering. Hard gate — we do not advertise an unregistered project.Price band and unit mix. Sets the budget criterion in the qualified-lead definition.Catchment. Your view of it. Phase 0 will test it, and it is frequently drawn wider than the buyer behaves.Ad account and CRM access. Your accounts, our access. Never the other way round.Campaign history. What ran, what it cost, what happened. Failures are more useful than successes here.A named owner. Someone with authority over the sales follow-up.
+
+### What you do not need to have ready
+Creative, copy, a landing page or a media plan. Those come out of the research rather than into it, and arriving with them fixed is a common way to spend the first fortnight unwinding decisions made before the market was read.
+
+
+## What is in the weekly report?
+URL: https://qdnco.com/answers/what-is-in-the-weekly-report.html
+Topic: working
+
+Spend, cost per qualified lead, lead quality rate, sales-ready percentage as scored by your team, and the scaling decision for the coming week with the reasoning behind it. The last item is the one that distinguishes a report from a status update: every week the report says what changes and why, or it says explicitly that nothing changes and why that is correct. A report that only describes what happened is an activity log.
+
+### The five lines
+LineWhat it answersSpendWhat went out, from your own account, verifiable independentlyCost per qualified leadAgainst the written definition, not against form fillsQuality rateWhat share met the definitionSales-ready %Scored by your team, not by usDecisionScale, hold or cut — and the evidence for it The quality rate and the sales-ready percentage are deliberately separate. The first is our measurement against a contractual standard; the second is your team's judgement. When they diverge, that gap is the most useful thing in the report.
+
+### What is deliberately not in it
+Impressions, reach, engagement rate and follower growth. None of them is a decision input for a launch campaign, and including them makes a thin week look busy.
+
+
+## Should I advertise on 99acres, MagicBricks or Housing.com?
+URL: https://qdnco.com/answers/should-i-advertise-on-99acres-magicbricks-housing.html
+Topic: channels
+
+Portals capture buyers already searching for property, which makes their intent high and their volume capped by however many people are looking in your catchment this month. They are a reasonable complement to paid social and a poor replacement for it, because they cannot create demand — only compete for demand that exists. The characteristic problem is that your listing sits beside every competitor in the same locality, so you compete on price and photographs on a page you do not control.
+
+### What portals are good at
+High-intent capture at predictable cost, and reaching buyers who start their search on a portal rather than on a search engine — which in India is a substantial share. They are also useful early, before a project has any brand recognition, because the buyer is browsing a category rather than looking for you specifically.
+
+### The two structural problems
+You are listed beside your competitors. A portal page is a comparison surface by design. If your project is not the best value on that page, the page is working against you.You do not own the relationship or the data. Leads arrive through the portal's system, on their terms, and the audience you build there is not portable. Contrast an ad account where the pixel, the audiences and the spend history stay yours. Portal leads also tend to be shared or resold depending on the package, which places some of them close to the resold-lead problem — cheap, non-exclusive, and already being called by others.
+
+### The sensible split
+Portals for capture, paid social for creation, search for defence. If you only have budget for one, the answer depends on whether people are already searching for property in your catchment at the volume you need — which is a Phase 0 question, not a general one.
+
+
+## How long should I run a campaign before deciding it does not work?
+URL: https://qdnco.com/answers/how-long-to-test-a-campaign.html
+Topic: budget
+
+Set the review window before launch using expected event volume, the project sales cycle and the decision being tested. A month may be a planning starting point, but no fixed duration or event count guarantees stable delivery or a valid conclusion. Check tracking and obvious mismatches immediately; assess qualified-lead and booking outcomes over cohorts with enough follow-up time.
+
+### Why early judgement is so costly
+Restarting resets the learning. A campaign killed at day 10 and relaunched at day 20 has paid for the unstable phase twice and has no more information than it did at the start. Compounding this, performance during learning is genuinely worse and genuinely unrepresentative, so the data most likely to make you kill a campaign is the data least worth acting on.
+
+### What you may act on early
+Creative-level decisions, not campaign-level ones. If one concept out of five is clearly not producing after enough impressions, turning it off is a within-test decision and does not reset anything. Structural changes — objective, audience, budget distribution — restart learning. Make them deliberately and rarely, and not on a Tuesday because the weekend was quiet.
+
+
+## Why did my cost per lead suddenly increase?
+URL: https://qdnco.com/answers/why-did-my-cost-per-lead-increase.html
+Topic: budget
+
+Possible contributors include creative fatigue, auction changes, audience saturation, tracking problems, seasonality, offer changes and delivery edits. Rising frequency alongside cost is a clue, not proof of fatigue. Compare reach, spend, funnel conversion, qualification and recent changes before deciding whether to change the creative, targeting, offer or budget.
+
+### The diagnostic order
+SymptomLikely causeFixFrequency up, cost upCreative fatigueRefresh creativeFrequency flat, cost upAuction pressure or seasonalityWait, or narrow targetingReach falling, cost upAudience exhaustionWiden audience or new catchmentCost up right after an editLearning phase restartedRevert, or wait it outCost flat, quality downOptimisation driftCheck the optimisation event The last row is the one that gets missed, because cost per lead looks fine. If quality falls while cost holds, the campaign is finding a cheaper, worse population — usually because the optimisation event is a form fill rather than a qualification.
+
+### What not to do first
+Do not raise the budget to compensate. A significant budget increase restarts learning, so you add an unstable phase on top of whatever the original problem was, and now you cannot tell them apart. Diagnose, then change one thing.
+
+
+## How do I market a plotted development?
+URL: https://qdnco.com/answers/how-to-market-a-plotted-development.html
+Topic: segments
+
+For plotted developments, test messaging about documented approval status, title review, boundary clarity, dimensions and access alongside lifestyle benefits. Distinguish established infrastructure from future plans and have project-specific legal claims reviewed. Our ad snapshot does not establish that documentary creative always outperforms lifestyle creative or that plotted demand dominates Tier-2 Karnataka.
+
+### Why the argument inverts
+An apartment buyer is purchasing a finished thing they can stand inside. A plot buyer is purchasing a legal position and a future intention, and every doubt they have is about whether the position is sound. So the questions that decide the sale are: is the title clear, are the approvals real, is the boundary certain, what exactly am I buying. Renders of a clubhouse do not address any of them, and a campaign that leads with lifestyle is answering questions the buyer is not asking.
+
+### The two buyer pools to separate
+Local end users buying to build, and metro-based investors buying to hold. They behave completely differently — the first wants to know about construction feasibility and neighbourhood, the second about appreciation and exit. In Tier-2 Karnataka the investor pool is frequently based in Bangalore, and it is routinely missed because the geography targeting is drawn tightly around the project. That is the most common avoidable error in plot campaigns.
+
+### What this does to the funnel
+More of the decision happens offline and in person than in apartment sales, so a purely digital funnel underperforms its lead numbers. Budget for the site visit as the real conversion event and measure cost per site visit rather than cost per lead.
+
+
+## Is marketing commercial or office space different from residential?
+URL: https://qdnco.com/answers/how-to-market-commercial-property.html
+Topic: segments
+
+Substantially different in three ways. The audience is far smaller and defined by business need rather than demographics, so broad social targeting wastes most of its reach. The decision cycle is longer and involves more people, which makes retargeting and content far more important than a single conversion push. And search carries disproportionate weight, because commercial requirements are actively searched with specific terms — square footage, locality, floor plate — in a way homes usually are not.
+
+### Where the budget should sit
+Weighted more towards search and LinkedIn than a residential launch would be, with Meta used for retargeting and awareness within a tightly drawn business audience rather than for volume prospecting. The cost per lead will look alarming against residential benchmarks and should not be compared to them. A commercial lead is worth many times a residential one, so the only meaningful comparison is cost per booking.
+
+### What we will tell you honestly
+Our published proof is residential. We have delivered commercial-adjacent work, but the benchmarks on this site — ₹266 cost per lead, 51% sales-ready — are residential figures from residential campaigns and do not transfer. If your project is commercial, the honest answer is that Phase 0 would be doing more genuine discovery and less pattern-matching than it would on a residential launch. That is worth knowing before you buy it.
+
+
+## Do I need a landing page, or are lead forms enough?
+URL: https://qdnco.com/answers/do-i-need-a-landing-page.html
+Topic: channels
+
+Instant lead forms produce more leads at lower cost with worse contact rates; landing pages produce fewer, better and more expensive leads. Neither is correct in the abstract. If your sales team has spare capacity and you need volume to find the market, use instant forms with qualifying questions. If your team is saturated and wasting time on unreachable enquiries, a landing page filters before the lead exists, which is cheaper than filtering afterwards.
+
+### The friction is the mechanism
+Everything that makes a landing page convert worse is also what makes its leads better. A buyer who clicks through, waits for a page to load, reads it and then fills a form has demonstrated more intent than one who tapped a pre-filled overlay. So the choice is really about where you want to spend the filtering — in the ad platform, or in your sales team's afternoon.
+
+### If you use instant forms, do this
+Add two or three qualifying questions — budget band, timeline, locality preferenceSwitch the form to the higher-intent setting where the platform offers oneMake sure the CRM connection fires a qualification event back, or you are optimising for the wrong thingRoute to a named owner on arrival, because instant-form leads decay fastest
+
+
+## Can you work alongside my existing agency?
+URL: https://qdnco.com/answers/can-you-work-with-my-existing-agency.html
+Topic: working
+
+Yes, where the split is clean — for example, they hold brand and offline while we hold performance, or they run creative production against a research brief we produce. No, where two parties are optimising the same ad account, because two people making budget decisions on one campaign produces worse results than either would alone, and neither can be held to a number. If the arrangement cannot be described in one sentence naming who owns which metric, it will not work.
+
+### Splits that work
+Research and strategy with us, execution with themPerformance with us, brand and offline with themMedia with us, creative production with their studio against our briefPhase 0 with us as a one-off diagnostic, everything else unchanged The last is the most common way people start, and it is deliberately low-commitment: a paid market read that their existing agency can then execute against.
+
+### The split that does not work
+Both parties buying media in the same account towards the same objective. Beyond the coordination problem, it makes accountability impossible — every result has two authors and every failure has none. If the existing relationship is valued and they are already running the ad account well, the honest recommendation may be that you do not need us for performance at all. Phase 0 is still useful, and it is separable.
+
+
+## Do you work outside real estate?
+URL: https://qdnco.com/answers/do-you-work-outside-real-estate.html
+Topic: choosing
+
+QDnCo’s recorded experience includes EdTech and other adjacent categories. Research, tracking and lead-quality discipline can transfer, but project economics and buyer behaviour need fresh validation. Historical real estate examples should not be presented as benchmarks for another industry.
+
+### What transfers and what does not
+TransfersDoes not transferFunnel structure and test designCatchment and corridor knowledgeWritten qualification standardThe specific five criteria, which are property-shapedCRM feedback loop and optimisation eventsRERA compliance workflowCreative volume and fatigue disciplinePublished cost-per-lead benchmarksResearch-before-spend sequenceBuyer research and personas So the process transfers and the priors do not, which means non-real-estate work involves more genuine discovery and less pattern-matching. That usually means Phase 0 is doing more of the work, and it is worth knowing that before commissioning it.
+
+### Why the site is real-estate-first anyway
+Because that is where the delivered proof, the market research and the specialisation genuinely are, and a practice that claims every category equally is claiming none of them. If you are outside real estate and the process above is what you want, the conversation is worth having. Just do not buy it on the strength of a ₹266 cost per lead that came from a Bangalore apartment launch.
+
+
+## When is the best time to launch a real estate campaign?
+URL: https://qdnco.com/answers/best-time-to-launch-a-real-estate-campaign.html
+Topic: budget
+
+Work backwards: you need roughly six weeks of research, architecture and creative before going live, so the campaign starts when the launch is six weeks out. Beyond that, the two timing factors that matter are festival season, which lifts intent across Indian property markets and lifts auction prices with it, and the launch calendar of your own catchment. Launching into a corridor where three competitors went live last week means paying a premium for the same audience.
+
+### How to check your catchment's launch pressure
+The Meta Ad Library, free and public. Search advertisers in your locality and look at how many are currently running and how long they have been live. A corridor with several ads started in the last fortnight is a contested auction you are about to enter. This takes about twenty minutes and is the highest-value free check available before committing a launch budget. It is also part of what Phase 0 does formally.
+
+### The festival trade-off
+Intent genuinely rises and so does cost. Whether that is good for you depends on your margin per unit and whether your inventory is differentiated enough to win a contested auction. A premium project with a clear position often does well; an undifferentiated one pays the higher prices without the offsetting conversion lift. The one thing not to do is launch into festival season unprepared because the season is coming. Arriving late with untested creative into the most expensive auction of the year is the worst of both.
+
+
+## What is a good lead-to-site-visit ratio?
+URL: https://qdnco.com/answers/what-is-a-good-site-visit-ratio.html
+Topic: quality
+
+There is no reliable industry benchmark worth quoting, and anyone offering you one is guessing — it varies enormously with ticket size, distance and how the visit is scheduled. What matters is your own ratio, tracked from the first month, because it moves within weeks and it catches lead-quality and sales-process problems long before booking data would. Track it as cost per site visit rather than as a percentage, since that makes it comparable across campaigns.
+
+### Why this is the metric to add first
+Cost per lead is fast to measure and easy to game. Cost per booking is honest but arrives a full sales cycle late, by which point the launch window may have closed. Cost per site visit sits between them: available within weeks, hard to game, and directly attached to something your sales team already tracks. If you add one number to your reporting this quarter, add this one.
+
+### What a falling ratio tells you
+If leads hold and site visits fall, either the lead quality has drifted or the sales follow-up has. Check speed to first call before concluding it is the campaign — that single variable explains more site-visit decline than targeting does. If cost per lead falls and cost per site visit rises at the same time, the campaign has found a cheaper and worse audience. That combination is the clearest signal available that the optimisation event is wrong.
+
+
+## What is the difference between a lead and an enquiry?
+URL: https://qdnco.com/answers/difference-between-lead-and-enquiry.html
+Topic: quality
+
+In practice the two are used interchangeably and neither means anything on its own. Both describe a person who submitted their details, which tells you nothing about whether they can be reached, can afford the unit, are in your catchment, or already exist in your CRM. This is precisely why the useful term is "qualified lead" with a written definition attached, and why an agency quoting a price per lead without that definition is quoting a price for an undefined unit.
+
+### The distinction worth making instead
+Not lead versus enquiry, but raw versus qualified. A raw lead is any submitted set of contact details. A qualified lead has been tested against criteria agreed in advance — in our case contactability within 48 hours across three attempts, budget inside the price band, intent within six months, valid catchment, and no CRM duplicate within 90 days. The gap between those two numbers is where every dispute in this category lives, and it is worth measuring in your own CRM regardless of who does your marketing.
+
+### A note on vocabulary as a warning sign
+If a proposal uses "leads", "enquiries", "prospects" and "opportunities" apparently interchangeably, it usually means no definition sits behind any of them. Ask which one is being sold and how it is tested. The quality of the answer tells you most of what you need to know.
+
+
+========================================================================
+# COMPARISONS
+========================================================================
+
+## Performance marketing vs channel partners
+URL: https://qdnco.com/compare/performance-marketing-vs-channel-partner.html
+
+VERDICT: Channel partners cost more per booking — typically 1–3% of unit value, so ₹2,00,000 on a ₹1 crore unit — but carry no upfront risk and deliver an accompanied, pre-qualified buyer. Performance marketing costs money before anything sells and is substantially cheaper per booking once the funnel works, but only if you have a sales team that can work leads inside 48 hours. If you do not have that team, the channel partner is the better buy and no amount of cheaper leads will change that.
+
+### Where the channel partner genuinely wins
+Three cases, and they are common ones. You have no sales team. Qualified leads decay in hours. A developer without people to call them is buying a list, and buying a list is how the money disappears with nothing to show. The partner brings their own follow-up.You need certainty of cost. Commission is a known percentage of a completed sale. Media is a committed spend against an uncertain outcome. If your project cannot tolerate a month of spend that produces nothing bookable, the partner is the correct instrument.The buyer network is closed to advertising. Some segments — NRI, HNI, specific community networks — transact on relationships that no amount of Meta budget reaches. Partners have access you cannot buy. None of these is recoverable by running better campaigns, which is why they are stated without a rebuttal.
+
+### Where performance marketing wins
+Cost per booking at volume. Once the funnel works, the arithmetic is not close. Commission scales linearly with units sold; media does not.You keep what you build. The ad account, its spend history, the pixel and the audiences are assets that make the next launch cheaper. A commission buys one transaction and leaves nothing behind.You can see what is happening. Partner performance is opaque until a booking appears. Campaign performance is visible daily, which means it is correctable daily.It is not exclusive. Advertising reaches buyers no partner has a relationship with, which is most of the market for most projects.
+
+### Running both without paying twice
+Most developers should run both, and most who do eventually have an attribution fight. A partner introduces a buyer who first saw your Meta ad, both channels claim the booking, and one of them gets paid for work the other did. Settle it before launch, in writing: a documented introduction window, with the CRM first-touch record as the tiebreak. It takes an afternoon to agree and it is impossible to agree fairly once there is a specific commission on the table.
+
+
+## Paying per qualified lead vs paying a retainer
+URL: https://qdnco.com/compare/cpql-vs-retainer-agency.html
+
+VERDICT: Pay per qualified lead if your sales process already works and the top of the funnel is thin — you are buying volume against a written definition and moving acquisition risk onto the agency. Take a retainer if leads arrive and then rot: if nobody calls inside 48 hours, or you cannot state your cost per site visit, buying more leads makes the loss bigger, not smaller. Per-lead pricing with no written definition of "qualified" is worse than a retainer, because it looks accountable while being unmeasurable.
+
+### Each model has a characteristic failure
+They are opposites, and knowing which one you are exposed to matters more than the price. Per-lead fails towards volume. If the unit is not defined tightly, the cheapest way to deliver more units is to loosen the targeting. The invoice goes up, the sales team gets busier, and nothing books. This is the single most common bad experience developers report in this category, and it is a definitional failure rather than a dishonesty one. Retainer fails towards activity. A fixed fee for a broad scope rewards visible effort — reports, meetings, decks — over outcomes nobody is measuring. It fails slowly and politely, which is why it can run for two quarters before anyone calls it.
+
+### A two-question diagnostic
+What is your median time to first call? If you cannot answer, or the answer is over 24 hours, your problem is not lead volume and per-lead pricing will not help you.What is your cost per site visit? If you cannot answer, nothing past the form fill is being measured, and buying more form fills is buying more of something you cannot evaluate. Two "cannot answer"s means take the retainer and fix the funnel. Two confident answers means buy leads — you have earned the right to treat acquisition as the constraint.
+
+### The sequence most developers actually need
+Retainer first for a quarter to build the funnel, the routing, the CRM feedback loop and the reporting. Then move to per-lead once there is a working machine for leads to enter. Doing it in the other order — buying volume into an unbuilt funnel — is the most expensive ordering available, and it is the one the market defaults to because volume is easier to sell than plumbing.
+
+
+## Buying leads vs generating your own
+URL: https://qdnco.com/compare/buying-leads-vs-generating-them.html
+
+VERDICT: A resold lead is cheap because it is not exclusive — the same enquiry is typically sold to several developers, so you are competing for a buyer who is being called by your competitors on the same afternoon. Generating your own costs more per lead and produces a lead nobody else has, plus an ad account and audience data you keep. Buying resold leads is defensible only as a short-term fill for idle sales capacity, never as an acquisition strategy.
+
+### Why the price is low
+Because the same lead is sold more than once. A reseller generates a generic enquiry — "apartments in Bangalore" rather than an enquiry about your project — and monetises it by selling it to several buyers. Your ₹200 is a share of a lead, not a lead. The buyer on the other end experiences this as four sales calls in one day from four projects they did not specifically ask about. Contact rates and tolerance are correspondingly poor, and none of that is fixable by calling faster.
+
+### The compliance exposure nobody mentions
+You did not write the advertisement that generated a resold lead, you cannot see it, and you generally cannot get it. If it made claims about pricing, approvals or amenities that your project cannot support, the enquiry arriving in your CRM came from a promise you did not make and cannot honour. Under RERA the promoter carries advertising liability. An arrangement where a third party advertises into your category and hands you the resulting enquiries is one where you have accepted the downstream of an advertisement you never approved.
+
+### When buying them is defensible
+One case: you have idle sales capacity this month and no campaign running. Cheap leads keep a team in practice and occasionally produce a booking, and the alternative is people sitting still. Treat it as filling time, not as acquisition. The moment it becomes the plan, you are funding a competitor's lead generation and receiving the leftovers.
+
+
+## Building an in-house marketing team vs hiring an agency
+URL: https://qdnco.com/compare/in-house-vs-agency-real-estate.html
+
+VERDICT: Below roughly three concurrent launches, an agency is cheaper and better, because a specialist without continuous work stops being a specialist and learns on your budget. Above that, in-house starts to win on cost and on responsiveness. The hybrid beats both in most cases: one in-house owner holding the CRM, the sales interface and the reporting, with media buying and creative production run externally.
+
+### The cost comparison people get wrong
+A competent performance marketer in Bangalore costs meaningfully more per year than most specialist agency retainers, and salary is the smaller half of the number. Add tooling, creative production, the months before they are productive, and the budget they will spend learning your category. The honest version is that in-house is not cheaper at low volume. It is better at high volume, which is a different claim.
+
+### The split that usually works
+One in-house owner, external execution. The in-house role holds the parts that cannot be outsourced — the CRM, the relationship with the sales team, and the authority to make them call leads inside 48 hours. Nobody outside your company can chase your own salespeople, and that chase is worth more than any optimisation. External handles media buying and creative production, which benefit from seeing many accounts and which do not require sitting in your office.
+
+### The failure mode is identical in both directions
+A marketing hire with no authority over sales follow-up, or an agency with no counterpart inside the business who owns the outcome. Both produce the same result: leads arrive, nobody is accountable for what happens next, and by the time anyone looks the launch window has closed. If you take one thing from this comparison, make it this — the appointment that matters is not who buys the media, it is who owns the number.
+
+
+## AI creative volume vs studio production
+URL: https://qdnco.com/compare/ai-creative-volume-vs-studio-production.html
+
+VERDICT: AI-generated statics win on concepting, layout and the volume that real testing requires — bringing the marginal cost of a concept near zero changes which tests are worth running at all. Studio production wins, and is the only honest option, for anything depicting the actual property: the building, the elevation, the amenities, the view. Under RERA the promoter carries liability for what an advertisement depicts, so the project itself is photographed or rendered from approved plans, never generated.
+
+### What actually changes
+At studio rates, running six distinct concepts through three refresh cycles is a budget line most launches refuse. So campaigns run tired creative and blame the audience, and the refresh happens when a change order clears rather than when the numbers say so. Dropping the marginal cost changes which tests are affordable. The advantage is operational — more shots on goal, taken at the right moment — and it shows up in the account rather than in the artwork.
+
+### The line, stated plainly
+No AI-generated imagery of the project, the elevation, the amenities or the view. Layout, typography, background treatment, lifestyle context, copy — all fine. The building — never. This is not caution for its own sake. Under RERA the promoter carries liability for what the advertisement depicts, and "the tool generated it" is not a defence anyone has successfully run. A generated image of a building that does not exist as depicted is a misrepresentation risk sitting on the developer, not on the agency that produced it.
+
+### How they actually work together
+Test the argument cheaply, then produce the winner properly. Use generated statics to find which concept the market responds to — price, location, amenity, urgency, proof — across a real test with enough cells to kill a loser. Then commission the studio against the concept that won, with approved photography of the actual asset. That sequencing spends the production budget on a known answer instead of on a guess, which is the whole benefit.
+
+
+========================================================================
+# CATCHMENTS
+========================================================================
+
+## Real estate marketing in North Bangalore
+URL: https://qdnco.com/areas/north-bangalore.html
+Corridors: Devanahalli · Yelahanka · Hebbal · Thanisandra · Jakkur · Bagalur · the airport corridor along NH-44
+Delivered proof: This is the catchment behind our published benchmark: ₹266 cost per lead at a 51% sales-ready rate on a premium residential launch, with the quality rate scored by the client's own sales team.
+
+### Who is actually buying
+A materially larger share of investors than anywhere else in Bangalore, buying against future appreciation rather than immediate occupation. The airport, the metro extension and the employment corridors north of Hebbal are the underlying thesis, and buyers here are explicitly making a bet on timelines. That changes what a lead is. An investor enquiry has no urgency about possession and a great deal of interest in what the corridor will look like in five years, so the qualification conversation runs differently — intent windows are longer and budget bands are wider than the same ticket size would imply elsewhere.
+
+### The argument that works
+Connectivity and appreciation, evidenced. This is the one catchment where infrastructure timelines are genuinely the product, and where specific, checkable claims about them outperform lifestyle imagery. The corresponding risk is the one to manage carefully: infrastructure claims are promises about things you do not control. An advertisement implying a metro date or a road completion that slips becomes a complaint later, and under RERA the promoter carries it. Cite what is sanctioned and dated; do not imply what is merely announced.
+
+### Why leads cost what they do here
+North Bangalore during launch season carries one of the more contested ad auctions in the city, because a large number of projects are addressing an overlapping investor audience with a similar message. Cost per lead sits at the upper half of the ₹350–₹500 Bangalore residential band in most months. The ₹266 we delivered is below that band and should be read as what a well-targeted premium launch achieved, not as what the corridor costs generally.
+
+### Language and targeting notes
+English-dominant with meaningful Kannada uplift in the outer stretches towards Bagalur and Devanahalli. Worth split-testing rather than assuming; the assumption that everyone in the corridor reads English advertising quietly costs reach at the edges. NRI targeting is more productive here than in any other Bangalore catchment, and it needs its own campaign — different time zones, different creative, and a sales process that can handle a buyer who will not visit the site before booking.
+
+
+## Real estate marketing in East Bangalore
+URL: https://qdnco.com/areas/east-bangalore.html
+Corridors: Whitefield · Budigere Cross · Varthur · Sarjapur Road · Marathahalli · the Outer Ring Road tech belt
+No published benchmark for this catchment.
+
+### Who is actually buying
+Salaried technology employees buying to live in, with the decision anchored to a specific office. The ORR tech belt and Whitefield campuses are the gravitational centre, and the catchment for any given project is drawn far more tightly than its postcode suggests — a project twenty minutes further out is competing in a different market, not a slightly worse one. The practical consequence is that the geography criterion in a qualified-lead definition does more work here than anywhere else. A lead from the wrong side of the ORR is not a marginal lead, it is a lead that will not visit.
+
+### The argument that works
+Commute, stated in minutes to named employers, and school access. Those two carry more weight than amenity lists in this catchment, and they are checkable, which makes them safe to advertise specifically. Ready-to-move and near-possession inventory has a structural advantage here that it does not have in North Bangalore, because the buyer has a lease ending and a date in mind. Under-construction projects in this corridor are advertising against a competitor the buyer can move into next month, and the campaign has to acknowledge that rather than ignore it.
+
+### Why leads cost what they do here
+High volume, high competition, and a large body of resale and rental inventory advertising into the same queries. This is the catchment where the Google negative keyword list matters most — "rent", "rental", "PG", "resale" and their variants will consume a search budget here faster than in any other part of the city. Cost per lead sits within the ₹350–₹500 band, with the wide variance driven mostly by how tightly the commute radius is drawn.
+
+### Language and targeting notes
+The most English-dominant catchment in the city, and the one where a multilingual split test is least likely to pay. It is also the most transient — a significant share of the audience has moved to Bangalore within a few years, which makes locality familiarity low and explicit orientation in the creative more valuable than it would be in West or South Bangalore.
+
+
+## Real estate marketing in West Bangalore
+URL: https://qdnco.com/areas/west-bangalore.html
+Corridors: Yeshwanthpur · Nagasandra · Peenya · Rajajinagar · Malleshwaram fringe · Tumkur Road along the metro
+No published benchmark for this catchment.
+
+### Who is actually buying
+End users with existing family and community ties in the area, frequently buying within a few kilometres of where they already live, and often upgrading rather than entering the market. Business-owning and trading households are better represented here than in the technology corridors. This is the most important difference in the city and the one most often missed. The buyer already knows the locality — they do not need it explained, and creative that orients them reads as condescending rather than helpful. What they are evaluating is the specific building and the specific price.
+
+### The argument that works
+Value, clearly stated, and metro proximity in walking minutes. Price sensitivity here is genuine rather than performed, and a campaign that hides the price band to force an enquiry generates volume that fails the budget criterion at qualification. Publishing the entry price in the creative costs some leads and improves nearly every downstream number. In a catchment this price-sensitive, that trade is almost always correct.
+
+### Why leads cost what they do here
+Less contested than North or East, with fewer simultaneous launches addressing the same audience. Cost per lead tends to the lower half of the ₹350–₹500 band. The offsetting factor is ticket size. Lower average ticket means the same cost per lead consumes a larger share of the per-unit marketing budget, so the cost-per-lead advantage is smaller than it looks once expressed per booking.
+
+### Language and targeting notes
+The catchment where Kannada creative earns its place most reliably. A Kannada and English split test is worth running as standard here rather than as an experiment, and the uplift is usually in reach and cost rather than in conversion rate. Radius targeting also works better here than interest-based targeting, because the buyer genuinely is local — a tight geographic ring around the project outperforms a demographic profile drawn across the city.
+
+
+## Real estate marketing in South Bangalore
+URL: https://qdnco.com/areas/south-bangalore.html
+Corridors: Kanakapura Road · JP Nagar · Bannerghatta Road · Jayanagar · Electronic City fringe · Uttarahalli
+No published benchmark for this catchment.
+
+### Two buyers in one catchment
+The established south — Jayanagar, JP Nagar and their surrounds — is old-money, premium, extremely locality-loyal and small in volume. The expanding south along Kanakapura Road and towards Electronic City is mid-market, price-led and high in volume. Running these as one campaign is the characteristic mistake here. The premium buyer is repelled by value messaging, the mid-market buyer is priced out by premium messaging, and a combined campaign optimises towards whichever fills forms more readily — which is the mid-market — while reporting a healthy cost per lead to a developer selling premium inventory.
+
+### The argument that works, per segment
+For the established south: locality permanence, build quality and the specific address. This buyer is not being sold on a corridor; they have chosen the corridor and are evaluating a building within it. For the expanding south: price, connectivity to Electronic City and the southern employment belt, and possession timeline. Closer in character to East Bangalore than to the premium pockets a few kilometres away.
+
+### Why leads cost what they do here
+This is the most contested auction in the city — the largest number of simultaneous advertisers addressing overlapping audiences, across the widest range of ticket sizes. Cost per lead is volatile and can exceed the ₹350–₹500 band during heavy launch periods. The practical defence is narrowness. Broad targeting in South Bangalore competes with everyone; a tightly drawn segment with a specific argument competes with far fewer advertisers for a much more relevant audience, and prices better despite the smaller pool.
+
+### Language and targeting notes
+Mixed, and it splits along the same line as everything else here. The established south is comfortably bilingual with strong Kannada resonance; the expanding south skews closer to the transient, English-dominant profile of the tech corridors. A single language strategy across the catchment will be wrong for one half of it. This is one of the few places where running two language treatments is worth the added campaign complexity.
+
+
+## Real estate marketing in Mysore
+URL: https://qdnco.com/areas/mysore.html
+Corridors: Mysore city · Ring Road corridors · Bogadi · Hunsur Road · Nanjangud Road · Bangalore–Mysore expressway belt
+Delivered proof: Delivered cost per lead in Mysore and Tier-2 Karnataka has run at roughly half the Bangalore level, because the auction is far less contested. We publish this as a ratio rather than an absolute because it moves with ticket size.
+
+### Who is actually buying
+Three groups that need separating. Local end users buying to build. Bangalore-based buyers acquiring land as an appreciation play against the expressway. And returning or retiring buyers with family roots in the region. The second group is reachable from Bangalore and behaves like an investor; the first two are local and behave like end users. They justify different campaigns, and the Bangalore-based investor pool is the one most often missed because the geography targeting is drawn around Mysore.
+
+### Trust, not lifestyle
+Plot buyers here convert on clear title, approvals, boundary clarity and documentation far more than on rendered lifestyle imagery. The creative that wins in Bangalore apartment marketing frequently underperforms in this market for exactly that reason. Anything that reduces perceived transaction risk — approval status, survey clarity, plot dimensions, what is legally established rather than planned — outperforms aspiration. This is a market where the honest, document-led advertisement is also the better-performing one.
+
+### The cost advantage, stated honestly
+Roughly half the Bangalore cost per lead, against a slower sales cycle and a smaller absolute audience. Half the cost per lead with double the time to booking is not an improvement in cost per booking, and the arbitrage is only real for a project that can carry the longer cycle. More of the decision also happens offline and in person here than in Bangalore, which means the handover from marketing to sales matters more and a purely digital funnel will underperform its lead numbers.
+
+### What the observed spend says
+Our August ad snapshot includes plot and land advertising, but the retained buy-side set mixes geographies. It does not establish Karnataka-specific demand or profitability. Use local enquiry and sales evidence to validate the catchment. Public ad references can inform what to test; their recorded ages cannot prove which offers will sell.
+
+
+## Real estate marketing in Tier-2 Karnataka
+URL: https://qdnco.com/areas/karnataka-tier-2.html
+Corridors: Tumkur · Hassan · Mandya · Ramanagara · Chikkaballapur · Doddaballapur · the expressway and highway belts
+No published benchmark for this catchment.
+
+### What transfers from the metro playbook
+The mechanics do. Funnel structure, the separation of channel-partner and end-buyer pools, the qualified-lead definition, the CRM feedback loop and the budget floor all behave the same way, because they are properties of the platforms and of sales physics rather than of the city. The trust-led creative approach that works in Mysore transfers well across the region, and for the same reason: these are predominantly plot and land markets where the buyer is assessing transaction risk.
+
+### What does not transfer
+Audience size, relevance and expected event volume affect test design. A narrow catchment may produce limited reach or rising frequency; those observations need to be read alongside qualification and sales outcomes. Do not expand the geography merely to accumulate platform events. Broaden only when evidence supports an additional buyer catchment, then track those enquiries separately.
+
+### What we do not know
+We have not sized the developer population across Tier-2 Karnataka, and our market model explicitly leaves it out — the Bangalore figure is bottom-up and the Tier-2 addition is unsized. The cost arbitrage is documented from delivered work; the market depth behind it is not. So this page does not carry a benchmark, and any agency quoting you a confident Tier-2 cost per lead across the region generally is quoting a number they cannot support. The honest answer is that it is cheaper than Bangalore and that a specific project needs a specific read.
+
+
+========================================================================
+# RESEARCH
+========================================================================
+
+## 51 real estate marketing ads: a reproducible Meta audit
+URL: https://qdnco.com/data/meta-ad-library-audit-bangalore-agencies.html
+Published: 2026-08-09
+Collected: 9 August 2026; counts reconciled 13 September 2026
+Method: Recount of the retained Apify export. Group rows by the collector’s sell/buy label, deduplicate exact library URLs within each group, and count distinct advertiser display-name strings. The raw collection reports 204 items; 152 scored rows were retained. Three actors appear in the fallback log. Search terms and the source-file checksum are in the method download.
+Sample: Sell: 56 retained rows, 51 unique ad links, 41 advertiser names. Buy: 96 retained rows, 96 unique ad links, 45 advertiser names. The combined retained set has 147 unique links.
+Limits: Not a census of Bangalore agencies. CRM vendors are included; names are not verified legal entities or unique Page IDs. The export records one collection error. Search terms and collector labels constrain coverage; no agency websites were exhaustively audited. Retained run-age fields do not prove continuous delivery, spend, profitability or demand. The original raw 204 items are not all available in this retained export.
+
+### What the retained data establishes
+The August snapshot contains 51 unique sell-side ad links across 41 advertiser-name strings, plus 96 buy-side links across 45 names. Five duplicate sell-side URLs remain among the 152 scored rows. Counting rows as unique ads would overstate this retained sample. The collector labels describe how records were grouped for research. They do not establish that every seller is an agency, that every advertiser serves Bengaluru, or that every buy-side record is in Karnataka.
+
+### Inspect the records and repeat the count
+Download the 51-link sell-side index (CSV).Download the 96-link buy-side context index (CSV).Download search terms, counts, method and source checksum (JSON). Each CSV contains the snapshot date, collector category, advertiser name, library link, recorded ad age and matched search term. Ad copy, images, personal contacts and account credentials are excluded. Library links may change availability after the snapshot. To reproduce the index counts, count distinct library_url values and advertiser_name strings in each CSV. The JSON separately records the pre-deduplication row counts from the retained export. When the same link matched more than one search term, the first retained row supplies the displayed term and age.
+
+### Activity is a starting point for questions
+An advertiser’s continued presence can justify investigating its offer and creative. It cannot tell you whether the campaign produced qualified enquiries or bookings. The retained export has no spend, conversion or revenue fields. Compare the promise, destination, price presentation and qualification process against your own brief. Then test the relevant hypothesis in your own account with a defined lead-quality measure. A long-running ad is a research reference, not a proven winning creative.
+
+### What we can say about transparency
+This snapshot does not establish that no agency publishes prices, sells research or defines a qualified lead. Captured ad excerpts are not an exhaustive review of websites, proposals or commercial terms. Earlier wording made that unsupported inference; this revision withdraws it. Our own commitments remain concrete: published commercial terms, a documented research process and a written qualified-lead definition. Buyers can assess these directly without a claim that competitors lack them.
+
+### How to cite or extend the audit
+Cite QDnCo, the snapshot date, this page and the size of the relevant subset. Describe it as a keyword-selected snapshot. Preserve the distinction between rows, unique links and advertiser names. For a stronger follow-up, retain Page IDs, document geographic inclusion rules, review landing pages with dates and predefine the coding questions before collecting new records. That would support a different study; these downloads do not substitute for it.
+
+
+## Bengaluru developer marketing: a transparent sizing scenario
+URL: https://qdnco.com/data/bangalore-developer-marketing-market-size.html
+Published: 2026-08-11
+Collected: Q1 2026 source; model revised 13 September 2026
+Method: Multiply ANAROCK’s reported Q1 launches by four; divide by an assumed 300 units per project equivalent; apply an assumed ₹1 lakh monthly agency fee for 12 months. A separate 50% selection scenario halves the result.
+Sample: 24,400 residential units reported for Q1 2026. This is a launch-volume input, not a sample of agency contracts or an observed annual project count.
+Limits: Quarterly activity may be seasonal. Unit counts include project phases and do not identify distinct engagements. Average project size, agency take-up, fee and engagement duration are unmeasured assumptions. The 50% selection factor is not a measured share clearing a budget threshold. Excludes existing inventory, non-residential work and other geographies.
+
+### The sourced input and the correction
+ANAROCK’s Bengaluru Q1 2026 Residential Market Viewpoints reports 24,400 launches. Read the original report for its coverage and rounding conventions. An earlier version used 27,000 from a search snippet. We replaced it with this directly checked report on 13 September 2026. The revised arithmetic below should not be combined with estimates from another provider without reconciling coverage.
+
+### Calculate a scenario, step by step
+With the assumptions below, the conditional fee pool is ₹39.04 crore; a 50% selection scenario gives ₹19.52 crore. Neither figure is a measured addressable or serviceable market. StepBasisScenario valueQuarterly launchesANAROCK Q1 2026 reported units24,400Four-quarter run rate24,400 × 4; assumes the quarter repeats97,600 unitsProject equivalents97,600 ÷ assumed 300 units325.33 equivalentsFee per equivalentAssumed ₹1 lakh/month × 12 months₹12 lakhConditional fee pool325.33 × ₹12 lakh; unrounded calculation₹39.04 croreOptional selection scenarioAssumed 50% take-up or eligibility₹19.52 crore
+
+### Show how assumptions change the answer
+Assumed units per equivalentEquivalent countFee pool at ₹12 lakh/yearAt assumed 50% selection200488₹58.56 crore₹29.28 crore300325.33₹39.04 crore₹19.52 crore400244₹29.28 crore₹14.64 crore A six-month engagement instead of twelve halves every fee-pool result. A lower fee or agency take-up reduces it again. These independent assumptions matter as much as project size; selecting only an optimistic combination would create false precision.
+
+### What this helps you decide
+Use the model to identify which inputs need field research: unique project and phase counts, in-house versus agency delivery, actual contract duration and fee distribution. A list of verified potential buyers is more useful for sales planning than the fee-pool headline. This model does not establish QDnCo’s obtainable revenue or prove that demand exceeds delivery capacity. Replace the assumptions with documented observations before using it for hiring or investment decisions.
+
+
+## Real estate lead costs: reported examples and planning limits
+URL: https://qdnco.com/data/real-estate-cost-per-lead-benchmarks.html
+Published: 2026-08-11
+Collected: Historical reports retained by August 2026; source status reviewed 13 September 2026
+Method: Owner-reported figures retained in project notes. Illustrative cost per useful lead equals CPL divided by the quality rate. Underlying reporting periods, denominators and attribution need reconciliation before independently verified case-study claims can be made.
+Sample: Selected examples, not a pooled or representative sample. The reported total engagement count is not the denominator for these CPL calculations.
+Limits: The ₹266/51% example and enterprise portfolio report have different scopes. Enterprise experience may include execution through agency accounts and does not imply a direct developer appointment. Sales-ready is a historical label, not automatically the current contractual qualified-lead definition. No geography-wide or causal targeting conclusion follows from these examples.
+
+### Read the source status with the number
+ExampleReported figureSource status and scopePremium North Bengaluru residential₹266 CPL; 51% sales-readyOwner-reported; export and CRM reconciliation pendingEnterprise portfolio experienceApproximately 22,000 leads/month at ₹450 CPLOwner-reported portfolio-level experience through agency accounts; not a result for one named developmentBudget illustration₹350–500 CPLPlanning assumption; not an industry survey The first example gives about ₹522 per sales-ready lead by arithmetic. It does not establish the cost of a booking or collected revenue.
+
+### Compare useful leads on consistent definitions
+Illustrative comparison: ₹200 CPL at a 15% useful-lead rate gives about ₹1,333 per useful lead. ₹600 CPL at 60% gives ₹1,000. The lower raw CPL has the higher useful-lead cost in this example. Define the qualification criteria, duplicate window, reporting period and attribution method before comparing campaigns. Report the raw count and qualified count alongside percentages so small or incomplete cohorts are visible.
+
+### Test the drivers instead of assuming them
+Offer and catchment. Ticket size, location and buyer readiness can change both acquisition cost and conversion.Targeting. Broadening an audience may change volume and quality; the direction and size need to be measured.Optimisation and feedback. CRM qualification signals can support a downstream test when the integration and data quality are reliable. They do not guarantee an improvement.Follow-up. Contact speed, sales coverage and qualification consistency affect how many form submissions become useful conversations.
+
+### Build a booking-cost scenario
+For an illustration only, assume a 1% raw-lead-to-booking rate and ₹400 CPL. Ten bookings would require 1,000 leads and ₹4 lakh in media before agency fees and applicable taxes. At 0.5% conversion the same target requires twice the media; at 2% it requires half. Use completed sales cohorts to replace these assumptions. A recent lead cohort that has not finished its sales cycle cannot yet establish booking conversion.
+
+
+========================================================================
+# GLOSSARY
+========================================================================
+
+## CPL — Cost per lead
+Total media spend divided by the number of leads generated. The most quoted number in real estate marketing and the least informative on its own, because it says nothing about whether the leads were reachable, in budget or in catchment.
+At QDnCo: Working band for Bangalore residential is ₹350–₹500, moving with ticket size and catchment competitiveness.
+
+## CPQL — Cost per qualified lead
+The cost of a lead that meets a written qualification standard, rather than of any form submission. Distinguished from CPL by the fact that the qualification test is defined in advance and applied by the buyer, not the seller.
+At QDnCo: QDnCo charges ₹550 per qualified lead, ₹495 above 60 a month, ₹450 above 120, with a 60-lead monthly minimum.
+
+## Qualified lead
+A lead meeting a pre-agreed, testable standard. Without a written definition the term means whatever the party using it needs it to mean, which is why disputes in this category almost always resolve to it.
+At QDnCo: Five criteria: contactable within 48 hours across three attempts; budget inside the project band; intent within six months; valid catchment; not a CRM duplicate within 90 days.
+
+## Sales-ready rate
+The share of delivered leads that the client's own sales team judges worth pursuing after first contact. Multiplying CPL by the inverse of this rate gives the true cost of a useful lead.
+At QDnCo: 51% delivered on a premium North Bangalore residential launch at ₹266 CPL — an effective ₹520 per lead worth working.
+
+## Cost per site visit
+Media spend divided by the number of prospects who physically visited the project. The most useful intermediate metric in real estate, because it is available within weeks and is much harder to game than a form fill.
+
+## Cost per booking
+Total marketing cost divided by units booked. The only metric that settles whether a campaign worked, and the slowest to become reliable because it waits on a full sales cycle.
+
+## Lead-to-booking ratio
+How many raw leads it takes to produce one booking. Varies enormously with ticket size, sales capability and lead source.
+At QDnCo: Plan on 100:1 until your own sales data proves better — roughly 60% of raw leads qualify, and a strong team closes about 10% of those.
+
+## Duplicate lead
+An enquiry from a person already in the CRM. Charged twice by careless suppliers and a frequent cause of inflated volume figures.
+At QDnCo: A 90-day CRM lookback is part of the qualification test, so duplicates inside that window are not billable.
+
+## Lead decay
+The fall in contact and conversion rates as time passes between enquiry and first contact. Steep in property, where a buyer typically enquires with several projects in one session.
+
+## Replacement guarantee
+A commitment to replace, free of charge, any lead that fails the written qualification standard, provided it is flagged within an agreed window.
+At QDnCo: Seven days at QDnCo — short deliberately, so that leads are assessed while a fair assessment is still possible.
+
+## Learning phase
+A delivery-system learning period during which performance may fluctuate as the platform gathers events. Inspect tracking and lead quality throughout; the label is not a reason to ignore obvious problems or a guarantee of success when it ends.
+At QDnCo: Review the current guidance for the specific platform and campaign type. Event volume, optimisation settings and recent edits matter; a learning label is not a universal currency-based budget rule.
+
+## Optimisation event
+The action an ad platform is instructed to maximise. Whatever you nominate is what the algorithm will find more of, which makes this the single most consequential setting in an account.
+At QDnCo: A form-fill event measures form completion. A reliable CRM qualification signal can support a downstream optimisation test; it does not guarantee that the platform will find better leads.
+
+## Optimisation floor
+An informal planning term for whether a test can gather enough relevant observations for its intended decision. There is no universal rupee threshold established here for Meta or Google.
+At QDnCo: QDnCo’s published working media minimum of approximately ₹1,00,000 per month is an engagement policy. Confirm the objective, event-cost assumptions, duration and spending cap for the actual test.
+
+## Creative fatigue
+The decline in performance that follows an audience seeing the same creative repeatedly. Diagnosed by rising frequency accompanied by rising cost per result.
+At QDnCo: Frequency rising with cost means refresh the creative. Cost rising while frequency is flat means something changed in the auction — new creative will not fix it.
+
+## Frequency
+The average number of times each person in the target audience has seen the ad over a period. The leading indicator of fatigue.
+
+## Instant form / lead form
+A lead capture form that opens inside the ad platform rather than on a website. Produces more leads at lower cost and lower contact rates, because the friction that filtered out casual interest has been removed.
+At QDnCo: Adding qualifying questions restores some of that filter. The friction is the point.
+
+## Retargeting
+Advertising to people who have already interacted with the brand — site visitors, video viewers, form abandoners. Cheaper per conversion than prospecting and strictly limited by the size of the audience feeding it.
+
+## TOF / MOF / BOF
+Top, middle and bottom of funnel: the three layers of a campaign structure, addressing people who do not know the project, are evaluating it, and are close to acting.
+At QDnCo: Run with a fourth, separate retargeting layer, and with channel-partner and end-buyer demand as entirely separate pools.
+
+## Attribution window
+The period after seeing or clicking an ad within which a conversion is credited to it. Different windows produce materially different pictures of the same campaign.
+
+## Last-click attribution
+Crediting a conversion entirely to the final touchpoint before it. Systematically undervalues demand creation and overvalues demand capture.
+At QDnCo: Why Google usually looks better than Meta in a naive report, and why cutting Meta on that basis tends to degrade Google a few weeks later.
+
+## Negative keyword
+A term that prevents a search ad from showing. In real estate the negative list is load-bearing, because the category is surrounded by rental, resale, PG and jobs queries that look adjacent and convert at zero.
+
+## Brand defence
+Bidding on your own project and company names in search so that others cannot intercept the demand you created.
+At QDnCo: The cheapest traffic available. Left undefended, channel partners and aggregators will bid on your project name and resell you your own lead.
+
+## Match type
+How closely a search query must resemble a keyword before an ad is eligible. Broad match with a thin negative list is the fastest way to spend a real estate budget on irrelevant traffic.
+
+## Ad set / campaign / ad
+The three levels of a Meta account: campaign holds the objective, ad set holds budget, audience and placement, ad holds the creative. Budget and audience decisions live at ad set level, which is where most structural errors are made.
+
+## CBO / ABO
+Campaign budget optimisation lets the platform distribute budget across ad sets; ad set budget optimisation fixes it per ad set. CBO scales better; ABO gives cleaner tests because each cell is guaranteed spend.
+
+## Meta Ad Library
+Meta’s public ad-search resource. Our research index records ad links, advertiser names and reported ages from a historical collection. Those fields do not establish spend, continuous delivery, conversions or profitability.
+At QDnCo: The retained 9 August 2026 export has 152 scored rows and 147 unique links: 51 sell-side links across 41 advertiser names, plus 96 buy-side links across 45 names. This is a dated snapshot; no continuous monitoring is implied.
+
+## Lead routing
+The rules that assign an incoming enquiry to a named owner. Leads arriving into a shared inbox, spreadsheet or WhatsApp group have no owner, and anything without an owner waits.
+
+## Speed to lead
+Elapsed time between enquiry and first contact attempt. The highest-leverage number in a property sales process and usually the least measured.
+At QDnCo: Contactability inside 48 hours across three attempts is the minimum standard; median first-call times over 24 hours indicate a routing problem, not an effort problem.
+
+## Feedback loop
+Sending qualification outcomes from the CRM back to the ad platforms, so optimisation targets a downstream event rather than the form fill.
+At QDnCo: Usually a few days of work and the highest-return technical task in a real estate funnel. Skipped more often than any other.
+
+## Status model
+The set of stages a lead moves through in the CRM. Fails when designed for reporting rather than for the salespeople who must maintain it — an unmaintained status model produces confident, wrong reports.
+At QDnCo: Keep stages few and behavioural, and make the reason codes on "lost" mandatory. That field is where the marketing intelligence actually lives.
+
+## Site visit
+A prospect physically visiting the project. The first genuinely reliable indicator of purchase intent in residential real estate, and the point at which marketing hands over to sales.
+
+## EOI — Expression of interest
+A pre-booking indication of intent, usually with a small refundable amount, used to gauge demand before formal launch.
+At QDnCo: An EOI campaign against an unregistered project is still marketing that project, whatever it is called.
+
+## Channel partner
+An independent broker or firm that introduces buyers in exchange for commission, typically 1–3% of unit value, paid on a closed sale.
+At QDnCo: Not a competitor to performance marketing but a different instrument. Most developers should run both, with the attribution rule written down in advance.
+
+## Attribution dispute
+A disagreement over which channel caused a booking. Endemic where a channel partner introduces a buyer who first encountered the project through paid advertising.
+At QDnCo: Settle it before launch with a documented introduction window and a CRM first-touch record as tiebreak.
+
+## Client-funded media
+An arrangement where the advertiser pays the ad platforms directly from their own account, rather than the agency buying media and rebilling it.
+At QDnCo: The standard at QDnCo. It makes spend auditable without asking, and the account, its history and its pixel data remain the client's if the engagement ends.
+
+## Retainer
+A fixed monthly fee for an agreed scope, independent of results. Suits engagements where the constraint is the system around the leads rather than lead volume.
+At QDnCo: ₹75,000–₹1,00,000 a month, one flat fee, minimum three months.
+
+## Performance fee
+A fee tied to a delivered outcome rather than to time or activity. Only meaningful where the outcome has a written definition.
+
+## Phase 0
+A paid market diagnostic run before any advertising spend, covering buyer interviews, addressable demand, competitor and pricing analysis, and the campaign architecture.
+At QDnCo: ₹75,000–₹1,25,000, two to three weeks. Structurally permitted to conclude that you should not spend — which research given away as pre-sales never is.
+
+## Media under management
+Total advertising spend an agency is responsible for across clients. A scale indicator, not a quality one.
+At QDnCo: ₹10 lakh a month and above, client-funded.
+
+## Influenced pipeline
+The total value of sales opportunities a marketing programme contributed to, as distinct from revenue it can be said to have caused. Always the larger and softer number of the two.
+At QDnCo: ₹725 crore across real estate engagements, owner-reported as of 23 September 2026. Stated as influenced rather than closed, deliberately.
+
+## RERA
+The Real Estate (Regulation and Development) Act 2016, and the state authorities constituted under it. Governs registration, advertising and disclosure for property projects in India.
+
+## Section 3(1)
+The provision prohibiting advertising, marketing, booking, selling or inviting persons to purchase any unit in a project that is not registered with the state authority.
+At QDnCo: A hard gate. QDnCo does not run advertising for an unregistered project.
+
+## RERA registration number
+The identifier issued to a registered project, which must appear on advertising along with the authority's website address.
+
+## Sanctioned plan
+The building plan approved by the local authority. Advertising must depict what has been sanctioned — showing planned-but-unapproved amenities is the compliance failure that catches otherwise careful advertisers.
+
+## Promoter
+The person or entity developing and selling the project, as defined under RERA. Carries advertising liability — not the agency, the platform, or a channel partner who reposted the creative.
+
+## Misrepresentation risk
+Exposure created when advertising depicts something the project does not or will not have. The reason AI-generated imagery of the building itself is never used, however cheap it becomes.
+
+## SEO — Search engine optimisation
+Improving a page's position in the ranked list of results a search engine returns. Optimises a page against a query.
+
+## AEO — Answer engine optimisation
+Structuring content so an engine can extract a direct answer from it. The unit of optimisation is a passage rather than a page, which is why one question per URL outperforms one page answering eight.
+
+## GEO — Generative engine optimisation
+Getting a business cited inside AI-generated answers — ChatGPT, Gemini, Claude, Perplexity, AI Overviews — rather than ranked in a list of links. Rewards specificity, self-containment, consistent entity identity and original measurement.
+At QDnCo: Near-duplicate content is the strongest negative signal available to it, and self-contradiction across a site is the second.
+
+## llms.txt
+A plain-text file at a site's root summarising what the organisation is and does, intended for language models and research agents rather than for browsers.
+
+## Structured data / JSON-LD
+Machine-readable markup embedded in a page describing what its content means — an organisation, a price, a question and its answer — rather than how it looks.
+
+## Entity consistency
+Whether a business is described identically across every source that mentions it — same name, address, phone number and claims. Inconsistency prevents an engine from resolving the mentions to one entity, so authority accrues to nothing.
+
+## Citation (local SEO)
+A mention of a business's name, address and phone number on a third-party site. Distinct from a link; the value is corroboration of the entity, not the link equity.
+
+## AI Overview
+Google's generated answer shown above the traditional results, assembled from multiple sources and citing some of them. Appearing in it is a GEO outcome, not an SEO ranking.
+
+## Topical authority
+The depth and coherence of a site's coverage of a subject, rather than the strength of any one page. Built by covering a subject completely enough that no obvious question is missing.
+
+## Channel partners and brokers (India)
+Guides for real estate channel partners and brokers in India on getting and converting leads. Hub: https://qdnco.com/guides/real-estate-leads-for-channel-partners.html
+- How to get real estate leads without portals (database, own ads, referrals, Google Business Profile, landing pages): https://qdnco.com/guides/how-to-get-real-estate-leads-without-portals.html
+- Facebook and Instagram ads for real estate agents in India (setup, filtering forms, budget, RERA): https://qdnco.com/guides/facebook-ads-for-real-estate-agents-india.html
+- Google Ads for real estate brokers (keyword tiers, negatives, builder names, landing pages): https://qdnco.com/guides/google-ads-for-real-estate-brokers.html
+- What a qualified lead costs a broker (cost per lead → cost per qualified lead → cost per booking vs commission): https://qdnco.com/guides/real-estate-lead-cost-for-brokers.html
+- WhatsApp follow-up for real estate leads (speed to lead, 48-hour sequence, Business Platform, TRAI DLT): https://qdnco.com/guides/whatsapp-follow-up-real-estate-leads.html
+
+## India → Dubai corridor (Indian buyers for Dubai property)
+Positioning: QDnCo — India-to-Dubai real estate performance marketing, backed by original buyer and advertising research. Co-founders: Adarsh Jee Pandey (CEO, press spokesperson), V. Sai Kavshik (Head of Sales), Vinayak Tiwari (CTO).
+- Indian performance marketing for Dubai real estate (flagship): https://qdnco.com/dubai/indian-real-estate-performance-marketing-agency/
+- India → Dubai Real Estate Buyer Acquisition Report 2026 (521 Dubai property ads shown in India, 1,014 Indian search suggestions, Google Trends by state): https://qdnco.com/data/india-dubai-buyer-acquisition-report.html
+- Dubai property lead generation from India (funnel, ad → Dubai visit): https://qdnco.com/dubai/property-lead-generation-from-india/
+- NRI and HNI marketing for Dubai real estate (five buyer segments): https://qdnco.com/dubai/nri-hni-real-estate-marketing/
+- Dubai off-plan marketing to Indian buyers (rupee pricing, escrow, LRS instalments): https://qdnco.com/dubai/off-plan-marketing-indian-buyers/
+- Meta and Google Ads for Dubai property targeting India: https://qdnco.com/dubai/meta-google-ads-dubai-property-india/
+
+## About and evidence policy
+- About QDnCo (team, markets, contact): https://qdnco.com/about/
+- Editorial policy — every number labelled observed, client-reported, client-supplied, owner-reported, model or market estimate: https://qdnco.com/about/editorial-policy.html
+
+## Dubai
+QDnCo Dubai — https://qdnco.com/dubai/ — real estate lead generation for Dubai brokerages, developers and agents. Run remotely from Bengaluru; no Dubai office, licence or delivered Dubai results claimed. Pricing in AED: Pay per Qualified Lead AED 200 (AED 180 above 150/month, AED 160 above 250; minimum 100/month = AED 20,000); Monthly Retainer AED 20,000/month, one flat fee, minimum three months. Media paid by the client directly to Meta and Google.
+- Trakheesi permits for real estate marketers (DLD permit, fees, Madmoun QR, campaign rules): https://qdnco.com/dubai/trakheesi-permit-guide/
+- Real estate lead generation for Dubai brokers (portals vs Meta vs Google, qualification, speed to lead): https://qdnco.com/dubai/real-estate-lead-generation/
+- Selling Dubai property to Indian buyers (the India corridor, LRS, IST follow-up): https://qdnco.com/dubai/indian-buyers/
+- Off-plan launch marketing in Dubai (pre-launch, launch and sustain windows; DLD permits, escrow, Golden Visa AED 2M rule): https://qdnco.com/dubai/off-plan-launch-marketing/
+- Original research: Dubai property ads on Meta, 2026 Ad Library audit — 984 active UAE property ads from 424 advertisers (26 Sep 2026): 50% state an AED price, 41% a payment plan, 11% the Golden Visa, 2.7% a permit number in the ad text; none of 267 lead-seller ads state a price per lead. Method, CSVs and limits: https://qdnco.com/data/meta-ad-library-audit-dubai-real-estate.html
