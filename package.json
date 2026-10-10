@@ -1,0 +1,45 @@
+{
+  "name": "portfolio-site",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "site": "node sync-faq-schema.mjs && node make-legal.mjs && node make-guides.mjs && node build-dist.mjs && node prerender.mjs",
+    "audit": "node audit-responsive.mjs && node audit-touch.mjs && node audit-headroom.mjs && node audit-fit.mjs && node audit-seo.mjs && node audit-links.mjs && node audit-deadcode.mjs && node verify.mjs",
+    "deploy": "node deploy.mjs",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "faq": "node sync-faq-schema.mjs --check",
+    "verify": "node verify.mjs",
+    "seo": "node audit-seo.mjs",
+    "legal": "node make-legal.mjs",
+    "gaps": "node audit-gaps.mjs",
+    "fit": "node audit-fit.mjs",
+    "guides": "node make-guides.mjs",
+    "test": "node --test tests/lead-capture.test.mjs"
+  },
+  "dependencies": {
+    "framer-motion": "^13.0.0",
+    "jpeg-js": "^0.4.4",
+    "lucide-react": "^1.28.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "autoprefixer": "^10.5.4",
+    "basic-ftp": "^6.2.0",
+    "oxlint": "^1.75.0",
+    "pngjs": "^7.0.0",
+    "postcss": "^8.5.25",
+    "puppeteer-core": "^25.5.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.0"
+  }
+}

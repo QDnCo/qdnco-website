@@ -1,0 +1,36 @@
+{
+  "snapshot_utc": "2026-08-09T03:43:31Z",
+  "source_sha256": "345bdbcc18e8c40bc299c2010fd2f46205a3399a9f4b15107bb127e2d1ded846",
+  "raw_items_reported_by_collector": 204,
+  "retained_scored_rows": 152,
+  "unique_library_urls": 147,
+  "search_terms": [
+    "real estate marketing agency Bangalore",
+    "real estate lead generation agency India",
+    "performance marketing agency real estate builders",
+    "qualified leads for builders site visits",
+    "property marketing agency Bengaluru",
+    "real estate digital marketing company India",
+    "apartments Bangalore booking site visit",
+    "plots Mysore investment",
+    "villa project Bangalore pre launch",
+    "prelaunch offer apartment Bengaluru",
+    "RERA approved plots Bangalore",
+    "CRM real estate lead management India"
+  ],
+  "collection_error_records": 1,
+  "method": "Retained rows grouped by side; exact library URL deduplication; distinct advertiser display-name strings. No Page IDs retained. First row retained for each URL within each side.",
+  "limits": "Historical keyword-selected sample, not a census. Category labels are inherited from the collector and not independent business classifications. Ad age is a recorded field, not verified continuous delivery, spend or performance. No pricing-absence or profitability inference is supported.",
+  "sides": {
+    "sell": {
+      "retained_rows": 56,
+      "unique_library_urls": 51,
+      "distinct_advertiser_names": 41
+    },
+    "buy": {
+      "retained_rows": 96,
+      "unique_library_urls": 96,
+      "distinct_advertiser_names": 45
+    }
+  }
+}

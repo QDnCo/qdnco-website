@@ -1,0 +1,347 @@
+{
+  "_meta": {
+    "site": "https://qdnco.com",
+    "generated": "2026-09-13",
+    "practice": "QD & Co.",
+    "totalClusters": 15,
+    "notes": "Curated topic-to-page mapping. No automatic suffix expansion or fabricated volume/difficulty values."
+  },
+  "clusters": [
+    {
+      "id": "real-estate-marketing",
+      "pillar": "Real estate marketing",
+      "intent": "commercial",
+      "priority": "P0",
+      "targetUrl": "https://qdnco.com/",
+      "keywords": [
+        {
+          "keyword": "real estate marketing agency",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "real estate marketing Bengaluru",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "property marketing agency",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "developer-launch",
+      "pillar": "Developer launch marketing",
+      "intent": "commercial",
+      "priority": "P0",
+      "targetUrl": "https://qdnco.com/guides/real-estate-performance-marketing-bangalore.html",
+      "keywords": [
+        {
+          "keyword": "property launch marketing",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "real estate performance marketing Bangalore",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "lead-qualification",
+      "pillar": "Lead qualification",
+      "intent": "informational",
+      "priority": "P0",
+      "targetUrl": "https://qdnco.com/guides/what-counts-as-a-qualified-lead.html",
+      "keywords": [
+        {
+          "keyword": "qualified real estate lead definition",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "real estate lead qualification",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "lead-economics",
+      "pillar": "Lead and booking economics",
+      "intent": "informational",
+      "priority": "P0",
+      "targetUrl": "https://qdnco.com/guides/cost-per-qualified-lead-real-estate.html",
+      "keywords": [
+        {
+          "keyword": "cost per qualified lead real estate",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "CPL versus CPQL",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "meta-ads",
+      "pillar": "Meta acquisition",
+      "intent": "commercial",
+      "priority": "P1",
+      "targetUrl": "https://qdnco.com/guides/meta-ads-for-real-estate-launches.html",
+      "keywords": [
+        {
+          "keyword": "Meta ads real estate developers",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "Facebook ads property launch",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "google-ads",
+      "pillar": "Google acquisition",
+      "intent": "commercial",
+      "priority": "P1",
+      "targetUrl": "https://qdnco.com/guides/google-ads-for-real-estate.html",
+      "keywords": [
+        {
+          "keyword": "Google ads real estate",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "property search campaigns",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "creative",
+      "pillar": "Creative direction",
+      "intent": "commercial",
+      "priority": "P1",
+      "targetUrl": "https://qdnco.com/guides/ai-creative-volume-vs-traditional-agency.html",
+      "keywords": [
+        {
+          "keyword": "real estate ad creative",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "AI creative real estate marketing",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "sales-follow-up",
+      "pillar": "CRM and sales follow-up",
+      "intent": "informational",
+      "priority": "P1",
+      "targetUrl": "https://qdnco.com/guides/real-estate-crm-and-lead-funnel.html",
+      "keywords": [
+        {
+          "keyword": "real estate CRM lead funnel",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "real estate lead follow-up process",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "budget",
+      "pillar": "Campaign budget planning",
+      "intent": "informational",
+      "priority": "P1",
+      "targetUrl": "https://qdnco.com/answers/minimum-budget-real-estate-marketing.html",
+      "keywords": [
+        {
+          "keyword": "real estate marketing budget",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "property advertising budget",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "pricing",
+      "pillar": "Agency scope and pricing",
+      "intent": "commercial",
+      "priority": "P1",
+      "targetUrl": "https://qdnco.com/pricing/index.html",
+      "keywords": [
+        {
+          "keyword": "real estate marketing agency pricing",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "real estate marketing retainer",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "ad-research",
+      "pillar": "Ad research methodology",
+      "intent": "informational",
+      "priority": "P1",
+      "targetUrl": "https://qdnco.com/data/meta-ad-library-audit-bangalore-agencies.html",
+      "keywords": [
+        {
+          "keyword": "real estate Meta Ad Library audit",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "property marketing competitor research",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "market-research",
+      "pillar": "Market-sizing methodology",
+      "intent": "informational",
+      "priority": "P1",
+      "targetUrl": "https://qdnco.com/data/bangalore-developer-marketing-market-size.html",
+      "keywords": [
+        {
+          "keyword": "Bengaluru developer marketing market size",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "real estate marketing market research",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "channel-partners",
+      "pillar": "Channel partners and direct demand",
+      "intent": "informational",
+      "priority": "P1",
+      "targetUrl": "https://qdnco.com/guides/channel-partner-vs-direct-demand.html",
+      "keywords": [
+        {
+          "keyword": "channel partner versus direct demand",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "developer demand generation",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "catchments",
+      "pillar": "Local catchment planning",
+      "intent": "local",
+      "priority": "P1",
+      "targetUrl": "https://qdnco.com/areas/index.html",
+      "keywords": [
+        {
+          "keyword": "Bengaluru property marketing catchment",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "Mysore real estate marketing",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    },
+    {
+      "id": "research-library",
+      "pillar": "Real estate marketing research",
+      "intent": "informational",
+      "priority": "P1",
+      "targetUrl": "https://qdnco.com/data/index.html",
+      "keywords": [
+        {
+          "keyword": "real estate marketing research",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        },
+        {
+          "keyword": "property marketing data",
+          "type": "editorial-target",
+          "volumeTier": null,
+          "difficulty": null
+        }
+      ],
+      "contentNotes": "Editorial query hypothesis. Search volume, difficulty and ranking are unmeasured. Review the linked page for source context and scope."
+    }
+  ]
+}

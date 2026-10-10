@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cookie Policy | QDnCo</title>
+<meta name="description" content="What this site stores in your browser, and what it does not.">
+<link rel="canonical" href="https://qdnco.com/legal/cookies.html">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0A0D12">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600;700;800&family=Kanit:wght@700;800&display=swap" rel="stylesheet">
+<script>
+/* Applied before paint so the page never flashes the wrong ground. Same key the
+   main site writes, so the choice made there carries straight over. */
+(function(){try{var t=localStorage.getItem('qd-theme');
+if(t!=='light'&&t!=='dark')t='light';
+document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='light'}})();
+</script>
+<style>
+/* The site's own tokens, verbatim, so these pages are the same product rather
+   than a lookalike. Theme follows the attribute the main site writes, and the
+   stored key is shared, so a choice made on the landing page carries here. */
+:root{
+  --page-rgb: 10,13,18;
+  --ink-rgb: 244,246,248;
+  --fill-rgb: 255,255,255;
+  --page:#0A0D12; --ink:#F4F6F8;
+  --veil: rgba(10,13,18,0.82);
+  --accent:#B683FF;
+  --content-max: 1720px;
+}
+:root[data-theme="light"]{
+  --page-rgb: 255,255,255;
+  --ink-rgb: 10,13,18;
+  --fill-rgb: 10,13,18;
+  --page:#FFFFFF; --ink:#0A0D12;
+  --veil: rgba(255,255,255,0.90);
+  --accent:#7A00C2;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font:400 17px/1.68 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  letter-spacing:-.005em; -webkit-font-smoothing:antialiased;
+}
+
+/* ── Wallpaper ──
+   The same Mux stream the site runs, with the same wash over it. Fixed and
+   behind everything, exactly as SiteWallpaper does it. */
+.wall{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--page)}
+.wall video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:saturate(1.45) contrast(1.12)}
+:root[data-theme="light"] .wall video{filter:saturate(1.5) brightness(1.06)}
+.wall .wash{position:absolute;inset:0;background:rgba(0,0,0,0.42)}
+:root[data-theme="light"] .wall .wash{background:rgba(255,255,255,0.62)}
+
+.shell{position:relative;z-index:1}
+.page{padding:clamp(1.2rem,3vw,2.4rem) clamp(0.9rem,3vw,2rem) clamp(3rem,8vw,6rem)}
+.wrap{
+  max-width:940px;margin:0 auto;
+  padding:clamp(1.6rem,4vw,3.2rem) clamp(1.2rem,4vw,3rem) clamp(2.4rem,6vw,4rem);
+  background:var(--veil);
+  -webkit-backdrop-filter:blur(26px) saturate(1.15);backdrop-filter:blur(26px) saturate(1.15);
+  border:1px solid rgba(var(--ink-rgb),.12);
+  border-radius:clamp(20px,2.4vw,32px);
+  box-shadow:0 40px 100px -50px rgba(0,0,0,.6);
+}
+
+/* ── Chrome ── */
+.bar{
+  position:sticky;top:0;z-index:5;
+  display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;
+  padding:clamp(.8rem,2vw,1.1rem) clamp(1.1rem,5vw,2rem);
+  background:rgba(var(--page-rgb),0.86);
+  -webkit-backdrop-filter:blur(26px) saturate(1.35);backdrop-filter:blur(26px) saturate(1.35);
+  border-bottom:1px solid rgba(var(--ink-rgb),.12);
+}
+/* Same lockup as the landing-page nav: qdco.png + tagline, same widths
+   (desktop clamp 146–170, phone 112), theme-flipped on light. */
+.home{
+  display:inline-flex;align-items:center;text-decoration:none;color:var(--ink);line-height:1;
+  border:1px solid rgba(255,255,255,.38);border-radius:999px;
+  padding:clamp(.52rem,.86vw,.88rem) clamp(.8rem,1.1vw,1.15rem);
+  transform:scaleX(1.05) scaleY(.95);transform-origin:left center;
+  transition:border-color 260ms ease;
+}
+:root[data-theme="light"] .home{border-color:rgba(10,13,18,.32)}
+.home-col{
+  display:flex;flex-direction:column;gap:clamp(4px,.45vw,6px);
+  width:clamp(146px,10.5vw,170px);container-type:inline-size;
+}
+.home img{width:100%;height:auto;display:block}
+:root[data-theme="light"] .home img{filter:brightness(0) saturate(0)}
+.home-tag{
+  font-family:'Inter',system-ui,sans-serif;font-weight:400;text-transform:uppercase;
+  letter-spacing:.095em;line-height:1;white-space:nowrap;
+  color:rgba(255,255,255,.72);font-size:max(9px,5.85cqi);
+}
+:root[data-theme="light"] .home-tag{color:rgba(10,13,18,.72)}
+.bar-right{display:flex;align-items:center;gap:.9rem}
+.back{font-family:'Barlow',sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;
+  border:1px solid rgba(var(--ink-rgb),.24);border-radius:999px;padding:.6rem 1.15rem;
+  color:var(--ink);min-height:44px;display:inline-flex;align-items:center;
+  transition:border-color .2s ease,background .2s ease}
+.back:hover{border-color:var(--accent);color:var(--accent)}
+
+/* The site's switch, same geometry and the same Apple easing curve. */
+.theme-switch{--sw-w:60px;--sw-h:31px;--sw-pad:3px;position:relative;flex-shrink:0;
+  width:var(--sw-w);height:var(--sw-h);padding:0;border-radius:999px;cursor:pointer;appearance:none;
+  border:1px solid rgba(var(--ink-rgb),.22);background:rgba(var(--ink-rgb),.10);
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.28);
+  transition:background 420ms cubic-bezier(.32,.72,0,1),border-color 420ms cubic-bezier(.32,.72,0,1)}
+.theme-switch-ico{position:absolute;top:0;bottom:0;width:calc(var(--sw-w)/2);z-index:2;
+  display:grid;place-items:center;pointer-events:none;
+  transition:color 420ms cubic-bezier(.32,.72,0,1),opacity 420ms cubic-bezier(.32,.72,0,1)}
+.theme-switch-ico svg{width:calc(var(--sw-h)*.47);height:calc(var(--sw-h)*.47);display:block}
+.theme-switch-moon{left:0}.theme-switch-sun{right:0}
+:root:not([data-theme="light"]) .theme-switch-moon{color:#0A0D12;opacity:1}
+:root:not([data-theme="light"]) .theme-switch-sun{color:rgb(var(--ink-rgb));opacity:.42}
+:root[data-theme="light"] .theme-switch-sun{color:#fff;opacity:1}
+:root[data-theme="light"] .theme-switch-moon{color:rgb(var(--ink-rgb));opacity:.42}
+.theme-switch-knob{position:absolute;top:var(--sw-pad);left:var(--sw-pad);z-index:1;
+  height:calc(var(--sw-h) - var(--sw-pad)*2 - 2px);width:calc(var(--sw-w)/2 - var(--sw-pad));
+  border-radius:999px;background:linear-gradient(180deg,#FFF 0%,#ECEEF1 100%);
+  box-shadow:0 2px 6px rgba(0,0,0,.34);
+  transition:transform 460ms cubic-bezier(.32,.72,0,1),background 420ms cubic-bezier(.32,.72,0,1)}
+:root[data-theme="light"] .theme-switch-knob{transform:translateX(calc(var(--sw-w)/2));
+  background:linear-gradient(180deg,#2B2F36 0%,#14171C 100%)}
+
+/* ── Type, on the site's scale ── */
+.eyebrow{font-family:'Barlow',sans-serif;font-weight:600;text-transform:uppercase;
+  letter-spacing:.2em;font-size:.72rem;color:var(--accent);margin:0 0 .7rem}
+h1{font-family:'Instrument Serif',serif;font-weight:400;
+  font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.02;letter-spacing:-.02em;margin:0 0 .7rem}
+.updated{font-family:'Barlow',sans-serif;color:rgba(var(--ink-rgb),.6);
+  font-size:.92rem;margin:0 0 2.6rem}
+h2{font-family:'Barlow',sans-serif;font-weight:700;
+  font-size:clamp(1.2rem,2.2vw,1.6rem);line-height:1.24;margin:2.8rem 0 .8rem;letter-spacing:-.01em}
+h3{font-family:'Barlow',sans-serif;font-weight:600;font-size:1.06rem;margin:1.7rem 0 .45rem}
+p,li{color:rgba(var(--ink-rgb),.82)}
+li{margin:.4rem 0}
+ul,ol{padding-left:1.35rem}
+strong{color:var(--ink);font-weight:600}
+a{color:var(--accent);text-underline-offset:3px}
+
+/* Panels use the section glass the site uses, not a flat grey. */
+.card{background:rgba(var(--fill-rgb),.07);border:1px solid rgba(var(--ink-rgb),.18);
+  border-radius:20px;padding:1.35rem 1.55rem;margin:1.6rem 0;
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.card p:last-child{margin-bottom:0}.card p:first-child{margin-top:0}
+.todo{display:inline-block;background:rgba(182,0,168,.16);border:1px dashed var(--accent);
+  color:var(--accent);border-radius:6px;padding:.05em .5em;font-size:.86em;font-weight:600}
+/* Tables scroll inside their own box rather than pushing the page sideways.
+   A four-column table at 375px cannot both fit and stay legible; letting it
+   scroll horizontally keeps the column widths readable and keeps the document
+   itself from overflowing, which is the thing that actually looks broken. */
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.4rem 0;
+  border-radius:12px}
+.tablewrap table{margin:0}
+.tablewrap table th,.tablewrap table td{white-space:normal}
+@media (max-width:560px){ .tablewrap table{min-width:460px} }
+table{width:100%;border-collapse:collapse;margin:1.4rem 0;font-size:.95rem}
+th,td{text-align:left;padding:.7rem .8rem;border-bottom:1px solid rgba(var(--ink-rgb),.14);vertical-align:top}
+th{color:var(--ink);font-weight:600;font-family:'Barlow',sans-serif}
+td{color:rgba(var(--ink-rgb),.78)}
+
+.foot{margin-top:4.5rem;padding-top:1.8rem;border-top:1px solid rgba(var(--ink-rgb),.14);
+  color:rgba(var(--ink-rgb),.6);font-size:.9rem}
+.foot nav{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin-bottom:1.1rem}
+.foot a{text-decoration:none;font-family:'Barlow',sans-serif;font-weight:500}
+.foot a:hover{text-decoration:underline}
+.foot [aria-current]{color:var(--ink);font-weight:600}
+
+@media (max-width:767px){
+  .home{padding:.36rem .7rem;transform:none}
+  .home-col{width:112px;gap:4px}
+  .home-tag{letter-spacing:.065em;font-size:max(8px,6.2cqi)}
+}
+@media (max-width:560px){ body{font-size:16px} table{font-size:.88rem} .bar{position:static} }
+@media (prefers-reduced-motion: reduce){ .wall video{display:none} .theme-switch,.theme-switch-knob{transition-duration:1ms} }
+</style>
+</head>
+<body>
+
+<div class="wall" aria-hidden="true">
+  <video id="wall" muted playsinline loop preload="none"></video>
+  <div class="wash"></div>
+</div>
+
+<div class="shell">
+  <header class="bar">
+    <a class="home" href="../index.html"><span class="home-col"><img src="../brands/qdco.png" alt="QDnCo" width="170" height="34" decoding="async" /><span class="home-tag">The Next-Gen Brand Lab</span></span></a>
+    <div class="bar-right">
+      <button type="button" class="theme-switch" id="tt" role="switch" aria-label="Toggle colour theme">
+        <span class="theme-switch-ico theme-switch-moon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </span>
+        <span class="theme-switch-ico theme-switch-sun" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.1M12 19.3v2.1M2.6 12h2.1M19.3 12h2.1M5.4 5.4l1.5 1.5M17.1 17.1l1.5 1.5M18.6 5.4l-1.5 1.5M6.9 17.1l-1.5 1.5"/></svg>
+        </span>
+        <span class="theme-switch-knob" aria-hidden="true"></span>
+      </button>
+      <a class="back" href="../index.html">&larr; Back to site</a>
+    </div>
+  </header>
+
+  <div class="page">
+  <div class="wrap">
+    <main>
+      <p class="eyebrow">QDnCo &middot; Legal</p>
+      <h1>Cookie Policy</h1>
+      <p class="updated">Last updated 2026-09-24 &middot; Applies to https://qdnco.com</p>
+      <p>This page explains what <a href="https://qdnco.com">qdnco.com</a> stores in your browser.</p>
+
+<h2>1. We do not use tracking or advertising cookies</h2>
+<p>This site sets <strong>no advertising cookies, no analytics cookies and no cross-site trackers</strong>.
+There is no Meta Pixel, no Google Analytics tag and no remarketing tag on this website. That is why you are
+not asked to accept a cookie banner — there is nothing to consent to.</p>
+
+<h2>2. What is stored locally</h2>
+<table>
+  <tr><th>What</th><th>Type</th><th>Purpose</th><th>Lifetime</th></tr>
+  <tr><td>Theme preference</td><td>Browser local storage</td>
+      <td>Remembers whether you chose the light or dark version so it does not reset on every visit</td>
+      <td>Until you clear site data</td></tr>
+</table>
+<p>This is stored by your browser on your own device. It is not a cookie, it is not sent to our server, and
+it identifies nothing about you.</p>
+
+<h2>3. Third-party services that load on this page</h2>
+<p>Some assets are served by third parties, and those requests necessarily reveal your IP address and browser
+to them, as any web request does:</p>
+<ul>
+  <li><strong>Google Fonts</strong> — typefaces.</li>
+  <li><strong>unpkg</strong> — JavaScript libraries the page runs on.</li>
+  <li><strong>Mux</strong> — the background video.</li>
+</ul>
+<p>None of these is used by us to profile you, and we receive no analytics from them.</p>
+
+<h2>4. When you submit the enquiry form</h2>
+<p>Submitting the form sends the details you typed to our Google Apps Script endpoint. That is a deliberate
+action by you, not passive tracking. What happens to that data is covered in the
+<a href="privacy.html">Privacy Policy</a>.</p>
+
+<h2>5. Controlling local storage</h2>
+<p>You can clear the stored theme preference at any time through your browser's "clear site data" or
+"clear browsing data" controls. The site will still work; it will simply follow your operating system's
+light or dark setting again.</p>
+    </main>
+
+    <footer class="foot">
+      <nav aria-label="Legal pages">
+      <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <span aria-current="page">Cookie Policy</span>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="refund.html">Refunds & Cancellation</a>
+    <a href="accessibility.html">Accessibility</a>
+      </nav>
+      <p>QDnCo &middot; Bangalore, Karnataka, India &middot;
+         <a href="mailto:qdnco01@gmail.com">qdnco01@gmail.com</a> &middot;
+         <a href="tel:+918861179992">+91 88611 79992</a></p>
+      <p>&copy; 2026 QDnCo. All rights reserved.</p>
+    </footer>
+  </div>
+  </div>
+</div>
+
+<script>
+/* Theme toggle, writing the key the main site reads. */
+(function(){var r=document.documentElement,b=document.getElementById('tt');
+var sync=function(){b.setAttribute('aria-checked',r.dataset.theme==='light')};sync();
+b.addEventListener('click',function(){
+  r.dataset.theme=r.dataset.theme==='light'?'dark':'light';
+  try{localStorage.setItem('qd-theme',r.dataset.theme)}catch(e){}sync();});})();
+
+/* The wallpaper is decoration, so it must never delay the text. Loaded after
+   the page settles, skipped entirely for reduced-motion and for anyone on a
+   metered or slow connection. */
+(function(){
+  var v=document.getElementById('wall');
+  if(!v||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var c=navigator.connection;
+  if(c&&(c.saveData||/2g/.test(c.effectiveType||'')))return;
+  /* hls.js is tried FIRST, exactly as the site's HlsVideo does. Desktop Chrome
+     returns "maybe" from canPlayType for an HLS manifest despite having no
+     native HLS decoder, so leading with that check made Chrome fetch the whole
+     manifest and every chunk and then sit at readyState 0 — a silent failure
+     that also wasted the bandwidth. Native playback is the fallback, for Safari. */
+  var native=function(){
+    if(!v.canPlayType('application/vnd.apple.mpegurl'))return;
+    v.src=`https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8`;v.play().catch(function(){});
+  };
+  var start=function(){
+    var s=document.createElement('script');
+    s.src='https://unpkg.com/hls.js@1/dist/hls.min.js';
+    s.onload=function(){
+      if(!window.Hls||!window.Hls.isSupported()){native();return}
+      var h=new window.Hls({capLevelToPlayerSize:true});
+      h.loadSource(`https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8`);h.attachMedia(v);
+      h.on(window.Hls.Events.MANIFEST_PARSED,function(){v.play().catch(function(){})});};
+    s.onerror=native;
+    document.head.appendChild(s);
+  };
+  /* Both, guarded to fire once. requestIdleCallback alone is not reliable: on a
+     page the browser treats as hidden — a background tab, for instance — it can
+     be starved indefinitely, and the wallpaper would then never appear even
+     after the user switches to it. The timer is the floor. */
+  var done=false;
+  var once=function(){if(done)return;done=true;start()};
+  if('requestIdleCallback' in window)requestIdleCallback(once,{timeout:2000});
+  setTimeout(once,2000);
+})();
+</script>
+</body>
+</html>

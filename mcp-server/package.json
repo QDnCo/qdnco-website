@@ -1,0 +1,16 @@
+{
+  "name": "qdnco-site-mcp",
+  "version": "1.0.0",
+  "description": "Minimal MCP server exposing QD & Co. site facts, llms.txt, and SEO keyword clusters",
+  "type": "module",
+  "main": "index.mjs",
+  "bin": {
+    "qdnco-site-mcp": "./index.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "optionalDependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}
