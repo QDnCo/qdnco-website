@@ -575,29 +575,29 @@
       "id": "DIR-06",
       "stream": "Directories",
       "title": "DesignRush social-link correction",
-      "status": "Yet to do",
-      "detail": "Recorded Facebook link needs correction.",
-      "next": "Save the canonical QDnCo Facebook URL in the existing profile.",
+      "status": "Completed",
+      "detail": "Public DesignRush profile already has the canonical QDnCo Facebook, X, LinkedIn, Instagram and YouTube links. No duplicate edit was needed.",
+      "next": "Maintain existing verified profile links.",
       "owner": "Agent",
-      "url": "https://www.designrush.com/user/profile/services",
+      "url": "https://www.designrush.com/agency/profile/qdnco",
       "steps": [],
-      "checked": "2026-10-01",
-      "evidence": "Dated execution record; details retained locally",
-      "url_label": "DesignRush profile editor"
+      "checked": "2026-10-13",
+      "evidence": "October 13: public profile DOM and saved screenshot verified.",
+      "url_label": "Public DesignRush profile"
     },
     {
       "id": "DIR-07",
       "stream": "Directories",
       "title": "Sortlist portfolios",
-      "status": "Yet to do",
-      "detail": "Public profile and cover saved; one portfolio text saved but illustration failed; four remain.",
-      "next": "Retry uploader and complete remaining portfolio entries.",
+      "status": "In progress",
+      "detail": "Two Sortlist portfolio records now exist: Brigade Eternia and Vaishnavi Life. Vaishnavi text and case-study link are publicly verified; its image upload remains pending.",
+      "next": "Finish portfolio images and three remaining factual case-study entries. Avoid duplicating the saved Vaishnavi record.",
       "owner": "Agent",
-      "url": "https://app.sortlist.com/qdnco/profile/works/brigade-eternia-real-estate-campaign-delivery--brigade-eternia-agency-cp-delivery--real-estate/edit",
+      "url": "https://www.sortlist.com/agency/qdnco/portfolio/vaishnavi-life-mysore-plotted-development-marketing--vaishnavi-life-project-marketing--real-estate",
       "steps": [],
-      "checked": "2026-10-01",
-      "evidence": "Dated execution record; details retained locally",
-      "url_label": "Existing Sortlist portfolio editor"
+      "checked": "2026-10-13",
+      "evidence": "October 13 public Sortlist page and screenshot; image chooser did not complete.",
+      "url_label": "Published Vaishnavi Life portfolio"
     },
     {
       "id": "DIR-08",
@@ -659,13 +659,13 @@
       "stream": "Directories",
       "title": "GBP service areas",
       "status": "In progress",
-      "detail": "October 12: authenticated service-area list contains 20 regions/cities, including Bengaluru, Chennai, Hyderabad, Mumbai, Delhi and Dubai. Profile is a service-area business with no displayed office address.",
-      "next": "Reconcile broad service-area list with current actual coverage; do not invent offices or treat area selection as a proximity-ranking fix.",
+      "detail": "Removed country/state entries India, UAE, Goa and Karnataka. Saved 16 city entries including Bengaluru and Dubai. Updated service description to current paid ads, SEO/AI search, landing pages and CRM services.",
+      "next": "Verify which distant cities involve actual in-person client visits. Worldwide remote enquiry coverage does not establish physical service-area eligibility.",
       "owner": "Agent",
       "url": "https://business.google.com/",
       "steps": [],
-      "checked": "2026-10-12",
-      "evidence": "2026-10-12-growth-recovery: authenticated dashboard observations and saved proof"
+      "checked": "2026-10-13",
+      "evidence": "October 13: authenticated saved description and area list; screenshots retained locally."
     },
     {
       "id": "DIR-13",
@@ -973,14 +973,14 @@
       "id": "KB-07",
       "stream": "Knowledge & operations",
       "title": "Completion-time dashboard updates",
-      "status": "In progress",
-      "detail": "Canonical local tasks updated with verified Threads publication, Pinterest branding and Sulekha publication. Public dashboard update remains blocked by legacy deploy guard against GitHub-managed homepage hash.",
-      "next": "Reconcile dashboard-only delivery with GitHub production manifest; do not bypass the legacy guard.",
+      "status": "Completed",
+      "detail": "GitHub-only dashboard delivery is operational. Workflow 38303056617 succeeded; all six public dashboard file hashes were independently verified.",
+      "next": "Reconcile meaningful verified outcomes and dispatch the scoped GitHub workflow.",
       "owner": "Agent",
       "url": "https://qdnco.com/growth-status/",
       "steps": [],
       "checked": "2026-10-13",
-      "evidence": "October 13 tasks reconciliation; public dashboard not claimed refreshed."
+      "evidence": "October 13: commit c1e1389, workflow 38303056617, six live SHA-256 matches."
     },
     {
       "id": "WEB-10",
@@ -1082,14 +1082,14 @@
       "id": "SEO-11",
       "stream": "Search & measurement",
       "title": "Remove obsolete commercial promises from current live resources",
-      "status": "In progress",
-      "detail": "Live qualified-lead guide still promises free replacement and seven-day acceptance. Canonical production scan finds related wording in 19 HTML files, including pricing, glossary and answers; requires coordinated visible-copy and structured-data correction.",
-      "next": "Audit current campaign-based positioning and correct canonical site through GitHub without deploying the unpublished redesign or breaking URLs.",
+      "status": "Completed",
+      "detail": "Corrected obsolete per-lead fees and replacement promises across 38 current-site HTML pages, including visible copy and structured data. Existing URLs preserved; unpublished redesign remains separate.",
+      "next": "Monitor indexing and keep platform pricing descriptions aligned with campaign/project-based scope.",
       "owner": "Agent",
       "url": "https://qdnco.com/guides/what-counts-as-a-qualified-lead.html",
       "steps": [],
       "checked": "2026-10-13",
-      "evidence": "October 13 live guide read and canonical production HTML scan. No correction published yet."
+      "evidence": "October 13: commit 1478c81, workflow 38303567080 succeeded; all 38 changed public files independently matched local SHA-256 hashes."
     }
   ],
   "platforms": [
@@ -1284,6 +1284,6 @@
     }
   ],
   "reconciled_at": "2026-10-13",
-  "reconciliation_note": "Verified GoodFirms, Medium and Search Console changes. Instagram partial-review scope retained; obsolete live commercial-copy issue added. No redesign launch.",
-  "updated_at": "2026-10-12T20:07:52.730037+00:00"
+  "reconciliation_note": "Verified GitHub deployments and platform observations. Pending reviews and incomplete research remain distinguished from completed work.",
+  "updated_at": "2026-10-12T20:43:12.213283+00:00"
 }
