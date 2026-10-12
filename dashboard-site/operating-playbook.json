@@ -1,0 +1,46 @@
+{
+  "version": "2026-10-01",
+  "icps": [
+    "Bangalore developers",
+    "Bangalore channel partners",
+    "Chennai developers and channel partners",
+    "Dubai brokerages and developers"
+  ],
+  "offer": "A clear diagnostic of buyer-fit, creative and lead handoff; supported by free objection guides and calculator",
+  "conversion_workflow": [
+    "Relevant educational post with one clear problem",
+    "Matching regional guide or calculator",
+    "Existing enquiry form with stated project context",
+    "Confirmed contact and project fit",
+    "Qualified consultation",
+    "Proposal and owner-led closing"
+  ],
+  "weekly_feedback_loop": [
+    "Record source and UTM",
+    "Separate raw/contactable/qualified/meeting/proposal/won stages",
+    "Record duplicate and rejection reasons",
+    "Review sales feedback weekly",
+    "Change one meaningful message/offer variable",
+    "Report cohort denominators and observation window"
+  ],
+  "do_not_implement": [
+    "Guaranteed CTR, rank, bookings or revenue",
+    "Bulk unsolicited DMs or WhatsApp sends",
+    "Scraped personal emails uploaded as ad audiences",
+    "Unverified plugin installation or account access",
+    "Using another creator\u2019s results as QDnCo results"
+  ],
+  "implemented_now": [
+    "Source inventory and triage index",
+    "Company-fit scoring template",
+    "Diagnostic script",
+    "Two-week organic experiment plan",
+    "Shareable status dashboard"
+  ],
+  "remaining": [
+    "Full reel audio/carousel verification",
+    "Permissioned business shortlist with current source evidence",
+    "Run organic tests and measure qualified consultations",
+    "Paid tests only with a separate spending approval"
+  ]
+}

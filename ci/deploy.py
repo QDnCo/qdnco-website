@@ -77,9 +77,11 @@ def plan(desired, previous, actual):
     return [name for name in desired if desired[name] != actual.get(name)]
 
 
-def main():
-    desired = validate(Path('release'))
-    declared = json.loads(Path('release-manifest.json').read_text())
+def main(*, artifact='release', manifest='release-manifest.json', validator=None,
+         scope='', state_name='.qdnco-deploy-state.json',
+         baseline='ci/production-baseline.json', public_paths=None):
+    desired = (validator or validate)(Path(artifact))
+    declared = json.loads(Path(manifest).read_text())
     if desired != declared:
         raise ValueError('Artifact manifest mismatch')
     root = os.environ['FTP_REMOTE'].rstrip('/')
@@ -88,11 +90,15 @@ def main():
     sha = os.environ.get('GITHUB_SHA', 'local-check')
     safe_path(sha)
     parent = str(PurePosixPath(root).parent)
-    state_path = parent + '/.qdnco-deploy-state.json'
-    backup = parent + '/.qdnco-deploy-backups/' + sha + '-' + os.environ.get('GITHUB_RUN_ATTEMPT', '1')
+    state_path = parent + '/' + state_name
+    if scope:
+        if scope != 'growth-status':
+            raise ValueError('Unsupported deployment scope')
+        root += '/' + scope
+    backup = parent + '/.qdnco-deploy-backups/' + sha + '-' + os.environ.get('GITHUB_RUN_ATTEMPT', '1') + ('-' + scope if scope else '')
     ftp = connect()
     old_state = get(ftp, state_path, optional=True)
-    previous = json.loads(old_state)['files'] if old_state else json.loads(Path('ci/production-baseline.json').read_text())
+    previous = json.loads(old_state)['files'] if old_state else json.loads(Path(baseline).read_text())
     ftp.quit()
     actual, originals = {}, {}
     names = sorted(set(previous) | set(desired))
@@ -133,7 +139,7 @@ def main():
                 mkdirs(ftp, backup + '/' + str(PurePosixPath(name).parent))
                 put_verified(ftp, backup + '/' + name, originals[name])
             mkdirs(ftp, root + '/' + str(PurePosixPath(name).parent))
-            put_verified(ftp, root + '/' + name + '.qdnco-upload', (Path('release') / name).read_bytes())
+            put_verified(ftp, root + '/' + name + '.qdnco-upload', (Path(artifact) / name).read_bytes())
         for name in sorted(changes, key=lambda n: (n == 'index.html', n.endswith('.html'), n)):
             # Refuse edits made while staging this deployment.
             current = get(ftp, root + '/' + name, optional=True)
@@ -143,8 +149,9 @@ def main():
             changed.append(name)
             if digest(get(ftp, root + '/' + name)) != desired[name]:
                 raise ValueError('Post-deploy file mismatch: ' + name)
-        for name in ['index.html', 'dubai/index.html']:
-            url = 'https://qdnco.com/' + ('' if name == 'index.html' else 'dubai/') + '?deploy=' + sha
+        for name in (public_paths or ['index.html', 'dubai/index.html']):
+            public_name = name if scope else ('' if name == 'index.html' else 'dubai/')
+            url = 'https://qdnco.com/' + (scope + '/' if scope else '') + public_name + '?deploy=' + sha
             request = urllib.request.Request(url, headers={'Cache-Control': 'no-cache', 'User-Agent': 'QDnCo-GitHub-Actions'})
             if digest(urllib.request.urlopen(request, timeout=60).read()) != desired[name]:
                 raise ValueError('Public HTTP verification failed: ' + name)

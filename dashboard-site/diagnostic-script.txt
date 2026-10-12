@@ -1,0 +1,9 @@
+QD n Co — 90-second personalised diagnostic framework
+
+0–15s: Name the actual developer/CP, city and one observable issue on their public landing page.
+15–40s: Show the exact friction: missing price context, location mismatch, unclear project fit or confusing enquiry path. Do not infer their CPL or conversion.
+40–65s: Show one concrete fix and how to test it.
+65–80s: Explain the metric: qualified enquiry, attended consultation or sales feedback—not clicks alone.
+80–90s: Offer the relevant free QDnCo guide and an optional conversation.
+
+This is a recording framework, not a sent message. Individual outreach remains subject to a defined recipient and authorization. No claimed audit findings without inspecting the actual page.

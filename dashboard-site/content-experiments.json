@@ -1,0 +1,38 @@
+[
+  {
+    "id": "EXP-01",
+    "market": "Bangalore CP",
+    "hook": "Cheap leads. Expensive follow-up.",
+    "destination": "https://qdnco.com/tools/real-estate-lead-cost-calculator.html?utm_source=community&utm_medium=organic&utm_campaign=leadgen_oct2026&utm_content=exp01",
+    "success_metric": "qualified enquiries",
+    "status": "prepared_not_published",
+    "test_rule": "One concept per post; no invented scarcity or outcome guarantee; compare equivalent observation windows."
+  },
+  {
+    "id": "EXP-02",
+    "market": "Chennai developer",
+    "hook": "Before more leads, define a good one.",
+    "destination": "https://qdnco.com/guides/real-estate-objection-handling-india.html?utm_source=community&utm_medium=organic&utm_campaign=leadgen_oct2026&utm_content=exp02",
+    "success_metric": "consultations attended",
+    "status": "prepared_not_published",
+    "test_rule": "One concept per post; no invented scarcity or outcome guarantee; compare equivalent observation windows."
+  },
+  {
+    "id": "EXP-03",
+    "market": "Dubai brokerage",
+    "hook": "A price objection needs a clearer comparison.",
+    "destination": "https://qdnco.com/guides/real-estate-objection-handling-dubai.html?utm_source=community&utm_medium=organic&utm_campaign=leadgen_oct2026&utm_content=exp03",
+    "success_metric": "guide-assisted enquiries",
+    "status": "prepared_not_published",
+    "test_rule": "One concept per post; no invented scarcity or outcome guarantee; compare equivalent observation windows."
+  },
+  {
+    "id": "EXP-04",
+    "market": "India developer",
+    "hook": "What did sales learn from last week\u2019s leads?",
+    "destination": "https://qdnco.com/guides/real-estate-objection-handling-india.html?utm_source=community&utm_medium=organic&utm_campaign=leadgen_oct2026&utm_content=exp04",
+    "success_metric": "sales-feedback completion",
+    "status": "prepared_not_published",
+    "test_rule": "One concept per post; no invented scarcity or outcome guarantee; compare equivalent observation windows."
+  }
+]

@@ -1,0 +1,33 @@
+name: Growth dashboard only
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: qdnco-production-main
+  cancel-in-progress: false
+jobs:
+  dashboard:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: https://qdnco.com/growth-status/
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - run: python3 -m unittest discover -s ci -p 'test_*.py'
+      - run: python3 ci/dashboard.py
+      - name: Refuse superseded main commit
+        run: |
+          current=$(git ls-remote https://github.com/QDnCo/qdnco-website.git refs/heads/main | cut -f1)
+          test "$current" = "$GITHUB_SHA"
+      - name: Deploy only growth-status with drift protection and rollback
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_REMOTE: ${{ secrets.FTP_REMOTE }}
+        run: python3 ci/dashboard.py --deploy

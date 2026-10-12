@@ -1,0 +1,38 @@
+{
+  "purpose": "Manual business-fit assessment for QDnCo, not a promised conversion model",
+  "fields": [
+    "company",
+    "official_website",
+    "market",
+    "developer_or_channel_partner",
+    "public_evidence_url",
+    "evidence_date",
+    "stated_marketing_need",
+    "project_launch_stage",
+    "consent_or_contact_provenance",
+    "owner_next_step"
+  ],
+  "criteria": [
+    {
+      "criterion": "Bangalore, Chennai or Dubai service fit",
+      "points": 2
+    },
+    {
+      "criterion": "Developer, CP or brokerage decision-making role verified",
+      "points": 2
+    },
+    {
+      "criterion": "Specific research/creative/lead-generation problem evidenced",
+      "points": 2
+    },
+    {
+      "criterion": "Budget and decision authority confirmed by prospect, not inferred",
+      "points": 2
+    },
+    {
+      "criterion": "Sales follow-up capacity and timing confirmed",
+      "points": 2
+    }
+  ],
+  "interpretation": "Use score for prioritisation only; missing facts stay unknown. No automated rejection of individuals, scraped audiences or messages."
+}
