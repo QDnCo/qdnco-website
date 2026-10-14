@@ -305,13 +305,14 @@
       "title": "X nine-post queue and graphics",
       "status": "Scheduled",
       "detail": "Nine posts recorded through October 24 at 10 AM IST; graphics added to October 3, 5 and 17.",
-      "next": "Verify actual publication before moving entries to completed.",
+      "next": "Restore X brand session in QDnCo Chrome, then inspect remaining native schedules before adding any posts.",
       "owner": "Agent",
       "url": "https://x.com/qdnco_official",
       "steps": [],
-      "checked": "2026-09-30",
-      "evidence": "Dated execution record; details retained locally",
-      "delivery_note": "Scheduled dates are recorded; delivery of elapsed posts has not been verified in this dashboard refresh."
+      "checked": "2026-10-14",
+      "evidence": "October 14 public profile screenshot and exact post links in delivery ledger",
+      "delivery_note": "October 14 Dubai launch post and October 7/10 posts visibly published. Remaining future dates are previously recorded schedules, not newly verified delivery.",
+      "access_note": "QDnCo Chrome X session is signed out; owner login required for native queue access."
     },
     {
       "id": "SOC-04",
@@ -706,13 +707,13 @@
       "stream": "Community & PR",
       "title": "Quora business profile",
       "status": "Completed",
-      "detail": "QDnCo Business Profile approved; posting access reconfirmed October 13. Three relevant answers published October 11–13.",
-      "next": "Continue useful answers under the one-answer-per-run queue and platform rules.",
+      "detail": "QDnCo Business Profile approved. Four relevant answers published October 11–14 with disclosed affiliation.",
+      "next": "Review unpublished queue entries after October 14; do not automatically publish beyond the queue window.",
       "owner": "Agent",
       "url": "https://www.quora.com/profile/QDnCo",
       "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "October 13 community run: QDnCo byline, full published answer, permalink and screenshot verified."
+      "checked": "2026-10-14",
+      "evidence": "October 14 community queue: four published permalinks and visible publication evidence recorded."
     },
     {
       "id": "COM-03",
@@ -893,7 +894,7 @@
       "stream": "Knowledge & operations",
       "title": "SEO knowledge bank",
       "status": "In progress",
-      "detail": "Prior196 caption records and two full carousels retained. Latest21 visible saved tiles inventoried,19 absent from the prior inventory. Relevant caption lessons validated and mapped to actions; full saved-video review remains incomplete.",
+      "detail": "Prior196 caption records and two full carousels retained. Latest21 visible saved tiles inventoried,19 absent from the prior inventory. Relevant caption lessons validated and mapped to actions; full saved-video review remains incomplete. One additional tool assessed from sampled reel frames and official product documentation; full audio coverage remains pending.",
       "next": "Continue remaining collection pagination and full-media review; validate claims before implementation.",
       "owner": "Agent",
       "url": "",
@@ -975,13 +976,13 @@
       "stream": "Knowledge & operations",
       "title": "Completion-time dashboard updates",
       "status": "Completed",
-      "detail": "GitHub-only dashboard delivery is operational. Workflow 38303056617 succeeded; all six public dashboard file hashes were independently verified.",
+      "detail": "GitHub-only dashboard delivery is operational. Latest verified release 21fe92e passed guarded deployment and all six live file hash checks.",
       "next": "Reconcile meaningful verified outcomes and dispatch the scoped GitHub workflow.",
       "owner": "Agent",
       "url": "https://qdnco.com/growth-status/",
       "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "October 13: commit c1e1389, workflow 38303056617, six live SHA-256 matches."
+      "checked": "2026-10-14",
+      "evidence": "October 14: workflow 38520355908 succeeded; six-file release verified. Subsequent reconciliation is not counted as deployed until checked."
     },
     {
       "id": "WEB-10",
@@ -1105,7 +1106,7 @@
       "name": "Quora",
       "priority": "Priority 1",
       "role": "Answer specific buyer, broker and marketing questions with disclosed affiliation.",
-      "state": "Business profile approved; two answers published October 11 and 12",
+      "state": "Business profile approved; four answers published October 11–14",
       "url": "https://www.quora.com/profile/QDnCo"
     },
     {
@@ -1284,7 +1285,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-14T06:07:08.764785+00:00",
-  "reconciliation_note": "October 14: verified community outcomes retained. Necessary directory support requests sent after self-service checks; all three listings remain unresolved and await platform action. AI visibility audit added; partial indexing and sampled omissions remain in progress, not a confirmed delisting.",
-  "updated_at": "2026-10-14T06:07:08.793712+00:00"
+  "reconciled_at": "2026-10-14T12:23:18.735118+00:00",
+  "reconciliation_note": "October 14: four Quora answers verified, X delivery verified with future scheduling access pending. Saved-media review remains incomplete. Directory support outcomes remain waiting; no ranking or publication inferred from submission.",
+  "updated_at": "2026-10-14T12:23:18.762887+00:00"
 }
