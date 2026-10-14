@@ -508,14 +508,14 @@
       "id": "DIR-01",
       "stream": "Directories",
       "title": "Bing Places",
-      "status": "Waiting",
-      "detail": "October 13 authenticated dashboard still shows Pending publish. September 30 submission is 13 calendar days old, beyond the stated 7–12 day window; no rejection or error is displayed.",
-      "next": "Monitor existing record and assess overdue support follow-up in separately authorized platform work. Do not resubmit or create a duplicate.",
-      "owner": "Bing",
+      "status": "Owner action",
+      "detail": "Bing remains verified but Pending publish on October 14, 14 calendar days after submission. The stated 7–12 day window has passed. Support escalation is drafted, not sent.",
+      "next": "Approve the prepared support message. Retain the existing listing; do not resubmit.",
+      "owner": "Owner",
       "url": "https://www.bing.com/forbusiness/singleEntity?setlang=en&bizid=9486ec83-1da7-4e3a-b725-05dafd27d8e9&sc=5",
       "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "October 13 listing monitor: authenticated dashboard and screenshot. Publication remains unverified.",
+      "checked": "2026-10-14",
+      "evidence": "October 14 authenticated listing checks and prepared recovery requests; publication remains unverified.",
       "url_label": "Existing Bing listing · sign-in required"
     },
     {
@@ -603,28 +603,28 @@
       "id": "DIR-08",
       "stream": "Directories",
       "title": "Crunchbase public recovery",
-      "status": "Waiting",
-      "detail": "Organization submitted; October 12 submitted URL still displays Page not found. Account agreement remains unaccepted; support resolution and publication remain unverified.",
-      "next": "Recover the submitted record; do not create another organization.",
-      "owner": "Crunchbase",
+      "status": "Owner action",
+      "detail": "Existing organization remains unresolved. October 14 access requires session verification; the support thread has acknowledgement only. A reply is drafted, not sent.",
+      "next": "Complete the open Crunchbase session verification and approve the prepared support reply. Recover the existing record.",
+      "owner": "Owner",
       "url": "https://www.crunchbase.com/organization/e20ca7c5-f19d-47b6-bf29-1b80b6ca8101",
       "steps": [],
-      "checked": "2026-10-12",
-      "evidence": "October 12 listing follow-up: submitted URL inspected. Business mailbox sign-in expired, so support replies could not be checked.",
+      "checked": "2026-10-14",
+      "evidence": "October 14 authenticated listing checks and prepared recovery requests; publication remains unverified.",
       "url_label": "Submitted record · publication unverified"
     },
     {
       "id": "DIR-09",
       "stream": "Directories",
       "title": "Justdial dashboard recovery",
-      "status": "Waiting",
-      "detail": "Registration, categories, logo and daily hours saved; support ticket closed without proof of a fix.",
-      "next": "Recheck existing listing access and obtain the exact public URL.",
-      "owner": "Justdial",
+      "status": "Owner action",
+      "detail": "Existing support ticket remains closed without verified editing access or a public listing URL. A recovery form is prepared, not submitted.",
+      "next": "Approve submission of the prepared recovery request for the existing listing; do not create a duplicate.",
+      "owner": "Owner",
       "url": "https://cs.justdial.com/csportal/?source=77&type=user",
       "steps": [],
-      "checked": "2026-10-12",
-      "evidence": "October 12 listing follow-up: support ticket remains closed with no public listing URL or confirmed editor recovery.",
+      "checked": "2026-10-14",
+      "evidence": "October 14 authenticated listing checks and prepared recovery requests; publication remains unverified.",
       "url_label": "Existing Justdial support portal"
     },
     {
@@ -713,17 +713,14 @@
       "id": "COM-03",
       "stream": "Community & PR",
       "title": "Reddit account",
-      "status": "Owner action",
-      "detail": "Owner explicitly rejected the existing Reddit identity and requested a new QDnCo-branded account on October 14. Old session logged out; email signup prepared. New account is not yet created.",
-      "next": "Owner completes the signup agreement, password and any verification. Then brand the profile and check community eligibility before posting.",
-      "owner": "Owner",
-      "url": "https://www.reddit.com/",
-      "steps": [
-        "Complete the open Reddit email signup in business Chrome.",
-        "Choose an available QDnCo-branded username and finish verification."
-      ],
+      "status": "In progress",
+      "detail": "Owner-created u/qdnco verified. Logo, QDnCo banner, descriptive bio and website link are visible. Introductory profile post published and pinned. Lead-qualification schedule submitted for October 16 10:00 IST; persistence still unverified.",
+      "next": "Verify the submitted schedule before any retry. Check community rules and new-account eligibility before participation.",
+      "owner": "Agent",
+      "url": "https://www.reddit.com/user/qdnco/",
+      "steps": [],
       "checked": "2026-10-14",
-      "evidence": "runs/2026-10-14-growth-recovery/reddit-signup-handoff.png"
+      "evidence": "runs/2026-10-14-growth-recovery/reddit-profile-banner.png"
     },
     {
       "id": "COM-04",
@@ -787,13 +784,13 @@
       "stream": "Community & PR",
       "title": "Community answer queue",
       "status": "In progress",
-      "detail": "Three of seven prepared answers published: lead qualification, lead nurturing and performance metrics. Four remain queued; three are due. Queue dates are not native platform schedules. Reddit access remains unverified.",
-      "next": "Check a relevant existing question and current rules for the next item; publish at most one answer per run through October 14.",
+      "detail": "Four of seven answers published on Quora with affiliation disclosures. Three remain unpublished. October 14 objection-handling answer verified by permalink and screenshot. Queue dates are not native schedules.",
+      "next": "After October 14 mark remaining three items for review and pause the answer-queue automation; no automatic publishing beyond the approved window.",
       "owner": "Agent",
-      "url": "https://www.quora.com/Which-metrics-matter-the-most-in-real-estate-performance-marketing/answer/QDnCo",
+      "url": "https://www.quora.com/Are-there-any-other-objections-you-commonly-hear-from-real-estate-buyers-or-sellers-What-are-they-How-do-you-typically-handle-them/answer/QDnCo",
       "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "October 13 community check: OB-06 published with affiliation disclosure, hypothetical figures labelled, and no external link. Final copy and visible proof saved.",
+      "checked": "2026-10-14",
+      "evidence": "runs/2026-10-14-community-answer-check/quora-answer-published.png",
       "url_label": "Read the latest published answer"
     },
     {
@@ -1110,8 +1107,8 @@
       "name": "Reddit / Reddit Pro",
       "priority": "Priority 1",
       "role": "Listen and answer relevant questions; subreddit rules govern links and promotion.",
-      "state": "CAPTCHA gate",
-      "url": "https://support.reddithelp.com/hc/en-us/articles/24368510335892-What-is-Reddit-Pro"
+      "state": "u/qdnco verified; logo, banner, bio, website link and pinned introduction live; schedule verification pending",
+      "url": "https://www.reddit.com/user/qdnco/"
     },
     {
       "name": "Trustpilot",
@@ -1124,8 +1121,8 @@
       "name": "Medium",
       "priority": "Priority 2",
       "role": "Useful standalone articles; canonical attribution for republished website content.",
-      "state": "Terms gate",
-      "url": "https://help.medium.com/hc/en-us/articles/214550207-Importing-a-post-to-Medium"
+      "state": "Branded profile; two articles published",
+      "url": "https://medium.com/@qdnco01"
     },
     {
       "name": "Substack / Notes",
@@ -1138,8 +1135,8 @@
       "name": "Threads",
       "priority": "Priority 2",
       "role": "Short practical ideas and conversations linked to the brand Instagram identity.",
-      "state": "Brand sign-in requires owner completion",
-      "url": "https://www.threads.com/"
+      "state": "Branded profile; first post published; next post scheduled October 16 10:00 IST",
+      "url": "https://www.threads.com/@qdnco.official"
     },
     {
       "name": "Pinterest",
@@ -1187,7 +1184,7 @@
       "name": "Bing Places",
       "priority": "Priority 1",
       "role": "One accurate local business record; no duplicate citations.",
-      "state": "Publication pending",
+      "state": "Publication overdue; support draft awaiting approval",
       "url": "https://www.bingplaces.com/"
     },
     {
@@ -1236,7 +1233,7 @@
       "name": "Crunchbase",
       "priority": "Entity support",
       "role": "Accurate company facts; not a forum or a guaranteed ranking source.",
-      "state": "Submitted record unresolved",
+      "state": "Session verification and support-reply approval needed",
       "url": "https://www.crunchbase.com/"
     },
     {
@@ -1282,7 +1279,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-14",
-  "reconciliation_note": "Added verified live form delivery, website fixes and GBP schedules. Instagram full-media review and rankings remain unfinished; no pending submission promoted to published.",
-  "updated_at": "2026-10-14T04:02:39.883575+00:00"
+  "reconciled_at": "2026-10-14T05:11:09.449217+00:00",
+  "reconciliation_note": "October 14 evidence reconciled: Reddit banner and pinned introduction verified; four Quora answers published; three directory recovery requests prepared but not sent. Unverified schedules and platform publication remain incomplete.",
+  "updated_at": "2026-10-14T05:11:11.989461+00:00"
 }
