@@ -169,13 +169,13 @@
       "stream": "Search & measurement",
       "title": "Current search scoreboard",
       "status": "In progress",
-      "detail": "October 13: 28-day Web report for September 13–October 10 shows 40 clicks, 788 impressions, 5.1% CTR and average position 11. Overview shows 45 indexed pages and 95 not indexed. These are visibility measurements, not proof of the cause of reduced lead intake.",
+      "detail": "October 14 Search Console comparison: last seven days 8 clicks, 352 impressions, 2.3% CTR, average position 10.5; previous seven days 11 clicks, 331 impressions, 3.3% CTR, position 10.9. This does not establish the cause of reduced enquiries or total website traffic.",
       "next": "Prioritise useful service/guide pages; inspect crawl readiness and content quality before requesting indexing.",
       "owner": "Agent",
       "url": "https://search.google.com/search-console",
       "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "runs/2026-10-13-growth-recovery/gsc-28-day.png; gsc-28-day-baseline.txt",
+      "checked": "2026-10-14",
+      "evidence": "runs/2026-10-14-growth-recovery/gsc-week-comparison.txt",
       "url_label": "Search Console · sign-in required"
     },
     {
@@ -354,15 +354,15 @@
       "stream": "Social content",
       "title": "Google Business posts",
       "status": "Scheduled",
-      "detail": "October 3 and 5 posts retained; new October 8, 12 and 15 posts scheduled.",
-      "next": "Confirm delivery in GBP.",
+      "detail": "GBP shows the Chennai update published and existing Dubai update scheduled for October15. New CRM handoff and campaign-scope updates are confirmed scheduled for October17 and20 at10:00.",
+      "next": "Verify delivery after each date; scheduled posts are not published posts.",
       "owner": "Agent",
       "url": "https://business.google.com/",
       "steps": [],
-      "checked": "2026-09-30",
-      "evidence": "Dated execution record; details retained locally",
+      "checked": "2026-10-14",
+      "evidence": "October14 owner dashboard and saved scheduling proof",
       "url_label": "Google Business Profile · verify delivery",
-      "delivery_note": "Scheduled dates are recorded; delivery of elapsed posts has not been verified in this dashboard refresh."
+      "delivery_note": "Published and scheduled states checked separately in the authenticated owner dashboard."
     },
     {
       "id": "SOC-08",
@@ -714,30 +714,29 @@
       "stream": "Community & PR",
       "title": "Reddit account",
       "status": "Owner action",
-      "detail": "October 2 check shows Reddit signed out. Earlier signup/CAPTCHA remains unresolved; no completed eligible account is verified.",
-      "next": "Complete the existing registration or sign in to the brand account; do not create a duplicate.",
+      "detail": "Owner explicitly rejected the existing Reddit identity and requested a new QDnCo-branded account on October 14. Old session logged out; email signup prepared. New account is not yet created.",
+      "next": "Owner completes the signup agreement, password and any verification. Then brand the profile and check community eligibility before posting.",
       "owner": "Owner",
       "url": "https://www.reddit.com/",
       "steps": [
-        "Open Reddit and sign in if the account already exists.",
-        "If registration is unfinished, resume it and complete any password step yourself.",
-        "For a CAPTCHA or displayed agreement, complete it yourself or provide the specific required confirmation."
+        "Complete the open Reddit email signup in business Chrome.",
+        "Choose an available QDnCo-branded username and finish verification."
       ],
-      "checked": "2026-10-03",
-      "evidence": "October 3 community check: Quora review notice unchanged; Reddit signed out. No posting access confirmed."
+      "checked": "2026-10-14",
+      "evidence": "runs/2026-10-14-growth-recovery/reddit-signup-handoff.png"
     },
     {
       "id": "COM-04",
       "stream": "Community & PR",
       "title": "Medium free profile",
       "status": "Completed",
-      "detail": "Existing Medium account branded with QDnCo logo, current services and qdnco.com link. Original five-stage real estate lead-quality article publicly published and verified.",
+      "detail": "QDnCo profile branded; two original articles published. The October 14 article explains how to compare a real estate marketing agency’s scope, campaign count, creative allowance, fees and lead handoff.",
       "next": "Measure referral visits and useful reader responses; maintain factual original content.",
       "owner": "Agent",
-      "url": "https://medium.com/@qdnco01/before-you-increase-your-real-estate-ad-budget-audit-these-five-lead-stages-5b300dd84414",
+      "url": "https://medium.com/@qdnco01/what-to-ask-before-hiring-a-real-estate-marketing-agency-6606810cc0cd",
       "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "runs/2026-10-13-growth-recovery/medium-published.png and medium-profile.png"
+      "checked": "2026-10-14",
+      "evidence": "runs/2026-10-14-growth-recovery/medium-published.png"
     },
     {
       "id": "COM-05",
@@ -892,13 +891,13 @@
       "stream": "Knowledge & operations",
       "title": "SEO knowledge bank",
       "status": "In progress",
-      "detail": "196 caption records across 13 topic collections saved; two complete carousels visually reviewed (four-slide positioning and nine-slide SEO workflow). Knowledge banks distinguish useful advice from unsupported claims. Full saved-video/all-collection review remains incomplete.",
+      "detail": "Prior196 caption records and two full carousels retained. Latest21 visible saved tiles inventoried,19 absent from the prior inventory. Relevant caption lessons validated and mapped to actions; full saved-video review remains incomplete.",
       "next": "Continue remaining collection pagination and full-media review; validate claims before implementation.",
       "owner": "Agent",
       "url": "",
       "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "Roadmap knowledge banks and runs/2026-10-13-growth-recovery/INSTAGRAM-APPLICATION.md",
+      "checked": "2026-10-14",
+      "evidence": "Private roadmap knowledge-bank review ledgers; no private source transcripts exposed.",
       "access_note": "Private research task. Saved collections and source transcripts remain local and are not exposed on this shareable page."
     },
     {
@@ -1283,7 +1282,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-13T04:59:33Z",
-  "reconciliation_note": "October 13: third Quora answer verified, Bing overdue pending distinguished from rejection, and full-media research coverage clarified. Existing completed work and remaining gates preserved.",
-  "updated_at": "2026-10-13T05:00:25.656359+00:00"
+  "reconciled_at": "2026-10-14",
+  "reconciliation_note": "Added verified live form delivery, website fixes and GBP schedules. Instagram full-media review and rankings remain unfinished; no pending submission promoted to published.",
+  "updated_at": "2026-10-14T04:02:39.883575+00:00"
 }
