@@ -288,16 +288,17 @@
       "id": "SOC-02",
       "stream": "Social content",
       "title": "Instagram and Facebook five-post queue",
-      "status": "Scheduled",
-      "detail": "Facebook and Instagram posts dated October 2, 5, 8 and 11 are verified in the Published grid. October 14 remains scheduled on both platforms.",
-      "next": "Check delivery after each date. Recorded Meta display times were not independently timezone-verified.",
+      "status": "Completed",
+      "detail": "Five-post October 2–14 queue delivered to Facebook and Instagram. Earlier four dates were verified in the October 12 Published grid; October 14 Dubai post is now publicly verified on both platforms.",
+      "next": "Restore native QDnCo brand access before preparing additional schedules; avoid duplicate posts.",
       "owner": "Agent",
       "url": "https://business.facebook.com/latest/home?asset_id=1005599139307013&business_id=1005601885973405",
       "steps": [],
-      "checked": "2026-10-12",
-      "evidence": "2026-10-12-growth-recovery/meta-published.json; authenticated Scheduled grid",
+      "checked": "2026-10-14",
+      "evidence": "October 14 Instagram DeeeQMJD4kC and Facebook photo 122126758341125510; visible full captions and publication screenshots retained.",
       "url_label": "Meta Business Suite · verify delivery",
-      "delivery_note": "October 2, 5, 8 and 11 delivery was verified in the October 12 execution record; October 14 is still scheduled."
+      "delivery_note": "October 14 public URLs: https://www.instagram.com/qdnco.official/p/DeeeQMJD4kC/ and https://www.facebook.com/photo/?fbid=122126758341125510",
+      "access_note": "Existing Meta brand-access blocker remains; public delivery does not establish administrative access."
     },
     {
       "id": "SOC-03",
@@ -789,14 +790,14 @@
       "id": "COM-08",
       "stream": "Community & PR",
       "title": "Community answer queue",
-      "status": "In progress",
-      "detail": "Four of seven answers published on Quora with affiliation disclosures. Three remain unpublished. October 14 objection-handling answer verified by permalink and screenshot. Queue dates are not native schedules.",
-      "next": "After October 14 mark remaining three items for review and pause the answer-queue automation; no automatic publishing beyond the approved window.",
+      "status": "Waiting",
+      "detail": "October 2–14 queue closed. Four answers published on Quora; three unpublished entries retained for review. The expired answer-queue automation is paused. Queue dates were not native schedules.",
+      "next": "Review the three unused topics before any newly authorized publication plan; preserve existing published answers and avoid duplicates.",
       "owner": "Agent",
       "url": "https://www.quora.com/Are-there-any-other-objections-you-commonly-hear-from-real-estate-buyers-or-sellers-What-are-they-How-do-you-typically-handle-them/answer/QDnCo",
       "steps": [],
-      "checked": "2026-10-14",
-      "evidence": "runs/2026-10-14-community-answer-check/quora-answer-published.png",
+      "checked": "2026-10-15",
+      "evidence": "Queue expiry reconciliation: OB-03, OB-04 and OB-05 marked needs_review; automation pause confirmed.",
       "url_label": "Read the latest published answer"
     },
     {
@@ -1287,5 +1288,5 @@
   ],
   "reconciled_at": "2026-10-14T12:23:18.735118+00:00",
   "reconciliation_note": "October 14: four Quora answers verified, X delivery verified with future scheduling access pending. Saved-media review remains incomplete. Directory support outcomes remain waiting; no ranking or publication inferred from submission.",
-  "updated_at": "2026-10-14T12:23:18.762887+00:00"
+  "updated_at": "2026-10-14T22:23:52.982430+00:00"
 }
