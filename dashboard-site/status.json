@@ -181,15 +181,20 @@
     {
       "id": "SEO-05",
       "stream": "Search & measurement",
-      "title": "Four-engine AI-search baseline",
+      "title": "AI recommendation visibility: six-engine audit",
       "status": "In progress",
-      "detail": "October 13 authenticated Google generative AI features report shows 183 impressions for September 13–October 10. Homepage 72 and Dubai Trakheesi guide 63 page impressions shown. This is Google AI-feature exposure, not proof of brand recommendations or visibility in other AI engines.",
-      "next": "Retain dated Google baseline and complete separate fixed-prompt checks for ChatGPT, Perplexity, Gemini and Claude; track citations separately from mentions.",
+      "detail": "October 14: Google AI report shows 183 impressions (September 13–October 10). Direct Bangalore search samples in ChatGPT, Perplexity and Claude omitted QDnCo. No blanket delisting established. Outdated homepage pricing metadata and About creative allowance corrected through GitHub; live file hashes match.",
+      "next": "Complete and repeat the fixed-query engine matrix; resolve priority indexing gaps and improve attributable campaign evidence. Distinguish citations, mentions and recommendations.",
       "owner": "Agent",
       "url": "https://www.perplexity.ai/",
-      "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "runs/2026-10-13-growth-recovery/gsc-ai-features-28-day.png and text observation",
+      "steps": [
+        "Audit all eight requested query families across six engines with dates and search mode.",
+        "Track Google indexing: 45 indexed; 87 discovered but not indexed; two crawled exclusions as of October 9.",
+        "Preserve existing URLs and crawl access; no manual actions or security issues reported.",
+        "Build stronger public case evidence without invented results or ranking claims."
+      ],
+      "checked": "2026-10-14",
+      "evidence": "October 14 AI visibility audit; GitHub commit 961bd60; authenticated Google report and saved engine answers",
       "url_label": "Perplexity · baseline remains incomplete"
     },
     {
@@ -508,14 +513,14 @@
       "id": "DIR-01",
       "stream": "Directories",
       "title": "Bing Places",
-      "status": "Owner action",
-      "detail": "Bing remains verified but Pending publish on October 14, 14 calendar days after submission. The stated 7–12 day window has passed. Support escalation is drafted, not sent.",
-      "next": "Approve the prepared support message. Retain the existing listing; do not resubmit.",
-      "owner": "Owner",
+      "status": "Waiting",
+      "detail": "Verified listing remains Pending publish beyond the stated 7–12 days. Official support inquiry sent after checking self-service controls.",
+      "next": "Await written diagnosis/publication or a specific correction request; do not resubmit.",
+      "owner": "Bing",
       "url": "https://www.bing.com/forbusiness/singleEntity?setlang=en&bizid=9486ec83-1da7-4e3a-b725-05dafd27d8e9&sc=5",
       "steps": [],
       "checked": "2026-10-14",
-      "evidence": "October 14 authenticated listing checks and prepared recovery requests; publication remains unverified.",
+      "evidence": "October 14 signed-in self-service checks and verified support submission; no publication or recovery claimed.",
       "url_label": "Existing Bing listing · sign-in required"
     },
     {
@@ -603,28 +608,28 @@
       "id": "DIR-08",
       "stream": "Directories",
       "title": "Crunchbase public recovery",
-      "status": "Owner action",
-      "detail": "Existing organization remains unresolved. October 14 access requires session verification; the support thread has acknowledgement only. A reply is drafted, not sent.",
-      "next": "Complete the open Crunchbase session verification and approve the prepared support reply. Recover the existing record.",
-      "owner": "Owner",
+      "status": "Waiting",
+      "detail": "Login restored, but submitted organization URL still says Page not found and company association search finds no QDnCo record. Recovery reply sent on existing case.",
+      "next": "Await recovery of the original company URL and editing access, then complete the verified profile and assets.",
+      "owner": "Crunchbase",
       "url": "https://www.crunchbase.com/organization/e20ca7c5-f19d-47b6-bf29-1b80b6ca8101",
       "steps": [],
       "checked": "2026-10-14",
-      "evidence": "October 14 authenticated listing checks and prepared recovery requests; publication remains unverified.",
+      "evidence": "October 14 signed-in self-service checks and verified support submission; no publication or recovery claimed.",
       "url_label": "Submitted record · publication unverified"
     },
     {
       "id": "DIR-09",
       "stream": "Directories",
       "title": "Justdial dashboard recovery",
-      "status": "Owner action",
-      "detail": "Existing support ticket remains closed without verified editing access or a public listing URL. A recovery form is prepared, not submitted.",
-      "next": "Approve submission of the prepared recovery request for the existing listing; do not create a duplicate.",
-      "owner": "Owner",
+      "status": "Waiting",
+      "detail": "Existing listing access remains unresolved. New recovery request accepted, referencing the earlier closed case; email resolution requested.",
+      "next": "Await canonical public listing URL and free owner editing access; verify both before marking recovered.",
+      "owner": "Justdial",
       "url": "https://cs.justdial.com/csportal/?source=77&type=user",
       "steps": [],
       "checked": "2026-10-14",
-      "evidence": "October 14 authenticated listing checks and prepared recovery requests; publication remains unverified.",
+      "evidence": "October 14 signed-in self-service checks and verified support submission; no publication or recovery claimed.",
       "url_label": "Existing Justdial support portal"
     },
     {
@@ -1184,7 +1189,7 @@
       "name": "Bing Places",
       "priority": "Priority 1",
       "role": "One accurate local business record; no duplicate citations.",
-      "state": "Publication overdue; support draft awaiting approval",
+      "state": "Publication overdue; official support inquiry sent",
       "url": "https://www.bingplaces.com/"
     },
     {
@@ -1233,7 +1238,7 @@
       "name": "Crunchbase",
       "priority": "Entity support",
       "role": "Accurate company facts; not a forum or a guaranteed ranking source.",
-      "state": "Session verification and support-reply approval needed",
+      "state": "Login restored; missing company record awaiting support recovery",
       "url": "https://www.crunchbase.com/"
     },
     {
@@ -1279,7 +1284,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-14T05:11:09.449217+00:00",
-  "reconciliation_note": "October 14 evidence reconciled: Reddit banner and pinned introduction verified; four Quora answers published; three directory recovery requests prepared but not sent. Unverified schedules and platform publication remain incomplete.",
-  "updated_at": "2026-10-14T05:11:11.989461+00:00"
+  "reconciled_at": "2026-10-14T06:07:08.764785+00:00",
+  "reconciliation_note": "October 14: verified community outcomes retained. Necessary directory support requests sent after self-service checks; all three listings remain unresolved and await platform action. AI visibility audit added; partial indexing and sampled omissions remain in progress, not a confirmed delisting.",
+  "updated_at": "2026-10-14T06:07:08.793712+00:00"
 }
