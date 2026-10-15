@@ -361,13 +361,13 @@
       "stream": "Social content",
       "title": "Google Business posts",
       "status": "Scheduled",
-      "detail": "GBP shows the Chennai update published and existing Dubai update scheduled for October15. New CRM handoff and campaign-scope updates are confirmed scheduled for October17 and20 at10:00.",
+      "detail": "GBP Chennai and October 15 Dubai buyer-fit updates are published. CRM handoff and campaign-scope updates remain scheduled for October 17 and 20 at 10:00.",
       "next": "Verify delivery after each date; scheduled posts are not published posts.",
       "owner": "Agent",
       "url": "https://business.google.com/",
       "steps": [],
-      "checked": "2026-10-14",
-      "evidence": "October14 owner dashboard and saved scheduling proof",
+      "checked": "2026-10-15",
+      "evidence": "Refreshed native GBP posts panel: Dubai update Published 1 hour ago; October 17 and 20 still Scheduled. Screenshot and snapshot retained.",
       "url_label": "Google Business Profile · verify delivery",
       "delivery_note": "Published and scheduled states checked separately in the authenticated owner dashboard."
     },
@@ -765,12 +765,13 @@
       "title": "Threads brand account",
       "status": "Completed",
       "detail": "QDnCo Threads account authenticated; service bio and official website link saved. First lead-quality post visibly published.",
-      "next": "Review engagement before scheduling the next useful post.",
+      "next": "Verify the campaign-scope post after October 16 at 10:00 IST; do not duplicate its confirmed native schedule.",
       "owner": "Agent",
       "url": "https://www.threads.com/@qdnco.official/post/DeZ6SXEj4Xu",
       "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "runs/2026-10-13-growth-recovery/threads-published.png"
+      "checked": "2026-10-15",
+      "evidence": "Original post permalink retained; October 15 native schedule screenshot and snapshot in growth-recovery records.",
+      "delivery_note": "Native Drafts panel confirms campaign-scope post scheduled for October 16, 10:00 GMT+5:30. Not yet published."
     },
     {
       "id": "COM-07",
@@ -1288,5 +1289,5 @@
   ],
   "reconciled_at": "2026-10-14T12:23:18.735118+00:00",
   "reconciliation_note": "October 14: four Quora answers verified, X delivery verified with future scheduling access pending. Saved-media review remains incomplete. Directory support outcomes remain waiting; no ranking or publication inferred from submission.",
-  "updated_at": "2026-10-14T22:23:52.982430+00:00"
+  "updated_at": "2026-10-15T12:27:29.393772+00:00"
 }
