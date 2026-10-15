@@ -3695,6 +3695,48 @@ video {
   }
 }
 </style>
+<style id="ui-p0">
+/* UI audit P0 (docs/UI-AUDIT.md): text floor, tap targets, mobile nav affordance.
+   Kept as one override block so the generated styles and hydrated inline styles are untouched. */
+.metrics-attribution,
+.hero-light .metrics-attribution,
+.intro-metrics-note,
+.project-source-note { font-size: 0.75rem !important; }
+.rounded-md.font-body.font-light,
+.font-body.font-light.min-w-0,
+.rounded-lg .font-body.font-light.mt-0\.5 { font-size: 0.8125rem !important; font-weight: 400 !important; }
+.project-source-note { font-weight: 400 !important; }
+@media (max-width: 1279px) {
+  .hero-light-stat .tracking-widest,
+  .hero-light-stats-row .hero-light-stat > div:last-child,
+  .intro-stat-k,
+  .intro-member-role { font-size: 0.75rem !important; }
+}
+@media (max-width: 767px), (pointer: coarse) {
+  a.font-body.font-light.inline-flex,
+  a.font-body.font-light.transition-opacity,
+  a.font-body.inline-flex.items-center,
+  a.footer-chip,
+  a.region-cta.is-compact,
+  a.shrink-0.transition-opacity { min-height: 44px !important; align-items: center; }
+  a.font-body.font-light.inline-flex,
+  a.shrink-0.transition-opacity { display: inline-flex; }
+  button.theme-switch.is-compact { position: relative; }
+  button.theme-switch.is-compact::after { content: ""; position: absolute; inset: -8px -4px; }
+  a.shrink-0.transition-opacity { min-width: 44px; justify-content: center; }
+  button.mt-4.rounded-full, button.is-on { min-height: 44px !important; }
+  .vyostra-badge { position: relative; }
+  .vyostra-badge::after { content: ""; position: absolute; inset: -16px -8px; }
+  footer a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+@media (max-width: 1099px) {
+  nav.nav-mobile .overflow-x-auto {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+            mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+    scroll-snap-type: x proximity;
+  }
+}
+</style>
 </head>
 <body>
 <script>
