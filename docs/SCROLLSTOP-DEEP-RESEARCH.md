@@ -332,7 +332,7 @@ Pricing stays on `/pricing/` with a text link from section 4 or 6.
 
 1. **Dark vs light.** Scroll Stop's look depends on a dark canvas. QDnCo is light on the hero. Switching to dark is a brand decision, not a CSS tweak. *Needs your call.*
 2. **Single-action funnel vs pricing visibility.** Their approach filters leads by hiding price. QDnCo already ranks for pricing queries. Hiding it could cost traffic. Recommendation: keep `/pricing/`, de-emphasise it on home.
-3. **SEO regression.** Collapsing 12 sections into 7 can delete indexable text and internal links. Move text to the secondary pages, do not delete it, and re-run `audit-seo.mjs` and `audit-links.mjs`.
+3. **SEO regression.** Collapsing 12 sections into 7 can delete indexable text and internal links. Move text to the secondary pages, do not delete it, and re-run `scripts/audit/audit-seo.mjs` and `scripts/audit/audit-links.mjs`.
 4. **Two build paths.** Home and `/dubai/` are React-prerendered, the other ~125 pages are static shells. A redesign must update both systems or the mismatch in `UI-AUDIT.md` gets worse.
 5. **Qualification thresholds.** The contact page only works with real numbers. Rs 10L/month is Scroll Stop's number. QDnCo needs its own floor, and for Dubai a separate AED threshold.
 6. **Video weight.** Their 6 `.webm` loops are small. Keep QDnCo's reel under a fixed budget (for example 6 clips, under 400 KB each, `preload="none"`, play on viewport).
@@ -344,7 +344,7 @@ Pricing stays on `/pricing/` with a text link from section 4 or 6.
 1. Decide dark vs light and the single accent colour (risk 1).
 2. Define the outcome metric for the H1 and the four stats (A6, A9).
 3. Write the tokens from section 8 into the shared stylesheet and migrate the home page and `/dubai/` first.
-4. Rebuild home to the 7-section structure behind a branch, then diff with `audit-seo.mjs`, `audit-responsive.mjs`, `audit-touch.mjs`.
+4. Rebuild home to the 7-section structure behind a branch, then diff with `scripts/audit/audit-seo.mjs`, `scripts/audit/audit-responsive.mjs`, `scripts/audit/audit-touch.mjs`.
 5. Re-run `/design-review` and `/qa` on `/` and `/dubai/` before merging.
 
 If useful, the next artifact is a one-page wireframe of the 7 sections at 1440 and 390 with real QDnCo copy slots, via `/design-shotgun` or `/design-html`.

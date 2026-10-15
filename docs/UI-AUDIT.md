@@ -218,7 +218,7 @@ This is the biggest page-speed win and has no visual effect.
 5. **Hero and service cards** (P1-3 to P1-5): needs design sign-off.
 6. **Scale clean-up and secondary-page header/footer alignment** (P2-1, P2-4): do last, touches many files.
 
-Where the homepage CSS lives: it is generated, not hand-edited. The page is built from `src/` and the generator scripts at the repo root (`prerender.mjs`, `build-dist.mjs`, `site-shell.mjs`, `_jsx-source/`) and then copied into `site/`. Change the source and regenerate, or edit `site/index.html` and `site/dubai/index.html` directly and keep the two in step. Confirm with the team which route is current, because editing only `site/` can be overwritten by the next regeneration.
+Where the homepage CSS lives: it is generated, not hand-edited. The page is built from `src/` and the generator scripts in `scripts/` (`scripts/build/prerender.mjs`, `scripts/build/build-dist.mjs`, `scripts/generate/site-shell.mjs`, `_jsx-source/`) and then copied into `site/`. Change the source and regenerate, or edit `site/index.html` and `site/dubai/index.html` directly and keep the two in step. Confirm with the team which route is current, because editing only `site/` can be overwritten by the next regeneration.
 
 ---
 

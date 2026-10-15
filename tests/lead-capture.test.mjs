@@ -4,7 +4,7 @@ import vm from 'node:vm'
 import test from 'node:test'
 import ts from 'typescript'
 
-const backend = fs.readFileSync(new URL('../lead-backend.gs', import.meta.url), 'utf8')
+const backend = fs.readFileSync(new URL('../apps-script/lead-backend.gs', import.meta.url), 'utf8')
 const client = fs.readFileSync(new URL('../public/js/lead-capture.js', import.meta.url), 'utf8')
 const base = { name: 'Local test', phone: '+91 90000 00000', project: 'TEST ONLY', catchment: 'Bengaluru', budget: 'Not decided yet', page: 'https://qdnco.com/?email=private@example.com', request_id: 'local-test-0001' }
 function harness(options = {}) {
