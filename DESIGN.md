@@ -275,6 +275,37 @@ Replaces the nine-card carousel (QDnCo New design and copy). `id="services"` is 
 - **One outline CTA per column** linking to `#contact`.
 - `/dubai/` shows its own creatives line and two extra Dubai-specific points.
 
+### 6.11 Marketing cost calculator (`/tools/marketing-cost-calculator.html`)
+
+Ported from the QDnCo New contact page. Two cards: violet-tinted result card (role, price, terms) and a form card (India / Dubai switch, role, service, campaign or project stepper). Only Meta/Google Ad Campaigns for developers, mandate firms and channel partners show a price; everything else shows "Let's connect."
+- Rates: developer/mandate ₹78,000 → ₹62,400 and channel partner ₹54,000 → ₹43,200 per campaign per month by volume; Dubai = INR rate × 4,650 / 54,000 in AED per project.
+- **`noindex` and unlinked** until the owner approves publishing these rates (the source marks them "not a published offer").
+
+### 6.12 Results proof cards (`#results`)
+
+Three linked cards after the intro: kind label (violet), big figure, label, client + ↗. Each opens its `/work/` case study.
+
+### 6.13 Founder film (`#founder-film`)
+
+Soft-ink panel `#262B38`: copy and three bordered points left, 9:16 video right. Plays muted only in view, pauses off-screen and on hidden tabs, never plays under reduced motion, and offers "▶ Play with sound". Video uses `preload="metadata"`.
+
+### 6.14 Guides teaser (`#resources`)
+
+Three cards (kind label, title, "Open ↗") into `/insights/` with an "All guides and worksheets" link. Dubai shows its own three.
+
+### 6.15 Closing CTA band (`#get-plan`)
+
+Soft-ink panel before the contact form: headline + violet second line, three ticks, then a violet primary button, a WhatsApp button (muted green `#1F8F55`) and a call link.
+
+### 6.16 Markets map (`#worldwide`)
+
+Corridor map (Chicago → Dubai → India) and an India close-up with keyboard-selectable pins, region cards and city pills that stay in sync. Land from `assets/world.json` (Natural Earth); the static prerender omits land paths (they load at runtime). Pins mark market coverage, not offices.
+
+### Secondary pages added
+
+- `/insights/` + six field guides and `worksheets.csv` (secondary-page shell, Article schema).
+- `/resources/`: every public page grouped by type, titles taken from each page's `<title>`.
+
 ## 7. Motion
 
 | Use | Duration | Easing |
@@ -395,3 +426,4 @@ The page mounts with `createRoot`, so React replaces the static HTML on load, bu
 | 2026-10-15 | "Every phase in full" list replaced by the How we work step cards + detail panel; all fonts switched to the system sans-serif stack (no web fonts) | Owner preferred the QDnCo New design; system sans removes every font download |
 | 2026-10-15 | UX polish pass: bento tiles, FAQ cards, footer card, softer violet #5B32C8 and ink #262B38, scroll-reveal motion | Visual hierarchy without touching words, links, headings or schema (verified: identical text and SEO snapshot on all 128 pages) |
 | 2026-10-15 | Services carousel replaced by the QDnCo New two-column Marketing / Technology layout and copy | Owner request; easier to scan than a nine-card carousel with blurred neighbours |
+| 2026-10-15 | Ported QDnCo New features on feature/new-site-port: proof cards, founder film, guides teaser, CTA band, markets map, field guides, resource library, cost calculator | Owner asked to bring everything new from the QDnCo New site; company profile PDF held back (stamped PRIVATE REVIEW) |
