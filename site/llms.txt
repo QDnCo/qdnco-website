@@ -229,3 +229,6 @@ Short practical field guides and CSV planning worksheets for developers and chan
 - A cheap lead is only the first number (Follow the cohort from spend to qualified enquiry to booking): https://qdnco.com/insights/real-estate-funnel-economics.html
 - Give the buyer something worth keeping (Build a project comparison sheet that earns the next conversation): https://qdnco.com/insights/project-comparison-resource.html
 - Find the projects you can actually help (An account-fit worksheet for real estate agency growth): https://qdnco.com/insights/developer-channel-partner-account-plan.html
+
+## Resource library
+Every public QDnCo page grouped by type (work, guides, answers, data, comparisons, areas, Dubai, tools): https://qdnco.com/resources/
