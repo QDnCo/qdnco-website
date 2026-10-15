@@ -220,3 +220,12 @@ https://qdnco.com/llms-full.txt — every answer, definition, comparison and fin
   Its sensitivity range is published on the page; please carry it.
 - Cite research with its source date, sample and limitations. Third-party material retains its owners’ terms. Linking the page keeps
   the method and the limits attached to the number.
+
+## Field guides
+Short practical field guides and CSV planning worksheets for developers and channel partners. Hub: https://qdnco.com/insights/
+- Stop mixing bad numbers with bad-fit buyers (A lead-quality audit for developers and channel partners): https://qdnco.com/insights/lead-quality-audit.html
+- Does your lead form need another question? (Test qualified demand, not just cheaper submissions): https://qdnco.com/insights/form-friction-test.html
+- More enquiries. Who calls them back? (A practical capacity plan for real estate sales teams): https://qdnco.com/insights/follow-up-capacity.html
+- A cheap lead is only the first number (Follow the cohort from spend to qualified enquiry to booking): https://qdnco.com/insights/real-estate-funnel-economics.html
+- Give the buyer something worth keeping (Build a project comparison sheet that earns the next conversation): https://qdnco.com/insights/project-comparison-resource.html
+- Find the projects you can actually help (An account-fit worksheet for real estate agency growth): https://qdnco.com/insights/developer-channel-partner-account-plan.html
