@@ -721,13 +721,14 @@
       "stream": "Community & PR",
       "title": "Reddit account",
       "status": "In progress",
-      "detail": "Owner-created u/qdnco verified. Logo, QDnCo banner, descriptive bio and website link are visible. Introductory profile post published and pinned. Lead-qualification schedule submitted for October 16 10:00 IST; persistence still unverified.",
-      "next": "Verify the submitted schedule before any retry. Check community rules and new-account eligibility before participation.",
+      "detail": "Owner-created u/qdnco verified with logo, banner, bio and website link. Introductory post published and pinned; October 16 lead-qualification checklist now publicly verified.",
+      "next": "Monitor genuine responses and verify community rules and new-account eligibility before participation. Do not duplicate the delivered checklist.",
       "owner": "Agent",
       "url": "https://www.reddit.com/user/qdnco/",
       "steps": [],
-      "checked": "2026-10-14",
-      "evidence": "runs/2026-10-14-growth-recovery/reddit-profile-banner.png"
+      "checked": "2026-10-16",
+      "evidence": "Public profile and direct checklist permalink verified October 16 at 10:12 IST; author u/qdnco and matching full copy visible.",
+      "delivery_note": "October 16 checklist published: https://www.reddit.com/user/qdnco/comments/1x76tvm/real_estate_lead_qualification_a_fivepoint/"
     },
     {
       "id": "COM-04",
@@ -1289,5 +1290,5 @@
   ],
   "reconciled_at": "2026-10-14T12:23:18.735118+00:00",
   "reconciliation_note": "October 14: four Quora answers verified, X delivery verified with future scheduling access pending. Saved-media review remains incomplete. Directory support outcomes remain waiting; no ranking or publication inferred from submission.",
-  "updated_at": "2026-10-15T12:27:29.393772+00:00"
+  "updated_at": "2026-10-16T05:05:12.833339+00:00"
 }
