@@ -317,6 +317,12 @@ Corridor map (Chicago → Dubai → India) and an India close-up with keyboard-s
 - **Slow backend:** Apps Script takes 15–30 s on a cold start. The gate waits up to 5 s for confirmation, then opens the calculator while the send finishes (60 s limit); only a real failure shows a WhatsApp/email notice. The About starter never sends before navigating (it would be cancelled); the pricing page sends it on arrival.
 - **Testing:** never submit against the live endpoint; a page-level stub is lost on navigation, so never test the About hand-off against a real endpoint; stub `window.fetch` (QDLeadCapture is frozen). `tests/estimate.test.mjs` pins every rate and checks the gate lead carries no price.
 
+### 6.18 India | Dubai toggle and location default (homepage, `/dubai/`)
+
+- The top bar (desktop and phone) carries an **India | Dubai** segmented pill beside the theme switch, replacing the "Selling in Dubai? Go to QDnCo Dubai" badge (16 Oct 2026). Both sides are real links (`/`, `/dubai/`) with `hreflang`, so the two homepages stay cross-linked for crawlers. The active side is the current page.
+- **Location default:** an inline script in `<head>` sends a visitor arriving from outside the site to the matching homepage by device time zone (`Asia/Dubai` → `/dubai/`, `Asia/Kolkata`/`Asia/Calcutta` → `/`). It runs once per session, never for crawlers or after an internal link, and never after the visitor picks a side (`sessionStorage` `qd-estimate-market`, shared with the calculator).
+- `scripts/generate/make-dubai-home.py` and `scripts/patches/patch-india-for-dubai.py` still describe the old badge; `site/` is the source of truth.
+
 ### Secondary pages added
 
 - `/insights/` + six field guides and `worksheets.csv` (secondary-page shell, Article schema).
