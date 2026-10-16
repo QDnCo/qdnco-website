@@ -146,7 +146,7 @@
       statusLine(c),
     ]);
     return [
-      h('button', { type: 'button', class: 'qde-link qde-back', 'data-action': 'back' }, ['← ' + picked]),
+      h('button', { type: 'button', class: 'qde-link qde-back', 'data-action': 'back' }, ['← Change: ' + picked]),
       h('h3', { tabindex: '-1' }, ['Where should we send it?']),
       form,
       h('small', { class: 'qde-foot' }, ['We’ll WhatsApp your estimate within one working day · No commitment']),
