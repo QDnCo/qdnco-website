@@ -9,7 +9,7 @@
  *      (sessionStorage) skips straight to the calculator.
  *   2. Calculator: one wide card. Left "01 / Your price" (price for the chosen
  *      count, fees + media total, terms, what's included). Right "A couple of
- *      details" (role, service, campaign count, studio add-ons).
+ *      details" (role, service, campaign count).
  *   3. "This works. Let's talk" sends the exact quote as a follow-up lead for
  *      the same contact, then shows the thank-you with a WhatsApp link.
  *
@@ -18,7 +18,7 @@
  *
  * Optional attributes:
  *   data-market="dubai"         fix the market (hides the India/Dubai switch)
- *   data-role, data-service, data-count, data-addons   preselect inputs
+ *   data-role, data-service, data-count   preselect inputs
  *   data-source="guide:cpql"    label stored with the lead (defaults to the page path)
  *   data-tone="gold"            gold variant instead of brand violet
  *   data-sync-url="true"        mirror the selection in the address bar
@@ -38,7 +38,7 @@
   /** @typedef {Extract<Quote, { priced: true }>} Priced */
   /** @typedef {{ name: string, phone: string }} Contact */
   /** @typedef {{ catalog: Catalog, engine: Engine, listbox: import('./types').ListboxApi, leads: import('./types').LeadCaptureApi | null }} Deps */
-  /** @typedef {{ selection: Selection, contact: Contact, sent: boolean, addonsOpen: boolean, status: string, busy: boolean, failedLead: Record<string, string> | null }} State */
+  /** @typedef {{ selection: Selection, contact: Contact, sent: boolean, status: string, busy: boolean, failedLead: Record<string, string> | null }} State */
   /** @typedef {{ deps: Deps, el: HTMLElement, left: HTMLElement, right: HTMLElement, uid: string, state: State }} Calc */
 
   const CONTACT_KEY = 'qd-estimate-contact';
@@ -415,23 +415,6 @@
 
   /**
    * @param {Calc} c
-   * @returns {HTMLElement}
-   */
-  function addonsBlock(c) {
-    const open = c.state.addonsOpen || c.state.selection.addons.length > 0;
-    const panelId = c.uid + '-addons';
-    const chips = c.deps.catalog.addons.map((a) => h('label', { class: 'qde-chip' }, [
-      h('input', { type: 'checkbox', name: 'addons', value: a.id, checked: c.state.selection.addons.indexOf(a.id) >= 0 }),
-      h('span', {}, [a.label]),
-    ]));
-    return h('div', { class: 'qde-extra' }, [
-      h('button', { type: 'button', class: 'qde-link', 'data-action': 'addons', 'aria-expanded': String(open), 'aria-controls': panelId }, [open ? '− Studio production (quoted separately)' : '+ Add studio production']),
-      h('div', { id: panelId, class: 'qde-chips', role: 'group', 'aria-label': 'Studio production add-ons', hidden: !open }, chips),
-    ]);
-  }
-
-  /**
-   * @param {Calc} c
    * @returns {HTMLElement | null}
    */
   function marketSwitch(c) {
@@ -462,7 +445,6 @@
       dropdownRow(c, 'role', 'Which best describes you?', roles),
       dropdownRow(c, 'service', 'What service are you looking for?', services),
       stepper(c, q),
-      addonsBlock(c),
       h('button', { type: 'button', class: 'qde-button', 'data-action': 'send', disabled: s.busy }, [cta, s.busy ? null : arrow()]),
       s.status ? statusLine(s.status, s.failedLead ? mailtoFor(catalog, s.failedLead) : undefined) : null,
     ];
@@ -499,20 +481,6 @@
       root.history.replaceState(null, '', root.location.pathname + c.deps.engine.toQuery(c.state.selection) + root.location.hash);
     }
     if (focus) /** @type {HTMLElement | null} */ (c.right.querySelector(focus))?.focus();
-  }
-
-  /**
-   * @param {Calc} c
-   * @param {Event} event
-   * @returns {void}
-   */
-  function onChange(c, event) {
-    const t = event.target;
-    const s = c.state;
-    if (t instanceof HTMLInputElement && t.name === 'addons') {
-      s.selection = c.deps.engine.toggleAddon(s.selection, t.value);
-      render(c, 'input[name="addons"][value="' + t.value + '"]');
-    }
   }
 
   /**
@@ -558,10 +526,9 @@
   /**
    * @param {Calc} c
    * @param {string} action
-   * @param {HTMLElement} target
    * @returns {void}
    */
-  function runAction(c, action, target) {
+  function runAction(c, action) {
     const s = c.state;
     if (action === 'inc' || action === 'dec') {
       const by = action === 'inc' ? 1 : -1;
@@ -569,7 +536,6 @@
       const atEdge = by > 0 ? s.selection.count >= c.deps.catalog.maxCount : s.selection.count <= 1;
       return render(c, '[data-action="' + (atEdge ? (by > 0 ? 'dec' : 'inc') : action) + '"]');
     }
-    if (action === 'addons') { s.addonsOpen = target.getAttribute('aria-expanded') !== 'true'; return render(c, '[data-action="addons"]'); }
     if (action === 'send' && !s.busy) sendQuote(c);
   }
 
@@ -587,7 +553,7 @@
       c.state.selection = c.deps.engine.normalise(c.deps.catalog, { ...c.state.selection, market: /** @type {import('./types').MarketId} */ (market) });
       return render(c, '[data-market="' + market + '"]');
     }
-    runAction(c, target.dataset.action || '', target);
+    runAction(c, target.dataset.action || '');
   }
 
   /* ───────────────────────── Mount ───────────────────────── */
@@ -601,8 +567,7 @@
     const ds = el.dataset;
     const market = marketOf(el);
     const useUrl = ds.syncUrl === 'true' && root.location.search.length > 1;
-    const addons = (ds.addons || '').split(',').map((s) => s.trim()).filter(Boolean);
-    const raw = useUrl ? { ...deps.engine.fromQuery(root.location.search), market } : { market, role: ds.role, service: ds.service, count: Number(ds.count) || 1, addons };
+    const raw = useUrl ? { ...deps.engine.fromQuery(root.location.search), market, addons: [] } : { market, role: ds.role, service: ds.service, count: Number(ds.count) || 1, addons: [] };
     return deps.engine.normalise(deps.catalog, raw);
   }
 
@@ -618,8 +583,7 @@
     const left = h('div', { class: 'qde-left' });
     const right = h('div', { class: 'qde-right' });
     /** @type {Calc} */
-    const c = { deps, el, left, right, uid: 'qde' + ++mountCount, state: { selection: initialSelection(deps, el), contact, sent: false, addonsOpen: false, status: '', busy: false, failedLead: null } };
-    right.addEventListener('change', (e) => onChange(c, e));
+    const c = { deps, el, left, right, uid: 'qde' + ++mountCount, state: { selection: initialSelection(deps, el), contact, sent: false, status: '', busy: false, failedLead: null } };
     right.addEventListener('click', (e) => onClick(c, e));
     el.classList.add('qde');
     el.replaceChildren(h('div', { class: 'qde-card qde-split' }, [left, right]));
