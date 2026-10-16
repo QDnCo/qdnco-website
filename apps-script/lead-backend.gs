@@ -8,7 +8,7 @@
  * Never place account passwords or private API credentials in this file.
  *
  * Every saved lead is also forwarded to the Vyostra AI CRM. Set two Script
- * Properties: VYOSTRA_API_URL (https://vyostra.com, the public API host; no
+ * Properties: VYOSTRA_API_URL (e.g. https://<vyostra backend host>, no
  * trailing slash) and VYOSTRA_FORM_ID (the "QDnCo website" form in Vyostra).
  * Without both, forwarding is skipped and the Vyostra column says so.
  */
