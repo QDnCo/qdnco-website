@@ -299,25 +299,20 @@ Soft-ink panel before the contact form: headline + violet second line, three tic
 
 Corridor map (Chicago → Dubai → India) and an India close-up with keyboard-selectable pins, region cards and city pills that stay in sync. Land from `assets/world.json` (Natural Earth); the static prerender omits land paths (they load at runtime). Pins mark market coverage, not offices.
 
-### 6.17 Marketing cost calculator (`/js/estimate/`): homepage `#pricing`, `/tools/marketing-cost-calculator.html`, blog embeds
+### 6.17 Marketing cost calculator, lead-gated (`/js/estimate/`): homepage `#pricing`, `/dubai/`, `/tools/marketing-cost-calculator.html`, About, blog embeds
 
-Replaces the homepage price cards and the "Included / Quoted separately" split (16 Oct 2026). One wide card, two halves (stack below ~760px, price first):
+**Rule: no price is shown before the lead is sent.** Every placement starts with the gate.
 
-- **Left, "01 / Your price":** role, the per-campaign price (Dubai: per project, AED) as one `role="status"` line in a fixed-height slot, a fees + recommended media = total monthly investment breakdown (India), terms, the four volume tiers with the current one outlined, and what the fee includes.
-- **Right, "A couple of details.":** role, service, campaign stepper, "+ Add studio production" chips, "This works. Let's talk". That swaps the right half to the quick capture ("A small first step · Get your marketing estimate", name + phone, optional project) while the price stays visible.
-- **Starter band** (`data-qd-estimate="starter"`, used on About): "Your next project" copy + name/phone card. "Get my free estimate" goes to `pricingPath` (`/#pricing` or `/dubai/#pricing`) with name/phone in `sessionStorage`, prefilled in the quick capture.
-- **Rates:** developer / mandate firm ₹78,000 → ₹62,400, channel partner ₹54,000 → ₹43,200 per campaign per month; Dubai = INR × 4,650 / 54,000 in AED per project. Only Meta/Google Ad Campaigns for client roles are priced. All in `site/js/estimate/catalog.js` with media and the includes list.
+1. **Gate:** "Your next project · Need more property enquiries? Talk to our team." with the "A small first step · Get your marketing estimate" card (name + phone). "Get my free estimate" validates and sends the lead (`project` = "Opened the pricing calculator"). Only a confirmed send opens the calculator; a failure shows a retry message and an email link. A visitor who passed the gate this session (`sessionStorage`) goes straight to the calculator.
+2. **Calculator** (one wide card, stacks below ~760px): left "01 / Your price" (role, the price for the chosen count only, fees + recommended media = total monthly investment, terms, what's included); right "A couple of details, {name}." (role, service, campaign stepper, studio add-ons). **No per-volume price table.**
+3. **"This works. Let's talk"** sends the exact quote as a follow-up lead for the same contact, then thanks them with a WhatsApp link.
 
-```html
-<div data-qd-estimate data-service="ads" data-source="guide:my-post"></div>
-<script defer src="/js/estimate/embed.js?v=2026-10-16-4"></script>
-```
-
-- **Options:** `data-market` (fixes the market and hides the switch), `data-role`, `data-service`, `data-count`, `data-addons`, `data-source`, `data-tone="gold"`, `data-sync-url`; starter copy via `data-eyebrow`, `data-heading`, `data-heading-em`, `data-lede`.
-- **Homepage:** `PricingCalculator` renders an empty host and calls `QDEstimateWidget.mountAll` (also on `qd-estimate-ready`). The prerendered host holds a plain rate list (`.qde-fallback`) generated from the catalog; regenerate it when rates change.
+- `data-qd-estimate="starter"` (About): gate only; after the send it goes to `pricingPath` (`/#pricing`, `/dubai/#pricing`), where the calculator opens unlocked.
+- **Rates** live only in `site/js/estimate/catalog.js` (developer / mandate ₹78,000 → ₹62,400, channel partner ₹54,000 → ₹43,200 per campaign per month; Dubai = INR × 4,650 / 54,000 in AED per project). The prerendered HTML carries the gate copy, never prices. Note: the catalog is public JS, so rates are visible to anyone reading the source; true gating would need the quote served after the lead.
+- **Embed:** `<div data-qd-estimate data-service="ads" data-source="guide:my-post"></div>` + `<script defer src="/js/estimate/embed.js?v=2026-10-16-5"></script>`. Options: `data-market`, `data-role`, `data-service`, `data-count`, `data-addons`, `data-source`, `data-tone="gold"`, `data-sync-url`, gate copy attributes.
+- **Homepage:** `PricingCalculator` renders an empty host and calls `QDEstimateWidget.mountAll` (also on `qd-estimate-ready`).
 - **Cache:** bump `VERSION` in `embed.js` and every `?v=` whenever these files change.
-- **Leads:** exact quote in `project`, market in `catchment`, `budget` = "Discuss on call".
-- Tests: `tests/estimate.test.mjs` (every rate vs. the original calculator, TypeScript strict check).
+- **Testing:** never submit against the live endpoint; stub `window.fetch` (QDLeadCapture is frozen). `tests/estimate.test.mjs` pins every rate and checks the gate lead carries no price.
 
 ### Secondary pages added
 
@@ -447,3 +442,4 @@ The page mounts with `createRoot`, so React replaces the static HTML on load, bu
 | 2026-10-15 | Ported QDnCo New features on feature/new-site-port: proof cards, founder film, guides teaser, CTA band, markets map, field guides, resource library, cost calculator | Owner asked to bring everything new from the QDnCo New site; company profile PDF held back (stamped PRIVATE REVIEW) |
 | 2026-10-16 | Estimate card ships in violet; gold kept only as an opt-in `data-tone="gold"` | Owner chose violet after a side-by-side /design-review: one accent sitewide (1.2, 2.2), no serif (3.1) |
 | 2026-10-16 | Homepage pricing cards replaced by the marketing cost calculator; About gets the starter band instead of the calculator | Owner request: show exact price points; research favours ungated live pricing with fees, media and total shown separately |
+| 2026-10-16 | Calculator is lead-gated everywhere; per-volume tier table removed | Owner requirement: capture name and phone before any price is shown |
