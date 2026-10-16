@@ -144,6 +144,7 @@
    */
   function buildLead(catalog, selection, input, source) {
     const summary = summaryText(catalog, selection);
+    const service = catalog.services.find((s) => s.id === selection.service) || catalog.services[0];
     return {
       name: input.name,
       phone: input.phone,
@@ -153,8 +154,26 @@
       services: selection.service,
       addons: selection.addons.join(','),
       estimate: summary,
+      // Separate columns so the CRM can filter on them; `estimate` keeps the one-line view.
+      role: roleLabel(catalog, selection),
+      service_name: service.label,
+      quote: quoteText(catalog, selection),
       source,
     };
+  }
+
+  /**
+   * The fee exactly as the card showed it, or why there was no price.
+   * @param {Catalog} catalog
+   * @param {Selection} selection
+   * @returns {string}
+   */
+  function quoteText(catalog, selection) {
+    const q = quote(catalog, selection);
+    if (!q.priced) return 'No price shown (Let’s connect)';
+    const each = formatMoney(q.currency, q.perUnit) + '/' + q.unit + '/mo';
+    if (q.count === 1) return each;
+    return each + ' × ' + q.countLabel + ' = ' + formatMoney(q.currency, q.total) + '/mo' + (q.isFloor ? ' (from)' : '');
   }
 
   /**

@@ -67,6 +67,12 @@ test('lead carries the exact quote and every field the backend requires', () => 
   for (const key of ['name', 'phone', 'project', 'catchment', 'budget']) assert.ok(lead[key], key)
   assert.equal(lead.project, 'Skyline · Developer · Meta/Google Ad Campaigns · 2 campaigns · ₹70,200/campaign/mo · + Drone')
   assert.equal(lead.catchment, 'India'); assert.equal(lead.budget, 'Discuss on call')
+  assert.equal(lead.role, 'Developer'); assert.equal(lead.service_name, 'Meta/Google Ad Campaigns')
+  assert.equal(lead.quote, '₹70,200/campaign/mo × 2 = ₹1,40,400/mo')
+})
+test('the quote field says so when no price was shown', () => {
+  const lead = engine.buildLead(catalog, sel({ service: 'crm' }), { name: 'A', phone: '+91 90000 00000', project: '' }, 'about')
+  assert.equal(lead.quote, 'No price shown (Let’s connect)'); assert.equal(lead.service_name, 'CRM Setup & Automation')
 })
 test('selection survives a URL round trip; legacy ?dubai still opens Dubai', () => {
   const s = sel({ market: 'dubai', role: 'channel-partner', count: 3, addons: ['motion'] })
