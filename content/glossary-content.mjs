@@ -43,7 +43,7 @@ export const TERMS = [
     group: 'economics',
     term: 'CPQL — Cost per qualified lead',
     def: 'The cost of a lead that meets a written qualification standard, rather than of any form submission. Distinguished from CPL by the fact that the qualification test is defined in advance and applied by the buyer, not the seller.',
-    note: 'QDnCo charges ₹550 per qualified lead, ₹495 above 60 a month, ₹450 above 120, with a 60-lead monthly minimum.',
+    note: 'Priced per campaign by campaign count, with a written qualified-lead definition. Calculator: https://qdnco.com/tools/marketing-cost-calculator.html',
   },
   {
     group: 'economics',
@@ -241,7 +241,7 @@ export const TERMS = [
     group: 'commercial',
     term: 'Retainer',
     def: 'A fixed monthly fee for an agreed scope, independent of results. Suits engagements where the constraint is the system around the leads rather than lead volume.',
-    note: '₹50,000–₹75,000 a month plus 8% of media and 2% on units above a written threshold.',
+    note: 'One fee agreed in writing, minimum three months.',
   },
   {
     group: 'commercial',
@@ -252,7 +252,7 @@ export const TERMS = [
     group: 'commercial',
     term: 'Phase 0',
     def: 'A paid market diagnostic run before any advertising spend, covering buyer interviews, addressable demand, competitor and pricing analysis, and the campaign architecture.',
-    note: '₹75,000–₹1,25,000, two to three weeks. Structurally permitted to conclude that you should not spend — which research given away as pre-sales never is.',
+    note: 'Scoped in writing, two to three weeks. Structurally permitted to conclude that you should not spend — which research given away as pre-sales never is.',
   },
   {
     group: 'commercial',

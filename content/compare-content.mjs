@@ -40,7 +40,7 @@ export const COMPARISONS = [
       head: ['', 'Performance marketing', 'Channel partner'],
       rows: [
         ['When you pay', 'Before results, continuously', 'On a closed sale only'],
-        ['Typical cost', '₹550/qualified lead + media, client-funded', '1–3% of unit value'],
+        ['Typical cost', 'Fee per campaign (see the calculator) + media, client-funded', '1–3% of unit value'],
         ['Cost on a ₹1 Cr unit', '~₹40,000 media + fee at 100 leads/booking', '~₹2,00,000 at 2%'],
         ['Who carries the risk', 'You, upfront', 'Them, until it closes'],
         ['Buyer arrives', 'As an enquiry needing qualification', 'Accompanied, often near-decided'],
@@ -87,7 +87,7 @@ export const COMPARISONS = [
       head: ['', 'Per qualified lead', 'Retainer'],
       rows: [
         ['You pay for', 'A delivered unit', 'Scope and time'],
-        ['Typical price', '₹550, ₹495 above 60/mo, ₹450 above 120/mo', '₹50,000–₹75,000/mo + 8% media + 2% upside'],
+        ['Typical price', 'Fee per campaign, falling with campaign count', 'One fee agreed in writing'],
         ['Risk sits with', 'The agency', 'You'],
         ['Requires a written definition', 'Absolutely — or it means nothing', 'Helpful, not structural'],
         ['Covers funnel and CRM work', 'No', 'Yes'],
@@ -112,7 +112,7 @@ export const COMPARISONS = [
     ],
     faqs: [
       { q: 'Is pay-per-lead better than a retainer for real estate?', a: 'Only if your sales process already works and "qualified" is defined in writing. If leads currently arrive and go unworked, a retainer that fixes the funnel is worth more than cheaper leads entering a broken one.' },
-      { q: 'What is a fair price per qualified lead in India?', a: 'QDnCo charges ₹550, falling to ₹495 above 60 a month and ₹450 above 120, on top of client-funded media. The price only means something alongside the definition of what counts as qualified — a lower price against a looser definition is not a better deal.' },
+      { q: 'What is a fair price per qualified lead in India?', a: 'QDnCo prices Meta/Google campaigns per campaign, with the fee falling as campaign count rises and a written qualified-lead definition. See the calculator: https://qdnco.com/tools/marketing-cost-calculator.html' },
       { q: 'What is the risk with per-lead pricing?', a: 'That "qualified" is undefined, so the cheapest way for the agency to deliver more units is to loosen targeting. The protection is a written, testable definition and a replacement guarantee with a short flag window.' },
     ],
     related: ['performance-marketing-vs-channel-partner', 'in-house-vs-agency-real-estate'],

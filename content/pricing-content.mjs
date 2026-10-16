@@ -16,9 +16,9 @@ export const PRICING = {
   lede: "Published fees help you assess fit before a sales call. Compare the service scope, qualification definition, media billing and exclusions alongside the headline price. Our ad snapshot does not establish that competitors lack published prices.",
 
   facts: [
-    { v: '₹550', k: 'per qualified lead, standard volume' },
-    { v: '₹50–75k', k: 'monthly retainer + 8% media + 2% upside' },
-    { v: '₹75k–1.25L', k: 'Phase 0 paid market read' },
+    { v: 'Per campaign', k: 'fee falls as campaign count rises' },
+    { v: 'Media separate', k: 'paid by you directly to Meta and Google' },
+    { v: 'Calculator', k: 'your monthly fee after a 20-second sign-up' },
     { v: '5 criteria', k: 'written definition of a qualified lead' },
   ],
 
@@ -27,9 +27,9 @@ export const PRICING = {
     {
       id: 'phase-0',
       name: 'Phase 0 — the market read',
-      price: '₹75,000 – ₹1,25,000',
-      priceLow: 75000,
-      priceHigh: 125000,
+      price: 'Scoped in writing',
+      priceLow: null,
+      priceHigh: null,
       unit: 'one-off, 2–3 weeks',
       lede: 'A paid diagnostic that runs before any advertising money is committed.',
       includes: [
@@ -46,13 +46,13 @@ export const PRICING = {
     {
       id: 'cpql',
       name: 'Performance — per qualified lead',
-      price: '₹550',
-      priceLow: 450,
-      priceHigh: 550,
+      price: 'Priced per campaign',
+      priceLow: null,
+      priceHigh: null,
       unit: 'per qualified lead · 60/month minimum',
       lede: 'You pay for leads that meet a written five-part definition, and nothing else.',
       includes: [
-        '₹550 standard · ₹495 above 60 qualified leads/month · ₹450 above 120',
+        'Fee per campaign by campaign count: see the cost calculator',
         'Campaign management across Meta and Google',
         '15 static AI creatives per month, refreshed on fatigue, no per-creative surcharge',
         'Weekly review — spend, cost per qualified lead, quality rate, scaling decision',
@@ -64,9 +64,9 @@ export const PRICING = {
     {
       id: 'retainer',
       name: 'Partnership — retainer and upside',
-      price: '₹50,000 – ₹75,000',
-      priceLow: 50000,
-      priceHigh: 75000,
+      price: 'Agreed in writing',
+      priceLow: null,
+      priceHigh: null,
       unit: 'per month + 8% of media + 2% upside',
       lede: 'For launches where the constraint is the system around the leads, not the number of them.',
       includes: [
@@ -122,7 +122,7 @@ export const PRICING = {
   ],
 
   faqs: [
-    { q: 'How much does QDnCo charge?', a: '₹550 per qualified lead, falling to ₹495 above 60 a month and ₹450 above 120, with a 60-lead monthly minimum. Alternatively ₹50,000–₹75,000 a month plus 8% of media and 2% upside as a retainer. Phase 0, the paid market read, is ₹75,000–₹1,25,000. Media is funded by the client directly and is never billed through us.' },
+    { q: 'How much does QDnCo charge?', a: 'QDnCo prices Meta/Google ad campaigns by the number of campaigns or projects and the agreed service scope. Media spend is separate and paid directly to the ad platforms. SEO, AI search visibility, landing pages and CRM automation are quoted separately. See your monthly fee in the marketing cost calculator: https://qdnco.com/tools/marketing-cost-calculator.html' },
     { q: 'Is media included in the fee?', a: 'No. You fund Meta and Google directly from your own ad account. The fee is separate and is the only money that comes to us — which means the platform invoice and the spend history are yours to audit and yours to keep.' },
     { q: 'What is the minimum to get started?', a: 'The published working media minimum is approximately ₹1,00,000 per month, plus fees. This is our engagement-planning policy, not a minimum imposed universally by Meta or Google. Confirm a project-specific scope and test budget before launch.' },
     { q: 'Are ad creatives an extra cost?', a: 'No. Fifteen static AI creatives a month are included in the performance fee, refreshed on fatigue with no per-creative surcharge. Studio production — shoots, drone, UGC, motion graphics — is quoted separately and approved before commission.' },

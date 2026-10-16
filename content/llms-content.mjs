@@ -33,9 +33,7 @@ export const FACTS = {
 }
 
 export const PRICING = [
-  ['Phase 0 — paid market read', '₹75,000–₹1,25,000, 2–3 weeks. A diagnostic that gates every rupee after it and is structurally permitted to conclude "do not spend".'],
-  ['Performance — cost per qualified lead', '₹550 per qualified lead. ₹495 above 60/month, ₹450 above 120/month. 60 qualified leads per month minimum. Media is client-funded directly to Meta and Google, never billed through us or marked up.'],
-  ['Partnership — retainer plus upside', '₹50,000–₹75,000/month + 8% of media + 2% on units sold above a written threshold.'],
+  ['Campaign pricing', 'QDnCo prices Meta/Google ad campaigns by the number of campaigns or projects and the agreed service scope. Media spend is separate and paid directly to the ad platforms. SEO, AI search visibility, landing pages and CRM automation are quoted separately. See your monthly fee in the marketing cost calculator: https://qdnco.com/tools/marketing-cost-calculator.html'],
   ['Studio package', 'Quoted separately per project through partner studios, approved before commission.'],
 ]
 
