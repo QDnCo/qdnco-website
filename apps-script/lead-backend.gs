@@ -6,31 +6,16 @@
  * deployment to a new version so the website /exec URL remains unchanged.
  * Verify the deployed version using GET, then a labelled owner test enquiry.
  * Never place account passwords or private API credentials in this file.
- *
- * Every saved lead is also forwarded to the Vyostra AI CRM. Set two Script
- * Properties: VYOSTRA_API_URL (e.g. https://<vyostra backend host>, no
- * trailing slash) and VYOSTRA_FORM_ID (the "QDnCo website" form in Vyostra).
- * Without both, forwarding is skipped and the Vyostra column says so.
  */
 var NOTIFY_EMAIL = 'qdnco01@gmail.com';
 var SHEET_NAME = 'Leads';
-var PROPS = PropertiesService.getScriptProperties();
-var SHEET_ID = PROPS.getProperty('SHEET_ID');
-var LEAD_VERSION = '2026-10-16-vyostra-v1';
+var SHEET_ID = PropertiesService.getScriptProperties().getProperty('SHEET_ID');
+var LEAD_VERSION = '2026-10-16-estimate-v1';
 var FIELDS = ['submitted', 'name', 'phone', 'project', 'catchment', 'budget', 'page',
   'request_id', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
-  'referrer', 'notification', 'services', 'addons', 'estimate', 'source',
-  'role', 'service_name', 'quote', 'vyostra'];
+  'referrer', 'notification', 'services', 'addons', 'estimate', 'source'];
 // Optional context sent by the estimate widget (site/js/estimate/). Never required.
-var OPTIONAL_FIELDS = ['services', 'addons', 'estimate', 'source', 'role', 'service_name', 'quote'];
-// Sheet field -> the answer label stored on the Vyostra lead. Vyostra reads
-// name, phone, project and budget from these labels into its own columns.
-var VYOSTRA_LABELS = [
-  ['name', 'Name'], ['phone', 'Phone'], ['project', 'Project'], ['catchment', 'Market'],
-  ['budget', 'Budget'], ['role', 'Role'], ['service_name', 'Service'], ['quote', 'Quoted fee'],
-  ['addons', 'Add-ons'], ['estimate', 'Estimate summary'], ['source', 'Source'],
-  ['utm_source', 'UTM source'], ['utm_medium', 'UTM medium'], ['utm_campaign', 'UTM campaign'],
-  ['request_id', 'Request ID']];
+var OPTIONAL_FIELDS = ['services', 'addons', 'estimate', 'source'];
 
 function book() {
   // Never fall back to a different workbook after a target/access error.
@@ -88,7 +73,6 @@ function cleanLead(input) {
   var origin = textField(input.referrer, 1000).match(/^https?:\/\/[^/?#]+/i);
   lead.referrer = origin ? origin[0] : '';
   lead.notification = 'pending';
-  lead.vyostra = 'pending';
   OPTIONAL_FIELDS.forEach(function (field) { lead[field] = textField(input[field], 300); });
   return lead;
 }
@@ -117,53 +101,13 @@ function leadSheet() {
 }
 
 function notifyLead(lead) {
-  var body = FIELDS.filter(function (field) { return field !== 'notification' && field !== 'vyostra'; })
+  var body = FIELDS.filter(function (field) { return field !== 'notification'; })
     .map(function (field) { return field + ': ' + (lead[field] || '-'); }).join('\n');
   MailApp.sendEmail({
     to: NOTIFY_EMAIL,
     subject: 'New website enquiry — ' + (lead.project || lead.name),
     body: body + '\n\nContact phone: ' + lead.phone + '\n',
   });
-}
-
-function vyostraAnswers(lead) {
-  var answers = {};
-  VYOSTRA_LABELS.forEach(function (pair) {
-    if (lead[pair[0]]) answers[pair[1]] = String(lead[pair[0]]);
-  });
-  return answers;
-}
-
-// Sends the lead to the Vyostra AI form-submit endpoint, the one its form
-// widget uses, so it lands in the CRM with the WhatsApp alert and CRM sync.
-// Returns the status written to the Sheet; never throws.
-function forwardToVyostra(lead) {
-  var apiUrl = PROPS.getProperty('VYOSTRA_API_URL');
-  var formId = PROPS.getProperty('VYOSTRA_FORM_ID');
-  if (!apiUrl || !formId) return 'not_configured';
-  try {
-    var response = UrlFetchApp.fetch(apiUrl.replace(/\/+$/, '') + '/api/forms/leads', {
-      method: 'post',
-      contentType: 'application/json',
-      muteHttpExceptions: true,
-      payload: JSON.stringify({ formId: formId, sourceUrl: lead.page || 'https://qdnco.com/', customFields: vyostraAnswers(lead) }),
-    });
-    var code = response.getResponseCode();
-    if (code === 201) return 'sent';
-    console.error('vyostra_forward_rejected', code, lead.request_id);
-    return 'failed_' + code;
-  } catch (err) {
-    console.error('vyostra_forward_failed', lead.request_id);
-    return 'failed';
-  }
-}
-
-function setStatus(record, rowNumber, field, value) {
-  try {
-    record.sheet.getRange(rowNumber, record.columns.indexOf(field) + 1).setValue(value);
-  } catch (err) {
-    console.error('lead_status_write_failed', field, rowNumber);
-  }
 }
 
 function doPost(e) {
@@ -215,9 +159,13 @@ function doPost(e) {
   } catch (err) {
     console.error('lead_alert_failed', lead.request_id);
   }
-  setStatus(record, rowNumber, 'notification', notified ? 'sent' : 'failed');
-  setStatus(record, rowNumber, 'vyostra', forwardToVyostra(lead));
-  // A failed email or CRM forward does not erase or falsely reject an enquiry saved in the Sheet.
+  try {
+    record.sheet.getRange(rowNumber, record.columns.indexOf('notification') + 1)
+      .setValue(notified ? 'sent' : 'failed');
+  } catch (err) {
+    console.error('lead_alert_status_failed', lead.request_id);
+  }
+  // A failed email does not erase or falsely reject an enquiry saved in the Sheet.
   return json({ ok: true, request_id: lead.request_id, notification_sent: notified });
 }
 
