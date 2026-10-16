@@ -1,0 +1,152 @@
+/* Marketing cost calculator + starter band (DESIGN.md 6.17).
+   Loaded by /js/estimate/embed.js. Violet by default (brand accent);
+   data-tone="gold" gives the QDnCo New look. Layout follows each element's
+   own width through container queries, so the same markup fits the homepage
+   pricing section, the 940px document column and a narrow blog column. */
+.qde{
+  --qde-ink-rgb: var(--ink-rgb, 10,13,18);
+  --qde-ink: var(--ink, #0a0d12);
+  --qde-muted: rgba(var(--qde-ink-rgb), .70);
+  --qde-line: rgba(var(--qde-ink-rgb), .16);
+  --qde-accent: #5b32c8;
+  --qde-accent-text: var(--accent, #5b32c8);
+  --qde-card: #fcfbf9;
+  --qde-wash: #fff;
+  --qde-selected: rgba(91,50,200,.08);
+  --qde-border: #5b32c8;
+  --qde-btn-bg: #5b32c8;
+  --qde-btn-hover: #4a28a6;
+  --qde-btn-ink: #fff;
+  --qde-em-font: inherit;
+  --qde-em-style: normal;
+  container-type: inline-size;
+  color: var(--qde-ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  text-align: left;
+}
+:root[data-theme="dark"] .qde:not([data-tone="gold"]){
+  --qde-card: #0e1319; --qde-wash: rgba(255,255,255,.03); --qde-selected: rgba(168,123,255,.14); --qde-border: #a87bff;
+}
+.qde[data-tone="gold"]{
+  --qde-accent: #9a6b1f; --qde-accent-text: #805917; --qde-card: #fbf4e6; --qde-wash: rgba(172,127,48,.07);
+  --qde-selected: rgba(172,127,48,.14); --qde-border: #b58a3f; --qde-line: rgba(137,98,35,.32);
+  --qde-btn-bg: linear-gradient(120deg,#d8ac59,#f6dfa6 48%,#dfb766); --qde-btn-hover: linear-gradient(120deg,#cf9f48,#f1d593 48%,#d6ab55);
+  --qde-btn-ink: #252016; --qde-em-font: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif; --qde-em-style: italic;
+  --qde-ink: #0a0d12; --qde-ink-rgb: 10,13,18;
+}
+:root[data-theme="dark"] .qde[data-tone="gold"]{
+  --qde-card: #1a1913; --qde-ink: #f8f3e9; --qde-ink-rgb: 248,243,233;
+  --qde-accent-text: #e5bd6b; --qde-border: #d7ae62; --qde-line: rgba(218,178,98,.4);
+}
+.qde *, .qde *::before, .qde *::after{box-sizing:border-box}
+.qde h2, .qde h3{font-family:inherit;color:var(--qde-ink);margin:0}
+.qde p, .qde ul{margin:0}
+.qde :focus-visible{outline:3px solid var(--qde-accent);outline-offset:2px}
+.qde .qde-eyebrow{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--qde-accent-text)}
+.qde-sub{font-size:14px;line-height:1.5;color:var(--qde-muted)}
+.qde-hint{display:block;font-size:13px;line-height:1.45;font-weight:400;color:var(--qde-muted)}
+.qde-foot{display:block;text-align:center;font-size:12px;color:var(--qde-muted)}
+
+/* ── Card shell ── */
+.qde-card{border-radius:24px;border:2px solid var(--qde-border);background:var(--qde-card)}
+
+/* ── Calculator: image-14 split ── */
+.qde-split{display:grid;grid-template-columns:1fr}
+.qde-left, .qde-right{container-type:inline-size;display:grid;align-content:start;gap:16px;padding:clamp(22px,4cqi,40px)}
+.qde-left{border-bottom:1px solid var(--qde-line)}
+@container (min-width:760px){
+  .qde-split{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .qde-left{border-bottom:0;border-right:1px solid var(--qde-line)}
+}
+.qde-role{font-size:clamp(26px,7cqi,36px);line-height:1.1;letter-spacing:-.03em;font-weight:600}
+.qde-price{display:grid;gap:6px;min-height:84px}
+.qde-price strong{font-size:clamp(40px,13cqi,64px);line-height:1;font-weight:700;letter-spacing:-.035em;color:var(--qde-accent-text);font-variant-numeric:tabular-nums}
+.qde-price small{font-size:13px;color:var(--qde-muted)}
+.qde-terms{font-size:14px;line-height:1.55;color:var(--qde-ink)}
+
+
+.qde-includes{display:grid;gap:8px;padding:14px 0 0;border-top:1px solid var(--qde-line);list-style:none}
+.qde-includes li{position:relative;padding-left:26px;font-size:14px;line-height:1.45;color:var(--qde-ink)}
+.qde-includes li::before{content:"";position:absolute;left:2px;top:3px;width:14px;height:8px;border-left:2px solid var(--qde-accent-text);border-bottom:2px solid var(--qde-accent-text);transform:rotate(-45deg)}
+
+/* Right column */
+.qde-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;min-height:40px}
+.qde-head .qde-eyebrow{white-space:nowrap}
+.qde-right h3{font-size:clamp(24px,6cqi,30px);line-height:1.15;letter-spacing:-.03em;font-weight:600}
+.qde-right h3:focus{outline:none}
+.qde-mkt{display:inline-flex;gap:2px;padding:3px;border-radius:999px;border:1px solid var(--qde-line)}
+.qde-mkt button{position:relative;min-height:32px;min-width:44px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:var(--qde-muted);font:inherit;font-size:12px;font-weight:600;cursor:pointer}
+.qde-mkt button::after{content:"";position:absolute;inset:-6px 0}
+.qde-mkt button[aria-pressed="true"]{background:var(--qde-ink);color:var(--qde-card)}
+.qde-row{display:grid;gap:8px;font-size:15px;font-weight:600}
+
+/* Dropdown (listbox.js): trigger + menu, no shadows; depth comes from a
+   solid surface, a hairline border and the accent ring. */
+.qde{--qde-pop:#fff;--qde-ring:rgba(91,50,200,.18)}
+:root[data-theme="dark"] .qde:not([data-tone="gold"]){--qde-pop:#151b23;--qde-ring:rgba(168,123,255,.28)}
+.qde[data-tone="gold"]{--qde-pop:#fffaf0;--qde-ring:rgba(172,127,48,.22)}
+:root[data-theme="dark"] .qde[data-tone="gold"]{--qde-pop:#22201a}
+.qde-dd{position:relative}
+.qde-dd-btn{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:56px;padding:0 14px 0 16px;border:1px solid var(--qde-line);border-radius:14px;background:var(--qde-wash);color:var(--qde-ink);font:inherit;font-size:16px;font-weight:500;text-align:left;cursor:pointer;transition:border-color .15s ease,background-color .15s ease}
+.qde-dd-btn:hover{border-color:rgba(var(--qde-ink-rgb),.34)}
+.qde .qde-dd-btn:focus-visible{outline:3px solid var(--qde-ring);outline-offset:0;border-color:var(--qde-border)}
+.qde-dd.is-open .qde-dd-btn{border-color:var(--qde-border);background:var(--qde-selected)}
+.qde-dd-value{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qde-dd-chev{flex:none;width:20px;height:20px;fill:none;stroke:var(--qde-muted);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s ease}
+.qde-dd.is-open .qde-dd-chev{transform:rotate(180deg);stroke:var(--qde-accent-text)}
+.qde-dd-list{position:absolute;z-index:30;left:0;right:0;top:calc(100% + 6px);max-height:340px;overflow-y:auto;overscroll-behavior:contain;padding:6px;border:1px solid var(--qde-line);border-radius:16px;background:var(--qde-pop);animation:qde-dd-in .14s ease-out}
+.qde-dd.is-up .qde-dd-list{top:auto;bottom:calc(100% + 6px)}
+.qde-dd-list[hidden]{display:none}
+.qde-dd-list [role="group"]+[role="group"]{margin-top:4px;padding-top:4px;border-top:1px solid var(--qde-line)}
+.qde-dd-group{padding:10px 12px 6px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--qde-muted)}
+.qde-dd-opt{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;padding:9px 12px;border-radius:10px;font-size:15px;font-weight:500;line-height:1.3;color:var(--qde-ink);cursor:pointer}
+.qde-dd-opt.is-active{background:var(--qde-selected)}
+.qde-dd-opt[aria-selected="true"]{color:var(--qde-accent-text);font-weight:600}
+.qde-dd-text{display:grid;gap:2px}
+.qde-dd-text small{font-size:12px;font-weight:400;color:var(--qde-muted)}
+.qde-dd-check{flex:none;width:18px;height:18px;fill:none;stroke:var(--qde-accent-text);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;visibility:hidden}
+.qde-dd-opt[aria-selected="true"] .qde-dd-check{visibility:visible}
+@keyframes qde-dd-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.qde-dd.is-up .qde-dd-list{animation-name:qde-dd-up}
+@keyframes qde-dd-up{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.qde-step{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:8px;padding:6px;border-radius:10px;border:1px solid var(--qde-line);background:var(--qde-wash)}
+.qde-step button{width:44px;height:44px;border-radius:8px;border:1px solid var(--qde-line);background:var(--qde-card);color:var(--qde-ink);font:inherit;font-size:20px;cursor:pointer}
+.qde-step button:disabled{opacity:.35;cursor:not-allowed}
+.qde-step output{text-align:center;font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+
+
+/* Image-15 quick capture: boxed fields */
+.qde-form{display:grid;gap:12px}
+.qde-fields{display:grid;grid-template-columns:1fr;gap:12px}
+@container (min-width:400px){ .qde-fields{grid-template-columns:1fr 1fr} }
+.qde-field{display:block;padding:12px 14px;border:1px solid var(--qde-line);border-radius:12px;background:var(--qde-wash);cursor:text;transition:border-color .2s ease}
+.qde-field:focus-within{border-color:var(--qde-border)}
+.qde-field>span:first-child{display:block;font-size:12px;color:var(--qde-muted);margin-bottom:4px}
+.qde-field-row{display:flex;align-items:center;gap:8px}
+.qde-field input{flex:1;min-width:0;min-height:28px;padding:0;border:0;background:transparent;color:var(--qde-ink);font:inherit;font-size:15px;font-weight:500}
+.qde-field input:focus{outline:none}
+.qde-field input::placeholder{color:rgba(var(--qde-ink-rgb),.6)}
+.qde-field b{color:var(--qde-accent-text);font-weight:600}
+.qde-status{font-size:13px;color:var(--qde-muted)}
+.qde-status:empty{display:none}
+.qde-status a{color:var(--qde-accent-text)}
+
+.qde-button{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:52px;padding:0 26px;border:0;border-radius:999px;background:var(--qde-btn-bg);color:var(--qde-btn-ink);font:inherit;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer}
+.qde-button:hover{background:var(--qde-btn-hover)}
+.qde-button:disabled{opacity:.65;cursor:progress}
+
+/* ── Starter band: "Your next project" (image 15) ── */
+.qde-band{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;margin:3rem 0;padding:clamp(28px,5cqi,64px) 0;border-block:1px solid rgba(var(--qde-ink-rgb),.14)}
+@container (min-width:720px){ .qde-band{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,6cqi,72px)} }
+.qde-copy .qde-eyebrow{margin-bottom:18px;color:var(--qde-ink)}
+.qde-copy h2{font-size:clamp(30px,6cqi,54px);line-height:1.08;letter-spacing:-.035em;font-weight:600}
+.qde-copy h2 em{font-family:var(--qde-em-font);font-style:var(--qde-em-style);font-weight:inherit;color:var(--qde-accent-text)}
+.qde[data-tone="gold"] .qde-copy h2 em{color:var(--qde-ink);font-weight:400;letter-spacing:-.04em}
+.qde-copy p{margin-top:22px;max-width:380px;font-size:16px;line-height:1.65;color:var(--qde-muted)}
+.qde-starter{container-type:inline-size;display:grid;gap:14px;padding:clamp(20px,5cqi,30px)}
+.qde-starter h3{font-size:clamp(22px,6cqi,26px);line-height:1.2;letter-spacing:-.03em;font-weight:600}
+
+@media (prefers-reduced-motion: reduce){ .qde *{transition:none !important;animation:none !important} }
+
+/* Line up "01 / Your price" with the right column eyebrow row. */
+.qde-left>.qde-eyebrow{display:flex;align-items:center;min-height:40px}
