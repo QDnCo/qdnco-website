@@ -77,16 +77,35 @@
 .qde-mkt button[aria-pressed="true"]{background:var(--qde-ink);color:var(--page, #fff)}
 .qde[data-tone="gold"] .qde-mkt button[aria-pressed="true"]{background:#5a4523;color:#fbf4e6}
 
-/* Step 1: outcome tiles */
-.qde-tiles{display:grid;grid-template-columns:1fr;gap:10px}
-/* Tiles and fields measure the card (its own container), not the whole widget. */
-@container (min-width:520px){ .qde-tiles{grid-template-columns:1fr 1fr} }
-.qde-tile{position:relative;display:block;padding:14px 14px 14px 44px;border:1px solid var(--qde-line);border-radius:12px;background:var(--qde-wash);cursor:pointer;transition:border-color .2s ease,background .2s ease}
-.qde-tile:hover{border-color:var(--qde-border)}
-.qde-tile:has(input:checked){background:var(--qde-selected);border-color:var(--qde-border);box-shadow:inset 0 0 0 1px var(--qde-border)}
-.qde-tile input{position:absolute;left:14px;top:15px;width:18px;height:18px;margin:0;accent-color:var(--qde-accent)}
-.qde-tile b{display:block;font-size:15px;line-height:1.3}
-.qde-tile small{display:block;margin-top:3px;font-size:13px;line-height:1.4;color:var(--qde-muted)}
+/* Step 1: price block (the calculator result) */
+.qde-price{display:grid;gap:6px;padding:18px;border-radius:16px;background:var(--qde-selected);border:1px solid var(--qde-line)}
+.qde-price-role{font-size:13px;font-weight:600;color:var(--qde-muted)}
+.qde-price-value{font-size:clamp(34px,9cqi,46px);line-height:1;font-weight:700;letter-spacing:-.03em;color:var(--qde-accent-text)}
+.qde-price-unit{font-size:13px;color:var(--qde-muted)}
+.qde-price-total{font-size:15px;font-weight:700;color:var(--qde-ink)}
+.qde-price .qde-sub{margin-top:4px}
+.qde-hint{font-size:13px;line-height:1.5;color:var(--qde-muted)}
+.qde-tiers{margin-top:6px;padding-top:10px;border-top:1px solid var(--qde-line)}
+.qde-tiers>span{display:block;font-size:12px;font-weight:600;color:var(--qde-muted);margin-bottom:6px}
+.qde-tiers ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0;padding:0;list-style:none}
+.qde-tiers li{display:grid;gap:2px;padding:8px;border-radius:10px;background:var(--qde-wash);border:1px solid transparent;font-size:12px;color:var(--qde-muted)}
+.qde-tiers li b{font-size:13px;color:var(--qde-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.qde-tiers li.is-current{border-color:var(--qde-border)}
+@container (max-width:380px){ .qde-tiers ul{grid-template-columns:1fr 1fr} }
+
+/* Step 1: controls */
+.qde-row{display:grid;gap:6px;font-size:14px;font-weight:600}
+.qde-row select{width:100%;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--qde-line);background:var(--qde-wash);color:var(--qde-ink);font:inherit;font-weight:500}
+.qde-step{display:inline-flex;align-items:center;gap:14px}
+.qde-step button{width:44px;height:44px;border-radius:50%;border:1px solid var(--qde-line);background:var(--qde-wash);color:var(--qde-ink);font:inherit;font-size:20px;cursor:pointer}
+.qde-step button:disabled{opacity:.35;cursor:not-allowed}
+.qde-step output{min-width:2.5ch;text-align:center;font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* Step 2: quote recap (click to go back) */
+.qde-recap{display:grid;grid-template-columns:1fr auto;gap:2px 12px;width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--qde-line);background:var(--qde-selected);color:var(--qde-ink);font:inherit;text-align:left;cursor:pointer}
+.qde-recap span{font-size:12px;color:var(--qde-muted)}
+.qde-recap b{grid-column:1;font-size:16px;color:var(--qde-accent-text)}
+.qde-recap small{grid-column:2;grid-row:1 / span 2;align-self:center;font-size:13px;font-weight:600;color:var(--qde-accent-text)}
 
 .qde-extra{display:grid;gap:10px}
 .qde-link{justify-self:start;min-height:44px;padding:0;border:0;background:none;color:var(--qde-accent-text);font:inherit;font-size:14px;font-weight:600;cursor:pointer;text-align:left}
@@ -109,7 +128,6 @@
 .qde-field input:focus{outline:none}
 .qde-field input::placeholder{color:rgba(var(--qde-ink-rgb),.6)}
 .qde-field b{color:var(--qde-accent-text);font-weight:600}
-.qde-back{font-weight:500;color:var(--qde-muted)}
 
 /* Button, status, footnote */
 .qde-button{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:52px;padding:0 26px;border:0;border-radius:999px;background:var(--qde-btn-bg);color:var(--qde-btn-ink);font:inherit;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer}

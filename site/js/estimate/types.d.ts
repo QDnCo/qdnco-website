@@ -2,14 +2,26 @@
 // TypeScript strict mode; the browser never loads this file.
 
 export type MarketId = 'india' | 'dubai';
-export type Kind = 'needs' | 'addons';
+export type RateKey = 'developer' | 'channelPartner';
 
-export interface CatalogItem {
+export interface Role {
+  id: string;
+  label: string;
+  dubaiLabel?: string;
+  group: 'client' | 'other';
+  rateKey?: RateKey;
+}
+
+export interface Service {
+  id: string;
+  label: string;
+  priced?: boolean;
+}
+
+export interface Addon {
   id: string;
   label: string;
   short: string;
-  detail?: string;
-  exclusive?: boolean;
 }
 
 export interface EstimateCatalog {
@@ -19,16 +31,43 @@ export interface EstimateCatalog {
   contactEmail: string;
   whatsapp: string;
   budgetLabel: string;
+  maxCount: number;
   markets: Record<MarketId, { label: string }>;
-  needs: CatalogItem[];
-  addons: CatalogItem[];
+  roles: Role[];
+  services: Service[];
+  rates: Record<RateKey, number[]>;
+  dubai: { aedBase: number; inrBase: number };
+  addons: Addon[];
 }
 
 export interface Selection {
   market: MarketId;
-  needs: string[];
+  role: string;
+  service: string;
+  count: number;
   addons: string[];
 }
+
+export interface Tier {
+  label: string;
+  amount: number;
+}
+
+export type Quote =
+  | {
+      priced: true;
+      market: MarketId;
+      currency: 'INR' | 'AED';
+      roleLabel: string;
+      perUnit: number;
+      total: number;
+      count: number;
+      countLabel: string;
+      unit: 'campaign' | 'project';
+      isFloor: boolean;
+      tiers: Tier[];
+    }
+  | { priced: false; isClient: boolean; roleLabel: string };
 
 export interface ContactInput {
   name: string;
@@ -38,7 +77,9 @@ export interface ContactInput {
 
 export interface EstimateEngine {
   normalise(catalog: EstimateCatalog, raw: Partial<Selection>): Selection;
-  toggle(catalog: EstimateCatalog, selection: Selection, kind: Kind, id: string): Selection;
+  toggleAddon(selection: Selection, id: string): Selection;
+  quote(catalog: EstimateCatalog, selection: Selection): Quote;
+  formatMoney(currency: 'INR' | 'AED', amount: number): string;
   summaryText(catalog: EstimateCatalog, selection: Selection): string;
   buildLead(catalog: EstimateCatalog, selection: Selection, input: ContactInput, source: string): Record<string, string>;
   validPhone(phone: string): boolean;

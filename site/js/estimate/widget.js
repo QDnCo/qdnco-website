@@ -1,20 +1,22 @@
 // @ts-check
 /**
- * Estimate card. Mounts on every element with a data-qd-estimate attribute
- * and completes the whole enquiry in place, in two short steps:
- *   1. What do you need?        outcome tiles + optional creative add-ons
- *   2. Where should we send it? name + phone (project optional)
+ * Marketing cost calculator card. Mounts on every element with a
+ * data-qd-estimate attribute and completes the enquiry in place:
+ *   1. Calculate   market, role, service, campaign count -> live price
+ *   2. Contact     name + phone (project optional), sent with the quote
  *
  *   <div data-qd-estimate></div>
  *
  * Optional attributes:
  *   data-layout="card"        card only (default "band": copy left, card right)
- *   data-needs="ads"          pre-tick needs (ids from catalog.js)
+ *   data-role="channel-partner"  preselect a role (ids from catalog.js)
+ *   data-service="ads"        preselect a service
+ *   data-count="2"            preselect the campaign / project count
  *   data-addons="drone"       pre-tick add-ons
- *   data-market="dubai"       start on Dubai
+ *   data-market="dubai"       start on Dubai (also ?dubai or ?market=dubai in the URL)
  *   data-source="guide:cpql"  label stored with the lead (defaults to the page path)
  *   data-tone="gold"          gold variant instead of brand violet
- *   data-sync-url="true"      mirror picks in the address bar (shareable links)
+ *   data-sync-url="true"      mirror the selection in the address bar (shareable links)
  *   band copy: data-eyebrow, data-heading, data-heading-em, data-lede
  *
  * Needs catalog.js, engine.js and /js/lead-capture.js first (embed.js does that).
@@ -25,8 +27,7 @@
   /** @typedef {import('./types').EstimateCatalog} Catalog */
   /** @typedef {import('./types').Selection} Selection */
   /** @typedef {import('./types').EstimateEngine} Engine */
-  /** @typedef {import('./types').CatalogItem} CatalogItem */
-  /** @typedef {import('./types').Kind} Kind */
+  /** @typedef {import('./types').Quote} Quote */
   /** @typedef {{ catalog: Catalog, engine: Engine, leads: import('./types').LeadCaptureApi | null }} Deps */
   /** @typedef {{ selection: Selection, step: 1 | 2 | 3, name: string, phone: string, project: string, addonsOpen: boolean, status: string, busy: boolean, failedLead: Record<string, string> | null }} State */
   /** @typedef {{ deps: Deps, el: HTMLElement, card: HTMLElement, uid: string, state: State }} Card */
@@ -59,19 +60,110 @@
     return h('span', { 'aria-hidden': 'true' }, ['↗']);
   }
 
-  /* ───────────────────────── Step 1 ───────────────────────── */
+  /* ───────────────────────── Step 1: price ───────────────────────── */
 
   /**
    * @param {Card} c
-   * @param {CatalogItem} item
-   * @param {Kind} kind
+   * @param {Extract<Quote, { priced: true }>} q
+   * @returns {HTMLElement[]}
+   */
+  function pricedBody(c, q) {
+    const money = (/** @type {number} */ n) => c.deps.engine.formatMoney(q.currency, n);
+    const dubai = q.market === 'dubai';
+    const plural = q.count === 1 ? '' : 's';
+    const out = [
+      h('span', { class: 'qde-price-role' }, [q.roleLabel + (dubai ? ' · ' + q.countLabel + ' project' + plural + ' · ' + q.countLabel + ' campaign' + plural : '')]),
+      h('strong', { class: 'qde-price-value' }, [money(q.perUnit)]),
+      h('small', { class: 'qde-price-unit' }, [dubai ? 'per project / month · one campaign per project' : 'per campaign / month · INR · media spend additional']),
+    ];
+    if (q.count > 1) out.push(h('p', { class: 'qde-price-total' }, [(q.isFloor ? 'Starting from ' : '') + money(q.total) + ' / month total']));
+    out.push(h('p', { class: 'qde-sub' }, [dubai
+      ? 'Research, strategy, campaign management, weekly reporting and a dedicated relationship manager. Three-month engagement; final scope agreed in writing.'
+      : 'Indicative campaign retainer. Three-month engagement. Final scope confirmed after a project review.']));
+    out.push(h('p', { class: 'qde-hint' }, [dubai
+      ? 'Media spend is paid directly to Meta/Google, separately from agency fees.'
+      : 'Recommended media: ₹1 lakh per campaign monthly.']));
+    out.push(tierTable(c, q));
+    return out;
+  }
+
+  /**
+   * @param {Card} c
+   * @param {Extract<Quote, { priced: true }>} q
    * @returns {HTMLElement}
    */
-  function choice(c, item, kind) {
-    const checked = c.state.selection[kind].indexOf(item.id) >= 0;
-    const input = h('input', { type: 'checkbox', name: kind, value: item.id, checked });
-    if (kind === 'addons') return h('label', { class: 'qde-chip' }, [input, h('span', {}, [item.label])]);
-    return h('label', { class: 'qde-tile' }, [input, h('span', {}, [h('b', {}, [item.label]), h('small', {}, [item.detail || ''])])]);
+  function tierTable(c, q) {
+    const rows = q.tiers.map((t) => h('li', { class: q.countLabel === t.label || (t.label === '3–4' && (q.count === 3 || q.count === 4)) ? 'is-current' : undefined }, [
+      h('span', {}, [t.label]),
+      h('b', {}, [c.deps.engine.formatMoney(q.currency, t.amount)]),
+    ]));
+    return h('div', { class: 'qde-tiers' }, [h('span', {}, ['Monthly price per ' + q.unit + ' by volume']), h('ul', {}, rows)]);
+  }
+
+  /**
+   * @param {Extract<Quote, { priced: false }>} q
+   * @returns {HTMLElement[]}
+   */
+  function unpricedBody(q) {
+    return [
+      h('strong', { class: 'qde-price-value' }, ['Let’s connect.']),
+      h('p', { class: 'qde-sub' }, [q.isClient
+        ? 'We’ll tailor the scope and quote for your selected service. Fixed calculator pricing applies only to Meta/Google Ad Campaigns.'
+        : 'Partnerships, collaborations and other enquiries don’t need a campaign retainer. Tell us how you would like to connect.']),
+    ];
+  }
+
+  /**
+   * @param {Card} c
+   * @param {Quote} q
+   * @returns {HTMLElement}
+   */
+  function priceBlock(c, q) {
+    return h('div', { class: 'qde-price', 'aria-live': 'polite' }, q.priced ? pricedBody(c, q) : unpricedBody(q));
+  }
+
+  /* ───────────────────────── Step 1: controls ───────────────────────── */
+
+  /**
+   * @param {string} id
+   * @param {string} label
+   * @param {string} name
+   * @param {Array<{ value: string, label: string, group?: string }>} options
+   * @param {string} value
+   * @returns {HTMLElement}
+   */
+  function selectRow(id, label, name, options, value) {
+    /** @type {Map<string, HTMLElement>} */
+    const groups = new Map();
+    const select = h('select', { id, name });
+    for (const o of options) {
+      const opt = h('option', { value: o.value, selected: o.value === value }, [o.label]);
+      if (!o.group) { select.append(opt); continue; }
+      if (!groups.has(o.group)) { const g = h('optgroup', { label: o.group }); groups.set(o.group, g); select.append(g); }
+      groups.get(o.group)?.append(opt);
+    }
+    return h('label', { class: 'qde-row', for: id }, [h('span', {}, [label]), select]);
+  }
+
+  /**
+   * @param {Card} c
+   * @param {Quote} q
+   * @returns {HTMLElement | null}
+   */
+  function stepper(c, q) {
+    if (!q.priced) return null;
+    const noun = q.unit === 'project' ? 'projects' : 'campaigns';
+    const n = c.state.selection.count;
+    const max = c.deps.catalog.maxCount;
+    const labelId = c.uid + '-count';
+    return h('div', { class: 'qde-row' }, [
+      h('span', { id: labelId }, ['Number of ' + noun]),
+      h('div', { class: 'qde-step', role: 'group', 'aria-labelledby': labelId }, [
+        h('button', { type: 'button', 'data-action': 'dec', 'aria-label': 'Fewer ' + noun, disabled: n <= 1 }, ['−']),
+        h('output', { 'aria-live': 'polite' }, [q.countLabel]),
+        h('button', { type: 'button', 'data-action': 'inc', 'aria-label': 'More ' + noun, disabled: n >= max }, ['+']),
+      ]),
+    ]);
   }
 
   /**
@@ -81,9 +173,13 @@
   function addonsBlock(c) {
     const open = c.state.addonsOpen || c.state.selection.addons.length > 0;
     const panelId = c.uid + '-addons';
+    const chips = c.deps.catalog.addons.map((a) => h('label', { class: 'qde-chip' }, [
+      h('input', { type: 'checkbox', name: 'addons', value: a.id, checked: c.state.selection.addons.indexOf(a.id) >= 0 }),
+      h('span', {}, [a.label]),
+    ]));
     return h('div', { class: 'qde-extra' }, [
-      h('button', { type: 'button', class: 'qde-link', 'data-action': 'addons', 'aria-expanded': String(open), 'aria-controls': panelId }, [open ? '− Creative production' : '+ Add creative production']),
-      h('div', { id: panelId, class: 'qde-chips', role: 'group', 'aria-label': 'Creative production add-ons', hidden: !open }, c.deps.catalog.addons.map((item) => choice(c, item, 'addons'))),
+      h('button', { type: 'button', class: 'qde-link', 'data-action': 'addons', 'aria-expanded': String(open), 'aria-controls': panelId }, [open ? '− Creative production (quoted separately)' : '+ Add creative production']),
+      h('div', { id: panelId, class: 'qde-chips', role: 'group', 'aria-label': 'Creative production add-ons', hidden: !open }, chips),
     ]);
   }
 
@@ -92,16 +188,25 @@
    * @returns {HTMLElement[]}
    */
   function stepOne(c) {
-    const needs = c.deps.catalog.needs.map((item) => choice(c, item, 'needs'));
-    return [
-      h('h3', { tabindex: '-1' }, ['Get your marketing estimate.']),
-      h('p', { class: 'qde-sub' }, ['What do you need? Pick one or more.']),
-      h('div', { class: 'qde-tiles', role: 'group', 'aria-label': 'What you need' }, needs),
+    const { catalog, engine } = c.deps;
+    const s = c.state.selection;
+    const q = engine.quote(catalog, s);
+    const roles = catalog.roles.map((r) => ({
+      value: r.id,
+      label: s.market === 'dubai' && r.dubaiLabel ? r.dubaiLabel : r.label,
+      group: r.group === 'client' ? 'Real estate businesses' : 'Collaborations & other enquiries',
+    }));
+    const parts = [
+      h('h3', { tabindex: '-1' }, ['Calculate your marketing cost.']),
+      priceBlock(c, q),
+      selectRow(c.uid + '-role', 'Which best describes you?', 'role', roles, s.role),
+      selectRow(c.uid + '-service', 'What service are you looking for?', 'service', catalog.services.map((x) => ({ value: x.id, label: x.label })), s.service),
+      stepper(c, q),
       addonsBlock(c),
-      h('button', { type: 'button', class: 'qde-button', 'data-action': 'next' }, ['Next: where to send it ', arrow()]),
-      h('p', { class: 'qde-status', role: 'status' }, [c.state.status]),
-      h('small', { class: 'qde-foot' }, ['Takes 20 seconds · No commitment']),
+      h('button', { type: 'button', class: 'qde-button', 'data-action': 'next' }, [q.priced ? 'This works. Let’s talk ' : 'Let’s connect for a tailored scope ', arrow()]),
+      h('small', { class: 'qde-foot' }, ['No contact details needed to explore pricing']),
     ];
+    return parts.filter((part) => part !== null);
   }
 
   /* ───────────────────────── Step 2 ───────────────────────── */
@@ -131,25 +236,38 @@
 
   /**
    * @param {Card} c
+   * @returns {HTMLElement}
+   */
+  function quoteRecap(c) {
+    const q = c.deps.engine.quote(c.deps.catalog, c.state.selection);
+    const money = q.priced ? c.deps.engine.formatMoney(q.currency, q.perUnit) + ' per ' + q.unit + ' / month' : 'Tailored quote';
+    return h('button', { type: 'button', class: 'qde-recap', 'data-action': 'back' }, [
+      h('span', {}, [q.roleLabel + (q.priced ? ' · ' + q.countLabel + ' ' + q.unit + (q.count === 1 ? '' : 's') : '')]),
+      h('b', {}, [money]),
+      h('small', {}, ['← Change']),
+    ]);
+  }
+
+  /**
+   * @param {Card} c
    * @returns {HTMLElement[]}
    */
   function stepTwo(c) {
     const s = c.state;
-    const picked = c.deps.engine.summaryText(c.deps.catalog, s.selection);
-    const form = h('form', { class: 'qde-form', novalidate: true, 'aria-label': 'Where should we send your estimate' }, [
+    const form = h('form', { class: 'qde-form', novalidate: true, 'aria-label': 'Where should we send your plan' }, [
       h('div', { class: 'qde-fields' }, [
         field(c.uid + '-name', 'Your name', { name: 'name', autocomplete: 'name', placeholder: 'Add your name', maxlength: '120', value: s.name }),
         field(c.uid + '-phone', 'Phone / WhatsApp', { name: 'phone', type: 'tel', autocomplete: 'tel', inputmode: 'tel', placeholder: '+91 …', maxlength: '40', value: s.phone }),
       ]),
       field(c.uid + '-project', 'Project name (optional)', { name: 'project', placeholder: 'e.g. your launch or locality', maxlength: '120', value: s.project }),
-      h('button', { type: 'submit', class: 'qde-button', disabled: s.busy }, [s.busy ? 'Sending…' : 'Get my free estimate ', s.busy ? null : arrow()]),
+      h('button', { type: 'submit', class: 'qde-button', disabled: s.busy }, [s.busy ? 'Sending…' : 'Get my plan and quote ', s.busy ? null : arrow()]),
       statusLine(c),
     ]);
     return [
-      h('button', { type: 'button', class: 'qde-link qde-back', 'data-action': 'back' }, ['← Change: ' + picked]),
+      quoteRecap(c),
       h('h3', { tabindex: '-1' }, ['Where should we send it?']),
       form,
-      h('small', { class: 'qde-foot' }, ['We’ll WhatsApp your estimate within one working day · No commitment']),
+      h('small', { class: 'qde-foot' }, ['We’ll WhatsApp your plan within one working day · No commitment']),
     ];
   }
 
@@ -160,11 +278,11 @@
    * @returns {HTMLElement[]}
    */
   function stepDone(c) {
-    const text = 'Hi QDnCo, I just requested an estimate for: ' + c.deps.engine.summaryText(c.deps.catalog, c.state.selection);
+    const text = 'Hi QDnCo, I just requested a quote for: ' + c.deps.engine.summaryText(c.deps.catalog, c.state.selection);
     const wa = 'https://wa.me/' + c.deps.catalog.whatsapp + '?text=' + encodeURIComponent(text);
     return [
-      h('h3', { tabindex: '-1' }, ['Thanks, ' + c.state.name + '. Your estimate is on its way.']),
-      h('p', { class: 'qde-sub' }, ['Our team will WhatsApp you within one working day. Want to talk sooner?']),
+      h('h3', { tabindex: '-1' }, ['Thanks, ' + c.state.name + '. We’re on it.']),
+      h('p', { class: 'qde-sub' }, ['Our team will WhatsApp you within one working day with your plan and quote. Want to talk sooner?']),
       h('a', { class: 'qde-button', href: wa, target: '_blank', rel: 'noopener' }, ['Chat on WhatsApp now ', arrow()]),
     ];
   }
@@ -180,7 +298,7 @@
       h('button', { type: 'button', 'data-market': id, 'aria-pressed': String(c.state.selection.market === id) }, [m.label]));
     return h('div', { class: 'qde-head' }, [
       h('span', { class: 'qde-eyebrow' }, [c.state.step === 3 ? 'Sent' : 'Step ' + c.state.step + ' of 2']),
-      c.state.step === 3 ? null : h('div', { class: 'qde-mkt', role: 'group', 'aria-label': 'Market' }, markets),
+      c.state.step === 1 ? h('div', { class: 'qde-mkt', role: 'group', 'aria-label': 'Market' }, markets) : null,
     ]);
   }
 
@@ -207,12 +325,16 @@
    * @returns {void}
    */
   function onChange(c, event) {
-    const input = event.target;
-    if (!(input instanceof HTMLInputElement) || input.type !== 'checkbox') return;
-    const kind = /** @type {Kind} */ (input.name);
-    c.state.selection = c.deps.engine.toggle(c.deps.catalog, c.state.selection, kind, input.value);
-    c.state.status = '';
-    render(c, 'input[name="' + kind + '"][value="' + input.value + '"]');
+    const t = event.target;
+    const s = c.state;
+    if (t instanceof HTMLSelectElement && (t.name === 'role' || t.name === 'service')) {
+      s.selection = c.deps.engine.normalise(c.deps.catalog, { ...s.selection, [t.name]: t.value });
+      return render(c, 'select[name="' + t.name + '"]');
+    }
+    if (t instanceof HTMLInputElement && t.name === 'addons') {
+      s.selection = c.deps.engine.toggleAddon(s.selection, t.value);
+      render(c, 'input[name="addons"][value="' + t.value + '"]');
+    }
   }
 
   /**
@@ -223,12 +345,16 @@
    */
   function runAction(c, action, target) {
     const s = c.state;
+    const step = (/** @type {number} */ by) => {
+      s.selection = c.deps.engine.normalise(c.deps.catalog, { ...s.selection, count: s.selection.count + by });
+      const next = by > 0 && s.selection.count >= c.deps.catalog.maxCount ? 'dec' : by < 0 && s.selection.count <= 1 ? 'inc' : action;
+      render(c, '[data-action="' + next + '"]');
+    };
+    if (action === 'inc') return step(1);
+    if (action === 'dec') return step(-1);
     if (action === 'addons') { s.addonsOpen = target.getAttribute('aria-expanded') !== 'true'; return render(c, '[data-action="addons"]'); }
     if (action === 'back') { s.step = 1; s.status = ''; return render(c, 'h3'); }
-    if (action !== 'next') return;
-    if (!s.selection.needs.length) { s.status = 'Pick at least one so we know where to start.'; return render(c, '[data-action="next"]'); }
-    s.step = 2; s.status = '';
-    render(c, 'input[name="name"]');
+    if (action === 'next') { s.step = 2; s.status = ''; render(c, 'input[name="name"]'); }
   }
 
   /**
@@ -320,7 +446,7 @@
    */
   function mailtoFor(catalog, lead) {
     const body = ['name', 'phone', 'project', 'catchment', 'source'].map((k) => k + ': ' + (lead[k] || '')).join('\n');
-    return 'mailto:' + catalog.contactEmail + '?subject=' + encodeURIComponent('Estimate enquiry — ' + lead.name) + '&body=' + encodeURIComponent(body);
+    return 'mailto:' + catalog.contactEmail + '?subject=' + encodeURIComponent('Quote enquiry — ' + lead.name) + '&body=' + encodeURIComponent(body);
   }
 
   /**
@@ -329,7 +455,7 @@
    */
   function track(lead) {
     const gtag = /** @type {{ gtag?: (...args: unknown[]) => void }} */ (/** @type {unknown} */ (root)).gtag;
-    if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: 'estimate', services: lead.services, addons: lead.addons });
+    if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: 'calculator', service: lead.services, addons: lead.addons });
   }
 
   /* ───────────────────────── Mount ───────────────────────── */
@@ -353,10 +479,13 @@
    * @returns {Selection}
    */
   function initialSelection(deps, el) {
-    const split = (/** @type {string | undefined} */ v) => (v || '').split(',').map((s) => s.trim()).filter(Boolean);
-    if (el.dataset.syncUrl === 'true' && root.location.search) return deps.engine.normalise(deps.catalog, deps.engine.fromQuery(root.location.search));
-    const market = el.dataset.market === 'dubai' ? 'dubai' : 'india';
-    return deps.engine.normalise(deps.catalog, { market, needs: split(el.dataset.needs || el.dataset.services), addons: split(el.dataset.addons) });
+    const ds = el.dataset;
+    const fromUrl = deps.engine.fromQuery(root.location.search);
+    const addons = (ds.addons || '').split(',').map((s) => s.trim()).filter(Boolean);
+    const fromAttrs = { market: /** @type {import('./types').MarketId} */ (ds.market === 'dubai' ? 'dubai' : 'india'), role: ds.role, service: ds.service, count: Number(ds.count) || 1, addons };
+    const useUrl = ds.syncUrl === 'true' && root.location.search.length > 1;
+    const merged = useUrl ? fromUrl : { ...fromAttrs, market: fromUrl.market === 'dubai' ? 'dubai' : fromAttrs.market };
+    return deps.engine.normalise(deps.catalog, merged);
   }
 
   /**
