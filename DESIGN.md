@@ -299,23 +299,25 @@ Soft-ink panel before the contact form: headline + violet second line, three tic
 
 Corridor map (Chicago → Dubai → India) and an India close-up with keyboard-selectable pins, region cards and city pills that stay in sync. Land from `assets/world.json` (Natural Earth); the static prerender omits land paths (they load at runtime). Pins mark market coverage, not offices.
 
-### 6.17 Marketing cost calculator card (`/js/estimate/`, `/tools/marketing-cost-calculator.html`)
+### 6.17 Marketing cost calculator (`/js/estimate/`): homepage `#pricing`, `/tools/marketing-cost-calculator.html`, blog embeds
 
-The QDnCo New calculator (same rates and rules as the old 6.11 page) rebuilt as one embeddable card that completes the enquiry in place:
+Replaces the homepage price cards and the "Included / Quoted separately" split (16 Oct 2026). One wide card, two halves (stack below ~760px, price first):
+
+- **Left, "01 / Your price":** role, the per-campaign price (Dubai: per project, AED) as one `role="status"` line in a fixed-height slot, a fees + recommended media = total monthly investment breakdown (India), terms, the four volume tiers with the current one outlined, and what the fee includes.
+- **Right, "A couple of details.":** role, service, campaign stepper, "+ Add studio production" chips, "This works. Let's talk". That swaps the right half to the quick capture ("A small first step · Get your marketing estimate", name + phone, optional project) while the price stays visible.
+- **Starter band** (`data-qd-estimate="starter"`, used on About): "Your next project" copy + name/phone card. "Get my free estimate" goes to `pricingPath` (`/#pricing` or `/dubai/#pricing`) with name/phone in `sessionStorage`, prefilled in the quick capture.
+- **Rates:** developer / mandate firm ₹78,000 → ₹62,400, channel partner ₹54,000 → ₹43,200 per campaign per month; Dubai = INR × 4,650 / 54,000 in AED per project. Only Meta/Google Ad Campaigns for client roles are priced. All in `site/js/estimate/catalog.js` with media and the includes list.
 
 ```html
 <div data-qd-estimate data-service="ads" data-source="guide:my-post"></div>
-<script defer src="/js/estimate/embed.js?v=2026-10-16-3"></script>
+<script defer src="/js/estimate/embed.js?v=2026-10-16-4"></script>
 ```
 
-- **Step 1, calculate:** India / Dubai switch, role, service, campaign (Dubai: project) stepper 1–5+. Live price block at the top: per-campaign fee, monthly total, terms, and the four volume tiers with the current one outlined.
-- **Rates (public):** developer / mandate firm ₹78,000 → ₹62,400, channel partner ₹54,000 → ₹43,200 per campaign per month; Dubai = INR × 4,650 / 54,000 in AED per project. Only Meta/Google Ad Campaigns for client roles are priced; everything else shows "Let's connect".
-- **Step 2, contact:** quote recap (click to change), name + phone, optional project. Done state offers WhatsApp.
-- **Add-ons:** "+ Add creative production" chips (shoot, drone, UGC, motion), quoted separately.
-- **Options:** `data-layout="card"`, `data-role`, `data-service`, `data-count`, `data-addons`, `data-market`, `data-source`, `data-tone="gold"`, `data-sync-url` (shareable `?role=…&service=…&count=…`; legacy `?dubai` still works), band copy attributes.
-- **Catalog:** `site/js/estimate/catalog.js` holds roles, services, rates and add-ons. Bump `VERSION` in `embed.js` and the `?v=` on pages whenever these files change.
-- **Leads:** the exact quote rides in `project` (e.g. "Developer · Meta/Google Ad Campaigns · 2 campaigns · ₹70,200/campaign/mo"); market fills `catchment`; `budget` is "Discuss on call".
-- Tests: `tests/estimate.test.mjs` checks every rate against the original calculator, plus a TypeScript strict check.
+- **Options:** `data-market` (fixes the market and hides the switch), `data-role`, `data-service`, `data-count`, `data-addons`, `data-source`, `data-tone="gold"`, `data-sync-url`; starter copy via `data-eyebrow`, `data-heading`, `data-heading-em`, `data-lede`.
+- **Homepage:** `PricingCalculator` renders an empty host and calls `QDEstimateWidget.mountAll` (also on `qd-estimate-ready`). The prerendered host holds a plain rate list (`.qde-fallback`) generated from the catalog; regenerate it when rates change.
+- **Cache:** bump `VERSION` in `embed.js` and every `?v=` whenever these files change.
+- **Leads:** exact quote in `project`, market in `catchment`, `budget` = "Discuss on call".
+- Tests: `tests/estimate.test.mjs` (every rate vs. the original calculator, TypeScript strict check).
 
 ### Secondary pages added
 
@@ -444,3 +446,4 @@ The page mounts with `createRoot`, so React replaces the static HTML on load, bu
 | 2026-10-15 | Services carousel replaced by the QDnCo New two-column Marketing / Technology layout and copy | Owner request; easier to scan than a nine-card carousel with blurred neighbours |
 | 2026-10-15 | Ported QDnCo New features on feature/new-site-port: proof cards, founder film, guides teaser, CTA band, markets map, field guides, resource library, cost calculator | Owner asked to bring everything new from the QDnCo New site; company profile PDF held back (stamped PRIVATE REVIEW) |
 | 2026-10-16 | Estimate card ships in violet; gold kept only as an opt-in `data-tone="gold"` | Owner chose violet after a side-by-side /design-review: one accent sitewide (1.2, 2.2), no serif (3.1) |
+| 2026-10-16 | Homepage pricing cards replaced by the marketing cost calculator; About gets the starter band instead of the calculator | Owner request: show exact price points; research favours ungated live pricing with fees, media and total shown separately |
