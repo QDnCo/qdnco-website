@@ -43,11 +43,17 @@ test('Dubai rates are the INR rate x 4,650 / 54,000 in AED per project', () => {
 test('5 is shown as 5+ and its total is a floor', () => {
   const q = price({ count: 9 })
   assert.equal(q.count, 5); assert.equal(q.countLabel, '5+'); assert.equal(q.isFloor, true)
-  assert.deepEqual(plain(q.tiers).map(t => t.amount), [78000, 70200, 66000, 62400])
+  assert.equal('tiers' in q, false, 'no per-volume price table is exposed')
 })
 test('only Meta/Google ads for client roles get a price', () => {
   assert.deepEqual(plain(price({ service: 'crm' })), { priced: false, isClient: true, roleLabel: 'Developer' })
   assert.deepEqual(plain(price({ role: 'press' })), { priced: false, isClient: false, roleLabel: 'Media / press' })
+})
+test('the gate lead carries contact and market but no price', () => {
+  const lead = engine.buildGateLead(catalog, 'dubai', { name: 'A', phone: '+971 50 000 0000' }, 'home:pricing')
+  for (const key of ['name', 'phone', 'project', 'catchment', 'budget']) assert.ok(lead[key], key)
+  assert.equal(lead.project, 'Opened the pricing calculator'); assert.equal(lead.catchment, 'Dubai')
+  assert.equal(/₹|AED/.test(JSON.stringify(lead)), false)
 })
 test('money formats per market', () => {
   assert.equal(engine.formatMoney('INR', 140400), '₹1,40,400')

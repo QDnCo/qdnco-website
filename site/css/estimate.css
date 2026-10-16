@@ -70,13 +70,6 @@
 .qde-breakdown .qde-sum{padding-top:8px;border-top:1px solid var(--qde-line);color:var(--qde-ink);font-weight:600}
 .qde-breakdown .qde-sum b{font-size:16px}
 
-.qde-tiers>span{display:block;font-size:12px;font-weight:600;color:var(--qde-muted);margin-bottom:8px}
-.qde-tiers ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:0;list-style:none}
-.qde-tiers li{display:grid;gap:2px;padding:10px;border-radius:10px;border:1px solid var(--qde-line);background:var(--qde-wash);font-size:12px;color:var(--qde-muted)}
-.qde-tiers li b{font-size:14px;color:var(--qde-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
-.qde-tiers li.is-current{border-color:var(--qde-border);box-shadow:inset 0 0 0 1px var(--qde-border)}
-@container (max-width:420px){ .qde-tiers ul{grid-template-columns:1fr 1fr} }
-
 .qde-includes{display:grid;gap:8px;padding:14px 0 0;border-top:1px solid var(--qde-line);list-style:none}
 .qde-includes li{position:relative;padding-left:26px;font-size:14px;line-height:1.45;color:var(--qde-ink)}
 .qde-includes li::before{content:"";position:absolute;left:2px;top:3px;width:14px;height:8px;border-left:2px solid var(--qde-accent-text);border-bottom:2px solid var(--qde-accent-text);transform:rotate(-45deg)}

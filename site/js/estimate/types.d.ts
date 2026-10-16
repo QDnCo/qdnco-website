@@ -51,11 +51,6 @@ export interface Selection {
   addons: string[];
 }
 
-export interface Tier {
-  label: string;
-  amount: number;
-}
-
 export type Quote =
   | {
       priced: true;
@@ -68,7 +63,6 @@ export type Quote =
       countLabel: string;
       unit: 'campaign' | 'project';
       isFloor: boolean;
-      tiers: Tier[];
       mediaTotal: number | null;
     }
   | { priced: false; isClient: boolean; roleLabel: string };
@@ -86,6 +80,7 @@ export interface EstimateEngine {
   formatMoney(currency: 'INR' | 'AED', amount: number): string;
   summaryText(catalog: EstimateCatalog, selection: Selection): string;
   buildLead(catalog: EstimateCatalog, selection: Selection, input: ContactInput, source: string): Record<string, string>;
+  buildGateLead(catalog: EstimateCatalog, market: MarketId, contact: { name: string; phone: string }, source: string): Record<string, string>;
   validPhone(phone: string): boolean;
   toQuery(selection: Selection): string;
   fromQuery(search: string): Partial<Selection>;

@@ -12,9 +12,6 @@
   /** @typedef {import('./types').Quote} Quote */
   /** @typedef {import('./types').Role} Role */
 
-  /** Tier rows shown under the price: label and the rate index they use. */
-  const TIERS = /** @type {Array<[string, number]>} */ ([['1', 0], ['2', 1], ['3–4', 2], ['5+', 4]]);
-
   /**
    * @param {Catalog} catalog
    * @param {Partial<Selection>} raw
@@ -95,7 +92,6 @@
       countLabel: n >= catalog.maxCount ? catalog.maxCount + '+' : String(n),
       unit: selection.market === 'dubai' ? 'project' : 'campaign',
       isFloor: n >= catalog.maxCount,
-      tiers: TIERS.map(([label, index]) => ({ label, amount: rates[index] })),
       mediaTotal: catalog.mediaPerCampaign[selection.market] ? Number(catalog.mediaPerCampaign[selection.market]) * n : null,
     };
   }
@@ -160,6 +156,28 @@
   }
 
   /**
+   * The first lead, sent before any price is shown (the calculator is gated).
+   * @param {Catalog} catalog
+   * @param {import('./types').MarketId} market
+   * @param {{ name: string, phone: string }} contact
+   * @param {string} source
+   * @returns {Record<string, string>}
+   */
+  function buildGateLead(catalog, market, contact, source) {
+    return {
+      name: contact.name,
+      phone: contact.phone,
+      project: 'Opened the pricing calculator',
+      catchment: catalog.markets[market].label,
+      budget: catalog.budgetLabel,
+      services: '',
+      addons: '',
+      estimate: '',
+      source,
+    };
+  }
+
+  /**
    * @param {Selection} selection
    * @returns {string}
    */
@@ -190,6 +208,6 @@
   }
 
   /** @type {import('./types').EstimateEngine} */
-  const engine = { normalise, toggleAddon, quote, formatMoney, summaryText, buildLead, validPhone, toQuery, fromQuery };
+  const engine = { normalise, toggleAddon, quote, formatMoney, summaryText, buildLead, buildGateLead, validPhone, toQuery, fromQuery };
   root.QDEstimate = Object.freeze(engine);
 })(globalThis);
