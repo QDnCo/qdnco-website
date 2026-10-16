@@ -55,7 +55,7 @@
 .qde-copy h2 em{font-family:var(--qde-em-font);font-style:var(--qde-em-style);font-weight:inherit;color:var(--qde-accent-text)}
 .qde[data-tone="gold"] .qde-copy h2 em{color:var(--qde-ink);font-weight:400;letter-spacing:-.04em}
 .qde-copy p{margin-top:22px;max-width:380px;font-size:16px;line-height:1.65;color:var(--qde-muted)}
-@container (min-width:720px){ .qde-band{grid-template-columns:1.05fr .95fr;gap:clamp(28px,6cqi,72px)} }
+@container (min-width:720px){ .qde-band{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6cqi,72px)} }
 
 /* ── Card ── */
 .qde-card{display:grid;gap:14px;padding:clamp(20px,4cqi,30px);border-radius:24px;border:2px solid var(--qde-border);background:var(--qde-card)}
