@@ -92,7 +92,27 @@ export interface LeadCaptureApi {
   requestId(): string;
 }
 
+export interface ListboxOption {
+  value: string;
+  label: string;
+  hint?: string;
+  group?: string;
+}
+
+export interface ListboxConfig {
+  id: string;
+  labelId: string;
+  options: ListboxOption[];
+  value: string;
+  onChange(value: string): void;
+}
+
+export interface ListboxApi {
+  create(config: ListboxConfig): HTMLElement;
+}
+
 declare global {
+  var QDListbox: ListboxApi | undefined;
   var QDEstimateCatalog: EstimateCatalog | undefined;
   var QDEstimate: EstimateEngine | undefined;
   var QDEstimateWidget: { mountAll(scope?: ParentNode): void } | undefined;
