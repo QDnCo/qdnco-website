@@ -1,7 +1,7 @@
 # QDnCo — LLM Site Map
 Brand: QDnCo
 # https://qdnco.com
-# Last updated: 2026-09-19
+# Last updated: 2026-10-16
 # Generated from the site's own content modules, not maintained by hand.
 # Purpose: help language models, answer engines and research agents cite
 # QDnCo accurately. Every figure below also appears on a page, with its
@@ -56,19 +56,11 @@ Developer and project websites and a landing page per campaign, served as full H
 ### CRM & Lead Management — delivered by Vyostra AI (https://vyostra.com/)
 One pipeline for Meta, Google, portal, website and WhatsApp leads: instant routing to the right salesperson, stages tracked from enquiry to qualified lead to site visit to booking, automatic follow-up, and a weekly lead-quality report.
 
-## Published pricing
+## Pricing
 
-### Phase 0 — paid market read
-₹75,000–₹1,25,000, 2–3 weeks. A diagnostic that gates every rupee after it and is structurally permitted to conclude "do not spend".
+QDnCo prices Meta/Google ad campaigns by the number of campaigns or projects and the agreed service scope. Media spend is separate and paid directly to the ad platforms. SEO, AI search visibility, landing pages and CRM automation are quoted separately. See your monthly fee in the marketing cost calculator: https://qdnco.com/tools/marketing-cost-calculator.html
 
-### Performance — cost per qualified lead
-₹550 per qualified lead. ₹495 above 60/month, ₹450 above 120/month. 60 qualified leads per month minimum. Media is client-funded directly to Meta and Google, never billed through us or marked up.
-
-### Partnership — monthly retainer
-₹75,000–₹1,00,000/month, one flat fee, minimum three months.
-
-### Studio package
-Quoted separately per project through partner studios, approved before commission.
+Studio production (shoots, drone, UGC, motion) is quoted separately per project and approved before commission.
 
 ## Definition of a qualified lead
 
@@ -126,7 +118,7 @@ Positioning: QDnCo — India-to-Dubai real estate performance marketing, backed 
 - Editorial policy — every number labelled observed, client-reported, client-supplied, owner-reported, model or market estimate: https://qdnco.com/about/editorial-policy.html
 
 ## Dubai
-QDnCo Dubai — https://qdnco.com/dubai/ — real estate lead generation for Dubai brokerages, developers and agents. Run remotely from Bengaluru; no Dubai office, licence or delivered Dubai results claimed. Pricing in AED: Pay per Qualified Lead AED 200 (AED 180 above 150/month, AED 160 above 250; minimum 100/month = AED 20,000); Monthly Retainer AED 20,000/month, one flat fee, minimum three months. Media paid by the client directly to Meta and Google.
+QDnCo Dubai — https://qdnco.com/dubai/ — real estate lead generation for Dubai brokerages, developers and agents. Run remotely from Bengaluru; no Dubai office, licence or delivered Dubai results claimed. Priced in AED per project; see the calculator: https://qdnco.com/tools/marketing-cost-calculator.html?dubai Media paid by the client directly to Meta and Google.
 - Trakheesi permits for real estate marketers (DLD permit, fees, Madmoun QR, campaign rules): https://qdnco.com/dubai/trakheesi-permit-guide/
 - Real estate lead generation for Dubai brokers (portals vs Meta vs Google, qualification, speed to lead): https://qdnco.com/dubai/real-estate-lead-generation/
 - Selling Dubai property to Indian buyers (the India corridor, LRS, IST follow-up): https://qdnco.com/dubai/indian-buyers/
@@ -143,7 +135,7 @@ Real estate marketing in Dubai for developers, brokerages and channel partners �
 
 ### Answers, one question per URL — https://qdnco.com/answers/index.html
 - https://qdnco.com/answers/what-does-qd-and-co-charge.html — What does QDnCo charge?
-- https://qdnco.com/answers/why-550-per-qualified-lead.html — Why is the fee ₹550 per qualified lead and not ₹450?
+- https://qdnco.com/answers/why-550-per-qualified-lead.html — How is QDnCo campaign pricing calculated?
 - https://qdnco.com/answers/are-ad-creatives-charged-extra.html — Are ad creatives charged extra?
 - https://qdnco.com/answers/who-pays-for-the-ad-spend.html — Who pays for the ad spend — the agency or the developer?
 - https://qdnco.com/answers/what-is-the-retainer-package.html — What is the retainer package?

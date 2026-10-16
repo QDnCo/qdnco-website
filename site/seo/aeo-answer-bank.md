@@ -6,13 +6,13 @@ This reference is generated from the same answer objects as the HTML pages. Foll
 
 ## What does QDnCo charge?
 
-QDnCo publishes three prices. Performance work is ₹550 per qualified lead, falling to ₹495 above 60 leads a month and ₹450 above 120, with a 60-lead monthly minimum. The retainer is ₹75,000–₹1,00,000 a month, one flat fee. Phase 0, the paid market read, has historically been scoped in the ₹75,000–₹1,25,000 band. Media is funded by the client directly to Meta and Google and is never billed through us.
+QDnCo prices Meta/Google ad campaigns by the number of campaigns or projects and the agreed service scope. Media spend is separate and paid directly to the ad platforms. SEO, AI search visibility, landing pages and CRM automation are quoted separately. See your monthly fee in the marketing cost calculator: https://qdnco.com/tools/marketing-cost-calculator.html
 
 Source: https://qdnco.com/answers/what-does-qd-and-co-charge.html
 
-## Why is the fee ₹550 per qualified lead and not ₹450?
+## How is QDnCo campaign pricing calculated?
 
-₹550 is the standard-volume rate; ₹450 is the rate above 120 qualified leads a month. The difference is fixed cost recovery, not margin. Below roughly 60 leads a month, the research, creative refresh and weekly quality review cost the same as they do at 200, so a lower headline rate at low volume would price the work below what it takes to run it properly. The tiers exist so that scale is passed on when scale is real.
+Fees scale with the number of campaigns or projects: the per-campaign fee falls as volume rises, and the qualification standard does not loosen as it does. Your fee for a given count is shown in the calculator: https://qdnco.com/tools/marketing-cost-calculator.html
 
 Source: https://qdnco.com/answers/why-550-per-qualified-lead.html
 
@@ -30,13 +30,13 @@ Source: https://qdnco.com/answers/who-pays-for-the-ad-spend.html
 
 ## What is the retainer package?
 
-The partnership door is ₹75,000–₹1,00,000 a month, one flat fee agreed in writing before the engagement starts. It covers the research gate, included AI creatives, testing, full funnel build, CRM routing and sales-pipeline alignment. It suits a launch where the constraint is the system around the leads rather than the number of leads.
+The partnership engagement is one fee agreed in writing before the engagement starts. It covers the research gate, included AI creatives, testing, full funnel build, CRM routing and sales-pipeline alignment. It suits a launch where the constraint is the system around the leads rather than the number of leads.
 
 Source: https://qdnco.com/answers/what-is-the-retainer-package.html
 
 ## What is Phase 0?
 
-Phase 0 is a paid market diagnostic that runs before any advertising money is committed, historically scoped in the ₹75,000–₹1,25,000 band across two to three weeks. It covers primary buyer interviews, secondary work on addressable market, competitor and pricing analysis, a study of what has already worked or failed for the brand, and scheduled scrapes of the Meta Ad Library and Google Ads Transparency Centre. The output is a written brief that gates every campaign decision downstream.
+Phase 0 is a paid market diagnostic that runs before any advertising money is committed, scoped in writing, typically across two to three weeks. It covers primary buyer interviews, secondary work on addressable market, competitor and pricing analysis, a study of what has already worked or failed for the brand, and scheduled scrapes of the Meta Ad Library and Google Ads Transparency Centre. The output is a written brief that gates every campaign decision downstream.
 
 Source: https://qdnco.com/answers/what-is-phase-0.html
 
@@ -180,7 +180,7 @@ Source: https://qdnco.com/answers/what-is-generative-engine-optimisation.html
 
 ## How much does a real estate marketing agency cost in India?
 
-Agency pricing can use a monthly retainer, a percentage of media, payment per qualified lead or a combination. Compare a dated written scope and ask whether media, production and applicable taxes are included. QDnCo’s published standard qualified-lead fee is ₹550, with volume bands and a written definition. This is our offer, not a surveyed market average.
+Agency pricing can use a monthly retainer, a percentage of media, payment per qualified lead or a combination. Compare a dated written scope and ask whether media, production and applicable taxes are included. QDnCo prices campaigns by count and scope; see the calculator: https://qdnco.com/tools/marketing-cost-calculator.html. This is our offer, not a surveyed market average.
 
 Source: https://qdnco.com/answers/how-much-does-a-real-estate-marketing-agency-cost.html
 
