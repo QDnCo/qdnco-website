@@ -10,6 +10,7 @@ const base = { name: 'Local test', phone: '+91 90000 00000', project: 'TEST ONLY
 function harness(options = {}) {
   const rows = options.rows ? structuredClone(options.rows) : []
   const emails = []
+  const fetches = []
   let released = 0
   const sheet = {
     getLastRow: () => rows.length,
@@ -26,13 +27,14 @@ function harness(options = {}) {
     console: { error() {} }, Date, JSON,
     Utilities: { getUuid: () => 'generated-test-uuid' },
     LockService: { getScriptLock: () => ({ tryLock: () => !options.busy, releaseLock: () => released++ }) },
-    PropertiesService: { getScriptProperties: () => ({ getProperty: key => key === 'SHEET_ID' ? 'test-sheet-id' : null }) },
+    PropertiesService: { getScriptProperties: () => ({ getProperty: key => key === 'SHEET_ID' ? 'test-sheet-id' : (options.props || {})[key] || null }) },
     SpreadsheetApp: { openById: id => { assert.equal(id, 'test-sheet-id'); if (options.bookFail) throw new Error('denied'); return { getSheetByName: () => sheet, insertSheet: () => sheet } }, flush() {} },
+    UrlFetchApp: { fetch: (url, req) => { if (options.vyostraThrow) throw new Error('dns'); fetches.push({ url, body: JSON.parse(req.payload) }); return { getResponseCode: () => options.vyostraCode || 201 } } },
     MailApp: { sendEmail: mail => { if (options.mailFail) throw new Error('quota'); emails.push(mail) } },
     ContentService: { MimeType: { JSON: 'json' }, createTextOutput: content => ({ setMimeType: () => JSON.parse(content) }) },
   })
   vm.runInContext(backend, ctx)
-  return { rows, emails, submit: lead => ctx.doPost({ postData: { contents: typeof lead === 'string' ? lead : JSON.stringify(lead) } }), released: () => released }
+  return { rows, emails, fetches, submit: lead => ctx.doPost({ postData: { contents: typeof lead === 'string' ? lead : JSON.stringify(lead) } }), released: () => released }
 }
 
 test('invalid or missing fields never write a sheet or email', () => {
@@ -72,7 +74,7 @@ test('legacy seven-column sheet is extended without changing old row values', ()
   const original = ['2020-01-01', 'Old record', '12345678', 'Historical', 'Area', 'Band', 'https://qdnco.com/']
   const h = harness({ rows: [['Submitted', 'Name', 'Phone', 'Project', 'Catchment', 'Budget', 'Page'], original] })
   assert.equal(h.submit(base).ok, true)
-  assert.deepEqual(h.rows[1], original); assert.equal(h.rows[0].length, 19)
+  assert.deepEqual(h.rows[1], original); assert.equal(h.rows[0].length, 23)
 })
 test('formula-shaped inputs are stored as text', () => {
   const h = harness(); assert.equal(h.submit({ ...base, name: '=1+1' }).ok, true)
@@ -127,4 +129,38 @@ test('editable homepage JSX sources are syntactically complete', () => {
     assert.deepEqual(tree.parseDiagnostics.map(x => ts.flattenDiagnosticMessageText(x.messageText, '\n')), [])
     assert.ok(html.includes('/js/lead-capture.js'))
   }
+})
+
+const VYOSTRA = { VYOSTRA_API_URL: 'https://vyostra.test/', VYOSTRA_FORM_ID: 'form-qdnco' }
+const vyostraColumn = h => h.rows[0].findIndex(c => String(c).toLowerCase() === 'vyostra')
+
+test('a saved lead is forwarded to the Vyostra form with the quote as labelled answers', () => {
+  const h = harness({ props: VYOSTRA })
+  const quoted = { ...base, request_id: 'local-test-vy01', role: 'Developer', service_name: 'Meta/Google Ad Campaigns', quote: '₹78,000/campaign/mo', addons: 'drone' }
+  assert.equal(h.submit(quoted).ok, true)
+  assert.equal(h.fetches.length, 1)
+  assert.equal(h.fetches[0].url, 'https://vyostra.test/api/forms/leads')
+  const body = h.fetches[0].body
+  assert.equal(body.formId, 'form-qdnco'); assert.equal(body.sourceUrl, 'https://qdnco.com/')
+  assert.equal(body.customFields.Phone, base.phone); assert.equal(body.customFields.Market, 'Bengaluru')
+  assert.equal(body.customFields['Quoted fee'], '₹78,000/campaign/mo'); assert.equal(body.customFields.Service, 'Meta/Google Ad Campaigns')
+  assert.equal(body.customFields['Request ID'], 'local-test-vy01'); assert.equal('Estimate summary' in body.customFields, false)
+  assert.equal(h.rows[1][vyostraColumn(h)], 'sent')
+  assert.equal(/vyostra/i.test(h.emails[0].body), false)
+})
+
+test('a Vyostra failure or missing config never rejects a lead saved in the Sheet', () => {
+  for (const [options, status] of [[{}, 'not_configured'], [{ props: VYOSTRA, vyostraCode: 500 }, 'failed_500'], [{ props: VYOSTRA, vyostraThrow: true }, 'failed']]) {
+    const h = harness(options)
+    const result = h.submit({ ...base })
+    assert.equal(result.ok, true)
+    assert.equal(h.rows.length, 2)
+    assert.equal(h.rows[1][vyostraColumn(h)], status)
+  }
+})
+
+test('a duplicate retry is not forwarded twice', () => {
+  const h = harness({ props: VYOSTRA })
+  h.submit({ ...base }); h.submit({ ...base })
+  assert.equal(h.fetches.length, 1)
 })
