@@ -18,7 +18,7 @@
     "gaps": "node scripts/audit/audit-gaps.mjs",
     "fit": "node scripts/audit/audit-fit.mjs",
     "guides": "node scripts/generate/make-guides.mjs",
-    "test": "node --test tests/lead-capture.test.mjs"
+    "test": "node --test tests/lead-capture.test.mjs tests/estimate.test.mjs"
   },
   "dependencies": {
     "framer-motion": "^13.0.0",
