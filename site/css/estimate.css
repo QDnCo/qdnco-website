@@ -10,8 +10,9 @@
   --qde-line: rgba(var(--qde-ink-rgb), .16);
   --qde-accent: #5b32c8;
   --qde-accent-text: var(--accent, #5b32c8);
-  --qde-card: rgba(var(--qde-ink-rgb), .035);
-  --qde-wash: rgba(91,50,200,.07);
+  --qde-card: #fcfbf9;
+  --qde-wash: #fff;
+  --qde-selected: rgba(91,50,200,.08);
   --qde-border: #5b32c8;
   --qde-btn-bg: #5b32c8;
   --qde-btn-hover: #4a28a6;
@@ -27,6 +28,7 @@
   --qde-accent-text: #805917;
   --qde-card: #fbf4e6;
   --qde-wash: rgba(172,127,48,.07);
+  --qde-selected: rgba(172,127,48,.14);
   --qde-border: #b58a3f;
   --qde-line: rgba(137,98,35,.32);
   --qde-btn-bg: linear-gradient(120deg,#d8ac59,#f6dfa6 48%,#dfb766);
@@ -36,6 +38,9 @@
   --qde-em-style: italic;
   --qde-ink: #0a0d12;
   --qde-ink-rgb: 10,13,18;
+}
+:root[data-theme="dark"] .qde:not([data-tone="gold"]){
+  --qde-card: #0e1319; --qde-wash: rgba(255,255,255,.03); --qde-selected: rgba(168,123,255,.14); --qde-border: #a87bff;
 }
 :root[data-theme="dark"] .qde[data-tone="gold"]{
   --qde-card: #1a1913; --qde-ink: #f8f3e9; --qde-ink-rgb: 248,243,233;
@@ -75,7 +80,7 @@
 @container (min-width:520px){ .qde-tiles{grid-template-columns:1fr 1fr} }
 .qde-tile{position:relative;display:block;padding:14px 14px 14px 44px;border:1px solid var(--qde-line);border-radius:12px;background:var(--qde-wash);cursor:pointer;transition:border-color .2s ease,background .2s ease}
 .qde-tile:hover{border-color:var(--qde-border)}
-.qde-tile:has(input:checked){border-color:var(--qde-border);box-shadow:inset 0 0 0 1px var(--qde-border)}
+.qde-tile:has(input:checked){background:var(--qde-selected);border-color:var(--qde-border);box-shadow:inset 0 0 0 1px var(--qde-border)}
 .qde-tile input{position:absolute;left:14px;top:15px;width:18px;height:18px;margin:0;accent-color:var(--qde-accent)}
 .qde-tile b{display:block;font-size:15px;line-height:1.3}
 .qde-tile small{display:block;margin-top:3px;font-size:13px;line-height:1.4;color:var(--qde-muted)}
@@ -86,7 +91,7 @@
 .qde-chips{display:flex;flex-wrap:wrap;gap:8px}
 .qde-chips[hidden]{display:none}
 .qde-chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--qde-line);border-radius:999px;background:var(--qde-wash);font-size:13px;font-weight:500;cursor:pointer}
-.qde-chip:has(input:checked){border-color:var(--qde-border);box-shadow:inset 0 0 0 1px var(--qde-border)}
+.qde-chip:has(input:checked){background:var(--qde-selected);border-color:var(--qde-border);box-shadow:inset 0 0 0 1px var(--qde-border)}
 .qde-chip input{width:16px;height:16px;margin:0;accent-color:var(--qde-accent)}
 
 /* Step 2: boxed fields from the source design */
