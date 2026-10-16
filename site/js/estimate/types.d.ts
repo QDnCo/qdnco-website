@@ -87,7 +87,7 @@ export interface EstimateEngine {
 }
 
 export interface LeadCaptureApi {
-  send(endpoint: string, lead: Record<string, string>): Promise<unknown>;
+  send(endpoint: string, lead: Record<string, string>, options?: { timeoutMs?: number }): Promise<unknown>;
   context(pageUrl: string, referrer: string): Record<string, string>;
   requestId(): string;
 }

@@ -42,6 +42,11 @@
   /** @typedef {{ deps: Deps, el: HTMLElement, left: HTMLElement, right: HTMLElement, uid: string, state: State }} Calc */
 
   const CONTACT_KEY = 'qd-estimate-contact';
+  /* The Apps Script backend can take 15-30 s to answer (cold start, sheet
+     write, alert email). Wait this long for a confirmation, then carry on
+     while the send finishes in the background with a longer limit. */
+  const FAST_WAIT_MS = 5000;
+  const SEND_TIMEOUT_MS = 60000;
   /* Default gate copy, written for the searches in seo/keyword-clusters.json
      (real estate marketing agency, real estate leads, agency pricing). QDnCo
      markets projects for developers; it does not sell property. */
@@ -95,23 +100,42 @@
     try { action(); } catch (error) { console.warn('[qd-estimate] storage unavailable', error); }
   }
 
-  /** @returns {Contact | null} contact saved after a successful gate, if any */
-  function capturedContact() {
-    /** @type {Contact | null} */
+  /**
+   * Contact saved in this session. `sent` is false when the About starter
+   * handed it over and the gate lead still has to go out from this page.
+   * @returns {{ contact: Contact, sent: boolean } | null}
+   */
+  function storedContact() {
+    /** @type {{ contact: Contact, sent: boolean } | null} */
     let saved = null;
     quietly(() => {
       const raw = JSON.parse(root.sessionStorage.getItem(CONTACT_KEY) || 'null');
-      if (raw && raw.captured === true && typeof raw.name === 'string' && typeof raw.phone === 'string') saved = { name: raw.name, phone: raw.phone };
+      if (raw && typeof raw.name === 'string' && typeof raw.phone === 'string') saved = { contact: { name: raw.name, phone: raw.phone }, sent: raw.captured === true };
     });
     return saved;
   }
 
   /**
    * @param {Contact} contact
+   * @param {boolean} sent
    * @returns {void}
    */
-  function rememberContact(contact) {
-    quietly(() => root.sessionStorage.setItem(CONTACT_KEY, JSON.stringify({ ...contact, captured: true })));
+  function rememberContact(contact, sent) {
+    quietly(() => root.sessionStorage.setItem(CONTACT_KEY, JSON.stringify({ ...contact, captured: sent })));
+  }
+
+  /**
+   * Resolves 'done' if `sending` settles within `ms`, 'slow' otherwise.
+   * A rejection inside the window rejects; a later one is the caller's to handle.
+   * @param {Promise<void>} sending
+   * @param {number} ms
+   * @returns {Promise<'done' | 'slow'>}
+   */
+  function within(sending, ms) {
+    /** @type {ReturnType<typeof setTimeout> | undefined} */
+    let timer;
+    const slow = new Promise((resolve) => { timer = setTimeout(() => resolve(/** @type {'slow'} */ ('slow')), ms); });
+    return Promise.race([sending.then(() => /** @type {'done'} */ ('done')), slow]).finally(() => clearTimeout(timer));
   }
 
   /**
@@ -135,7 +159,7 @@
     Object.assign(lead, deps.leads.context(root.location.href, document.referrer));
     lead.request_id = deps.leads.requestId();
     lead.submitted = new Date().toISOString();
-    await deps.leads.send(deps.catalog.endpoint, lead);
+    await deps.leads.send(deps.catalog.endpoint, lead, { timeoutMs: SEND_TIMEOUT_MS });
   }
 
   /**
@@ -235,25 +259,29 @@
    * @param {Deps} deps
    * @param {HTMLElement} el
    * @param {HTMLFormElement} form
-   * @param {(contact: Contact) => void} onCaptured
+   * @param {(contact: Contact, pending: Promise<void> | null) => void} onCaptured
    * @returns {Promise<void>}
    */
   async function submitGate(deps, el, form, onCaptured) {
     const contact = readGate(deps, form);
     if (!contact) return;
+    if (el.dataset.qdEstimate === 'starter') {
+      // Navigating would cancel an in-flight send, so the pricing page sends it.
+      rememberContact(contact, false);
+      return onCaptured(contact, null);
+    }
     const button = /** @type {HTMLButtonElement} */ (form.querySelector('button[type=submit]'));
     const status = /** @type {HTMLElement} */ (form.querySelector('.qde-status'));
-    const lead = deps.engine.buildGateLead(deps.catalog, marketOf(el), contact, el.dataset.source || root.location.pathname);
     button.disabled = true;
-    status.replaceChildren('Sending…');
+    status.replaceChildren('Saving your details…');
+    const sending = sendGateLead(deps, el, contact);
     try {
-      await deliver(deps, lead);
-      rememberContact(contact);
-      track('pricing-gate', lead);
-      onCaptured(contact);
+      const outcome = await within(sending, FAST_WAIT_MS);
+      onCaptured(contact, outcome === 'slow' ? sending : null);
     } catch (error) {
       console.error('[qd-estimate] gate lead not confirmed', error);
       button.disabled = false;
+      const lead = deps.engine.buildGateLead(deps.catalog, marketOf(el), contact, el.dataset.source || root.location.pathname);
       status.replaceChildren(statusLine('We could not confirm your details were received. Please try again.', mailtoFor(deps.catalog, lead)));
     }
   }
@@ -261,7 +289,20 @@
   /**
    * @param {Deps} deps
    * @param {HTMLElement} el
-   * @param {(contact: Contact) => void} onCaptured
+   * @param {Contact} contact
+   * @returns {Promise<void>}
+   */
+  async function sendGateLead(deps, el, contact) {
+    const lead = deps.engine.buildGateLead(deps.catalog, marketOf(el), contact, el.dataset.source || root.location.pathname);
+    await deliver(deps, lead);
+    rememberContact(contact, true);
+    track('pricing-gate', lead);
+  }
+
+  /**
+   * @param {Deps} deps
+   * @param {HTMLElement} el
+   * @param {(contact: Contact, pending: Promise<void> | null) => void} onCaptured
    * @returns {void}
    */
   function mountGate(deps, el, onCaptured) {
@@ -447,6 +488,7 @@
       h('h3', { tabindex: '-1' }, ['Thanks, ' + c.state.contact.name + '. We’re on it.']),
       h('p', { class: 'qde-sub' }, ['Our team will call you on ' + c.state.contact.phone + ' within one working day with your plan and quote. Want to talk sooner?']),
       h('a', { class: 'qde-button', href: wa, target: '_blank', rel: 'noopener' }, ['Chat on WhatsApp now ', arrow()]),
+      c.state.status ? statusLine(c.state.status, c.state.failedLead ? mailtoFor(c.deps.catalog, c.state.failedLead) : undefined) : h('span'),
     ];
   }
 
@@ -495,10 +537,10 @@
     const lead = c.deps.engine.buildLead(c.deps.catalog, s.selection, { name: s.contact.name, phone: s.contact.phone, project: '' }, c.el.dataset.source || root.location.pathname);
     s.busy = true; s.status = ''; s.failedLead = null;
     render(c);
+    const sending = deliver(c.deps, lead).then(() => track('pricing-quote', lead));
     try {
-      await deliver(c.deps, lead);
+      if ((await within(sending, FAST_WAIT_MS)) === 'slow') watchSend(c, sending, lead, 'your quote');
       s.sent = true;
-      track('pricing-quote', lead);
     } catch (error) {
       console.error('[qd-estimate] quote not confirmed', error);
       s.status = 'We could not confirm your quote was received. Please try again.';
@@ -506,6 +548,23 @@
     }
     s.busy = false;
     render(c, s.sent ? 'h3' : '[data-action="send"]');
+  }
+
+  /**
+   * A send still running after the fast wait: report only a real failure.
+   * @param {Calc} c
+   * @param {Promise<unknown>} sending
+   * @param {Record<string, string> | null} lead
+   * @param {string} what
+   * @returns {void}
+   */
+  function watchSend(c, sending, lead, what) {
+    sending.catch((error) => {
+      console.error('[qd-estimate] background send failed', error);
+      c.state.status = 'We could not confirm ' + what + ' reached us. WhatsApp or email us and we will pick it up.';
+      c.state.failedLead = lead;
+      render(c);
+    });
   }
 
   /**
@@ -563,9 +622,10 @@
    * @param {HTMLElement} el
    * @param {Contact} contact
    * @param {boolean} focusNow
+   * @param {Promise<void> | null} pending gate send still running, if any
    * @returns {void}
    */
-  function mountCalculator(deps, el, contact, focusNow) {
+  function mountCalculator(deps, el, contact, focusNow, pending) {
     const left = h('div', { class: 'qde-left' });
     const right = h('div', { class: 'qde-right' });
     /** @type {Calc} */
@@ -575,6 +635,7 @@
     el.classList.add('qde');
     el.replaceChildren(h('div', { class: 'qde-card qde-split' }, [left, right]));
     render(c, focusNow ? 'h3' : undefined);
+    if (pending) watchSend(c, pending, deps.engine.buildGateLead(deps.catalog, marketOf(el), contact, el.dataset.source || root.location.pathname), 'your details');
   }
 
   /** @returns {Deps | null} */
@@ -597,9 +658,12 @@
   function mountOne(deps, el) {
     const starter = el.dataset.qdEstimate === 'starter';
     const toPricing = () => { root.location.href = deps.catalog.pricingPath[marketOf(el)]; };
-    const known = capturedContact();
-    if (known && !starter) return mountCalculator(deps, el, known, false);
-    mountGate(deps, el, (contact) => (starter ? toPricing() : mountCalculator(deps, el, contact, true)));
+    const known = storedContact();
+    if (known && !starter) {
+      // Handed over from the About starter: send the gate lead from here.
+      return mountCalculator(deps, el, known.contact, false, known.sent ? null : sendGateLead(deps, el, known.contact));
+    }
+    mountGate(deps, el, (contact, pending) => (starter ? toPricing() : mountCalculator(deps, el, contact, true, pending)));
   }
 
   /**
