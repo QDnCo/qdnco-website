@@ -13,7 +13,7 @@
 (function (root) {
   'use strict';
 
-  const VERSION = '2026-10-16-7';
+  const VERSION = '2026-10-16-8';
   const BASE = '/js/estimate/';
   const CSS = '/css/estimate.css';
   /** @type {Array<[string, string]>} script URL, global it defines */
@@ -21,6 +21,7 @@
     ['/js/lead-capture.js', 'QDLeadCapture'],
     [BASE + 'catalog.js', 'QDEstimateCatalog'],
     [BASE + 'engine.js', 'QDEstimate'],
+    [BASE + 'listbox.js', 'QDListbox'],
     [BASE + 'widget.js', 'QDEstimateWidget'],
   ];
 

@@ -24,7 +24,7 @@
  *   data-sync-url="true"        mirror the selection in the address bar
  *   gate copy: data-eyebrow, data-heading, data-heading-em, data-lede
  *
- * Needs catalog.js, engine.js and /js/lead-capture.js first (embed.js does that).
+ * Needs catalog.js, engine.js, listbox.js and /js/lead-capture.js first (embed.js does that).
  * Dispatches "qd-estimate-ready" on window once loaded, so a React section can
  * mount late: window.QDEstimateWidget.mountAll(container).
  */
@@ -37,7 +37,7 @@
   /** @typedef {import('./types').Quote} Quote */
   /** @typedef {Extract<Quote, { priced: true }>} Priced */
   /** @typedef {{ name: string, phone: string }} Contact */
-  /** @typedef {{ catalog: Catalog, engine: Engine, leads: import('./types').LeadCaptureApi | null }} Deps */
+  /** @typedef {{ catalog: Catalog, engine: Engine, listbox: import('./types').ListboxApi, leads: import('./types').LeadCaptureApi | null }} Deps */
   /** @typedef {{ selection: Selection, contact: Contact, sent: boolean, addonsOpen: boolean, status: string, busy: boolean, failedLead: Record<string, string> | null }} State */
   /** @typedef {{ deps: Deps, el: HTMLElement, left: HTMLElement, right: HTMLElement, uid: string, state: State }} Calc */
 
@@ -381,24 +381,23 @@
   /* ───────────────────────── 2. Right: a couple of details ───────────────────────── */
 
   /**
-   * @param {string} id
+   * A labelled dropdown (listbox.js) for role or service.
+   * @param {Calc} c
+   * @param {'role' | 'service'} name
    * @param {string} label
-   * @param {string} name
-   * @param {Array<{ value: string, label: string, group?: string }>} options
-   * @param {string} value
+   * @param {import('./types').ListboxOption[]} options
    * @returns {HTMLElement}
    */
-  function selectRow(id, label, name, options, value) {
-    /** @type {Map<string, HTMLElement>} */
-    const groups = new Map();
-    const select = h('select', { id, name });
-    for (const o of options) {
-      const opt = h('option', { value: o.value, selected: o.value === value }, [o.label]);
-      if (!o.group) { select.append(opt); continue; }
-      if (!groups.has(o.group)) { const g = h('optgroup', { label: o.group }); groups.set(o.group, g); select.append(g); }
-      groups.get(o.group)?.append(opt);
-    }
-    return h('label', { class: 'qde-row', for: id }, [h('span', {}, [label]), select]);
+  function dropdownRow(c, name, label, options) {
+    const id = c.uid + '-' + name;
+    const box = c.deps.listbox.create({
+      id, labelId: id + '-label', options, value: c.state.selection[name],
+      onChange: (value) => {
+        c.state.selection = c.deps.engine.normalise(c.deps.catalog, { ...c.state.selection, [name]: value });
+        render(c, '#' + id);
+      },
+    });
+    return h('div', { class: 'qde-row' }, [h('span', { id: id + '-label' }, [label]), box]);
   }
 
   /**
@@ -463,12 +462,13 @@
       label: s.selection.market === 'dubai' && r.dubaiLabel ? r.dubaiLabel : r.label,
       group: r.group === 'client' ? 'Real estate businesses' : 'Collaborations & other enquiries',
     }));
+    const services = catalog.services.map((x) => ({ value: x.id, label: x.label, hint: x.priced ? 'Instant price' : 'Tailored quote' }));
     const cta = s.busy ? 'Sending…' : q.priced ? 'This works. Let’s talk ' : 'Let’s connect for a tailored scope ';
     return [
       h('div', { class: 'qde-head' }, [h('span', { class: 'qde-eyebrow' }, ['Calculate your starting cost']), marketSwitch(c)]),
       h('h3', { tabindex: '-1' }, ['A couple of details, ' + s.contact.name + '.']),
-      selectRow(c.uid + '-role', 'Which best describes you?', 'role', roles, s.selection.role),
-      selectRow(c.uid + '-service', 'What service are you looking for?', 'service', catalog.services.map((x) => ({ value: x.id, label: x.label })), s.selection.service),
+      dropdownRow(c, 'role', 'Which best describes you?', roles),
+      dropdownRow(c, 'service', 'What service are you looking for?', services),
       stepper(c, q),
       addonsBlock(c),
       h('button', { type: 'button', class: 'qde-button', 'data-action': 'send', disabled: s.busy }, [cta, s.busy ? null : arrow()]),
@@ -517,10 +517,6 @@
   function onChange(c, event) {
     const t = event.target;
     const s = c.state;
-    if (t instanceof HTMLSelectElement && (t.name === 'role' || t.name === 'service')) {
-      s.selection = c.deps.engine.normalise(c.deps.catalog, { ...s.selection, [t.name]: t.value });
-      return render(c, 'select[name="' + t.name + '"]');
-    }
     if (t instanceof HTMLInputElement && t.name === 'addons') {
       s.selection = c.deps.engine.toggleAddon(s.selection, t.value);
       render(c, 'input[name="addons"][value="' + t.value + '"]');
@@ -591,8 +587,9 @@
    * @returns {void}
    */
   function onClick(c, event) {
+    // Stay inside the panel: the host element itself may carry data-market.
     const target = /** @type {HTMLElement} */ (event.target).closest('[data-action],[data-market]');
-    if (!(target instanceof HTMLElement)) return;
+    if (!(target instanceof HTMLElement) || !c.right.contains(target)) return;
     const market = target.dataset.market;
     if (market) {
       c.state.selection = c.deps.engine.normalise(c.deps.catalog, { ...c.state.selection, market: /** @type {import('./types').MarketId} */ (market) });
@@ -642,12 +639,13 @@
   function resolveDeps() {
     const catalog = root.QDEstimateCatalog;
     const engine = root.QDEstimate;
-    if (!catalog || !engine) {
-      console.error('[qd-estimate] catalog.js and engine.js must load before widget.js');
+    const listbox = root.QDListbox;
+    if (!catalog || !engine || !listbox) {
+      console.error('[qd-estimate] catalog.js, engine.js and listbox.js must load before widget.js');
       return null;
     }
     if (!root.QDLeadCapture) console.warn('[qd-estimate] lead-capture.js missing; enquiries fall back to email');
-    return { catalog, engine, leads: root.QDLeadCapture || null };
+    return { catalog, engine, listbox, leads: root.QDLeadCapture || null };
   }
 
   /**
