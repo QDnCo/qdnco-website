@@ -128,3 +128,38 @@ test('editable homepage JSX sources are syntactically complete', () => {
     assert.ok(html.includes('/js/lead-capture.js'))
   }
 })
+
+const VYOSTRA_URL = 'https://vyostra.com/api/forms/leads'
+const quoted = { ...base, role: 'Developer', service_name: 'Meta/Google Ad Campaigns', quote: '₹78,000/campaign/mo', source: 'about' }
+function router(sheetReply, crmReply, calls = []) {
+  return async (url, request) => {
+    calls.push({ url, request })
+    const reply = url === VYOSTRA_URL ? crmReply : sheetReply
+    if (reply instanceof Error) throw reply
+    return { ok: true, json: async () => reply }
+  }
+}
+
+test('every lead goes to the Sheet and to the Vyostra form, with the quote as labelled answers', async () => {
+  const calls = []
+  await api.send('https://sheet.test/', quoted, { fetch: router({ ok: true }, { success: true }, calls) })
+  assert.deepEqual(calls.map(c => c.url).sort(), ['https://sheet.test/', VYOSTRA_URL])
+  const crm = calls.find(c => c.url === VYOSTRA_URL)
+  assert.equal(crm.request.headers['Content-Type'], 'application/json'); assert.equal(crm.request.credentials, 'omit')
+  const body = JSON.parse(crm.request.body)
+  assert.equal(body.formId, 'a60aafd4-1e2d-4c08-a99a-3f9847f684dd')
+  assert.equal(body.sourceUrl, 'https://qdnco.com/')
+  assert.equal(body.customFields.Name, base.name); assert.equal(body.customFields.Phone, base.phone)
+  assert.equal(body.customFields['Quoted fee'], '₹78,000/campaign/mo'); assert.equal(body.customFields.Service, 'Meta/Google Ad Campaigns')
+  assert.equal(body.customFields['Request ID'], base.request_id); assert.equal('Estimate summary' in body.customFields, false)
+})
+test('one confirmed destination is enough; the visitor sees an error only when both fail', async () => {
+  assert.equal((await api.send('https://sheet.test/', base, { fetch: router(new Error('down'), { success: true }) })).via, 'vyostra')
+  assert.equal((await api.send('https://sheet.test/', base, { fetch: router({ ok: true }, { success: false }) })).ok, true)
+  await assert.rejects(api.send('https://sheet.test/', base, { fetch: router({ ok: false }, new Error('down')) }), /receipt_unconfirmed/)
+})
+test('vyostra: null sends to the Sheet only', async () => {
+  const calls = []
+  await api.send('https://sheet.test/', base, { vyostra: null, fetch: router({ ok: true }, { success: true }, calls) })
+  assert.deepEqual(calls.map(c => c.url), ['https://sheet.test/'])
+})
