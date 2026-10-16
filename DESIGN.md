@@ -307,7 +307,7 @@ Ported from the QDnCo New "Your next project" band. One card that completes the 
 
 ```html
 <div data-qd-estimate data-needs="ads" data-source="guide:my-post"></div>
-<script defer src="/js/estimate/embed.js?v=2026-10-16"></script>
+<script defer src="/js/estimate/embed.js?v=2026-10-16-2"></script>
 ```
 
 - **Step 1 "What do you need?":** four outcome tiles (More enquiries, Faster follow-up, A launch page, Not sure yet; "Not sure" is exclusive) and a collapsed "+ Add creative production" row (shoot, drone, UGC, motion).
