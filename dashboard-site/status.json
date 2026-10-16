@@ -765,14 +765,14 @@
       "stream": "Community & PR",
       "title": "Threads brand account",
       "status": "Completed",
-      "detail": "QDnCo Threads account authenticated; service bio and official website link saved. First lead-quality post visibly published.",
-      "next": "Verify the campaign-scope post after October 16 at 10:00 IST; do not duplicate its confirmed native schedule.",
+      "detail": "QDnCo Threads account authenticated; service bio and official website link saved. Original lead-quality post and October 16 campaign-scope post visibly published.",
+      "next": "Monitor relevant responses; avoid reposting the delivered campaign-scope checklist.",
       "owner": "Agent",
       "url": "https://www.threads.com/@qdnco.official/post/DeZ6SXEj4Xu",
       "steps": [],
-      "checked": "2026-10-15",
-      "evidence": "Original post permalink retained; October 15 native schedule screenshot and snapshot in growth-recovery records.",
-      "delivery_note": "Native Drafts panel confirms campaign-scope post scheduled for October 16, 10:00 GMT+5:30. Not yet published."
+      "checked": "2026-10-16",
+      "evidence": "October 16 authenticated profile DOM shows matching campaign-scope copy and public permalink; screenshot and snapshot saved in growth-recovery records.",
+      "delivery_note": "October 16 scheduled post verified published: https://www.threads.com/@qdnco.official/post/DeirdcMkc8V (profile displays 6 hours ago). Original post: https://www.threads.com/@qdnco.official/post/DeZ6SXEj4Xu"
     },
     {
       "id": "COM-07",
@@ -1288,7 +1288,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-14T12:23:18.735118+00:00",
-  "reconciliation_note": "October 14: four Quora answers verified, X delivery verified with future scheduling access pending. Saved-media review remains incomplete. Directory support outcomes remain waiting; no ranking or publication inferred from submission.",
-  "updated_at": "2026-10-16T05:05:12.833339+00:00"
+  "reconciled_at": "2026-10-16T10:43:23Z",
+  "reconciliation_note": "Reconciled verified October 16 Threads native delivery; retained all other existing evidence and distinctions.",
+  "updated_at": "2026-10-16T10:46:22.806748+00:00"
 }
