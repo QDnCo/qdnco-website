@@ -65,6 +65,8 @@
   function ratesFor(catalog, selection, rateKey) {
     const inr = catalog.rates[rateKey];
     if (selection.market !== 'dubai') return inr;
+    const aed = catalog.dubai.rates && catalog.dubai.rates[rateKey];
+    if (aed) return aed;
     return inr.map((r) => Math.round((r * catalog.dubai.aedBase) / catalog.dubai.inrBase));
   }
 
@@ -92,7 +94,7 @@
       countLabel: n >= catalog.maxCount ? catalog.maxCount + '+' : String(n),
       unit: selection.market === 'dubai' ? 'project' : 'campaign',
       isFloor: n >= catalog.maxCount,
-      mediaTotal: catalog.mediaPerCampaign[selection.market] ? Number(catalog.mediaPerCampaign[selection.market]) * n : null,
+      flat: rates.every((r) => r === rates[0]),
     };
   }
 

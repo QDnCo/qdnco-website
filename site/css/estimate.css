@@ -64,11 +64,6 @@
 .qde-price small{font-size:13px;color:var(--qde-muted)}
 .qde-terms{font-size:14px;line-height:1.55;color:var(--qde-ink)}
 
-.qde-breakdown{display:grid;gap:8px;padding:14px 16px;border-radius:14px;background:var(--qde-selected)}
-.qde-breakdown div{display:flex;justify-content:space-between;gap:16px;font-size:14px;color:var(--qde-muted)}
-.qde-breakdown b{color:var(--qde-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
-.qde-breakdown .qde-sum{padding-top:8px;border-top:1px solid var(--qde-line);color:var(--qde-ink);font-weight:600}
-.qde-breakdown .qde-sum b{font-size:16px}
 
 .qde-includes{display:grid;gap:8px;padding:14px 0 0;border-top:1px solid var(--qde-line);list-style:none}
 .qde-includes li{position:relative;padding-left:26px;font-size:14px;line-height:1.45;color:var(--qde-ink)}

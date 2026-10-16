@@ -15,18 +15,21 @@ const plain = value => JSON.parse(JSON.stringify(value))
 const sel = (over = {}) => engine.normalise(catalog, { role: 'developer', service: 'ads', ...over })
 const price = over => engine.quote(catalog, sel(over))
 
-// The original QDnCo New calculator, kept verbatim as the reference.
-const cp = [54000, 48600, 45600, 45600, 43200], dev = [78000, 70200, 66000, 66000, 62400]
-const legacyInr = (role, n) => (role === 'channel-partner' ? cp : dev)[Math.min(n, 5) - 1]
-const legacyAed = (role, n) => Math.round(legacyInr(role, n) * 4650 / cp[0])
+// Developer / mandate rates come from the original QDnCo New calculator.
+// Channel partner in India is a flat ₹45,000 per campaign (owner, 16 Oct 2026).
+// Dubai keeps the original AED figures for both roles.
+const cpLegacy = [54000, 48600, 45600, 45600, 43200], dev = [78000, 70200, 66000, 66000, 62400]
+const legacyInr = (role, n) => (role === 'channel-partner' ? 45000 : dev[Math.min(n, 5) - 1])
+const legacyAed = (role, n) => Math.round((role === 'channel-partner' ? cpLegacy : dev)[Math.min(n, 5) - 1] * 4650 / cpLegacy[0])
 
-test('India rates match the original calculator for every role and count', () => {
+test('India rates: developer tiers as before, channel partner flat ₹45,000', () => {
   for (const role of ['developer', 'mandate', 'channel-partner']) {
     for (let n = 1; n <= 5; n++) {
       const q = price({ role, count: n })
       assert.equal(q.priced, true); assert.equal(q.currency, 'INR')
       assert.equal(q.perUnit, legacyInr(role, n), `${role} x${n}`)
       assert.equal(q.total, legacyInr(role, n) * n)
+      assert.equal(q.flat, role === 'channel-partner')
     }
   }
 })

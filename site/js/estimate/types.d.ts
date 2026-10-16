@@ -37,8 +37,7 @@ export interface EstimateCatalog {
   roles: Role[];
   services: Service[];
   rates: Record<RateKey, number[]>;
-  dubai: { aedBase: number; inrBase: number };
-  mediaPerCampaign: Partial<Record<MarketId, number>>;
+  dubai: { aedBase: number; inrBase: number; rates?: Partial<Record<RateKey, number[]>> };
   includes: string[];
   addons: Addon[];
 }
@@ -63,7 +62,8 @@ export type Quote =
       countLabel: string;
       unit: 'campaign' | 'project';
       isFloor: boolean;
-      mediaTotal: number | null;
+      /** Same per-unit price at every count. */
+      flat: boolean;
     }
   | { priced: false; isClient: boolean; roleLabel: string };
 

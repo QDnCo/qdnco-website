@@ -9,7 +9,8 @@
  *   shows "Let's connect".
  * - `rates[rateKey][n - 1]` is the monthly fee per campaign for n campaigns
  *   (the last entry applies to 5+).
- * - Dubai fees are per project in AED: INR rate × dubai.aedBase / dubai.inrBase.
+ * - Dubai fees are per project in AED: INR rate × dubai.aedBase / dubai.inrBase,
+ *   unless dubai.rates sets the AED figures for that rate key.
  */
 (function (root) {
   'use strict';
@@ -49,11 +50,12 @@
     ],
     rates: {
       developer: [78000, 70200, 66000, 66000, 62400],
-      channelPartner: [54000, 48600, 45600, 45600, 43200],
+      // Flat fee: the same per-campaign price at any campaign count (owner, 16 Oct 2026).
+      channelPartner: [45000, 45000, 45000, 45000, 45000],
     },
-    dubai: { aedBase: 4650, inrBase: 54000 },
-    /** Recommended monthly media per campaign, paid by the client to Meta/Google. */
-    mediaPerCampaign: { india: 100000 },
+    /* Dubai realtor rates stay at the earlier AED figures: the India
+       channel-partner change does not move the Dubai price. */
+    dubai: { aedBase: 4650, inrBase: 54000, rates: { channelPartner: [4650, 4185, 3927, 3927, 3720] } },
     /** Shown beside the price: what the fee covers. */
     includes: [
       'Ad creatives as the campaign needs, with no separate creative invoice',

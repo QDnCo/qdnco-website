@@ -320,22 +320,6 @@
   /**
    * @param {Calc} c
    * @param {Priced} q
-   * @returns {HTMLElement}
-   */
-  function breakdown(c, q) {
-    const money = (/** @type {number} */ n) => c.deps.engine.formatMoney(q.currency, n);
-    const plural = q.count === 1 ? '' : 's';
-    const rows = [h('div', {}, [h('span', {}, ['Agency fee · ' + q.countLabel + ' ' + q.unit + plural]), h('b', {}, [money(q.total)])])];
-    if (q.mediaTotal !== null) {
-      rows.push(h('div', {}, [h('span', {}, ['Recommended media, paid to Meta/Google']), h('b', {}, [money(q.mediaTotal)])]));
-      rows.push(h('div', { class: 'qde-sum' }, [h('span', {}, ['Total monthly investment']), h('b', {}, [(q.isFloor ? 'From ' : '') + money(q.total + q.mediaTotal)])]));
-    }
-    return h('div', { class: 'qde-breakdown' }, rows);
-  }
-
-  /**
-   * @param {Calc} c
-   * @param {Priced} q
    * @returns {HTMLElement[]}
    */
   function pricedLeft(c, q) {
@@ -347,7 +331,6 @@
         h('strong', {}, [c.deps.engine.formatMoney(q.currency, q.perUnit)]),
         h('small', {}, [unit]),
       ]),
-      breakdown(c, q),
       h('p', { class: 'qde-terms' }, [dubai
         ? 'Research, strategy, campaign management, weekly reporting and a dedicated relationship manager. Three-month engagement; final scope agreed in writing.'
         : 'Indicative campaign retainer. Three-month engagement. Final scope confirmed after a project review.']),
@@ -401,6 +384,15 @@
   }
 
   /**
+   * @param {Priced} q
+   * @returns {string}
+   */
+  function stepHint(q) {
+    if (q.flat) return 'Flat fee: the same price for every ' + q.unit + '.';
+    return q.unit === 'project' ? 'One campaign per project. Your per-project price updates automatically.' : 'Your per-campaign retainer updates automatically.';
+  }
+
+  /**
    * @param {Calc} c
    * @param {Quote} q
    * @returns {HTMLElement | null}
@@ -417,7 +409,7 @@
         h('output', {}, [q.countLabel]),
         h('button', { type: 'button', 'data-action': 'inc', 'aria-label': 'More ' + noun, disabled: n >= c.deps.catalog.maxCount }, ['+']),
       ]),
-      h('small', { class: 'qde-hint' }, [q.unit === 'project' ? 'One campaign per project. Your per-project price updates automatically.' : 'Your per-campaign retainer updates automatically.']),
+      h('small', { class: 'qde-hint' }, [stepHint(q)]),
     ]);
   }
 
