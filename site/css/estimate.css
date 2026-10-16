@@ -71,6 +71,9 @@
 .qde-sub{font-size:14px;line-height:1.5;color:var(--qde-muted)}
 .qde-mkt{display:inline-flex;gap:2px;padding:3px;border-radius:999px;border:1px solid var(--qde-line)}
 .qde-mkt button{min-height:32px;min-width:44px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:var(--qde-muted);font:inherit;font-size:12px;font-weight:600;cursor:pointer}
+/* 44px tap area without a bulkier pill (DESIGN.md 1.4). */
+.qde-mkt button{position:relative}
+.qde-mkt button::after{content:"";position:absolute;inset:-6px 0}
 .qde-mkt button[aria-pressed="true"]{background:var(--qde-ink);color:var(--page, #fff)}
 .qde[data-tone="gold"] .qde-mkt button[aria-pressed="true"]{background:#5a4523;color:#fbf4e6}
 
