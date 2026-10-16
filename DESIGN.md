@@ -275,11 +275,9 @@ Replaces the nine-card carousel (QDnCo New design and copy). `id="services"` is 
 - **One outline CTA per column** linking to `#contact`.
 - `/dubai/` shows its own creatives line and two extra Dubai-specific points.
 
-### 6.11 Marketing cost calculator (`/tools/marketing-cost-calculator.html`)
+### 6.11 Marketing cost calculator
 
-Ported from the QDnCo New contact page. Two cards: violet-tinted result card (role, price, terms) and a form card (India / Dubai switch, role, service, campaign or project stepper). Only Meta/Google Ad Campaigns for developers, mandate firms and channel partners show a price; everything else shows "Let's connect."
-- Rates: developer/mandate ₹78,000 → ₹62,400 and channel partner ₹54,000 → ₹43,200 per campaign per month by volume; Dubai = INR rate × 4,650 / 54,000 in AED per project.
-- **`noindex` and unlinked** until the owner approves publishing these rates (the source marks them "not a published offer").
+Superseded by 6.17: the page now hosts the calculator card, indexed and linked, with the rates public at the owner's request (16 Oct 2026).
 
 ### 6.12 Results proof cards (`#results`)
 
@@ -301,22 +299,23 @@ Soft-ink panel before the contact form: headline + violet second line, three tic
 
 Corridor map (Chicago → Dubai → India) and an India close-up with keyboard-selectable pins, region cards and city pills that stay in sync. Land from `assets/world.json` (Natural Earth); the static prerender omits land paths (they load at runtime). Pins mark market coverage, not offices.
 
-### 6.17 Estimate card (`/js/estimate/`, `/tools/estimate.html`)
+### 6.17 Marketing cost calculator card (`/js/estimate/`, `/tools/marketing-cost-calculator.html`)
 
-Ported from the QDnCo New "Your next project" band. One card that completes the enquiry in place, no prices shown:
+The QDnCo New calculator (same rates and rules as the old 6.11 page) rebuilt as one embeddable card that completes the enquiry in place:
 
 ```html
-<div data-qd-estimate data-needs="ads" data-source="guide:my-post"></div>
-<script defer src="/js/estimate/embed.js?v=2026-10-16-2"></script>
+<div data-qd-estimate data-service="ads" data-source="guide:my-post"></div>
+<script defer src="/js/estimate/embed.js?v=2026-10-16-3"></script>
 ```
 
-- **Step 1 "What do you need?":** four outcome tiles (More enquiries, Faster follow-up, A launch page, Not sure yet; "Not sure" is exclusive) and a collapsed "+ Add creative production" row (shoot, drone, UGC, motion).
-- **Step 2 "Where should we send it?":** name + phone in boxed fields, optional project name. Done state offers "Chat on WhatsApp now".
-- **Options:** `data-layout="card"` (card only; default band = copy left, card right), `data-needs`, `data-addons`, `data-market`, `data-source`, `data-tone`, `data-sync-url`, band copy via `data-eyebrow` / `data-heading` / `data-heading-em` / `data-lede`.
-- **Catalog:** `site/js/estimate/catalog.js` is the only place to change what visitors can pick.
-- **Leads:** `QDLeadCapture` to the Apps Script backend. Picks ride in `project`; market fills `catchment`; `budget` is "Discuss on call". `services`, `addons`, `estimate`, `source` columns need backend `2026-10-16-estimate-v1` deployed.
-- **No-JS fallback:** put the old `cta-band` inside the placeholder; the card replaces it on mount.
-- Container queries size the card to its own width. Tests: `tests/estimate.test.mjs` (engine + TypeScript strict check).
+- **Step 1, calculate:** India / Dubai switch, role, service, campaign (Dubai: project) stepper 1–5+. Live price block at the top: per-campaign fee, monthly total, terms, and the four volume tiers with the current one outlined.
+- **Rates (public):** developer / mandate firm ₹78,000 → ₹62,400, channel partner ₹54,000 → ₹43,200 per campaign per month; Dubai = INR × 4,650 / 54,000 in AED per project. Only Meta/Google Ad Campaigns for client roles are priced; everything else shows "Let's connect".
+- **Step 2, contact:** quote recap (click to change), name + phone, optional project. Done state offers WhatsApp.
+- **Add-ons:** "+ Add creative production" chips (shoot, drone, UGC, motion), quoted separately.
+- **Options:** `data-layout="card"`, `data-role`, `data-service`, `data-count`, `data-addons`, `data-market`, `data-source`, `data-tone="gold"`, `data-sync-url` (shareable `?role=…&service=…&count=…`; legacy `?dubai` still works), band copy attributes.
+- **Catalog:** `site/js/estimate/catalog.js` holds roles, services, rates and add-ons. Bump `VERSION` in `embed.js` and the `?v=` on pages whenever these files change.
+- **Leads:** the exact quote rides in `project` (e.g. "Developer · Meta/Google Ad Campaigns · 2 campaigns · ₹70,200/campaign/mo"); market fills `catchment`; `budget` is "Discuss on call".
+- Tests: `tests/estimate.test.mjs` checks every rate against the original calculator, plus a TypeScript strict check.
 
 ### Secondary pages added
 
