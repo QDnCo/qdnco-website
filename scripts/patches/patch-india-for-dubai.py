@@ -194,7 +194,7 @@ rep("name: 'Adarsh Ji Pandey'", "name: 'Adarsh Jee Pandey'")
 rep("'Scope, deliverables and billing terms agreed in writing before we start',", "'Scope, deliverables and billing terms agreed in writing before we start',\n      'Minimum three-month engagement',")
 
 # The baked frame no longer matches the source; empty it for a fresh prerender.
-a = s.index('<div id="root">'); b = s.index('<script src="/js/lead-capture.js">')
+a = s.index('<div id="root">'); b = s.index('<script src="/js/lead-capture.js')
 s = s[:a] + '<div id="root"></div>\n' + s[b:]
 assert s.count('<div id="root">') == 1
 open(P, 'w', encoding='utf-8').write(s)

@@ -47,7 +47,7 @@ s = re.sub(r'<script>/\* Region suggestion.*?</script>\n', '', s, flags=re.S)
 assert 'hreflang' not in s and 'qd-region-dismissed' not in s
 
 # ── 0. Drop the India prerender; the Dubai page is baked fresh ──
-a = s.index('<div id="root">'); b = s.index('<script src="/js/lead-capture.js">')
+a = s.index('<div id="root">'); b = s.index('<script src="/js/lead-capture.js')
 s = s[:a] + '<div id="root"></div>\n' + s[b:]
 assert s.count('<div id="root">') == 1
 
