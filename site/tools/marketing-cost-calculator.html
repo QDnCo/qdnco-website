@@ -6,7 +6,7 @@
 <title>Calculate your marketing cost | QDnCo</title>
 <meta name="description" content="Explore your indicative price first. When it feels right, tell us about you and your project.">
 <link rel="canonical" href="https://qdnco.com/tools/marketing-cost-calculator.html">
-<meta name="robots" content="noindex, follow">
+<meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0A0D12">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Calculate your marketing cost | QDnCo">
@@ -292,33 +292,7 @@ h2,h3{letter-spacing:-.015em}
 }
 @keyframes ux-rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 </style>
-<style id="mcc">
-/* Marketing cost calculator (QDnCo New design, DESIGN.md 6.11). */
-.mcc{display:grid;gap:20px;grid-template-columns:1fr 1fr;margin:1.6rem 0 2rem}
-.mcc>section{padding:clamp(22px,3vw,34px);border-radius:24px;background:#fcfbf9;color:#0a0d12;border:1px solid rgba(10,13,18,.12)}
-.mcc .mcc-result{background:#f6f4fb;border-color:rgba(91,50,200,.18)}
-.mcc .eyebrow{margin:0 0 10px}
-.mcc h2,.mcc h3{margin:.2rem 0 .6rem;color:#0a0d12}
-.mcc .mcc-price strong{display:block;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1;font-weight:700;letter-spacing:-.03em;color:#5b32c8}
-.mcc .mcc-price small{display:block;margin-top:8px;font-size:.875rem;color:rgba(10,13,18,.66)}
-.mcc p{color:rgba(10,13,18,.78)}
-.mcc .hint{font-size:.875rem;color:rgba(10,13,18,.62)}
-.mcc .review{display:block;margin-top:14px;padding:8px 12px;border-radius:12px;background:rgba(91,50,200,.08);color:#4a28a6;font-size:.8125rem;font-weight:600}
-.mcc label{display:flex;flex-direction:column;gap:.45rem;margin:0 0 1rem;font-weight:600;font-size:.95rem}
-.mcc select{font:inherit;font-weight:500;min-height:48px;padding:.7rem .9rem;border-radius:12px;border:1px solid rgba(10,13,18,.22);background:#fff;color:#0a0d12}
-.mcc select:focus-visible,.mcc button:focus-visible,.mcc a:focus-visible{outline:3px solid #5b32c8;outline-offset:2px}
-.mcc .mkt{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(10,13,18,.06);margin-bottom:1rem}
-.mcc .mkt button{min-height:40px;padding:0 18px;border:0;border-radius:999px;background:transparent;font:inherit;font-weight:600;color:rgba(10,13,18,.7);cursor:pointer}
-.mcc .mkt button[aria-pressed="true"]{background:#262b38;color:#fff}
-.mcc .step{display:inline-flex;align-items:center;gap:14px;margin:.2rem 0 .4rem}
-.mcc .step button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(10,13,18,.22);background:#fff;font-size:1.25rem;cursor:pointer}
-.mcc .step button:disabled{opacity:.35;cursor:default}
-.mcc .step output{min-width:2.5ch;text-align:center;font-size:1.5rem;font-weight:700}
-.mcc .go{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;margin-top:1rem;border-radius:999px;background:#5b32c8;color:#fff;font-weight:700;text-decoration:none}
-.mcc .go:hover{background:#4a28a6}
-.mcc .tiers{margin-top:12px;padding:12px 14px;border-radius:14px;border:1px solid rgba(10,13,18,.1);background:#fff;font-size:.875rem}
-@media (max-width:860px){.mcc{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="/css/estimate.css?v=2026-10-16-3">
 </head>
 <body>
 <div class="wall" aria-hidden="true"><video id="wall" muted playsinline loop preload="none"></video><div class="wash"></div></div>
@@ -337,26 +311,8 @@ h2,h3{letter-spacing:-.015em}
   <div class="page"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb">
     <a href="../index.html">Home</a><span>/</span><a href="../insights/index.html">Resources</a><span>/</span>Marketing cost calculator
   </nav><p class="eyebrow">Your free pricing estimate</p><h1>Calculate your marketing cost.</h1><p class="lede">Explore your indicative price first. When it feels right, tell us about you and your project.</p>
-<div class="mcc">
-  <section class="mcc-result" aria-live="polite" id="mcc-result"></section>
-  <section>
-    <form id="mcc-form" onsubmit="return false" aria-label="Price calculator">
-      <p class="eyebrow">Calculate your starting cost</p><h3>A couple of details.</h3><p class="hint">No contact details needed to explore pricing.</p>
-      <div class="mkt" role="group" aria-label="Market"><button type="button" data-m="india" aria-pressed="true">India</button><button type="button" data-m="dubai" aria-pressed="false">Dubai</button></div>
-      <label for="role">Which best describes you?<select id="role" name="enquiryType">
-        <optgroup label="Real estate businesses"><option>Developer</option><option>Mandate firm</option><option value="Channel partner" id="cp-opt">Channel partner</option></optgroup>
-        <optgroup label="Collaborations &amp; other enquiries"><option>Collaborator / agency partner</option><option>Service provider / specialist</option><option>Media / press</option><option>Other</option></optgroup>
-      </select></label>
-      <label for="service">What service are you looking for?<select id="service" name="service">
-        <option>Meta/Google Ad Campaigns</option><option>Real Estate SEO &amp; AI Search Optimization</option><option>CRM Setup &amp; Automation</option><option>Landing Pages</option><option>AI Lead Follow-Up &amp; WhatsApp Automation</option><option>Full marketing &amp; technology support</option><option>Others</option>
-      </select></label>
-      <div id="count-wrap"><span id="count-label" style="font-weight:600">Number of campaigns</span><br>
-        <div class="step" role="group" aria-labelledby="count-label"><button type="button" id="dec" aria-label="Decrease campaigns">−</button><output id="count" aria-live="polite" aria-atomic="true">1</output><button type="button" id="inc" aria-label="Increase campaigns">+</button></div>
-        <p class="hint" id="count-hint">Your per-campaign retainer updates automatically.</p></div>
-      <a class="go" id="go" href="../index.html#contact">This works. Let’s talk <span aria-hidden="true">↓</span></a>
-    </form>
-  </section>
-</div>
+<div id="calculator" data-qd-estimate data-layout="card" data-sync-url="true" data-source="tool:marketing-cost-calculator"></div>
+<noscript><p>The calculator needs JavaScript. Call <a href="tel:+918861179992">+91 88611 79992</a> or see the <a href="../pricing/index.html">pricing page</a>.</p></noscript>
     <footer class="foot">
       <nav aria-label="Sections"><a href="../guides/index.html">All guides</a>
         <a href="../work/index.html">Work</a>
@@ -402,48 +358,6 @@ if('requestIdleCallback' in window)requestIdleCallback(once,{timeout:2000});
 setTimeout(once,2000);})();
 </script>
 
-<script>
-(function(){
-var cp=[54000,48600,45600,45600,43200],dev=[78000,70200,66000,66000,62400];
-var st={m:'india',count:1};var $=function(i){return document.getElementById(i)};
-function draw(){
-  var role=$('role').value,svc=$('service').value,dubai=st.m==='dubai',n=st.count;
-  var isClient=['Channel partner','Developer','Mandate firm'].indexOf(role)>=0,has=isClient&&svc==='Meta/Google Ad Campaigns';
-  var base=role==='Channel partner'?cp:dev,price=base[Math.min(n,5)-1];
-  var drates=base.map(function(r){return Math.round(r*4650/cp[0])}),drate=drates[Math.min(n,5)-1];
-  var label=dubai&&role==='Channel partner'?'Realtor / Channel partner':role,nn=n===5?'5+':n;
-  $('cp-opt').textContent=dubai?'Realtor / Channel partner':'Channel partner';
-  $('count-wrap').hidden=!has;$('count').textContent=nn;$('dec').disabled=n<=1;$('inc').disabled=n>=5;
-  $('count-label').textContent=dubai?'Number of projects':'Number of campaigns';
-  $('dec').setAttribute('aria-label',dubai?'Decrease projects':'Decrease campaigns');$('inc').setAttribute('aria-label',dubai?'Increase projects':'Increase campaigns');
-  $('count-hint').textContent=dubai?'One campaign per project. Per-project pricing and monthly total update automatically.':'Your per-campaign retainer updates automatically.';
-  $('go').firstChild.textContent=has?'This works. Let\u2019s talk ':'Let\u2019s connect for a tailored scope ';
-  $('go').setAttribute('href',dubai?'../dubai/#contact':'../index.html#contact');
-  var h='<p class="eyebrow">01 / Your price</p>';
-  if(has&&dubai){var f=function(x){return x.toLocaleString('en-US')};
-    h+='<p class="eyebrow">'+label+'</p><h2>'+nn+' '+(n===1?'project':'projects')+' · '+nn+' '+(n===1?'campaign':'campaigns')+'</h2>'+
-    '<div class="mcc-price"><strong>AED '+f(drate)+'</strong><small>per project / month · one campaign per project</small></div>'+
-    '<p><strong>'+(n===5?'Starting from ':'')+'AED '+f(drate*n)+' / month total</strong></p>'+
-    '<p>Research, strategy, campaign management, weekly reporting and a dedicated relationship manager. Three-month engagement; final scope agreed in writing.</p>'+
-    '<p class="hint">Media spend is paid directly to Meta/Google, separately from agency fees. Additional campaigns within a project are scoped separately.</p>'+
-    '<div class="tiers"><strong>Monthly pricing per project</strong><p style="margin:.3rem 0 0">1: AED '+f(drates[0])+' · 2: AED '+f(drates[1])+'<br>3–4: AED '+f(drates[2])+' · 5+: AED '+f(drates[4])+'</p></div>'+
-    '<small class="review">Volume pricing per project. Developers and mandate firms share the same rates. Final quote confirms scope and total project count.</small>';
-  }else if(has){
-    h+='<h2>'+role+'</h2><div class="mcc-price"><strong>\u20b9'+price.toLocaleString('en-IN')+'</strong><small>per campaign / month · INR · media spend additional</small></div>'+
-    '<p>Indicative campaign retainer. Three-month engagement. Final scope confirmed after a project review.</p>'+
-    '<p class="hint">Recommended media: \u20b91 lakh per campaign monthly.</p><small class="review">Private pricing review · These rates are not a published offer.</small>';
-  }else{
-    h+='<h2>Let\u2019s connect.</h2><p>'+(isClient?'We\u2019ll tailor the scope and quote for your selected service. Fixed calculator pricing applies only to Meta/Google Ad Campaigns.':'Partnerships, collaborations and other enquiries don\u2019t need a campaign retainer. Tell us how you would like to connect below.')+'</p>';
-  }
-  $('mcc-result').innerHTML=h;
-}
-$('role').addEventListener('change',draw);$('service').addEventListener('change',draw);
-$('dec').addEventListener('click',function(){st.count=Math.max(1,st.count-1);draw()});
-$('inc').addEventListener('click',function(){st.count=Math.min(5,st.count+1);draw()});
-[].forEach.call(document.querySelectorAll('.mkt button'),function(b){b.addEventListener('click',function(){st.m=b.dataset.m;
-  [].forEach.call(document.querySelectorAll('.mkt button'),function(x){x.setAttribute('aria-pressed',x===b)});draw()})});
-if(/dubai/i.test(location.search))document.querySelector('.mkt [data-m=dubai]').click();else draw();
-})();
-</script>
+<script defer src="/js/estimate/embed.js?v=2026-10-16-3"></script>
 </body>
 </html>
