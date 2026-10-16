@@ -1,8 +1,8 @@
-/* Estimate card (DESIGN.md 6.17). Loaded by /js/estimate/embed.js.
-   Two tones share one layout: violet (default, brand accent) and gold
-   (data-tone="gold", the QDnCo New look). Layout follows the widget's own
-   width through container queries, so it fits a full-width band, the 940px
-   document column and a narrow blog column alike. */
+/* Marketing cost calculator + starter band (DESIGN.md 6.17).
+   Loaded by /js/estimate/embed.js. Violet by default (brand accent);
+   data-tone="gold" gives the QDnCo New look. Layout follows each element's
+   own width through container queries, so the same markup fits the homepage
+   pricing section, the 940px document column and a narrow blog column. */
 .qde{
   --qde-ink-rgb: var(--ink-rgb, 10,13,18);
   --qde-ink: var(--ink, #0a0d12);
@@ -22,25 +22,17 @@
   container-type: inline-size;
   color: var(--qde-ink);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-}
-.qde[data-tone="gold"]{
-  --qde-accent: #9a6b1f;
-  --qde-accent-text: #805917;
-  --qde-card: #fbf4e6;
-  --qde-wash: rgba(172,127,48,.07);
-  --qde-selected: rgba(172,127,48,.14);
-  --qde-border: #b58a3f;
-  --qde-line: rgba(137,98,35,.32);
-  --qde-btn-bg: linear-gradient(120deg,#d8ac59,#f6dfa6 48%,#dfb766);
-  --qde-btn-hover: linear-gradient(120deg,#cf9f48,#f1d593 48%,#d6ab55);
-  --qde-btn-ink: #252016;
-  --qde-em-font: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
-  --qde-em-style: italic;
-  --qde-ink: #0a0d12;
-  --qde-ink-rgb: 10,13,18;
+  text-align: left;
 }
 :root[data-theme="dark"] .qde:not([data-tone="gold"]){
   --qde-card: #0e1319; --qde-wash: rgba(255,255,255,.03); --qde-selected: rgba(168,123,255,.14); --qde-border: #a87bff;
+}
+.qde[data-tone="gold"]{
+  --qde-accent: #9a6b1f; --qde-accent-text: #805917; --qde-card: #fbf4e6; --qde-wash: rgba(172,127,48,.07);
+  --qde-selected: rgba(172,127,48,.14); --qde-border: #b58a3f; --qde-line: rgba(137,98,35,.32);
+  --qde-btn-bg: linear-gradient(120deg,#d8ac59,#f6dfa6 48%,#dfb766); --qde-btn-hover: linear-gradient(120deg,#cf9f48,#f1d593 48%,#d6ab55);
+  --qde-btn-ink: #252016; --qde-em-font: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif; --qde-em-style: italic;
+  --qde-ink: #0a0d12; --qde-ink-rgb: 10,13,18;
 }
 :root[data-theme="dark"] .qde[data-tone="gold"]{
   --qde-card: #1a1913; --qde-ink: #f8f3e9; --qde-ink-rgb: 248,243,233;
@@ -48,64 +40,62 @@
 }
 .qde *, .qde *::before, .qde *::after{box-sizing:border-box}
 .qde h2, .qde h3{font-family:inherit;color:var(--qde-ink);margin:0}
-.qde p{margin:0}
+.qde p, .qde ul{margin:0}
 .qde :focus-visible{outline:3px solid var(--qde-accent);outline-offset:2px}
 .qde .qde-eyebrow{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--qde-accent-text)}
+.qde-sub{font-size:14px;line-height:1.5;color:var(--qde-muted)}
+.qde-hint{display:block;font-size:13px;line-height:1.45;font-weight:400;color:var(--qde-muted)}
+.qde-foot{display:block;text-align:center;font-size:12px;color:var(--qde-muted)}
 
-/* ── Layout ── */
-.qde-band{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;margin:3rem 0;padding:clamp(28px,5cqi,64px) 0;border-block:1px solid rgba(var(--qde-ink-rgb),.14)}
-.qde-solo{max-width:560px;margin:1.6rem auto 2rem}
-.qde-copy .qde-eyebrow{margin-bottom:18px;color:var(--qde-ink)}
-.qde-copy h2{font-size:clamp(30px,6cqi,54px);line-height:1.08;letter-spacing:-.035em;font-weight:600}
-.qde-copy h2 em{font-family:var(--qde-em-font);font-style:var(--qde-em-style);font-weight:inherit;color:var(--qde-accent-text)}
-.qde[data-tone="gold"] .qde-copy h2 em{color:var(--qde-ink);font-weight:400;letter-spacing:-.04em}
-.qde-copy p{margin-top:22px;max-width:380px;font-size:16px;line-height:1.65;color:var(--qde-muted)}
-@container (min-width:720px){ .qde-band{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6cqi,72px)} }
+/* ── Card shell ── */
+.qde-card{border-radius:24px;border:2px solid var(--qde-border);background:var(--qde-card)}
 
-/* ── Card ── */
-.qde-card{container-type:inline-size;display:grid;gap:14px;padding:clamp(20px,4cqi,30px);border-radius:24px;border:2px solid var(--qde-border);background:var(--qde-card)}
+/* ── Calculator: image-14 split ── */
+.qde-split{display:grid;grid-template-columns:1fr}
+.qde-left, .qde-right{container-type:inline-size;display:grid;align-content:start;gap:16px;padding:clamp(22px,4cqi,40px)}
+.qde-left{border-bottom:1px solid var(--qde-line)}
+@container (min-width:760px){
+  .qde-split{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .qde-left{border-bottom:0;border-right:1px solid var(--qde-line)}
+}
+.qde-role{font-size:clamp(26px,7cqi,36px);line-height:1.1;letter-spacing:-.03em;font-weight:600}
+.qde-price{display:grid;gap:6px;min-height:84px}
+.qde-price strong{font-size:clamp(40px,13cqi,64px);line-height:1;font-weight:700;letter-spacing:-.035em;color:var(--qde-accent-text);font-variant-numeric:tabular-nums}
+.qde-price small{font-size:13px;color:var(--qde-muted)}
+.qde-terms{font-size:14px;line-height:1.55;color:var(--qde-ink)}
+
+.qde-breakdown{display:grid;gap:8px;padding:14px 16px;border-radius:14px;background:var(--qde-selected)}
+.qde-breakdown div{display:flex;justify-content:space-between;gap:16px;font-size:14px;color:var(--qde-muted)}
+.qde-breakdown b{color:var(--qde-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.qde-breakdown .qde-sum{padding-top:8px;border-top:1px solid var(--qde-line);color:var(--qde-ink);font-weight:600}
+.qde-breakdown .qde-sum b{font-size:16px}
+
+.qde-tiers>span{display:block;font-size:12px;font-weight:600;color:var(--qde-muted);margin-bottom:8px}
+.qde-tiers ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:0;list-style:none}
+.qde-tiers li{display:grid;gap:2px;padding:10px;border-radius:10px;border:1px solid var(--qde-line);background:var(--qde-wash);font-size:12px;color:var(--qde-muted)}
+.qde-tiers li b{font-size:14px;color:var(--qde-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.qde-tiers li.is-current{border-color:var(--qde-border);box-shadow:inset 0 0 0 1px var(--qde-border)}
+@container (max-width:420px){ .qde-tiers ul{grid-template-columns:1fr 1fr} }
+
+.qde-includes{display:grid;gap:8px;padding:14px 0 0;border-top:1px solid var(--qde-line);list-style:none}
+.qde-includes li{position:relative;padding-left:26px;font-size:14px;line-height:1.45;color:var(--qde-ink)}
+.qde-includes li::before{content:"";position:absolute;left:2px;top:3px;width:14px;height:8px;border-left:2px solid var(--qde-accent-text);border-bottom:2px solid var(--qde-accent-text);transform:rotate(-45deg)}
+
+/* Right column */
 .qde-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;min-height:40px}
 .qde-head .qde-eyebrow{white-space:nowrap}
-.qde-card h3{font-size:clamp(22px,4cqi,26px);line-height:1.2;letter-spacing:-.03em;font-weight:600}
-.qde-card h3:focus{outline:none}
-.qde-sub{font-size:14px;line-height:1.5;color:var(--qde-muted)}
+.qde-right h3{font-size:clamp(24px,6cqi,30px);line-height:1.15;letter-spacing:-.03em;font-weight:600}
+.qde-right h3:focus{outline:none}
 .qde-mkt{display:inline-flex;gap:2px;padding:3px;border-radius:999px;border:1px solid var(--qde-line)}
-.qde-mkt button{min-height:32px;min-width:44px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:var(--qde-muted);font:inherit;font-size:12px;font-weight:600;cursor:pointer}
-/* 44px tap area without a bulkier pill (DESIGN.md 1.4). */
-.qde-mkt button{position:relative}
+.qde-mkt button{position:relative;min-height:32px;min-width:44px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:var(--qde-muted);font:inherit;font-size:12px;font-weight:600;cursor:pointer}
 .qde-mkt button::after{content:"";position:absolute;inset:-6px 0}
-.qde-mkt button[aria-pressed="true"]{background:var(--qde-ink);color:var(--page, #fff)}
-.qde[data-tone="gold"] .qde-mkt button[aria-pressed="true"]{background:#5a4523;color:#fbf4e6}
-
-/* Step 1: price block (the calculator result) */
-.qde-price{display:grid;gap:6px;padding:18px;border-radius:16px;background:var(--qde-selected);border:1px solid var(--qde-line)}
-.qde-price-role{font-size:13px;font-weight:600;color:var(--qde-muted)}
-.qde-price-value{font-size:clamp(34px,9cqi,46px);line-height:1;font-weight:700;letter-spacing:-.03em;color:var(--qde-accent-text)}
-.qde-price-unit{font-size:13px;color:var(--qde-muted)}
-.qde-price-total{font-size:15px;font-weight:700;color:var(--qde-ink)}
-.qde-price .qde-sub{margin-top:4px}
-.qde-hint{font-size:13px;line-height:1.5;color:var(--qde-muted)}
-.qde-tiers{margin-top:6px;padding-top:10px;border-top:1px solid var(--qde-line)}
-.qde-tiers>span{display:block;font-size:12px;font-weight:600;color:var(--qde-muted);margin-bottom:6px}
-.qde-tiers ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0;padding:0;list-style:none}
-.qde-tiers li{display:grid;gap:2px;padding:8px;border-radius:10px;background:var(--qde-wash);border:1px solid transparent;font-size:12px;color:var(--qde-muted)}
-.qde-tiers li b{font-size:13px;color:var(--qde-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
-.qde-tiers li.is-current{border-color:var(--qde-border)}
-@container (max-width:380px){ .qde-tiers ul{grid-template-columns:1fr 1fr} }
-
-/* Step 1: controls */
-.qde-row{display:grid;gap:6px;font-size:14px;font-weight:600}
-.qde-row select{width:100%;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--qde-line);background:var(--qde-wash);color:var(--qde-ink);font:inherit;font-weight:500}
-.qde-step{display:inline-flex;align-items:center;gap:14px}
-.qde-step button{width:44px;height:44px;border-radius:50%;border:1px solid var(--qde-line);background:var(--qde-wash);color:var(--qde-ink);font:inherit;font-size:20px;cursor:pointer}
+.qde-mkt button[aria-pressed="true"]{background:var(--qde-ink);color:var(--qde-card)}
+.qde-row{display:grid;gap:8px;font-size:15px;font-weight:600}
+.qde-row select{width:100%;min-height:52px;padding:0 14px;border-radius:10px;border:1px solid var(--qde-line);background:var(--qde-wash);color:var(--qde-ink);font:inherit;font-weight:500}
+.qde-step{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:8px;padding:6px;border-radius:10px;border:1px solid var(--qde-line);background:var(--qde-wash)}
+.qde-step button{width:44px;height:44px;border-radius:8px;border:1px solid var(--qde-line);background:var(--qde-card);color:var(--qde-ink);font:inherit;font-size:20px;cursor:pointer}
 .qde-step button:disabled{opacity:.35;cursor:not-allowed}
-.qde-step output{min-width:2.5ch;text-align:center;font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
-
-/* Step 2: quote recap (click to go back) */
-.qde-recap{display:grid;grid-template-columns:1fr auto;gap:2px 12px;width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--qde-line);background:var(--qde-selected);color:var(--qde-ink);font:inherit;text-align:left;cursor:pointer}
-.qde-recap span{font-size:12px;color:var(--qde-muted)}
-.qde-recap b{grid-column:1;font-size:16px;color:var(--qde-accent-text)}
-.qde-recap small{grid-column:2;grid-row:1 / span 2;align-self:center;font-size:13px;font-weight:600;color:var(--qde-accent-text)}
+.qde-step output{text-align:center;font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
 
 .qde-extra{display:grid;gap:10px}
 .qde-link{justify-self:start;min-height:44px;padding:0;border:0;background:none;color:var(--qde-accent-text);font:inherit;font-size:14px;font-weight:600;cursor:pointer;text-align:left}
@@ -113,13 +103,13 @@
 .qde-chips{display:flex;flex-wrap:wrap;gap:8px}
 .qde-chips[hidden]{display:none}
 .qde-chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--qde-line);border-radius:999px;background:var(--qde-wash);font-size:13px;font-weight:500;cursor:pointer}
-.qde-chip:has(input:checked){background:var(--qde-selected);border-color:var(--qde-border);box-shadow:inset 0 0 0 1px var(--qde-border)}
+.qde-chip:has(input:checked){border-color:var(--qde-border);background:var(--qde-selected)}
 .qde-chip input{width:16px;height:16px;margin:0;accent-color:var(--qde-accent)}
 
-/* Step 2: boxed fields from the source design */
+/* Image-15 quick capture: boxed fields */
 .qde-form{display:grid;gap:12px}
 .qde-fields{display:grid;grid-template-columns:1fr;gap:12px}
-@container (min-width:440px){ .qde-fields{grid-template-columns:1fr 1fr} }
+@container (min-width:400px){ .qde-fields{grid-template-columns:1fr 1fr} }
 .qde-field{display:block;padding:12px 14px;border:1px solid var(--qde-line);border-radius:12px;background:var(--qde-wash);cursor:text;transition:border-color .2s ease}
 .qde-field:focus-within{border-color:var(--qde-border)}
 .qde-field>span:first-child{display:block;font-size:12px;color:var(--qde-muted);margin-bottom:4px}
@@ -128,14 +118,26 @@
 .qde-field input:focus{outline:none}
 .qde-field input::placeholder{color:rgba(var(--qde-ink-rgb),.6)}
 .qde-field b{color:var(--qde-accent-text);font-weight:600}
-
-/* Button, status, footnote */
-.qde-button{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:52px;padding:0 26px;border:0;border-radius:999px;background:var(--qde-btn-bg);color:var(--qde-btn-ink);font:inherit;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer}
-.qde-button:hover{background:var(--qde-btn-hover)}
-.qde-button:disabled{opacity:.65;cursor:progress}
 .qde-status{font-size:13px;color:var(--qde-muted)}
 .qde-status:empty{display:none}
 .qde-status a{color:var(--qde-accent-text)}
-.qde-foot{display:block;text-align:center;font-size:12px;color:var(--qde-muted)}
+
+.qde-button{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:52px;padding:0 26px;border:0;border-radius:999px;background:var(--qde-btn-bg);color:var(--qde-btn-ink);font:inherit;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer}
+.qde-button:hover{background:var(--qde-btn-hover)}
+.qde-button:disabled{opacity:.65;cursor:progress}
+
+/* ── Starter band: "Your next project" (image 15) ── */
+.qde-band{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;margin:3rem 0;padding:clamp(28px,5cqi,64px) 0;border-block:1px solid rgba(var(--qde-ink-rgb),.14)}
+@container (min-width:720px){ .qde-band{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,6cqi,72px)} }
+.qde-copy .qde-eyebrow{margin-bottom:18px;color:var(--qde-ink)}
+.qde-copy h2{font-size:clamp(30px,6cqi,54px);line-height:1.08;letter-spacing:-.035em;font-weight:600}
+.qde-copy h2 em{font-family:var(--qde-em-font);font-style:var(--qde-em-style);font-weight:inherit;color:var(--qde-accent-text)}
+.qde[data-tone="gold"] .qde-copy h2 em{color:var(--qde-ink);font-weight:400;letter-spacing:-.04em}
+.qde-copy p{margin-top:22px;max-width:380px;font-size:16px;line-height:1.65;color:var(--qde-muted)}
+.qde-starter{container-type:inline-size;display:grid;gap:14px;padding:clamp(20px,5cqi,30px)}
+.qde-starter h3{font-size:clamp(22px,6cqi,26px);line-height:1.2;letter-spacing:-.03em;font-weight:600}
 
 @media (prefers-reduced-motion: reduce){ .qde *{transition:none !important} }
+
+/* Line up "01 / Your price" with the right column eyebrow row. */
+.qde-left>.qde-eyebrow{display:flex;align-items:center;min-height:40px}

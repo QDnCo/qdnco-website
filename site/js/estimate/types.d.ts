@@ -28,6 +28,7 @@ export interface EstimateCatalog {
   version: string;
   endpoint: string;
   toolPath: string;
+  pricingPath: Record<MarketId, string>;
   contactEmail: string;
   whatsapp: string;
   budgetLabel: string;
@@ -37,6 +38,8 @@ export interface EstimateCatalog {
   services: Service[];
   rates: Record<RateKey, number[]>;
   dubai: { aedBase: number; inrBase: number };
+  mediaPerCampaign: Partial<Record<MarketId, number>>;
+  includes: string[];
   addons: Addon[];
 }
 
@@ -66,6 +69,7 @@ export type Quote =
       unit: 'campaign' | 'project';
       isFloor: boolean;
       tiers: Tier[];
+      mediaTotal: number | null;
     }
   | { priced: false; isClient: boolean; roleLabel: string };
 

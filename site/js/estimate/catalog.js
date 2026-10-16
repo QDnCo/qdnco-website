@@ -16,9 +16,11 @@
 
   /** @type {import('./types').EstimateCatalog} */
   const catalog = {
-    version: '2026-10-16-3',
+    version: '2026-10-16-4',
     endpoint: 'https://script.google.com/macros/s/AKfycbzfTd1BieV-6g4OFB99RTufHTYxhFdS9J0w3qHik2IxxPDlJ2ss8Xkugcs10VINJBKb/exec',
     toolPath: '/tools/marketing-cost-calculator.html',
+    /** Where the "Get my free estimate" starter sends visitors, per market. */
+    pricingPath: { india: '/#pricing', dubai: '/dubai/#pricing' },
     contactEmail: 'qdnco01@gmail.com',
     whatsapp: '918861179992',
     budgetLabel: 'Discuss on call',
@@ -50,6 +52,15 @@
       channelPartner: [54000, 48600, 45600, 45600, 43200],
     },
     dubai: { aedBase: 4650, inrBase: 54000 },
+    /** Recommended monthly media per campaign, paid by the client to Meta/Google. */
+    mediaPerCampaign: { india: 100000 },
+    /** Shown beside the price: what the fee covers. */
+    includes: [
+      'Ad creatives as the campaign needs, with no separate creative invoice',
+      'Campaign setup, A/B testing and live deployment on Meta and Google',
+      'Lead funnel, CRM routing and lead automation',
+      'Weekly report: spend, cost per qualified lead and lead quality',
+    ],
     addons: [
       { id: 'shoot', label: 'Photo & video shoot', short: 'Shoot' },
       { id: 'drone', label: 'Drone', short: 'Drone' },

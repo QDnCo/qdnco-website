@@ -96,6 +96,7 @@
       unit: selection.market === 'dubai' ? 'project' : 'campaign',
       isFloor: n >= catalog.maxCount,
       tiers: TIERS.map(([label, index]) => ({ label, amount: rates[index] })),
+      mediaTotal: catalog.mediaPerCampaign[selection.market] ? Number(catalog.mediaPerCampaign[selection.market]) * n : null,
     };
   }
 
