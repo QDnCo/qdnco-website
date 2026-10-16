@@ -42,6 +42,23 @@
   /** @typedef {{ deps: Deps, el: HTMLElement, left: HTMLElement, right: HTMLElement, uid: string, state: State }} Calc */
 
   const CONTACT_KEY = 'qd-estimate-contact';
+  /* Default gate copy, written for the searches in seo/keyword-clusters.json
+     (real estate marketing agency, real estate leads, agency pricing). QDnCo
+     markets projects for developers; it does not sell property. */
+  const GATE_COPY = {
+    india: {
+      eyebrow: 'Real estate marketing pricing',
+      heading: 'Need more qualified leads for your project?',
+      headingEm: 'Get your marketing estimate.',
+      lede: 'Meta and Google campaigns for real estate developers, mandate firms and channel partners in Bengaluru. Share your name and number to see your monthly fee.',
+    },
+    dubai: {
+      eyebrow: 'Dubai real estate marketing pricing',
+      heading: 'Need more qualified buyer leads in Dubai?',
+      headingEm: 'Get your marketing estimate.',
+      lede: 'Meta and Google campaigns for Dubai developers and realtors, priced in AED per project. Share your name and number to see your monthly fee.',
+    },
+  };
   let mountCount = 0;
 
   /**
@@ -171,10 +188,11 @@
    */
   function gateCopy(el) {
     const ds = el.dataset;
+    const copy = GATE_COPY[marketOf(el)];
     return h('div', { class: 'qde-copy' }, [
-      h('span', { class: 'qde-eyebrow' }, [ds.eyebrow || 'Your next project']),
-      h('h2', {}, [ds.heading || 'Need more property enquiries?', h('br'), h('em', {}, [ds.headingEm || 'Talk to our team.'])]),
-      h('p', {}, [ds.lede || 'Tell us about your project. Get a marketing plan and pricing estimate.']),
+      h('span', { class: 'qde-eyebrow' }, [ds.eyebrow || copy.eyebrow]),
+      h('h2', {}, [ds.heading || copy.heading, h('br'), h('em', {}, [ds.headingEm || copy.headingEm])]),
+      h('p', {}, [ds.lede || copy.lede]),
     ]);
   }
 

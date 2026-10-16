@@ -309,7 +309,7 @@ Corridor map (Chicago → Dubai → India) and an India close-up with keyboard-s
 
 - `data-qd-estimate="starter"` (About): gate only; after the send it goes to `pricingPath` (`/#pricing`, `/dubai/#pricing`), where the calculator opens unlocked.
 - **Rates** live only in `site/js/estimate/catalog.js` (developer / mandate ₹78,000 → ₹62,400, channel partner ₹54,000 → ₹43,200 per campaign per month; Dubai = INR × 4,650 / 54,000 in AED per project). The prerendered HTML carries the gate copy, never prices. Note: the catalog is public JS, so rates are visible to anyone reading the source; true gating would need the quote served after the lead.
-- **Embed:** `<div data-qd-estimate data-service="ads" data-source="guide:my-post"></div>` + `<script defer src="/js/estimate/embed.js?v=2026-10-16-5"></script>`. Options: `data-market`, `data-role`, `data-service`, `data-count`, `data-addons`, `data-source`, `data-tone="gold"`, `data-sync-url`, gate copy attributes.
+- **Embed:** `<div data-qd-estimate data-service="ads" data-source="guide:my-post"></div>` + `<script defer src="/js/estimate/embed.js?v=2026-10-16-6"></script>`. Options: `data-market`, `data-role`, `data-service`, `data-count`, `data-addons`, `data-source`, `data-tone="gold"`, `data-sync-url`, gate copy attributes.
 - **Homepage:** `PricingCalculator` renders an empty host and calls `QDEstimateWidget.mountAll` (also on `qd-estimate-ready`).
 - **Cache:** bump `VERSION` in `embed.js` and every `?v=` whenever these files change.
 - **Testing:** never submit against the live endpoint; stub `window.fetch` (QDLeadCapture is frozen). `tests/estimate.test.mjs` pins every rate and checks the gate lead carries no price.
