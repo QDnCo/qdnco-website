@@ -78,6 +78,13 @@ test('unknown ids fall back to defaults; add-ons toggle', () => {
   assert.deepEqual(plain(s), { market: 'india', role: 'developer', service: 'ads', count: 1, addons: ['ugc'] })
   assert.deepEqual(plain(engine.toggleAddon(s, 'ugc').addons), [])
 })
+test('time zone picks the default market; elsewhere falls back to the page', () => {
+  assert.equal(engine.marketFromTimeZone('Asia/Dubai'), 'dubai')
+  assert.equal(engine.marketFromTimeZone('Asia/Kolkata'), 'india')
+  assert.equal(engine.marketFromTimeZone('Asia/Calcutta'), 'india')
+  assert.equal(engine.marketFromTimeZone('Europe/London'), null)
+  assert.equal(engine.marketFromTimeZone(''), null)
+})
 test('phone validation matches the backend rule', () => {
   assert.equal(engine.validPhone('+91 90000 00000'), true)
   for (const bad of ['', '1234', 'letters12345678', '+1 234567890123456']) assert.equal(engine.validPhone(bad), false, bad)

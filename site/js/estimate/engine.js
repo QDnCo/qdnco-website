@@ -209,7 +209,20 @@
     };
   }
 
+  /**
+   * Default market from the visitor's time zone: no permission prompt and no
+   * network lookup. UAE devices report Asia/Dubai; India reports Asia/Kolkata
+   * (older systems Asia/Calcutta). Anywhere else returns null.
+   * @param {string} timeZone
+   * @returns {import('./types').MarketId | null}
+   */
+  function marketFromTimeZone(timeZone) {
+    if (timeZone === 'Asia/Dubai') return 'dubai';
+    if (timeZone === 'Asia/Kolkata' || timeZone === 'Asia/Calcutta') return 'india';
+    return null;
+  }
+
   /** @type {import('./types').EstimateEngine} */
-  const engine = { normalise, toggleAddon, quote, formatMoney, summaryText, buildLead, buildGateLead, validPhone, toQuery, fromQuery };
+  const engine = { marketFromTimeZone, normalise, toggleAddon, quote, formatMoney, summaryText, buildLead, buildGateLead, validPhone, toQuery, fromQuery };
   root.QDEstimate = Object.freeze(engine);
 })(globalThis);

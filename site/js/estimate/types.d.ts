@@ -82,6 +82,7 @@ export interface EstimateEngine {
   buildLead(catalog: EstimateCatalog, selection: Selection, input: ContactInput, source: string): Record<string, string>;
   buildGateLead(catalog: EstimateCatalog, market: MarketId, contact: { name: string; phone: string }, source: string): Record<string, string>;
   validPhone(phone: string): boolean;
+  marketFromTimeZone(timeZone: string): MarketId | null;
   toQuery(selection: Selection): string;
   fromQuery(search: string): Partial<Selection>;
 }

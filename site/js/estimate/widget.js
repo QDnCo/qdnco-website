@@ -17,7 +17,10 @@
  *   <div data-qd-estimate="starter"></div>  gate only; then goes to catalog.pricingPath
  *
  * Optional attributes:
- *   data-market="dubai"         fix the market (hides the India/Dubai switch)
+ *   data-market="dubai"         page default market. The visitor's own default
+ *                               wins: their toggle this session, ?dubai, then
+ *                               their time zone (Dubai / India). The India/Dubai
+ *                               switch always shows.
  *   data-role, data-service, data-count   preselect inputs
  *   data-source="guide:cpql"    label stored with the lead (defaults to the page path)
  *   data-tone="gold"            gold variant instead of brand violet
@@ -42,6 +45,8 @@
   /** @typedef {{ deps: Deps, el: HTMLElement, left: HTMLElement, right: HTMLElement, uid: string, state: State }} Calc */
 
   const CONTACT_KEY = 'qd-estimate-contact';
+  /** The visitor's India/Dubai toggle, kept for the session. */
+  const MARKET_KEY = 'qd-estimate-market';
   /* The Apps Script backend can take 15-30 s to answer (cold start, sheet
      write, alert email). Wait this long for a confirmation, then carry on
      while the send finishes in the background with a longer limit. */
@@ -143,8 +148,31 @@
    * @returns {import('./types').MarketId}
    */
   function marketOf(el) {
-    if (el.dataset.market) return el.dataset.market === 'dubai' ? 'dubai' : 'india';
-    return /dubai/i.test(root.location.search) ? 'dubai' : 'india';
+    const chosen = storedMarket();
+    if (chosen) return chosen;
+    if (/dubai/i.test(root.location.search)) return 'dubai';
+    const local = localMarket();
+    if (local) return local;
+    return el.dataset.market === 'dubai' ? 'dubai' : 'india';
+  }
+
+  /** @returns {import('./types').MarketId | null} */
+  function localMarket() {
+    const engine = root.QDEstimate;
+    let zone = '';
+    quietly(() => { zone = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; });
+    return engine ? engine.marketFromTimeZone(zone) : null;
+  }
+
+  /** @returns {import('./types').MarketId | null} */
+  function storedMarket() {
+    /** @type {import('./types').MarketId | null} */
+    let market = null;
+    quietly(() => {
+      const raw = root.sessionStorage.getItem(MARKET_KEY);
+      if (raw === 'india' || raw === 'dubai') market = raw;
+    });
+    return market;
   }
 
   /* ───────────────────────── Delivery ───────────────────────── */
@@ -418,7 +446,6 @@
    * @returns {HTMLElement | null}
    */
   function marketSwitch(c) {
-    if (c.el.dataset.market) return null;
     const buttons = Object.entries(c.deps.catalog.markets).map(([id, m]) =>
       h('button', { type: 'button', 'data-market': id, 'aria-pressed': String(c.state.selection.market === id) }, [m.label]));
     return h('div', { class: 'qde-mkt', role: 'group', 'aria-label': 'Market' }, buttons);
@@ -551,6 +578,7 @@
     const market = target.dataset.market;
     if (market) {
       c.state.selection = c.deps.engine.normalise(c.deps.catalog, { ...c.state.selection, market: /** @type {import('./types').MarketId} */ (market) });
+      quietly(() => root.sessionStorage.setItem(MARKET_KEY, c.state.selection.market));
       return render(c, '[data-market="' + market + '"]');
     }
     runAction(c, target.dataset.action || '');
