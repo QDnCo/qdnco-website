@@ -301,6 +301,23 @@ Soft-ink panel before the contact form: headline + violet second line, three tic
 
 Corridor map (Chicago → Dubai → India) and an India close-up with keyboard-selectable pins, region cards and city pills that stay in sync. Land from `assets/world.json` (Natural Earth); the static prerender omits land paths (they load at runtime). Pins mark market coverage, not offices.
 
+### 6.17 Estimate card (`/js/estimate/`, `/tools/estimate.html`)
+
+Ported from the QDnCo New "Your next project" band. One card that completes the enquiry in place, no prices shown:
+
+```html
+<div data-qd-estimate data-needs="ads" data-source="guide:my-post"></div>
+<script defer src="/js/estimate/embed.js?v=2026-10-16"></script>
+```
+
+- **Step 1 "What do you need?":** four outcome tiles (More enquiries, Faster follow-up, A launch page, Not sure yet; "Not sure" is exclusive) and a collapsed "+ Add creative production" row (shoot, drone, UGC, motion).
+- **Step 2 "Where should we send it?":** name + phone in boxed fields, optional project name. Done state offers "Chat on WhatsApp now".
+- **Options:** `data-layout="card"` (card only; default band = copy left, card right), `data-needs`, `data-addons`, `data-market`, `data-source`, `data-tone`, `data-sync-url`, band copy via `data-eyebrow` / `data-heading` / `data-heading-em` / `data-lede`.
+- **Catalog:** `site/js/estimate/catalog.js` is the only place to change what visitors can pick.
+- **Leads:** `QDLeadCapture` to the Apps Script backend. Picks ride in `project`; market fills `catchment`; `budget` is "Discuss on call". `services`, `addons`, `estimate`, `source` columns need backend `2026-10-16-estimate-v1` deployed.
+- **No-JS fallback:** put the old `cta-band` inside the placeholder; the card replaces it on mount.
+- Container queries size the card to its own width. Tests: `tests/estimate.test.mjs` (engine + TypeScript strict check).
+
 ### Secondary pages added
 
 - `/insights/` + six field guides and `worksheets.csv` (secondary-page shell, Article schema).
