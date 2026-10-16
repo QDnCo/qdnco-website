@@ -1,0 +1,113 @@
+/* Estimate card (DESIGN.md 6.17). Loaded by /js/estimate/embed.js.
+   Two tones share one layout: violet (default, brand accent) and gold
+   (data-tone="gold", the QDnCo New look). Layout follows the widget's own
+   width through container queries, so it fits a full-width band, the 940px
+   document column and a narrow blog column alike. */
+.qde{
+  --qde-ink-rgb: var(--ink-rgb, 10,13,18);
+  --qde-ink: var(--ink, #0a0d12);
+  --qde-muted: rgba(var(--qde-ink-rgb), .70);
+  --qde-line: rgba(var(--qde-ink-rgb), .16);
+  --qde-accent: #5b32c8;
+  --qde-accent-text: var(--accent, #5b32c8);
+  --qde-card: rgba(var(--qde-ink-rgb), .035);
+  --qde-wash: rgba(91,50,200,.07);
+  --qde-border: #5b32c8;
+  --qde-btn-bg: #5b32c8;
+  --qde-btn-hover: #4a28a6;
+  --qde-btn-ink: #fff;
+  --qde-em-font: inherit;
+  --qde-em-style: normal;
+  container-type: inline-size;
+  color: var(--qde-ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+.qde[data-tone="gold"]{
+  --qde-accent: #9a6b1f;
+  --qde-accent-text: #805917;
+  --qde-card: #fbf4e6;
+  --qde-wash: rgba(172,127,48,.07);
+  --qde-border: #b58a3f;
+  --qde-line: rgba(137,98,35,.32);
+  --qde-btn-bg: linear-gradient(120deg,#d8ac59,#f6dfa6 48%,#dfb766);
+  --qde-btn-hover: linear-gradient(120deg,#cf9f48,#f1d593 48%,#d6ab55);
+  --qde-btn-ink: #252016;
+  --qde-em-font: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --qde-em-style: italic;
+  --qde-ink: #0a0d12;
+  --qde-ink-rgb: 10,13,18;
+}
+:root[data-theme="dark"] .qde[data-tone="gold"]{
+  --qde-card: #1a1913; --qde-ink: #f8f3e9; --qde-ink-rgb: 248,243,233;
+  --qde-accent-text: #e5bd6b; --qde-border: #d7ae62; --qde-line: rgba(218,178,98,.4);
+}
+.qde *, .qde *::before, .qde *::after{box-sizing:border-box}
+.qde h2, .qde h3{font-family:inherit;color:var(--qde-ink);margin:0}
+.qde p{margin:0}
+.qde :focus-visible{outline:3px solid var(--qde-accent);outline-offset:2px}
+.qde .qde-eyebrow{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--qde-accent-text)}
+
+/* ── Layout ── */
+.qde-band{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;margin:3rem 0;padding:clamp(28px,5cqi,64px) 0;border-block:1px solid rgba(var(--qde-ink-rgb),.14)}
+.qde-solo{max-width:560px;margin:1.6rem auto 2rem}
+.qde-copy .qde-eyebrow{margin-bottom:18px;color:var(--qde-ink)}
+.qde-copy h2{font-size:clamp(30px,6cqi,54px);line-height:1.08;letter-spacing:-.035em;font-weight:600}
+.qde-copy h2 em{font-family:var(--qde-em-font);font-style:var(--qde-em-style);font-weight:inherit;color:var(--qde-accent-text)}
+.qde[data-tone="gold"] .qde-copy h2 em{color:var(--qde-ink);font-weight:400;letter-spacing:-.04em}
+.qde-copy p{margin-top:22px;max-width:380px;font-size:16px;line-height:1.65;color:var(--qde-muted)}
+@container (min-width:720px){ .qde-band{grid-template-columns:1.05fr .95fr;gap:clamp(28px,6cqi,72px)} }
+
+/* ── Card ── */
+.qde-card{display:grid;gap:14px;padding:clamp(20px,4cqi,30px);border-radius:24px;border:2px solid var(--qde-border);background:var(--qde-card)}
+.qde-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.qde-card h3{font-size:clamp(22px,4cqi,26px);line-height:1.2;letter-spacing:-.03em;font-weight:600}
+.qde-card h3:focus{outline:none}
+.qde-sub{font-size:14px;line-height:1.5;color:var(--qde-muted)}
+.qde-mkt{display:inline-flex;gap:2px;padding:3px;border-radius:999px;border:1px solid var(--qde-line)}
+.qde-mkt button{min-height:32px;min-width:44px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:var(--qde-muted);font:inherit;font-size:12px;font-weight:600;cursor:pointer}
+.qde-mkt button[aria-pressed="true"]{background:var(--qde-ink);color:var(--page, #fff)}
+.qde[data-tone="gold"] .qde-mkt button[aria-pressed="true"]{background:#5a4523;color:#fbf4e6}
+
+/* Step 1: outcome tiles */
+.qde-tiles{display:grid;grid-template-columns:1fr;gap:10px}
+@container (min-width:400px){ .qde-tiles{grid-template-columns:1fr 1fr} }
+.qde-tile{position:relative;display:block;padding:14px 14px 14px 44px;border:1px solid var(--qde-line);border-radius:12px;background:var(--qde-wash);cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.qde-tile:hover{border-color:var(--qde-border)}
+.qde-tile:has(input:checked){border-color:var(--qde-border);box-shadow:inset 0 0 0 1px var(--qde-border)}
+.qde-tile input{position:absolute;left:14px;top:15px;width:18px;height:18px;margin:0;accent-color:var(--qde-accent)}
+.qde-tile b{display:block;font-size:15px;line-height:1.3}
+.qde-tile small{display:block;margin-top:3px;font-size:13px;line-height:1.4;color:var(--qde-muted)}
+
+.qde-extra{display:grid;gap:10px}
+.qde-link{justify-self:start;min-height:44px;padding:0;border:0;background:none;color:var(--qde-accent-text);font:inherit;font-size:14px;font-weight:600;cursor:pointer;text-align:left}
+.qde-link:hover{text-decoration:underline;text-underline-offset:3px}
+.qde-chips{display:flex;flex-wrap:wrap;gap:8px}
+.qde-chips[hidden]{display:none}
+.qde-chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--qde-line);border-radius:999px;background:var(--qde-wash);font-size:13px;font-weight:500;cursor:pointer}
+.qde-chip:has(input:checked){border-color:var(--qde-border);box-shadow:inset 0 0 0 1px var(--qde-border)}
+.qde-chip input{width:16px;height:16px;margin:0;accent-color:var(--qde-accent)}
+
+/* Step 2: boxed fields from the source design */
+.qde-form{display:grid;gap:12px}
+.qde-fields{display:grid;grid-template-columns:1fr;gap:12px}
+@container (min-width:440px){ .qde-fields{grid-template-columns:1fr 1fr} }
+.qde-field{display:block;padding:12px 14px;border:1px solid var(--qde-line);border-radius:12px;background:var(--qde-wash);cursor:text;transition:border-color .2s ease}
+.qde-field:focus-within{border-color:var(--qde-border)}
+.qde-field>span:first-child{display:block;font-size:12px;color:var(--qde-muted);margin-bottom:4px}
+.qde-field-row{display:flex;align-items:center;gap:8px}
+.qde-field input{flex:1;min-width:0;min-height:28px;padding:0;border:0;background:transparent;color:var(--qde-ink);font:inherit;font-size:15px;font-weight:500}
+.qde-field input:focus{outline:none}
+.qde-field input::placeholder{color:rgba(var(--qde-ink-rgb),.6)}
+.qde-field b{color:var(--qde-accent-text);font-weight:600}
+.qde-back{font-weight:500;color:var(--qde-muted)}
+
+/* Button, status, footnote */
+.qde-button{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:52px;padding:0 26px;border:0;border-radius:999px;background:var(--qde-btn-bg);color:var(--qde-btn-ink);font:inherit;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer}
+.qde-button:hover{background:var(--qde-btn-hover)}
+.qde-button:disabled{opacity:.65;cursor:progress}
+.qde-status{font-size:13px;color:var(--qde-muted)}
+.qde-status:empty{display:none}
+.qde-status a{color:var(--qde-accent-text)}
+.qde-foot{display:block;text-align:center;font-size:12px;color:var(--qde-muted)}
+
+@media (prefers-reduced-motion: reduce){ .qde *{transition:none !important} }
