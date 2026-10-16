@@ -179,7 +179,7 @@
     const markets = Object.entries(c.deps.catalog.markets).map(([id, m]) =>
       h('button', { type: 'button', 'data-market': id, 'aria-pressed': String(c.state.selection.market === id) }, [m.label]));
     return h('div', { class: 'qde-head' }, [
-      h('span', { class: 'qde-eyebrow' }, [c.state.step === 3 ? 'Sent' : 'A small first step · ' + c.state.step + ' of 2']),
+      h('span', { class: 'qde-eyebrow' }, [c.state.step === 3 ? 'Sent' : 'Step ' + c.state.step + ' of 2']),
       c.state.step === 3 ? null : h('div', { class: 'qde-mkt', role: 'group', 'aria-label': 'Market' }, markets),
     ]);
   }

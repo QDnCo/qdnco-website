@@ -59,7 +59,8 @@
 
 /* ── Card ── */
 .qde-card{container-type:inline-size;display:grid;gap:14px;padding:clamp(20px,4cqi,30px);border-radius:24px;border:2px solid var(--qde-border);background:var(--qde-card)}
-.qde-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.qde-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;min-height:40px}
+.qde-head .qde-eyebrow{white-space:nowrap}
 .qde-card h3{font-size:clamp(22px,4cqi,26px);line-height:1.2;letter-spacing:-.03em;font-weight:600}
 .qde-card h3:focus{outline:none}
 .qde-sub{font-size:14px;line-height:1.5;color:var(--qde-muted)}
