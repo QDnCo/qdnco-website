@@ -10,10 +10,12 @@
 var NOTIFY_EMAIL = 'qdnco01@gmail.com';
 var SHEET_NAME = 'Leads';
 var SHEET_ID = PropertiesService.getScriptProperties().getProperty('SHEET_ID');
-var LEAD_VERSION = '2026-09-13-receipts-v1';
+var LEAD_VERSION = '2026-10-16-estimate-v1';
 var FIELDS = ['submitted', 'name', 'phone', 'project', 'catchment', 'budget', 'page',
   'request_id', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
-  'referrer', 'notification'];
+  'referrer', 'notification', 'services', 'addons', 'estimate', 'source'];
+// Optional context sent by the estimate widget (site/js/estimate/). Never required.
+var OPTIONAL_FIELDS = ['services', 'addons', 'estimate', 'source'];
 
 function book() {
   // Never fall back to a different workbook after a target/access error.
@@ -71,6 +73,7 @@ function cleanLead(input) {
   var origin = textField(input.referrer, 1000).match(/^https?:\/\/[^/?#]+/i);
   lead.referrer = origin ? origin[0] : '';
   lead.notification = 'pending';
+  OPTIONAL_FIELDS.forEach(function (field) { lead[field] = textField(input[field], 300); });
   return lead;
 }
 

@@ -72,11 +72,18 @@ test('legacy seven-column sheet is extended without changing old row values', ()
   const original = ['2020-01-01', 'Old record', '12345678', 'Historical', 'Area', 'Band', 'https://qdnco.com/']
   const h = harness({ rows: [['Submitted', 'Name', 'Phone', 'Project', 'Catchment', 'Budget', 'Page'], original] })
   assert.equal(h.submit(base).ok, true)
-  assert.deepEqual(h.rows[1], original); assert.equal(h.rows[0].length, 15)
+  assert.deepEqual(h.rows[1], original); assert.equal(h.rows[0].length, 19)
 })
 test('formula-shaped inputs are stored as text', () => {
   const h = harness(); assert.equal(h.submit({ ...base, name: '=1+1' }).ok, true)
   assert.equal(h.rows[1][1], "'=1+1")
+})
+test('estimate widget context is stored and emailed but never required', () => {
+  const h = harness(); const extra = { services: 'phase-0,crm', addons: 'drone', estimate: 'Phase 0, CRM + Drone', source: 'about' }
+  assert.equal(h.submit({ ...base, ...extra }).ok, true)
+  assert.deepEqual(h.rows[1].slice(15, 19), Object.values(extra))
+  assert.ok(h.emails[0].body.includes('estimate: Phase 0, CRM + Drone'))
+  const plain = harness(); assert.equal(plain.submit(base).ok, true); assert.deepEqual(plain.rows[1].slice(15, 19), ['', '', '', ''])
 })
 test('mail failure preserves the lead and records alert failure', () => {
   const h = harness({ mailFail: true }); const result = h.submit(base)
