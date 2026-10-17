@@ -12,6 +12,12 @@ class DeploymentGuards(unittest.TestCase):
         with self.assertRaises(ValueError):plan({'a':'1'}, {}, {'a':'other'})
     def test_refuse_removal(self):
         with self.assertRaises(ValueError):plan({}, {'a':'1'}, {'a':'1'})
+    def test_allow_listed_removal(self):
+        self.assertEqual(plan({'a':'1'}, {'a':'1','b':'2'}, {'a':'1','b':'2'}, {'b'}), [])
+    def test_refuse_unlisted_removal(self):
+        with self.assertRaises(ValueError):plan({'a':'1'}, {'a':'1','b':'2'}, {'a':'1','b':'2'}, {'c'})
+    def test_refuse_drifted_removal(self):
+        with self.assertRaises(ValueError):plan({'a':'1'}, {'a':'1','b':'2'}, {'a':'1','b':'9'}, {'b'})
     def test_reject_path_escape(self):
         for name in ['../secret','/secret','a\\b','a\nb']:
             with self.assertRaises(ValueError):safe_path(name)
