@@ -261,14 +261,14 @@
       "id": "SEO-10",
       "stream": "Search & measurement",
       "title": "Structured-data and mobile performance audit",
-      "status": "Yet to do",
-      "detail": "Latest release audit passed; old roadmap assertions may be stale.",
-      "next": "Recheck current schema eligibility, rendered content, mobile performance and redirect behavior before further changes.",
+      "status": "In progress",
+      "detail": "Rendered Dubai page has one H1, self-canonical, three hreflang links and parseable JSON-LD. First external arrival from an India-time browser redirects to India under the newer location-default code. India duplicate hreflang tags reduced from 45 to three; GitHub deployment and live byte match verified.",
+      "next": "Complete mobile/performance and schema eligibility checks; review explicit Dubai-link routing for Indian buyers without overriding newer owner-selected behavior.",
       "owner": "Agent",
       "url": "https://pagespeed.web.dev/",
       "steps": [],
-      "checked": "2026-10-01",
-      "evidence": "Dated execution record; details retained locally",
+      "checked": "2026-10-17",
+      "evidence": "October 17 rendered DOM records in growth-recovery: dubai-rendered-schema-oct17.json and dubai-rendered-schema-second-navigation-oct17.json. Syntax checks are not rich-result eligibility or ranking proof. Workflow 38996778158 succeeded; live HTTP 200 and local SHA-256 match recorded in hreflang-live-oct17.json.",
       "url_label": "PageSpeed Insights"
     },
     {
@@ -361,13 +361,13 @@
       "stream": "Social content",
       "title": "Google Business posts",
       "status": "Scheduled",
-      "detail": "GBP Chennai and October 15 Dubai buyer-fit updates are published. CRM handoff and campaign-scope updates remain scheduled for October 17 and 20 at 10:00.",
-      "next": "Verify delivery after each date; scheduled posts are not published posts.",
+      "detail": "Chennai, October 15 Dubai buyer-fit and October 17 CRM handoff updates are published. October 20 campaign-scope update retains its previously verified scheduled status.",
+      "next": "Verify October 20 delivery after 10:00 IST; do not duplicate published posts.",
       "owner": "Agent",
       "url": "https://business.google.com/",
       "steps": [],
-      "checked": "2026-10-15",
-      "evidence": "Refreshed native GBP posts panel: Dubai update Published 1 hour ago; October 17 and 20 still Scheduled. Screenshot and snapshot retained.",
+      "checked": "2026-10-17",
+      "evidence": "October 17 authenticated Google Search business panel shows CRM handoff update 23 minutes ago with matching tagged guide link. DOM and screenshot retained.",
       "url_label": "Google Business Profile · verify delivery",
       "delivery_note": "Published and scheduled states checked separately in the authenticated owner dashboard."
     },
@@ -375,14 +375,14 @@
       "id": "SOC-08",
       "stream": "Social content",
       "title": "GBP Phase 0 date correction",
-      "status": "Waiting",
-      "detail": "Incorrect September 2027 date changed to October 10, 2026; platform showed submitted for review.",
-      "next": "Check moderation and scheduled date before claiming published.",
+      "status": "Completed",
+      "detail": "Phase 0 update is visible in the business profile posts carousel with October 10, 2026 date.",
+      "next": "Retain published post; no date correction or duplicate needed.",
       "owner": "Google",
       "url": "https://business.google.com/",
       "steps": [],
-      "checked": "2026-09-30",
-      "evidence": "Dated execution record; details retained locally",
+      "checked": "2026-10-17",
+      "evidence": "October 17 Google business profile carousel displays the Phase 0 update and October 10, 2026 date.",
       "url_label": "Google Business Profile · check review"
     },
     {
@@ -610,15 +610,15 @@
       "id": "DIR-08",
       "stream": "Directories",
       "title": "Crunchbase public recovery",
-      "status": "Waiting",
-      "detail": "Login restored, but submitted organization URL still says Page not found and company association search finds no QDnCo record. Recovery reply sent on existing case.",
-      "next": "Await recovery of the original company URL and editing access, then complete the verified profile and assets.",
+      "status": "Blocked",
+      "detail": "Crunchbase support reports moderator deletion of the submitted profile, possibly suspected spam; technology-ecosystem eligibility guidelines were cited. Publication is not pending.",
+      "next": "Assess factual eligibility and recovery options under the existing support case; do not invent a technology-startup identity or create duplicates.",
       "owner": "Crunchbase",
       "url": "https://www.crunchbase.com/organization/e20ca7c5-f19d-47b6-bf29-1b80b6ca8101",
       "steps": [],
-      "checked": "2026-10-14",
-      "evidence": "October 14 signed-in self-service checks and verified support submission; no publication or recovery claimed.",
-      "url_label": "Submitted record · publication unverified"
+      "checked": "2026-10-17",
+      "evidence": "October 15 support reply inspected October 17; local listing-follow-up evidence retained.",
+      "url_label": "Original record · moderator deletion reported"
     },
     {
       "id": "DIR-09",
@@ -1242,7 +1242,7 @@
       "name": "Crunchbase",
       "priority": "Entity support",
       "role": "Accurate company facts; not a forum or a guaranteed ranking source.",
-      "state": "Login restored; missing company record awaiting support recovery",
+      "state": "Blocked: support reports moderator deletion; eligibility/recovery review needed",
       "url": "https://www.crunchbase.com/"
     },
     {
@@ -1288,7 +1288,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-16T10:43:23Z",
-  "reconciliation_note": "Reconciled verified October 16 Threads native delivery; retained all other existing evidence and distinctions.",
-  "updated_at": "2026-10-16T10:46:22.806748+00:00"
+  "reconciled_at": "2026-10-17T04:58:01.206112+00:00",
+  "reconciliation_note": "Reconciled October 17 GBP delivery, Phase 0 publication, verified locale metadata repair and Crunchbase moderator-deletion report. Remaining scheduled, blocked and incomplete work retains its evidence-based status.",
+  "updated_at": "2026-10-17T04:58:01.231900+00:00"
 }
