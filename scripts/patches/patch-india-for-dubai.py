@@ -16,6 +16,8 @@ def rep(old, new, n=1):
     if new in s and old not in s: return
     c = s.count(old); assert c == n, f'{c}x {old[:80]!r}'; s = s.replace(old, new)
 
+# Replace the existing locale set before adding it: repeated builds must not duplicate tags.
+s = re.sub(r'^[ \t]*<link rel="alternate" hreflang="(?:en-IN|en-AE|x-default)" href="https://qdnco\.com/(?:dubai/)?" />\n', "", s, flags=re.M)
 rep('<link rel="canonical" href="https://qdnco.com/" />',
     '<link rel="canonical" href="https://qdnco.com/" />\n'
     '    <link rel="alternate" hreflang="en-IN" href="https://qdnco.com/" />\n'
