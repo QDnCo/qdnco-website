@@ -15,6 +15,9 @@
 <meta property="og:site_name" content="QDnCo">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico?v=qd2" sizes="48x48"><link rel="icon" href="/favicon.svg?v=qd2" type="image/svg+xml"><link rel="icon" href="/icon-192.png?v=qd2" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=qd2"><link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600;700;800&family=Kanit:wght@700;800&display=swap" rel="stylesheet">
 <script>
 (function(){try{var t=localStorage.getItem('qd-theme');
 if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}
@@ -45,7 +48,7 @@ document.documentElement.dataset.theme=t}catch(e){}})();
 html{scroll-behavior:smooth}
 body{
   margin:0; background:var(--page); color:var(--ink);
-  font:400 17px/1.68 system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font:400 17px/1.68 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   letter-spacing:-.005em; -webkit-font-smoothing:antialiased;
 }
 
@@ -97,7 +100,7 @@ body{
 .home img{width:100%;height:auto;display:block}
 :root[data-theme="light"] .home img{filter:brightness(0) saturate(0)}
 .home-tag{
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,system-ui,sans-serif;font-weight:400;text-transform:uppercase;
+  font-family:'Inter',system-ui,sans-serif;font-weight:400;text-transform:uppercase;
   letter-spacing:.095em;line-height:1;white-space:nowrap;
   color:rgba(255,255,255,.72);font-size:max(9px,5.85cqi);
 }
@@ -135,7 +138,7 @@ body{
 /* ── Type, on the site's scale ── */
 .eyebrow{font-family:'Barlow',sans-serif;font-weight:600;text-transform:uppercase;
   letter-spacing:.2em;font-size:.72rem;color:var(--accent);margin:0 0 .7rem}
-h1{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,serif;font-weight:400;
+h1{font-family:'Instrument Serif',serif;font-weight:400;
   font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.02;letter-spacing:-.02em;margin:0 0 .7rem}
 .updated{font-family:'Barlow',sans-serif;color:rgba(var(--ink-rgb),.6);
   font-size:.92rem;margin:0 0 2.6rem}
@@ -197,7 +200,7 @@ td{color:rgba(var(--ink-rgb),.78)}
   margin:1.8rem 0 2.4rem}
 .keyfact{background:rgba(var(--fill-rgb),.06);border:1px solid rgba(var(--ink-rgb),.16);
   border-radius:16px;padding:1rem 1.15rem}
-.keyfact b{display:block;font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,serif;font-weight:400;
+.keyfact b{display:block;font-family:'Instrument Serif',serif;font-weight:400;
   font-size:clamp(1.5rem,2.4vw,2rem);line-height:1;color:var(--ink);margin-bottom:.35rem}
 .keyfact span{font-family:'Barlow',sans-serif;font-size:.86rem;color:rgba(var(--ink-rgb),.7);line-height:1.4}
 
@@ -295,34 +298,6 @@ td{color:rgba(var(--ink-rgb),.78)}
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:image" content="https://qdnco.com/og/og-india.jpg">
-<style id="shell-unify">
-/* Same backdrop as the homepage (DESIGN.md 4): a full-width veil over the
-   shared wallpaper and no floating card, so every page reads as one site. */
-.wall::after{content:"";position:absolute;inset:0;background:var(--veil)}
-.wrap{background:transparent;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
-/* One text family (DESIGN.md 3): Barlow retired, Inter for all text; Instrument
-   Serif stays on H1. Logo tagline floor raised from 8-9px. */
-.ans-card b,.back,.calc label,.chip,.crumbs,.cta-band a,.eyebrow,.faq summary,.foot a,.guide-card b,.jump a,.keyfact span,.out span,.related a,.term dt,.topic-head,.updated,h2,h3,th{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
-h2,h3{letter-spacing:-.015em}
-.home-tag{font-size:max(10px,6.2cqi)}
-</style>
-<style id="ux-polish">
-/* UX polish pass, secondary pages (DESIGN.md 2, 6, 7). Presentation only. */
-:root[data-theme="light"]{--accent:#5b32c8}
-.guide-card,.ans-card,.keyfact,.faq details,.related a{border-radius:20px}
-.guide-grid{gap:16px}
-@media (min-width:900px){.guide-grid>.guide-card:first-child:not(.wc){grid-column:span 2}}
-.guide-card:not(.wc){background:rgba(255,255,255,.62)}
-:root[data-theme="dark"] .guide-card:not(.wc){background:rgba(255,255,255,.04)}
-.guide-card.wc .wc-cta span,.guide-card.wc:hover .wc-cta{color:#5b32c8}
-.guide-card.wc .chip-result{color:#5b32c8}
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .guide-card,.ans-card,.keyfact,.faq details{animation:ux-rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
-  }
-}
-@keyframes ux-rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-</style>
 </head>
 <body>
 <div class="wall" aria-hidden="true"><video id="wall" muted playsinline loop preload="none"></video><div class="wash"></div></div>
@@ -338,7 +313,7 @@ h2,h3{letter-spacing:-.015em}
       <a class="back" href="../index.html">&larr; Back to site</a>
     </div>
   </header>
-  <div class="page"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Pricing</nav><p class="eyebrow">Pricing</p><h1>Real estate marketing pricing</h1><p class="updated">Updated 13 October 2026</p><p class="lede">Meta/Google ad campaign management is priced by campaign or project count. Your written estimate separates agency fees, media spend and any additional services.</p><div class="answer"><p>Tell us your business type, number of projects and service needs. We will confirm the monthly scope and estimate before work starts. QDnCo no longer offers the historical per-qualified-lead pricing described in older versions of this page.</p></div><p><a href="../tools/marketing-cost-calculator.html">See your monthly fee in the marketing cost calculator &rarr;</a></p><h2 id="cpql">Meta/Google ad campaigns</h2><p>For developers, mandate firms and channel partners. The campaign scope includes:</p><ul><li>Market research and positioning</li><li>Campaign strategy, setup and launch</li><li>Unlimited ad creatives as required by the agreed scope, without per-creative charges</li><li>Meta asset creation as required, without an additional asset-setup charge</li><li>Campaign maintenance and weekly reporting</li><li>A dedicated relationship manager</li></ul><h2 id="retainer">Campaign count determines the estimate</h2><p>Share how many projects or campaigns need management. Fees vary by business type and campaign count. Confirm the applicable tier, duration and exclusions in a dated written quote. Lead qualification is a performance measure, not a separate billable unit or a replacement guarantee.</p><h2 id="phase-0">Research and setup</h2><p>Market research and strategy form part of the agreed campaign scope. Any separate consulting work requires its own written scope and estimate.</p><h2 id="doors">Other services</h2><p>Real Estate SEO &amp; AI Search Optimization, brand presence and PR, CRM Setup &amp; Automation, Landing Pages, and AI Lead Follow-Up &amp; WhatsApp Automation receive custom quotes. Campaign-management pricing does not automatically apply to these services.</p><h2 id="media">Media and production are separate</h2><p>Pay Meta and Google directly from your own ad account. Agree the media budget before launch. Shoots, drone footage and specialist production require a separate scope if needed. Confirm applicable taxes and exclusions in writing.</p><h2 id="no">Dubai pricing</h2><p>Realtor / channel partner campaign management starts at AED 4,650 per project per month. Project-count tiers apply; developers and mandate firms share a separate schedule. <a href="../dubai/#pricing">Discuss your Dubai scope</a>.</p><h2 id="faq">Pricing questions</h2><div class="faq"><details><summary>Do you bill per qualified lead?</summary><p>No. Current Meta/Google ad campaign fees are based on campaign or project count and scope. Historical per-lead offers have been retired.</p></details><details><summary>Is media included?</summary><p>No. Agency fees and platform media spend are separate.</p></details><details><summary>Are results guaranteed?</summary><p>No. We agree service deliverables and reporting. Lead quality and bookings also depend on the project, pricing, market and sales follow-up.</p></details><details><summary>How do I get an estimate?</summary><p><a href="../index.html#contact">Share your business type, service and campaign count</a>. We will confirm the scope and pricing with you.</p></details></div><div class="related"><h2>Related reading</h2><ul>
+  <div class="page"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Pricing</nav><p class="eyebrow">Pricing</p><h1>Real estate marketing pricing</h1><p class="updated">Updated 13 October 2026</p><p class="lede">Meta/Google ad campaign management is priced by campaign or project count. Your written estimate separates agency fees, media spend and any additional services.</p><div class="answer"><p>Tell us your business type, number of projects and service needs. We will confirm the monthly scope and estimate before work starts. QDnCo no longer offers the historical per-qualified-lead pricing described in older versions of this page.</p></div><h2 id="cpql">Meta/Google ad campaigns</h2><p>For developers, mandate firms and channel partners. The campaign scope includes:</p><ul><li>Market research and positioning</li><li>Campaign strategy, setup and launch</li><li>Unlimited ad creatives as required by the agreed scope, without per-creative charges</li><li>Meta asset creation as required, without an additional asset-setup charge</li><li>Campaign maintenance and weekly reporting</li><li>A dedicated relationship manager</li></ul><h2 id="retainer">Campaign count determines the estimate</h2><p>Share how many projects or campaigns need management. Fees vary by business type and campaign count. Confirm the applicable tier, duration and exclusions in a dated written quote. Lead qualification is a performance measure, not a separate billable unit or a replacement guarantee.</p><h2 id="phase-0">Research and setup</h2><p>Market research and strategy form part of the agreed campaign scope. Any separate consulting work requires its own written scope and estimate.</p><h2 id="doors">Other services</h2><p>Real Estate SEO &amp; AI Search Optimization, brand presence and PR, CRM Setup &amp; Automation, Landing Pages, and AI Lead Follow-Up &amp; WhatsApp Automation receive custom quotes. Campaign-management pricing does not automatically apply to these services.</p><h2 id="media">Media and production are separate</h2><p>Pay Meta and Google directly from your own ad account. Agree the media budget before launch. Shoots, drone footage and specialist production require a separate scope if needed. Confirm applicable taxes and exclusions in writing.</p><h2 id="no">Dubai pricing</h2><p>Realtor / channel partner campaign management starts at AED 4,650 per project per month. Project-count tiers apply; developers and mandate firms share a separate schedule. <a href="../dubai/#pricing">Discuss your Dubai scope</a>.</p><h2 id="faq">Pricing questions</h2><div class="faq"><details><summary>Do you bill per qualified lead?</summary><p>No. Current Meta/Google ad campaign fees are based on campaign or project count and scope. Historical per-lead offers have been retired.</p></details><details><summary>Is media included?</summary><p>No. Agency fees and platform media spend are separate.</p></details><details><summary>Are results guaranteed?</summary><p>No. We agree service deliverables and reporting. Lead quality and bookings also depend on the project, pricing, market and sales follow-up.</p></details><details><summary>How do I get an estimate?</summary><p><a href="../index.html#contact">Share your business type, service and campaign count</a>. We will confirm the scope and pricing with you.</p></details></div><div class="related"><h2>Related reading</h2><ul>
     <li><a href="../compare/cpql-vs-retainer-agency.html">Paying per qualified lead vs paying a retainer<small>Which one you need depends on where your funnel breaks</small></a></li>
     <li><a href="../answers/what-counts-as-qualified-lead.html">What counts as a qualified lead?<small>Five project-fit checks for useful lead-quality reporting</small></a></li>
     <li><a href="../data/meta-ad-library-audit-bangalore-agencies.html">51 ad links, with a reproducible method<small>Inspect the August snapshot and its limits</small></a></li>

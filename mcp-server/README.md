@@ -66,8 +66,8 @@ Hard-coded facts: **15 AI static creatives/month**, **₹550 CPQL**, **₹1.25�
 From portfolio root:
 
 ```bash
-node scripts/build/generate-seo-corpus.mjs
-node scripts/build/build-dist.mjs
+node scripts/generate-seo-corpus.mjs
+node build-dist.mjs
 ```
 
 See `../seo/README.md` for how dist copies `llms.txt`, `robots.txt`, and `seo/`.

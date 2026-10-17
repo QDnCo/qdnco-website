@@ -54,12 +54,7 @@ AddType application/manifest+json .webmanifest
   RewriteEngine On
   RewriteRule ^inner_pages/blog\.html$ /guides/index.html [R=301,L]
   RewriteRule ^inner_pages/(blog|blogs|insights|articles|resources)[^/]*$ /guides/index.html [R=301,L]
-  RewriteRule ^(blog|blogs|articles)(/.*)?$ /guides/index.html [R=301,L]
-  # /insights/ and /resources/ are live sections again; only old URLs that no
-  # longer exist as a file or folder still go to the guides hub.
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(insights|resources)(/.*)?$ /guides/index.html [R=301,L]
+  RewriteRule ^(blog|blogs|insights|articles|resources)(/.*)?$ /guides/index.html [R=301,L]
   RewriteRule ^inner_pages/(about|about-us|team|who-we-are)[^/]*$ /about/ [R=301,L]
   RewriteRule ^(about-us|team)(\.html)?/?$ /about/ [R=301,L]
   RewriteRule ^inner_pages/(portfolio|work|projects|case-stud)[^/]*$ /work/index.html [R=301,L]

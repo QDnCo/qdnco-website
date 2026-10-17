@@ -16,6 +16,9 @@
 <meta content="QDnCo" property="og:site_name"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link rel="icon" href="/favicon.ico?v=qd2" sizes="48x48"><link rel="icon" href="/favicon.svg?v=qd2" type="image/svg+xml"><link rel="icon" href="/icon-192.png?v=qd2" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=qd2"><link rel="manifest" href="/site.webmanifest">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=Barlow:wght@300;400;500;600;700;800&amp;family=Kanit:wght@700;800&amp;display=swap" rel="stylesheet"/>
 <script>
 (function(){try{var t=localStorage.getItem('qd-theme');
 if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}
@@ -46,7 +49,7 @@ document.documentElement.dataset.theme=t}catch(e){}})();
 html{scroll-behavior:smooth}
 body{
   margin:0; background:var(--page); color:var(--ink);
-  font:400 17px/1.68 system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font:400 17px/1.68 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   letter-spacing:-.005em; -webkit-font-smoothing:antialiased;
 }
 
@@ -98,7 +101,7 @@ body{
 .home img{width:100%;height:auto;display:block}
 :root[data-theme="light"] .home img{filter:brightness(0) saturate(0)}
 .home-tag{
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,system-ui,sans-serif;font-weight:400;text-transform:uppercase;
+  font-family:'Inter',system-ui,sans-serif;font-weight:400;text-transform:uppercase;
   letter-spacing:.095em;line-height:1;white-space:nowrap;
   color:rgba(255,255,255,.72);font-size:max(9px,5.85cqi);
 }
@@ -136,7 +139,7 @@ body{
 /* ── Type, on the site's scale ── */
 .eyebrow{font-family:'Barlow',sans-serif;font-weight:600;text-transform:uppercase;
   letter-spacing:.2em;font-size:.72rem;color:var(--accent);margin:0 0 .7rem}
-h1{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,serif;font-weight:400;
+h1{font-family:'Instrument Serif',serif;font-weight:400;
   font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.02;letter-spacing:-.02em;margin:0 0 .7rem}
 .updated{font-family:'Barlow',sans-serif;color:rgba(var(--ink-rgb),.6);
   font-size:.92rem;margin:0 0 2.6rem}
@@ -198,7 +201,7 @@ td{color:rgba(var(--ink-rgb),.78)}
   margin:1.8rem 0 2.4rem}
 .keyfact{background:rgba(var(--fill-rgb),.06);border:1px solid rgba(var(--ink-rgb),.16);
   border-radius:16px;padding:1rem 1.15rem}
-.keyfact b{display:block;font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,serif;font-weight:400;
+.keyfact b{display:block;font-family:'Instrument Serif',serif;font-weight:400;
   font-size:clamp(1.5rem,2.4vw,2rem);line-height:1;color:var(--ink);margin-bottom:.35rem}
 .keyfact span{font-family:'Barlow',sans-serif;font-size:.86rem;color:rgba(var(--ink-rgb),.7);line-height:1.4}
 
@@ -296,61 +299,6 @@ td{color:rgba(var(--ink-rgb),.78)}
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:image" content="https://qdnco.com/og/og-india.jpg">
-<style id="work-portfolio">
-/* Portfolio cards: same light card as the homepage project rail. */
-.wrap.wrap-wide{max-width:1180px}
-.guide-card.wc{display:flex;flex-direction:column;padding:0;overflow:hidden;border-radius:24px;background:#fcfbf9;color:#0a0d12;border:1px solid rgba(10,13,18,.14)}
-.guide-card.wc:hover{border-color:rgba(94,14,215,.45);transform:translateY(-3px)}
-.guide-card.wc .wc-media{position:relative;display:block;flex:none;aspect-ratio:4/3;background:#eef0f3;overflow:hidden}
-.guide-card.wc .wc-media.is-plain{background:linear-gradient(160deg,#f7f5fb,#ebe8f3)}
-.guide-card.wc .wc-shot{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s ease}
-.guide-card.wc:hover .wc-shot{transform:scale(1.03)}
-.guide-card.wc .wc-logo{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;justify-content:center;height:36px;min-width:52px;padding:0 10px;background:rgba(255,255,255,.84);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-radius:10px}
-.guide-card.wc .wc-media.is-plain .wc-logo{inset:0;margin:auto;width:fit-content;height:72px;padding:0 20px;background:#fff;border:1px solid rgba(10,13,18,.08);border-radius:14px}
-.guide-card.wc .wc-logo img{max-height:24px;max-width:104px;width:auto;height:auto;display:block}
-.guide-card.wc .wc-media.is-plain .wc-logo img{max-height:44px;max-width:180px}
-.guide-card.wc .wc-body{display:flex;flex-direction:column;flex:1;padding:18px 20px 20px;color:#0a0d12}
-.guide-card.wc b{font-size:1.2rem;letter-spacing:-.015em;color:#0a0d12}
-.guide-card.wc .wc-body>span:not(.chip):not(.wc-cta){color:rgba(10,13,18,.68);font-size:.9375rem}
-.guide-card.wc .chip{align-self:flex-start;color:rgba(10,13,18,.75);border-color:rgba(10,13,18,.18);background:rgba(10,13,18,.04);font-size:.8125rem}
-.guide-card.wc .chip-result{color:#5e0ed7;border-color:rgba(94,14,215,.35);background:rgba(94,14,215,.06)}
-.guide-card.wc .wc-cta{margin-top:auto;padding-top:16px;display:flex;align-items:center;justify-content:space-between;min-height:48px;font-weight:600;font-size:.9375rem;color:#0a0d12}
-.guide-card.wc .wc-cta{border-top:1px solid rgba(10,13,18,.1);margin-top:18px}
-.guide-card.wc .wc-cta span{display:inline;color:#5e0ed7;font-size:inherit;transition:transform .2s ease}
-.guide-card.wc:hover .wc-cta{color:#5e0ed7}
-.guide-card.wc:hover .wc-cta span{transform:translateX(3px)}
-.guide-card.wc:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.jump a{min-height:44px;display:inline-flex;align-items:center}
-@media (prefers-reduced-motion:reduce){.guide-card.wc,.guide-card.wc .wc-shot,.guide-card.wc .wc-cta span{transition:none}.guide-card.wc:hover,.guide-card.wc:hover .wc-shot{transform:none}}
-</style>
-<style id="shell-unify">
-/* Same backdrop as the homepage (DESIGN.md 4): a full-width veil over the
-   shared wallpaper and no floating card, so every page reads as one site. */
-.wall::after{content:"";position:absolute;inset:0;background:var(--veil)}
-.wrap{background:transparent;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
-/* One text family (DESIGN.md 3): Barlow retired, Inter for all text; Instrument
-   Serif stays on H1. Logo tagline floor raised from 8-9px. */
-.ans-card b,.back,.calc label,.chip,.crumbs,.cta-band a,.eyebrow,.faq summary,.foot a,.guide-card b,.jump a,.keyfact span,.out span,.related a,.term dt,.topic-head,.updated,h2,h3,th{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
-h2,h3{letter-spacing:-.015em}
-.home-tag{font-size:max(10px,6.2cqi)}
-</style>
-<style id="ux-polish">
-/* UX polish pass, secondary pages (DESIGN.md 2, 6, 7). Presentation only. */
-:root[data-theme="light"]{--accent:#5b32c8}
-.guide-card,.ans-card,.keyfact,.faq details,.related a{border-radius:20px}
-.guide-grid{gap:16px}
-@media (min-width:900px){.guide-grid>.guide-card:first-child:not(.wc){grid-column:span 2}}
-.guide-card:not(.wc){background:rgba(255,255,255,.62)}
-:root[data-theme="dark"] .guide-card:not(.wc){background:rgba(255,255,255,.04)}
-.guide-card.wc .wc-cta span,.guide-card.wc:hover .wc-cta{color:#5b32c8}
-.guide-card.wc .chip-result{color:#5b32c8}
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .guide-card,.ans-card,.keyfact,.faq details{animation:ux-rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
-  }
-}
-@keyframes ux-rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-</style>
 </head>
 <body>
 <div aria-hidden="true" class="wall"><video id="wall" loop="" muted="" playsinline="" preload="none"></video><div class="wash"></div></div>
@@ -366,35 +314,63 @@ h2,h3{letter-spacing:-.015em}
 <a class="back" href="../index.html">← Back to site</a>
 </div>
 </header>
-<div class="page"><div class="wrap wrap-wide"><nav aria-label="Breadcrumb" class="crumbs"><a href="../index.html">Home</a><span>/</span>Work</nav><p class="eyebrow">QDnCo · Work</p><h1>Real estate project portfolio</h1><p class="updated">Last updated 2026-09-23 · 14 detailed project profiles</p><p class="lede">Residential, plotted and villa developments, including execution through client and agency accounts. View the homepage portfolio for the latest campaign snapshot and Brigade Sylvana. Project scale is distinct from marketing outcomes; logos do not imply direct developer appointment.</p><div class="jump"><a href="#launch">Residential launches</a><a href="#plotted">Plotted, villa and township</a><a href="#enterprise">Enterprise portfolio</a></div><p class="topic-head" id="launch">Residential launches · 8</p><div class="guide-grid"><a class="guide-card wc" href="indium-north-bangalore.html"><span class="wc-media"><img class="wc-shot" src="../shots/indium.jpg" alt="" loading="lazy" decoding="async"/><span class="wc-logo"><img src="../brands/indium.png" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Indium Group</b>
+<div class="page"><div class="wrap"><nav aria-label="Breadcrumb" class="crumbs"><a href="../index.html">Home</a><span>/</span>Work</nav><p class="eyebrow">QDnCo · Work</p><h1>Real estate project portfolio</h1><p class="updated">Last updated 2026-09-23 · 14 detailed project profiles</p><p class="lede">Residential, plotted and villa developments, including execution through client and agency accounts. View the homepage portfolio for the latest campaign snapshot and Brigade Sylvana. Project scale is distinct from marketing outcomes; logos do not imply direct developer appointment.</p><div class="jump"><a href="#launch">Residential launches</a><a href="#plotted">Plotted, villa and township</a><a href="#enterprise">Enterprise portfolio</a></div><p class="topic-head" id="launch">Residential launches · 8</p><div class="guide-grid"><a class="guide-card" href="indium-north-bangalore.html">
+<b>Indium Group</b>
 <span>Indium Group · North Bangalore<br/>₹266 per lead at 51% sales-ready. Fourteen days.</span>
-<span class="chip chip-result">₹266 CPL · 51% sales-ready</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a><a class="guide-card wc" href="kumar-platina.html"><span class="wc-media"><img class="wc-shot" src="../shots/kumar.jpg" alt="" loading="lazy" decoding="async"/><span class="wc-logo"><img src="../brands/kumar.png" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Kumar Platina</b>
+<span class="chip chip-result">₹266 CPL · 51% sales-ready</span>
+</a><a class="guide-card" href="kumar-platina.html">
+<b>Kumar Platina</b>
 <span>Kumar Properties · Nagasandra · Tumkur Road<br/>184 apartments on 1.84 acres, opposite Nagasandra Metro.</span>
-<span class="chip">Illustrative planning model</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a><a class="guide-card wc" href="brigade-eternia.html"><span class="wc-media"><img class="wc-shot" src="../shots/brigade.jpg" style="object-position:50% 0%" alt="" loading="lazy" decoding="async"/><span class="wc-logo"><img src="../brands/brigade.png" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Brigade Eternia</b>
+<span class="chip">Illustrative planning model</span>
+</a><a class="guide-card" href="brigade-eternia.html">
+<b>Brigade Eternia</b>
 <span>Brigade Group · Yelahanka · Doddaballapur Rd / NH-44<br/>3 BHK from ₹2.47 Cr, RERA-registered, on the NH-44 corridor.</span>
-<span class="chip">Illustrative planning model</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a><a class="guide-card wc" href="brigade-jeevan-sandya.html"><span class="wc-media"><img class="wc-shot" src="../shots/brigade.jpg" alt="" loading="lazy" decoding="async" style="object-position:0% 0%"/><span class="wc-logo"><img src="../brands/brigade.png" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Brigade Jeevan Sandya</b>
+<span class="chip">Illustrative planning model</span>
+</a><a class="guide-card" href="brigade-jeevan-sandya.html">
+<b>Brigade Jeevan Sandya</b>
 <span>Brigade Group · Kanakapura Road · South Bengaluru<br/>3, 3.5 and 4 BHK from ₹3.09 Cr on the Green Line belt.</span>
-<span class="chip">Illustrative planning model</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a><a class="guide-card wc" href="brigade-vanagaram.html"><span class="wc-media"><img class="wc-shot" src="../shots/brigade.jpg" alt="" loading="lazy" decoding="async" style="object-position:100% 0%"/><span class="wc-logo"><img src="../brands/brigade.png" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Brigade Vanagaram</b>
+<span class="chip">Illustrative planning model</span>
+</a><a class="guide-card" href="brigade-vanagaram.html">
+<b>Brigade Vanagaram</b>
 <span>Brigade Group · Vanagaram · Noombal · west Chennai<br/>Premium mixed-use off NH-48, launching October 2026.</span>
-<span class="chip">Illustrative planning model</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a><a class="guide-card wc" href="vajram-kogilu.html"><span class="wc-media"><img class="wc-shot" src="../shots/vajram-hero.png" alt="" loading="lazy" decoding="async"/><span class="wc-logo"><img src="../brands/vajram.webp" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Vajram KGF 2.0</b>
+<span class="chip">Illustrative planning model</span>
+</a><a class="guide-card" href="vajram-kogilu.html">
+<b>Vajram KGF 2.0</b>
 <span>Vajram Group · Kogilu · North Bengaluru<br/>From ₹1.71 Cr, EOI stage, on the airport corridor.</span>
-<span class="chip">Illustrative planning model</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a><a class="guide-card wc" href="nikoo-homes-9.html"><span class="wc-media"><img class="wc-shot" src="../shots/bhartiya-hero.png" alt="" loading="lazy" decoding="async"/><span class="wc-logo"><img src="../brands/bhartiya.png" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Nikoo Homes 9</b>
+<span class="chip">Illustrative planning model</span>
+</a><a class="guide-card" href="nikoo-homes-9.html">
+<b>Nikoo Homes 9</b>
 <span>Bhartiya City · Nikoo Homes · KIADB · Bagalur · North Bengaluru<br/>KIADB Aerospace corridor, studio to 3-bed loft.</span>
-<span class="chip">Illustrative planning model</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a><a class="guide-card wc" href="urbanrise-paradise-on-earth.html"><span class="wc-media"><img class="wc-shot" src="../shots/urbanrise-hero.png" alt="" loading="lazy" decoding="async"/><span class="wc-logo"><img src="../brands/urbanrise.png" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Urbanrise Paradise on Earth</b>
+<span class="chip">Illustrative planning model</span>
+</a><a class="guide-card" href="urbanrise-paradise-on-earth.html">
+<b>Urbanrise Paradise on Earth</b>
 <span>Urbanrise · Bengaluru<br/>Large-format residential, research and creative pipeline.</span>
-<span class="chip">Illustrative planning model</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a></div><p class="topic-head" id="plotted">Plotted, villa and township · 3</p><div class="guide-grid"><a class="guide-card wc" href="brigade-granada.html"><span class="wc-media"><img class="wc-shot" src="../shots/brigade.jpg" alt="" loading="lazy" decoding="async" style="object-position:25% 0%"/><span class="wc-logo"><img src="../brands/brigade.png" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Brigade Granada</b>
+<span class="chip">Illustrative planning model</span>
+</a></div><p class="topic-head" id="plotted">Plotted, villa and township · 3</p><div class="guide-grid"><a class="guide-card" href="brigade-granada.html">
+<b>Brigade Granada</b>
 <span>Brigade Group · Whitefield–Kadugodi · East Bangalore<br/>Mixed-use township on the Whitefield–Kadugodi road, EOI open.</span>
-<span class="chip">Illustrative planning model</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a><a class="guide-card wc" href="vaishnavi-life-mysore.html"><span class="wc-media"><img class="wc-shot" src="../shots/vaishnavi.jpg" alt="" loading="lazy" decoding="async"/><span class="wc-logo"><img src="../brands/vaishnavi.svg" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Vaishnavi Life Mysore</b>
+<span class="chip">Illustrative planning model</span>
+</a><a class="guide-card" href="vaishnavi-life-mysore.html">
+<b>Vaishnavi Life Mysore</b>
 <span>Vaishnavi Group · RT Nagar · Mysore city<br/>MDA-approved plots at RT Nagar, from ₹6,000/sqft.</span>
-<span class="chip">Illustrative planning model</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a><a class="guide-card wc" href="nambiar-bannerghatta.html"><span class="wc-media"><img class="wc-shot" src="../shots/nambiar-hero.png?v=20260923-hero" alt="" loading="lazy" decoding="async"/><span class="wc-logo"><img src="../brands/nambiar.svg" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Nambiar Bannerghatta</b>
+<span class="chip">Illustrative planning model</span>
+</a><a class="guide-card" href="nambiar-bannerghatta.html">
+<b>Nambiar Bannerghatta</b>
 <span>Nambiar Group · Bannerghatta · South Bengaluru<br/>76 acres, 298 villa plots, from ₹5.22 Cr.</span>
-<span class="chip">Illustrative planning model</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a></div><p class="topic-head" id="enterprise">Enterprise portfolio · 3</p><div class="guide-grid"><a class="guide-card wc" href="godrej-woodscapes.html"><span class="wc-media"><img class="wc-shot" src="../shots/godrej-woodscapes.jpg" alt="" loading="lazy" decoding="async"/><span class="wc-logo"><img src="../brands/godrej.svg" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Godrej Woodscapes</b>
+<span class="chip">Illustrative planning model</span>
+</a></div><p class="topic-head" id="enterprise">Enterprise portfolio · 3</p><div class="guide-grid"><a class="guide-card" href="godrej-woodscapes.html">
+<b>Godrej Woodscapes</b>
 <span>Godrej Properties · Budigere Cross · East Bangalore<br/>Execution experience through an agency account.</span>
-<span class="chip chip-result">Agency-account experience</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a><a class="guide-card wc" href="godrej-tiara.html"><span class="wc-media"><img class="wc-shot" src="../shots/godrej-tiara.jpg" alt="" loading="lazy" decoding="async"/><span class="wc-logo"><img src="../brands/godrej.svg" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Godrej Tiara</b>
+<span class="chip chip-result">Agency-account experience</span>
+</a><a class="guide-card" href="godrej-tiara.html">
+<b>Godrej Tiara</b>
 <span>Godrej Properties · Yeshwanthpur · Tumkur Road<br/>Enterprise Meta and Google execution at a ~₹4.4 Cr ticket.</span>
-<span class="chip">Illustrative planning model</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a><a class="guide-card wc" href="godrej-msr-city.html"><span class="wc-media"><img class="wc-shot" src="../shots/godrej-msr.jpg" alt="" loading="lazy" decoding="async"/><span class="wc-logo"><img src="../brands/godrej.svg" alt="" loading="lazy" decoding="async"/></span></span><span class="wc-body"><b>Godrej MSR City</b>
+<span class="chip">Illustrative planning model</span>
+</a><a class="guide-card" href="godrej-msr-city.html">
+<b>Godrej MSR City</b>
 <span>Godrej Properties · Shettigere · Devanahalli<br/>Investor-weighted demand on the North Bangalore growth corridor.</span>
-<span class="chip">Illustrative planning model</span><span class="wc-cta">View case study <span aria-hidden="true">→</span></span></span></a></div><div class="srcnote" style="margin-top:2.4rem"><p><b>On the numbers.</b> Highlighted figures are historical owner reports, with evidence limitations on the relevant pages.
+<span class="chip">Illustrative planning model</span>
+</a></div><div class="srcnote" style="margin-top:2.4rem"><p><b>On the numbers.</b> Highlighted figures are historical owner reports, with evidence limitations on the relevant pages.
       Agency-account execution is identified separately from direct delivery. Illustrative models are
       planning assumptions, not delivered results or forecasts. Project inventory is not units sold —
       see the <a href="../legal/disclaimer.html">disclaimer</a>.</p></div>

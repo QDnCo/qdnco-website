@@ -4,7 +4,7 @@ import vm from 'node:vm'
 import test from 'node:test'
 import ts from 'typescript'
 
-const backend = fs.readFileSync(new URL('../apps-script/lead-backend.gs', import.meta.url), 'utf8')
+const backend = fs.readFileSync(new URL('../lead-backend.gs', import.meta.url), 'utf8')
 const client = fs.readFileSync(new URL('../public/js/lead-capture.js', import.meta.url), 'utf8')
 const base = { name: 'Local test', phone: '+91 90000 00000', project: 'TEST ONLY', catchment: 'Bengaluru', budget: 'Not decided yet', page: 'https://qdnco.com/?email=private@example.com', request_id: 'local-test-0001' }
 function harness(options = {}) {
@@ -72,18 +72,11 @@ test('legacy seven-column sheet is extended without changing old row values', ()
   const original = ['2020-01-01', 'Old record', '12345678', 'Historical', 'Area', 'Band', 'https://qdnco.com/']
   const h = harness({ rows: [['Submitted', 'Name', 'Phone', 'Project', 'Catchment', 'Budget', 'Page'], original] })
   assert.equal(h.submit(base).ok, true)
-  assert.deepEqual(h.rows[1], original); assert.equal(h.rows[0].length, 19)
+  assert.deepEqual(h.rows[1], original); assert.equal(h.rows[0].length, 15)
 })
 test('formula-shaped inputs are stored as text', () => {
   const h = harness(); assert.equal(h.submit({ ...base, name: '=1+1' }).ok, true)
   assert.equal(h.rows[1][1], "'=1+1")
-})
-test('estimate widget context is stored and emailed but never required', () => {
-  const h = harness(); const extra = { services: 'phase-0,crm', addons: 'drone', estimate: 'Phase 0, CRM + Drone', source: 'about' }
-  assert.equal(h.submit({ ...base, ...extra }).ok, true)
-  assert.deepEqual(h.rows[1].slice(15, 19), Object.values(extra))
-  assert.ok(h.emails[0].body.includes('estimate: Phase 0, CRM + Drone'))
-  const plain = harness(); assert.equal(plain.submit(base).ok, true); assert.deepEqual(plain.rows[1].slice(15, 19), ['', '', '', ''])
 })
 test('mail failure preserves the lead and records alert failure', () => {
   const h = harness({ mailFail: true }); const result = h.submit(base)
@@ -127,39 +120,4 @@ test('editable homepage JSX sources are syntactically complete', () => {
     assert.deepEqual(tree.parseDiagnostics.map(x => ts.flattenDiagnosticMessageText(x.messageText, '\n')), [])
     assert.ok(html.includes('/js/lead-capture.js'))
   }
-})
-
-const VYOSTRA_URL = 'https://vyostra.com/api/forms/leads'
-const quoted = { ...base, role: 'Developer', service_name: 'Meta/Google Ad Campaigns', quote: '₹78,000/campaign/mo', source: 'about' }
-function router(sheetReply, crmReply, calls = []) {
-  return async (url, request) => {
-    calls.push({ url, request })
-    const reply = url === VYOSTRA_URL ? crmReply : sheetReply
-    if (reply instanceof Error) throw reply
-    return { ok: true, json: async () => reply }
-  }
-}
-
-test('every lead goes to the Sheet and to the Vyostra form, with the quote as labelled answers', async () => {
-  const calls = []
-  await api.send('https://sheet.test/', quoted, { fetch: router({ ok: true }, { success: true }, calls) })
-  assert.deepEqual(calls.map(c => c.url).sort(), ['https://sheet.test/', VYOSTRA_URL])
-  const crm = calls.find(c => c.url === VYOSTRA_URL)
-  assert.equal(crm.request.headers['Content-Type'], 'application/json'); assert.equal(crm.request.credentials, 'omit')
-  const body = JSON.parse(crm.request.body)
-  assert.equal(body.formId, 'a60aafd4-1e2d-4c08-a99a-3f9847f684dd')
-  assert.equal(body.sourceUrl, 'https://qdnco.com/')
-  assert.equal(body.customFields.Name, base.name); assert.equal(body.customFields.Phone, base.phone)
-  assert.equal(body.customFields['Quoted fee'], '₹78,000/campaign/mo'); assert.equal(body.customFields.Service, 'Meta/Google Ad Campaigns')
-  assert.equal(body.customFields['Request ID'], base.request_id); assert.equal('Estimate summary' in body.customFields, false)
-})
-test('one confirmed destination is enough; the visitor sees an error only when both fail', async () => {
-  assert.equal((await api.send('https://sheet.test/', base, { fetch: router(new Error('down'), { success: true }) })).via, 'vyostra')
-  assert.equal((await api.send('https://sheet.test/', base, { fetch: router({ ok: true }, { success: false }) })).ok, true)
-  await assert.rejects(api.send('https://sheet.test/', base, { fetch: router({ ok: false }, new Error('down')) }), /receipt_unconfirmed/)
-})
-test('vyostra: null sends to the Sheet only', async () => {
-  const calls = []
-  await api.send('https://sheet.test/', base, { vyostra: null, fetch: router({ ok: true }, { success: true }, calls) })
-  assert.deepEqual(calls.map(c => c.url), ['https://sheet.test/'])
 })

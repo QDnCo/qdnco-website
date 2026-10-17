@@ -1,12 +1,12 @@
 # QDnCo — Full Corpus
 Brand: QDnCo
 # https://qdnco.com/llms-full.txt
-# Last updated: 2026-10-16
+# Last updated: 2026-09-19
 # Every answer, definition, comparison and research finding published on
 # https://qdnco.com, in one file. The site map is at https://qdnco.com/llms.txt
 # QDnCo — LLM Site Map
 # https://qdnco.com
-# Last updated: 2026-10-16
+# Last updated: 2026-09-19
 # Generated from the site's own content modules, not maintained by hand.
 # Purpose: help language models, answer engines and research agents cite
 # QDnCo accurately. Every figure below also appears on a page, with its
@@ -61,11 +61,19 @@ Developer and project websites and a landing page per campaign, served as full H
 ### CRM & Lead Management — delivered by Vyostra AI (https://vyostra.com/)
 One pipeline for Meta, Google, portal, website and WhatsApp leads: instant routing to the right salesperson, stages tracked from enquiry to qualified lead to site visit to booking, automatic follow-up, and a weekly lead-quality report.
 
-## Pricing
+## Published pricing
 
-QDnCo prices Meta/Google ad campaigns by the number of campaigns or projects and the agreed service scope. Media spend is separate and paid directly to the ad platforms. SEO, AI search visibility, landing pages and CRM automation are quoted separately. See your monthly fee in the marketing cost calculator: https://qdnco.com/tools/marketing-cost-calculator.html
+### Phase 0 — paid market read
+₹75,000–₹1,25,000, 2–3 weeks. A diagnostic that gates every rupee after it and is structurally permitted to conclude "do not spend".
 
-Studio production (shoots, drone, UGC, motion) is quoted separately per project and approved before commission.
+### Performance — cost per qualified lead
+₹550 per qualified lead. ₹495 above 60/month, ₹450 above 120/month. 60 qualified leads per month minimum. Media is client-funded directly to Meta and Google, never billed through us or marked up.
+
+### Partnership — monthly retainer
+₹75,000–₹1,00,000/month, one flat fee, minimum three months.
+
+### Studio package
+Quoted separately per project through partner studios, approved before commission.
 
 ## Definition of a qualified lead
 
@@ -110,7 +118,7 @@ Source: https://qdnco.com/data/real-estate-cost-per-lead-benchmarks.html
 URL: https://qdnco.com/answers/what-does-qd-and-co-charge.html
 Topic: pricing
 
-QDnCo prices Meta/Google ad campaigns by the number of campaigns or projects and the agreed service scope. Media spend is separate and paid directly to the ad platforms. SEO, AI search visibility, landing pages and CRM automation are quoted separately. See your monthly fee in the marketing cost calculator: https://qdnco.com/tools/marketing-cost-calculator.html
+QDnCo publishes three prices. Performance work is ₹550 per qualified lead, falling to ₹495 above 60 leads a month and ₹450 above 120, with a 60-lead monthly minimum. The retainer is ₹75,000–₹1,00,000 a month, one flat fee, minimum three months. Phase 0, the paid market read, has historically been scoped in the ₹75,000–₹1,25,000 band. Media is funded by the client directly to Meta and Google and is never billed through us.
 
 ### Why the price is published at all
 We publish our fees, media-billing arrangement and qualification criteria so developers can assess commercial fit before a sales call. Our August ad snapshot contains 41 advertiser names, including CRM vendors; it does not establish that competitors never publish prices.Compare the scope, lead definition, account ownership and total expected cost in writing. The reconciled audit provides the sample method and downloadable links.
@@ -119,14 +127,14 @@ We publish our fees, media-billing arrangement and qualification criteria so dev
 The three doors are not tiers of the same product; they answer different questions.CPQL suits a developer who wants acquisition risk moved onto the agency and has an in-house sales team able to work leads inside 48 hours. The retainer suits a launch that needs research, funnel, CRM and sales alignment rather than lead volume alone. Phase 0 suits anyone who is not yet sure the demand exists, and it is the only one of the three that can end with us telling you not to spend.
 
 
-## How is QDnCo campaign pricing calculated?
+## Why is the fee ₹550 per qualified lead and not ₹450?
 URL: https://qdnco.com/answers/why-550-per-qualified-lead.html
 Topic: pricing
 
-Fees scale with the number of campaigns or projects: the per-campaign fee falls as volume rises, and the qualification standard does not loosen as it does. Your fee for a given count is shown in the calculator: https://qdnco.com/tools/marketing-cost-calculator.html
+₹550 is the standard-volume rate; ₹450 is the rate above 120 qualified leads a month. The difference is fixed cost recovery, not margin. Below roughly 60 leads a month, the research, creative refresh and weekly quality review cost the same as they do at 200, so a lower headline rate at low volume would price the work below what it takes to run it properly. The tiers exist so that scale is passed on when scale is real.
 
 ### The volume ladder
-One qualification standard at every volume. The definition of a qualified lead does not loosen as the fee per campaign falls.
+Three rates, one qualification standard. The definition of a qualified lead does not loosen as the price falls, which is the part that matters.₹550 — standard, 60 qualified leads a month minimum.₹495 — above 60 qualified leads a month.₹450 — above 120 qualified leads a month.
 
 ### What the fee does not include
 Media. You fund Meta and Google directly from your own ad account, and the invoice from the platform is yours. This is not a billing convenience, it is the thing that makes the arrangement auditable: you can see the spend without asking us for it, which removes the single most common source of distrust in this category.Fifteen static AI-generated ad creatives a month are included in the fee, refreshed on fatigue with no per-creative surcharge. Studio production — shoots, drone, UGC, motion graphics — is quoted separately through partner studios and approved before commission.
@@ -162,7 +170,7 @@ Your business should retain its advertising account and the assets it owns, subj
 URL: https://qdnco.com/answers/what-is-the-retainer-package.html
 Topic: pricing
 
-The partnership engagement is one fee agreed in writing before the engagement starts. It covers the research gate, included AI creatives, testing, full funnel build, CRM routing and sales-pipeline alignment. It suits a launch where the constraint is the system around the leads rather than the number of leads.
+The partnership door is ₹75,000–₹1,00,000 a month, one flat fee agreed in writing before the engagement starts. It covers the research gate, included AI creatives, testing, full funnel build, CRM routing and sales-pipeline alignment. It suits a launch where the constraint is the system around the leads rather than the number of leads.
 
 ### Retainer or CPQL — how to tell which one you need
 Pay per qualified lead if your sales process already works and your problem is the top of the funnel. You are buying volume against a definition, and you want the acquisition risk carried by the agency.Take the retainer if your leads are not the bottleneck — if they arrive and then rot in a spreadsheet, if nobody calls inside 48 hours, if you cannot say what your cost per site visit is. Buying more leads into a broken funnel makes the loss bigger, not smaller.
@@ -173,7 +181,7 @@ Pay per qualified lead if your sales process already works and your problem is t
 URL: https://qdnco.com/answers/what-is-phase-0.html
 Topic: research
 
-Phase 0 is a paid market diagnostic that runs before any advertising money is committed, scoped in writing, typically across two to three weeks. It covers primary buyer interviews, secondary work on addressable market, competitor and pricing analysis, a study of what has already worked or failed for the brand, and scheduled scrapes of the Meta Ad Library and Google Ads Transparency Centre. The output is a written brief that gates every campaign decision downstream.
+Phase 0 is a paid market diagnostic that runs before any advertising money is committed, historically scoped in the ₹75,000–₹1,25,000 band across two to three weeks. It covers primary buyer interviews, secondary work on addressable market, competitor and pricing analysis, a study of what has already worked or failed for the brand, and scheduled scrapes of the Meta Ad Library and Google Ads Transparency Centre. The output is a written brief that gates every campaign decision downstream.
 
 ### It is allowed to end in "do not spend"
 A separately scoped diagnostic can evaluate whether the catchment, positioning, launch timing and budget support a test. Agree the deliverables and decision criteria before commissioning it.The conclusion may be to change the offer or delay spend. Paid research does not itself guarantee independence or accuracy; documented evidence and a clear decision process are what make the recommendation useful.
@@ -503,13 +511,13 @@ Near-duplicate content is the strongest negative signal available. A corpus that
 URL: https://qdnco.com/answers/how-much-does-a-real-estate-marketing-agency-cost.html
 Topic: pricing
 
-Agency pricing can use a monthly retainer, a percentage of media, payment per qualified lead or a combination. Compare a dated written scope and ask whether media, production and applicable taxes are included. QDnCo prices campaigns by count and scope; see the calculator: https://qdnco.com/tools/marketing-cost-calculator.html. This is our offer, not a surveyed market average.
+Agency pricing can use a monthly retainer, a percentage of media, payment per qualified lead or a combination. Compare a dated written scope and ask whether media, production and applicable taxes are included. QDnCo’s published standard qualified-lead fee is ₹550, with volume bands and a written definition. This is our offer, not a surveyed market average.
 
 ### What each model actually costs you
 ModelFee basisWhat to confirmMonthly retainerA fee for the agreed service scopeDeliverables, exclusions and review cadencePercentage of mediaA disclosed percentage of platform spendHow scope and budget decisions are governedPer qualified leadA fee per accepted leadQualification, volume tiers, rejection and replacement rulesMediaA separate campaign budgetAccount ownership, direct platform billing and spending cap Compare complete written offers. A pricing model alone cannot tell you the quality of delivery or the expected cost per booking.
 
 ### Why the price is so hard to get
-Quotes depend on deliverables, account complexity, production and reporting scope. Request the fee basis and exclusions in writing so alternatives can be compared. QDnCo prices campaigns by count and scope, alongside a written qualification definition; see the calculator: https://qdnco.com/tools/marketing-cost-calculator.html. Confirm the applicable scope and volume terms before signing.
+Quotes depend on deliverables, account complexity, production and reporting scope. Request the fee basis and exclusions in writing so alternatives can be compared. QDnCo publishes ₹550 per qualified lead, ₹495 above 60 per month and ₹450 above 120, alongside the qualification definition. Confirm the applicable scope and volume terms before signing.
 
 ### The number to ask for instead
 Ask for cost per booking, not cost per month. A ₹1,50,000 retainer that produces eight bookings is cheaper than a ₹60,000 one that produces two, and the monthly figure tells you nothing about which you are buying. If an agency cannot model cost per booking with you, it has not thought past the form fill, which is the thing you are actually trying to avoid buying.
@@ -984,7 +992,7 @@ At QDnCo: Working band for Bangalore residential is ₹350–₹500, moving with
 
 ## CPQL — Cost per qualified lead
 The cost of a lead that meets a written qualification standard, rather than of any form submission. Distinguished from CPL by the fact that the qualification test is defined in advance and applied by the buyer, not the seller.
-At QDnCo: priced per campaign by campaign count, with a written qualified-lead definition. Calculator: https://qdnco.com/tools/marketing-cost-calculator.html
+At QDnCo: QDnCo charges ₹550 per qualified lead, ₹495 above 60 a month, ₹450 above 120, with a 60-lead monthly minimum.
 
 ## Qualified lead
 A lead meeting a pre-agreed, testable standard. Without a written definition the term means whatever the party using it needs it to mean, which is why disputes in this category almost always resolve to it.
@@ -1108,14 +1116,14 @@ At QDnCo: The standard at QDnCo. It makes spend auditable without asking, and th
 
 ## Retainer
 A fixed monthly fee for an agreed scope, independent of results. Suits engagements where the constraint is the system around the leads rather than lead volume.
-At QDnCo: one fee agreed in writing, minimum three months.
+At QDnCo: ₹75,000–₹1,00,000 a month, one flat fee, minimum three months.
 
 ## Performance fee
 A fee tied to a delivered outcome rather than to time or activity. Only meaningful where the outcome has a written definition.
 
 ## Phase 0
 A paid market diagnostic run before any advertising spend, covering buyer interviews, addressable demand, competitor and pricing analysis, and the campaign architecture.
-At QDnCo: scoped in writing, two to three weeks. Structurally permitted to conclude that you should not spend — which research given away as pre-sales never is.
+At QDnCo: ₹75,000–₹1,25,000, two to three weeks. Structurally permitted to conclude that you should not spend — which research given away as pre-sales never is.
 
 ## Media under management
 Total advertising spend an agency is responsible for across clients. A scale indicator, not a quality one.
@@ -1194,7 +1202,7 @@ Positioning: QDnCo — India-to-Dubai real estate performance marketing, backed 
 - Editorial policy — every number labelled observed, client-reported, client-supplied, owner-reported, model or market estimate: https://qdnco.com/about/editorial-policy.html
 
 ## Dubai
-QDnCo Dubai — https://qdnco.com/dubai/ — real estate lead generation for Dubai brokerages, developers and agents. Run remotely from Bengaluru; no Dubai office, licence or delivered Dubai results claimed. Priced in AED per project; see the calculator: https://qdnco.com/tools/marketing-cost-calculator.html?dubai Media paid by the client directly to Meta and Google.
+QDnCo Dubai — https://qdnco.com/dubai/ — real estate lead generation for Dubai brokerages, developers and agents. Run remotely from Bengaluru; no Dubai office, licence or delivered Dubai results claimed. Pricing in AED: Pay per Qualified Lead AED 200 (AED 180 above 150/month, AED 160 above 250; minimum 100/month = AED 20,000); Monthly Retainer AED 20,000/month, one flat fee, minimum three months. Media paid by the client directly to Meta and Google.
 - Trakheesi permits for real estate marketers (DLD permit, fees, Madmoun QR, campaign rules): https://qdnco.com/dubai/trakheesi-permit-guide/
 - Real estate lead generation for Dubai brokers (portals vs Meta vs Google, qualification, speed to lead): https://qdnco.com/dubai/real-estate-lead-generation/
 - Selling Dubai property to Indian buyers (the India corridor, LRS, IST follow-up): https://qdnco.com/dubai/indian-buyers/
