@@ -8303,7 +8303,10 @@ function CtaFooter() {
   const fade = (i) => ({
     initial: { opacity: 0, y: 32 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.3 },
+    /* amount 0 + a bottom margin: on phones the footer column stack is taller than
+       the screen, so any fraction (0.3 of ~3300px) can never be in view and the
+       footer stayed at opacity 0. Reveal once its top clears the bottom 10%. */
+    viewport: { once: true, amount: 0, margin: '0px 0px -10% 0px' },
     transition: { duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] },
   });
 
