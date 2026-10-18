@@ -58,9 +58,7 @@
         "Go-to-market research",
         "Generative engine optimisation"
       ],
-      "founder": {
-        "@id": "https://qdnco.com/#person"
-      },
+      "founder": [{"@id": "https://qdnco.com/#adarsh"}, {"@id": "https://qdnco.com/#person"}, {"@id": "https://qdnco.com/#vinayak-tiwari"}],
       "employee": [
         {
           "@id": "https://qdnco.com/#adarsh"
@@ -79,7 +77,7 @@
       "@type": "Person",
       "@id": "https://qdnco.com/#person",
       "name": "V. Sai Kavshik",
-      "jobTitle": "Head of Sales",
+      "jobTitle": "Head of Sales & co-founder",
       "worksFor": {
         "@id": "https://qdnco.com/#organization"
       },

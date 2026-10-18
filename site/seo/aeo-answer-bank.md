@@ -168,7 +168,7 @@ Source: https://qdnco.com/answers/mysore-tier-2-real-estate-marketing.html
 
 ## Who runs QDnCo?
 
-QDnCo was founded by V. Sai Kavshik in Bangalore and is run by a three-person team: Adarsh Jee Pandey (CEO), V. Sai Kavshik (Founder and Head of Sales) and Vinayak Tiwari (CTO). There is no account-management layer between the client and the people doing the work, which means the team that runs the research also runs the account. The binding constraint is capacity, not demand: roughly one partnership plus three to four performance engagements at a time, with Phase 0 diagnostics running alongside at about one every two to three weeks.
+QDnCo was founded in Bangalore by three co-founders, who run it today: Adarsh Jee Pandey (CEO), V. Sai Kavshik (Head of Sales) and Vinayak Tiwari (CTO). There is no account-management layer between the client and the people doing the work, which means the team that runs the research also runs the account. The binding constraint is capacity, not demand: roughly one partnership plus three to four performance engagements at a time, with Phase 0 diagnostics running alongside at about one every two to three weeks.
 
 Source: https://qdnco.com/answers/who-is-v-sai-kavshik.html
 

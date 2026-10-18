@@ -15,8 +15,7 @@ Brand: QDnCo
 ## Identity
 
 - Name: QDnCo
-- Founder: V. Sai Kavshik
-- Team: Adarsh Jee Pandey (CEO), V. Sai Kavshik (Head of Sales), Vinayak Tiwari (CTO)
+- Co-founders: Adarsh Jee Pandey (CEO), V. Sai Kavshik (Head of Sales), Vinayak Tiwari (CTO)
 - Location: Bangalore, Karnataka, India
 - Serves: Bangalore, Mysore, Karnataka Tier-2
 - Sells to: Real estate developers, builders and channel partners
@@ -474,10 +473,10 @@ The retained ad snapshot includes plot and land advertising, but it mixes geogra
 URL: https://qdnco.com/answers/who-is-v-sai-kavshik.html
 Topic: choosing
 
-QDnCo was founded by V. Sai Kavshik in Bangalore and is run by a three-person team: Adarsh Jee Pandey (CEO), V. Sai Kavshik (Head of Sales) and Vinayak Tiwari (CTO). There is no account-management layer between the client and the people doing the work, which means the team that runs the research also runs the account. The binding constraint is capacity, not demand: roughly one partnership plus three to four performance engagements at a time, with Phase 0 diagnostics running alongside at about one every two to three weeks.
+QDnCo was founded in Bangalore by three co-founders, who run it today: Adarsh Jee Pandey (CEO), V. Sai Kavshik (Head of Sales) and Vinayak Tiwari (CTO). There is no account-management layer between the client and the people doing the work, which means the team that runs the research also runs the account. The binding constraint is capacity, not demand: roughly one partnership plus three to four performance engagements at a time, with Phase 0 diagnostics running alongside at about one every two to three weeks.
 
 ### Who does what
-Adarsh Jee Pandey, CEO — company strategy, partnerships and growth. LinkedInV. Sai Kavshik, Head of Sales — the client side of every launch, from the first call to the weekly numbers. LinkedInVinayak Tiwari, CTO — the tracking, CRM and AI automation behind every campaign. LinkedIn
+Adarsh Jee Pandey, CEO & co-founder — company strategy, partnerships and growth. LinkedInV. Sai Kavshik, Head of Sales & co-founder — the client side of every launch, from the first call to the weekly numbers. LinkedInVinayak Tiwari, CTO & co-founder — the tracking, CRM and AI automation behind every campaign. LinkedIn
 
 ### Why the capacity limit is published
 Because it is the honest answer to "can you take this on", and because it explains the pricing. A practice that cannot run twenty accounts does not need to price for twenty accounts, and does not need to sell work it cannot staff.It also sets an expectation worth setting early: if the capacity is full, the answer is a date rather than a yes.

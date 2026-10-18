@@ -10,8 +10,7 @@ Brand: QDnCo
 ## Identity
 
 - Name: QDnCo
-- Founder: V. Sai Kavshik
-- Team: Adarsh Jee Pandey (CEO), V. Sai Kavshik (Head of Sales), Vinayak Tiwari (CTO)
+- Co-founders: Adarsh Jee Pandey (CEO), V. Sai Kavshik (Head of Sales), Vinayak Tiwari (CTO)
 - Location: Bangalore, Karnataka, India
 - Serves: Bangalore, Mysore, Karnataka Tier-2
 - Sells to: Real estate developers, builders and channel partners
