@@ -4089,25 +4089,37 @@ html[data-theme="light"] #contact .footer-cols{background:rgba(255,255,255,.78)}
 .qd-map-summary{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;margin-bottom:20px;border-top:1px solid rgba(var(--ink-rgb),.12);color:rgba(var(--ink-rgb),.78);line-height:1.55}
 .qd-map-summary a{display:inline-flex;min-height:44px;align-items:center;gap:6px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(var(--ink-rgb),.3)}
 .qd-map-summary a:hover{color:#5b32c8;border-color:#5b32c8}
-.qd-atlas{display:grid;grid-template-columns:1.55fr 1fr;gap:20px;align-items:start}
+.qd-atlas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
 .qd-atlas-card{position:relative;padding:18px 20px 20px;border-radius:24px;background:#fcfbf9;border:1px solid rgba(10,13,18,.12);overflow:hidden}
 .qd-atlas-card svg{display:block;width:100%;height:auto;margin-top:8px}
 .qd-atlas-kicker{font-size:.8125rem;font-weight:600;color:rgba(10,13,18,.62)}
 .qd-atlas-caption{margin-top:8px;font-size:.875rem;line-height:1.5;color:rgba(10,13,18,.68)}
 .qd-atlas-caption strong{color:#0a0d12}
-.qd-map .land path{fill:#e3e1ea;stroke:#fcfbf9;stroke-width:.35}
-.qd-map .route path{stroke:#5b32c8;stroke-width:1.2;stroke-dasharray:4 4;opacity:.7}
+.qd-map{--map-halo:rgba(255,255,255,.92)}
+html:not([data-theme="light"]) .qd-map{--map-halo:rgba(22,26,36,.92)}
+.qd-globe{cursor:grab;touch-action:pan-y;-webkit-user-select:none;user-select:none;border-radius:16px}
+.qd-globe.is-grabbing{cursor:grabbing}
+.qd-globe:focus-visible{outline:3px solid var(--card-accent);outline-offset:2px}
+.qd-globe .g-sphere{fill:rgba(var(--card-ink-rgb),.03);stroke:rgba(var(--card-ink-rgb),.16);stroke-width:.8}
+.qd-globe .g-grat{fill:none;stroke:rgba(var(--card-ink-rgb),.08);stroke-width:.4}
+.qd-globe .g-land{fill:rgba(var(--card-ink-rgb),.15);stroke:var(--map-halo);stroke-width:.3;stroke-linejoin:round}
+.qd-globe .g-hi{fill:var(--card-accent)}
+.qd-globe .g-arc{fill:none;stroke:var(--card-accent);stroke-width:1.4;stroke-linecap:round;stroke-dasharray:3 4;animation:qd-dash 1.6s linear infinite}
+.qd-globe .g-label{font-size:11px;font-weight:700;fill:var(--card-ink);paint-order:stroke;stroke:var(--map-halo);stroke-width:3px;stroke-linejoin:round}
+@keyframes qd-dash{to{stroke-dashoffset:-14}}
+.qd-dots circle{fill:rgba(var(--card-ink-rgb),.16);transition:opacity .4s ease}
+.qd-dots circle.on{fill:var(--card-accent)}
+.qd-india-outline{fill:none;stroke:var(--card-accent);stroke-width:.5;opacity:.7}
+.qd-india-pin{cursor:pointer;outline:none}
+.qd-india-pin .dot{fill:var(--card-accent);stroke:var(--map-halo);stroke-width:1.2}
+.qd-india-pin text{font-size:9px;font-weight:600;fill:var(--card-ink);paint-order:stroke;stroke:var(--map-halo);stroke-width:3px;stroke-linejoin:round}
+.qd-india-pin.on text{fill:var(--card-accent)}
+.qd-india-pin:focus-visible .dot{stroke:var(--card-accent);stroke-width:2}
+.qd-atlas-hint{display:block;margin-top:6px;font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(var(--card-ink-rgb),.55)}
 .qd-pin .halo{fill:rgba(91,50,200,.18);animation:qd-pulse 2.6s ease-out infinite;animation-delay:var(--d,0s);transform-box:fill-box;transform-origin:center}
 .qd-pin .dot{fill:#5b32c8}
 .qd-pin .badge{fill:#fff;stroke:rgba(10,13,18,.14);stroke-width:.6}
 .qd-pin .lbl{font-size:11px;font-weight:700;fill:#0a0d12}
-.qd-pin-sm{cursor:pointer;outline:none}
-.qd-pin-sm .lbl{font-size:2.6px}
-.qd-pin-sm .badge{stroke-width:.2}
-.qd-pin-sm .leader{stroke:rgba(10,13,18,.35);stroke-width:.2}
-.qd-pin-sm.on .badge{fill:#5b32c8;stroke:#5b32c8}
-.qd-pin-sm.on .lbl{fill:#fff}
-.qd-pin-sm:focus-visible .badge{stroke:#5b32c8;stroke-width:.6}
 @keyframes qd-pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.8);opacity:0}}
 .qd-regions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
 .qd-regions button{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;text-align:left;padding:20px 22px;border-radius:22px;background:#fcfbf9;color:#0a0d12;border:1px solid rgba(10,13,18,.12);font:inherit;cursor:pointer;transition:border-color 200ms ease,background-color 200ms ease}
@@ -4122,7 +4134,7 @@ html[data-theme="light"] #contact .footer-cols{background:rgba(255,255,255,.78)}
 .qd-cities button[aria-pressed="true"]{background:#262b38;border-color:#262b38;color:#fff}
 .qd-map-note{margin:16px 0 0;font-size:.8125rem;color:rgba(var(--ink-rgb),.62)}
 @media (max-width:900px){.qd-atlas,.qd-regions{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){.qd-pin .halo,.qd-beacon{animation:none}}
+@media (prefers-reduced-motion:reduce){.qd-pin .halo,.qd-beacon,.qd-globe .g-arc{animation:none}.qd-dots circle{transition:none}}
 </style>
 <style id="glass-cards">
 /* Glass cards (UI/UX Pro Max: glassmorphism). The content cards were solid
@@ -4195,11 +4207,8 @@ html[data-theme="light"]{
 .qd-proj .qd-card-stat{border-top-color:rgba(185,162,255,.22)}
 .qd-proj .qd-card-media.is-plain{background:linear-gradient(160deg,rgba(var(--card-ink-rgb),.05),rgba(var(--card-ink-rgb),.1))}
 /* Map inside the glass card. */
-html:not([data-theme="light"]) .qd-map .land path{fill:rgba(255,255,255,.16);stroke:rgba(255,255,255,.05)}
 html:not([data-theme="light"]) .qd-pin .badge{fill:#1b2030;stroke:rgba(255,255,255,.22)}
 html:not([data-theme="light"]) .qd-pin .lbl{fill:#f4f6f8}
-html:not([data-theme="light"]) .qd-pin-sm .leader{stroke:rgba(255,255,255,.35)}
-html:not([data-theme="light"]) .qd-pin-sm.on .badge{fill:#7a5cf0;stroke:#7a5cf0}
 
 @media (prefers-reduced-motion:reduce){.qd-proof-card,.qd-res-card,.qd-svc-col,.qd-proj .qd-card,.qd-step,.qd-atlas-card,.qd-regions button{transition:none}.qd-proof-card::after,.qd-res-card::after,.qd-svc-col::after,.qd-proj .qd-card::after,.qd-step::after,.qd-regions button::after{display:none}}
 @supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
@@ -7745,40 +7754,182 @@ function CtaBand() {
   );
 }
 
-/* Markets map (QDnCo New design, DESIGN.md 6.16): Chicago -> Dubai -> India
-   corridor, an India close-up with selectable city pins, and region cards.
-   Pins show market coverage, not offices. Map: Natural Earth. */
+/* Markets map (QDnCo New design, DESIGN.md 6.16): a draggable globe with the
+   Chicago -> Dubai -> India route, an India close-up drawn as a dot grid under
+   the official outline, region cards and city pills that stay in sync.
+   Pins show market coverage, not offices. Geometry: Natural Earth, India point
+   of view (scripts/generate/make-markets-map.py builds assets/markets-map.json). */
 const MAP_CITIES = [['Bangalore', 12.97, 77.59], ['Chennai', 13.08, 80.27], ['Pune', 18.52, 73.85], ['Mumbai', 19.08, 72.88], ['Delhi', 28.61, 77.21], ['Dubai', 25.20, 55.27], ['Chicago', 41.88, -87.63], ['Hyderabad', 17.39, 78.49]];
 const MAP_REGIONS = ['Karnataka, India', 'Tamil Nadu, India', 'Maharashtra, India', 'Maharashtra, India', 'Delhi, India', 'Dubai, United Arab Emirates', 'Illinois, United States', 'Telangana, India'];
-function MarketsMap() {
-  const [world, setWorld] = useState([]);
-  const [active, setActive] = useState(0);
-  useEffect(() => { let live = true; fetch('/assets/world.json').then((r) => r.json()).then((d) => { if (live) setWorld(d); }).catch(() => {}); return () => { live = false; }; }, []);
-  const project = ([lon, lat]) => [(lon + 180) * 1000 / 360, (90 - lat) * 500 / 180];
-  const path = (g) => (g.type === 'Polygon' ? [g.coordinates] : g.coordinates).map((poly) => poly.map((ring) => ring.map((p, i) => (i ? 'L' : 'M') + project(p).join(',')).join(' ') + 'Z').join(' ')).join(' ');
-  const land = world.map((g, i) => React.createElement('path', { key: i, d: path(g),}));
-  const city = MAP_CITIES[active];
-  const pick = (i) => (e) => { if (!e.key || e.key === 'Enter' || e.key === ' ') { if (e.key) e.preventDefault(); setActive(i); } };
-  const corridorPins = [6, 5, 0].map((i) => {
-    const c = MAP_CITIES[i]; const [x, py] = project(i === 0 ? [78, 23] : [c[2], c[1]]); const y = py + (i === 5 ? 7 : 0);
-    const label = i === 0 ? 'India' : c[0]; const w = label.length * 7 + 14;
-    return React.createElement('g', { key: i, className: "qd-pin", transform: 'translate(' + x + ',' + y + ')', style: { '--d': (-i * 0.7) + 's' },}
+const MAP_GEO_URL = '/assets/markets-map.json?v=2026-10-19-1';
+const INDIA_LABELS = { Bangalore: [-7, 3, 'end'], Chennai: [7, 3, 'start'], Hyderabad: [7, 2, 'start'], Pune: [7, 5, 'start'], Mumbai: [-7, -1, 'end'], Delhi: [7, 2, 'start'] };
+const GLOBE_R = 146, GLOBE_CX = 162, GLOBE_CY = 166, GLOBE_RAD = Math.PI / 180;
+const GLOBE_VIEWS = { India: [78, 22], Dubai: [52, 27], Chicago: [-88, 38] };
+const GLOBE_CAPTIONS = { India: ['India', 'Bangalore · Chennai · Hyderabad · Pune · Mumbai · Delhi'], Dubai: ['Dubai', 'United Arab Emirates'], Chicago: ['Chicago', 'Illinois, United States'] };
+const GLOBE_PINS = [['Chicago', -87.63, 41.88], ['Dubai', 55.27, 25.20]];
+
+/* Orthographic projection: [x, y, z] on the unit sphere, z >= 0 faces the viewer. */
+function globeRot(view, lon, lat) {
+  const l = (lon - view[0]) * GLOBE_RAD, p = lat * GLOBE_RAD, p0 = view[1] * GLOBE_RAD;
+  return [Math.cos(p) * Math.sin(l), Math.cos(p0) * Math.sin(p) - Math.sin(p0) * Math.cos(p) * Math.cos(l), Math.sin(p0) * Math.sin(p) + Math.cos(p0) * Math.cos(p) * Math.cos(l)];
+}
+const globeXY = (p) => (GLOBE_CX + p[0] * GLOBE_R).toFixed(1) + ',' + (GLOBE_CY - p[1] * GLOBE_R).toFixed(1);
+const globeAngle = (p) => Math.atan2(-p[1], p[0]);
+const globeWrap = (a) => ((a + 3 * Math.PI) % (2 * Math.PI)) - Math.PI;
+
+function globeHorizon(a, b) {
+  const t = a[2] / (a[2] - b[2]), x = a[0] + t * (b[0] - a[0]), y = a[1] + t * (b[1] - a[1]), h = Math.hypot(x, y) || 1;
+  return [x / h, y / h, 0];
+}
+
+/* One ring as a path, clipped at the horizon: hidden runs follow the rim as an arc. */
+function globeRing(view, ring) {
+  const P = ring.map(([lon, lat]) => globeRot(view, lon, lat)), n = P.length, s = P.findIndex((p) => p[2] >= 0);
+  if (s < 0) return '';
+  if (P.every((p) => p[2] >= 0)) return 'M' + P.map(globeXY).join('L') + 'Z';
+  const Q = P.slice(s).concat(P.slice(0, s));
+  let d = 'M' + globeXY(Q[0]), i = 1;
+  while (i <= n) {
+    if (Q[i % n][2] >= 0) { d += 'L' + globeXY(Q[i % n]); i++; continue; }
+    const exit = globeHorizon(Q[i - 1], Q[i % n]);
+    let j = i, turn = 0, last = globeAngle(exit);
+    while (Q[j % n][2] < 0) { const a = globeAngle(Q[j % n]); turn += globeWrap(a - last); last = a; j++; }
+    const entry = globeHorizon(Q[(j - 1) % n], Q[j % n]);
+    turn += globeWrap(globeAngle(entry) - last);
+    d += 'L' + globeXY(exit) + 'A' + GLOBE_R + ' ' + GLOBE_R + ' 0 ' + (Math.abs(turn) > Math.PI ? 1 : 0) + ' ' + (turn > 0 ? 1 : 0) + ' ' + globeXY(entry);
+    i = j;
+  }
+  return d + 'Z';
+}
+
+/* Polyline through projected points; frontOnly keeps it inside the visible disc. */
+function globeLine(pts, frontOnly) {
+  let d = '', pen = false;
+  pts.forEach((p) => {
+    const r = Math.hypot(p[0], p[1]), show = frontOnly ? p[2] >= 0 && r <= 1 : p[2] >= 0;
+    if (show) d += (pen ? 'L' : 'M') + globeXY(p);
+    pen = show;
+  });
+  return d;
+}
+
+function globeGraticule(view) {
+  let d = '';
+  for (let lon = -180; lon < 180; lon += 30) { const pts = []; for (let lat = -90; lat <= 90; lat += 4) pts.push(globeRot(view, lon, lat)); d += globeLine(pts, false); }
+  for (let lat = -60; lat <= 60; lat += 30) { const pts = []; for (let lon = -180; lon <= 180; lon += 4) pts.push(globeRot(view, lon, lat)); d += globeLine(pts, false); }
+  return d;
+}
+
+/* Great-circle route between two [lon, lat] points, lifted off the surface mid-way. */
+function globeRoute(view, a, b, lift) {
+  const vec = ([lon, lat]) => [Math.cos(lat * GLOBE_RAD) * Math.cos(lon * GLOBE_RAD), Math.cos(lat * GLOBE_RAD) * Math.sin(lon * GLOBE_RAD), Math.sin(lat * GLOBE_RAD)];
+  const va = vec(a), vb = vec(b), om = Math.acos(va[0] * vb[0] + va[1] * vb[1] + va[2] * vb[2]), pts = [];
+  for (let k = 0; k <= 48; k++) {
+    const t = k / 48, s1 = Math.sin((1 - t) * om) / Math.sin(om), s2 = Math.sin(t * om) / Math.sin(om);
+    const v = [0, 1, 2].map((i) => va[i] * s1 + vb[i] * s2), h = 1 + lift * Math.sin(Math.PI * t);
+    pts.push(globeRot(view, Math.atan2(v[1], v[0]) / GLOBE_RAD, Math.asin(v[2]) / GLOBE_RAD).map((c) => c * h));
+  }
+  return globeLine(pts, true);
+}
+
+function MarketsGlobe({ geo, market }) {
+  const [view, setView] = useState(GLOBE_VIEWS.India);
+  const viewRef = useRef(GLOBE_VIEWS.India), raf = useRef(0), drag = useRef(null), svg = useRef(null);
+  const apply = (v) => { viewRef.current = v; setView(v); };
+  const nudge = (dl, dp) => { const [l, p] = viewRef.current; apply([l + dl, Math.max(-60, Math.min(75, p + dp))]); };
+  useEffect(() => {
+    const [tl, tp] = GLOBE_VIEWS[market], [sl, sp] = viewRef.current, t0 = performance.now();
+    const dl = (((tl - sl) % 360) + 540) % 360 - 180, dur = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 900;
+    const step = (now) => {
+      const t = dur ? Math.min(1, (now - t0) / dur) : 1, e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      apply([sl + dl * e, sp + (tp - sp) * e]);
+      if (t < 1) raf.current = requestAnimationFrame(step);
+    };
+    cancelAnimationFrame(raf.current);
+    raf.current = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf.current);
+  }, [market]);
+  const onDown = (e) => {
+    cancelAnimationFrame(raf.current); drag.current = [e.clientX, e.clientY];
+    try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) { console.warn('markets map: pointer capture unavailable', err); }
+    e.currentTarget.classList.add('is-grabbing');
+  };
+  const onMove = (e) => {
+    if (!drag.current) return;
+    const k = (180 / (Math.PI * GLOBE_R)) * (324 / svg.current.getBoundingClientRect().width);
+    nudge(-(e.clientX - drag.current[0]) * k, (e.clientY - drag.current[1]) * k);
+    drag.current = [e.clientX, e.clientY];
+  };
+  const onUp = (e) => { drag.current = null; e.currentTarget.classList.remove('is-grabbing'); };
+  const onKey = (e) => {
+    const m = { ArrowLeft: [-8, 0], ArrowRight: [8, 0], ArrowUp: [0, 6], ArrowDown: [0, -6] }[e.key];
+    if (m) { e.preventDefault(); cancelAnimationFrame(raf.current); nudge(m[0], m[1]); }
+  };
+  const ring = (r) => globeRing(view, r);
+  const pins = GLOBE_PINS.map(([label, lon, lat], i) => {
+    const p = globeRot(view, lon, lat);
+    if (p[2] < 0.05) return null;
+    const w = label.length * 7 + 14;
+    return React.createElement('g', { key: label, className: "qd-pin", transform: 'translate(' + globeXY(p) + ')', style: { '--d': (-i * 0.7) + 's' },}
       , React.createElement('circle', { className: "halo", r: 7,}), React.createElement('circle', { className: "dot", r: 2.5,})
       , React.createElement('rect', { className: "badge", x: -w / 2, y: 6, width: w, height: 19, rx: 5,})
       , React.createElement('text', { className: "lbl", x: 0, y: 19, textAnchor: "middle",}, label));
   });
-  const indiaPins = [0, 1, 2, 3, 4, 7].map((i) => {
-    const c = MAP_CITIES[i]; const [px, py] = project([c[2], c[1]]);
-    const nudges = [[0, -1], [-2.5, -0.6], [1.2, 0], [2.6, 0.2], [0, 0]]; const offs = [[-5, 5], [5, 1], [5, 6], [-5, -3], [5, 0]];
-    const x = px + ((nudges[i] || [])[0] || 0), y = py + ((nudges[i] || [])[1] || 0); const [dx, dy] = offs[i] || [5, -3]; const w = c[0].length * 1.65 + 3;
-    return React.createElement('g', { key: c[0], transform: 'translate(' + x + ',' + y + ')', className: 'qd-pin qd-pin-sm' + (active === i ? ' on' : ''), role: "button", tabIndex: 0,
-        'aria-label': c[0] + ', ' + MAP_REGIONS[i], 'aria-pressed': active === i, onClick: pick(i), onKeyDown: pick(i), style: { '--d': (-i * 0.8) + 's' },}
-      , React.createElement('title', null, c[0] + ', ' + MAP_REGIONS[i])
-      , React.createElement('circle', { className: "halo", r: 3,}), React.createElement('circle', { className: "dot", r: 0.85,})
-      , React.createElement('path', { className: "leader", d: 'M0 0L' + dx * 0.7 + ' ' + dy,})
-      , React.createElement('rect', { className: "badge", x: dx < 0 ? dx - w + 1 : dx - 1, y: dy - 2.5, width: w, height: 5, rx: 1,})
-      , React.createElement('text', { className: "lbl", x: dx, y: dy, dominantBaseline: "middle", textAnchor: dx < 0 ? 'end' : 'start',}, c[0]));
-  });
+  const india = globeRot(view, 78.5, 21.5);
+  return (
+    React.createElement('svg', { ref: svg, className: "qd-globe", viewBox: "0 0 324 345", role: "img", tabIndex: 0,
+        'aria-label': "Globe with the route from Chicago to Dubai to India. India, the United Arab Emirates and the United States are highlighted. Drag or use the arrow keys to turn it.",
+        onPointerDown: onDown, onPointerMove: onMove, onPointerUp: onUp, onPointerCancel: onUp, onKeyDown: onKey,}
+      , React.createElement('circle', { className: "g-sphere", cx: GLOBE_CX, cy: GLOBE_CY, r: GLOBE_R,})
+      , React.createElement('path', { className: "g-grat", d: globeGraticule(view),})
+      , geo && React.createElement('path', { className: "g-land", d: geo.land.map(ring).join(''),})
+      , geo && React.createElement('path', { className: "g-hi", d: [geo.india, geo.usa, geo.uae].map((m) => m.map(ring).join('')).join(''),})
+      , React.createElement('path', { className: "g-arc", d: globeRoute(view, [-87.63, 41.88], [55.27, 25.20], 0.08),})
+      , React.createElement('path', { className: "g-arc", d: globeRoute(view, [55.27, 25.20], [77.59, 12.97], 0.04),})
+      , pins
+      , india[2] > 0.05 && React.createElement('text', { className: "g-label", x: GLOBE_CX + india[0] * GLOBE_R - 4, y: GLOBE_CY - india[1] * GLOBE_R + 26,}, "India"))
+  );
+}
+
+function IndiaDots({ geo, active, pick }) {
+  const vb = geo ? geo.vb.join(' ') : '0 0 324 345';
+  const lit = MAP_CITIES[active], [cx, cy] = geo ? geo.cities[lit[0]] : [0, 0];
+  const dots = geo ? geo.dots.map(([x, y], k) => {
+    const t = Math.max(0, 1 - Math.hypot(x - cx, y - cy) / 70);
+    return t > 0
+      ? React.createElement('circle', { key: k, className: "on", cx: x, cy: y, r: (1.45 + t * 0.5).toFixed(2), style: { opacity: (0.3 + t * 0.7).toFixed(2) },})
+      : React.createElement('circle', { key: k, cx: x, cy: y, r: 1.45,});
+  }) : null;
+  const pins = geo ? [0, 1, 2, 3, 4, 7].map((i) => {
+    const name = MAP_CITIES[i][0], [x, y] = geo.cities[name], [dx, dy, anchor] = INDIA_LABELS[name];
+    return React.createElement('g', { key: name, transform: 'translate(' + x + ',' + y + ')', className: 'qd-india-pin' + (active === i ? ' on' : ''), role: "button", tabIndex: 0,
+        'aria-label': name + ', ' + MAP_REGIONS[i], 'aria-pressed': active === i, onClick: pick(i), onKeyDown: pick(i),}
+      , React.createElement('title', null, name + ', ' + MAP_REGIONS[i])
+      , React.createElement('circle', { className: "dot", r: active === i ? 3.4 : 2.4,})
+      , React.createElement('text', { x: dx, y: dy, textAnchor: anchor,}, name));
+  }) : null;
+  return (
+    React.createElement('svg', { viewBox: vb, role: "img", 'aria-label': "India on its official boundary, drawn as a dot grid, with labeled Bangalore, Chennai, Hyderabad, Pune, Mumbai and Delhi pins",}
+      , React.createElement('g', { className: "qd-dots",}, dots)
+      , geo && React.createElement('path', { className: "qd-india-outline", d: geo.outline,})
+      , pins)
+  );
+}
+
+function MarketsMap() {
+  const [geo, setGeo] = useState(null);
+  const [active, setActive] = useState(0);
+  const [indiaCity, setIndiaCity] = useState(0);
+  useEffect(() => {
+    let live = true;
+    fetch(MAP_GEO_URL).then((r) => r.json()).then((d) => { if (live) setGeo(d); })
+      .catch((err) => console.warn('markets map: geometry failed to load', err));
+    return () => { live = false; };
+  }, []);
+  const select = (i) => { setActive(i); if (i !== 5 && i !== 6) setIndiaCity(i); };
+  const pick = (i) => (e) => { if (!e.key || e.key === 'Enter' || e.key === ' ') { if (e.key) e.preventDefault(); select(i); } };
+  const market = active === 5 ? 'Dubai' : active === 6 ? 'Chicago' : 'India';
+  const city = MAP_CITIES[indiaCity];
   const regions = [['01', 'India', 'Bangalore · Chennai · Hyderabad · Pune · Mumbai · Delhi', 'Karnataka · Tamil Nadu · Telangana · Maharashtra · Delhi', 0], ['02', 'United Arab Emirates', 'Dubai', 'Dubai', 5], ['03', 'United States', 'Chicago', 'Illinois', 6]];
   return (
     React.createElement('section', { id: "worldwide", className: "qd-map relative px-4 sm:px-7 md:px-10", 'aria-labelledby': "worldwide-heading",}
@@ -7793,31 +7944,28 @@ function MarketsMap() {
           , React.createElement('a', { href: "#contact",}, "Build demand in your market ", React.createElement('span', { 'aria-hidden': "true",}, "↗"))
         )
         , React.createElement('div', { className: "qd-atlas",}
-          , React.createElement('div', { className: "qd-atlas-card qd-atlas-wide",}
+          , React.createElement('div', { className: "qd-atlas-card",}
             , React.createElement('div', { className: "qd-atlas-kicker",}, "Chicago → Dubai → India")
-            , React.createElement('svg', { viewBox: "225 75 535 185", role: "img", 'aria-label': "Cropped map from Chicago through Dubai to India",}
-              , React.createElement('g', { className: "land",}, land)
-              , React.createElement('g', { className: "route", fill: "none",}, React.createElement('path', { d: "M257 134 Q445 55 654 187",}), React.createElement('path', { d: "M654 187 Q682 158 717 186",}))
-              , corridorPins)
-            , React.createElement('div', { className: "qd-atlas-caption",}, "An international perspective.", React.createElement('br', null), React.createElement('strong', null, "A close understanding of India."))
+            , React.createElement(MarketsGlobe, { geo: geo && geo.globe, market: market,})
+            , React.createElement('div', { className: "qd-atlas-caption", 'aria-live': "polite",}, React.createElement('strong', null, GLOBE_CAPTIONS[market][0]), React.createElement('br', null), GLOBE_CAPTIONS[market][1]
+              , React.createElement('span', { className: "qd-atlas-hint",}, "Drag to turn the globe"))
           )
           , React.createElement('div', { className: "qd-atlas-card",}
             , React.createElement('div', { className: "qd-atlas-kicker",}, "A closer view of India")
-            , React.createElement('svg', { viewBox: "674 144 86 92", role: "img", 'aria-label': "Zoomed India map with labeled Bangalore, Chennai, Hyderabad, Pune, Mumbai and Delhi pins",}
-              , React.createElement('g', { className: "land",}, land), indiaPins)
-            , React.createElement('div', { className: "qd-atlas-caption", 'aria-live': "polite",}, React.createElement('strong', null, city[0]), React.createElement('br', null), MAP_REGIONS[active])
+            , React.createElement(IndiaDots, { geo: geo && geo.india, active: indiaCity, pick: pick,})
+            , React.createElement('div', { className: "qd-atlas-caption", 'aria-live': "polite",}, React.createElement('strong', null, city[0]), React.createElement('br', null), MAP_REGIONS[indiaCity])
           )
         )
         , React.createElement('div', { className: "qd-regions",}
           , regions.map(([n, c, cities, states, i]) => (
-            React.createElement('button', { key: c, type: "button", className: (i === 0 ? (active < 5 || active === 7) : active === i) ? 'on' : '', onClick: () => setActive(i),}
+            React.createElement('button', { key: c, type: "button", className: (i === 0 ? (active < 5 || active === 7) : active === i) ? 'on' : '', onClick: () => select(i),}
               , React.createElement('span', { className: "qd-region-n",}, n + ' / MARKET')
               , React.createElement('strong', null, c), React.createElement('p', null, cities), React.createElement('small', null, states))
           ))
         )
         , React.createElement('div', { className: "qd-cities", role: "group", 'aria-label': "Cities",}
-          , MAP_CITIES.map((c, i) => React.createElement('button', { key: c[0], type: "button", 'aria-pressed': active === i, onClick: () => setActive(i),}, c[0])))
-        , React.createElement('p', { className: "qd-map-note",}, "Market coverage shown; pins do not represent office locations. Map: Natural Earth.")
+          , MAP_CITIES.map((c, i) => React.createElement('button', { key: c[0], type: "button", 'aria-pressed': active === i, onClick: () => select(i),}, c[0])))
+        , React.createElement('p', { className: "qd-map-note",}, "Market coverage shown; pins do not represent office locations. Map: Natural Earth (India point of view).")
       )
     )
   );
