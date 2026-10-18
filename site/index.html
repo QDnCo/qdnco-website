@@ -4089,6 +4089,7 @@ html:not([data-theme="light"]) .qd-map{--map-halo:rgba(22,26,36,.92)}
 .qd-dots circle{fill:rgba(var(--card-ink-rgb),.16);transition:opacity .4s ease}
 .qd-dots circle.on{fill:var(--card-accent)}
 .qd-india-outline{fill:none;stroke:var(--card-accent);stroke-width:.5;opacity:.7}
+.qd-closeup-neighbours{fill:rgba(var(--card-ink-rgb),.07);stroke:rgba(var(--card-ink-rgb),.18);stroke-width:.5}
 .qd-india-pin{cursor:pointer;outline:none}
 .qd-india-pin .dot{fill:var(--card-accent);stroke:var(--map-halo);stroke-width:1.2}
 .qd-india-pin text{font-size:9px;font-weight:600;fill:var(--card-ink);paint-order:stroke;stroke:var(--map-halo);stroke-width:3px;stroke-linejoin:round}
@@ -7670,14 +7671,19 @@ function CtaBand() {
 }
 
 /* Markets map (QDnCo New design, DESIGN.md 6.16): a draggable globe with the
-   Chicago -> Dubai -> India route, an India close-up drawn as a dot grid under
-   the official outline, region cards and city pills that stay in sync.
+   Chicago -> Dubai -> India route, a country close-up drawn as a dot grid under
+   the official outline (India here; Dubai first on /dubai/), region cards and
+   city pills that stay in sync.
    Pins show market coverage, not offices. Geometry: Natural Earth, India point
    of view (scripts/generate/make-markets-map.py builds assets/markets-map.json). */
 const MAP_CITIES = [['Bangalore', 12.97, 77.59], ['Chennai', 13.08, 80.27], ['Pune', 18.52, 73.85], ['Mumbai', 19.08, 72.88], ['Delhi', 28.61, 77.21], ['Dubai', 25.20, 55.27], ['Chicago', 41.88, -87.63], ['Hyderabad', 17.39, 78.49]];
 const MAP_REGIONS = ['Karnataka, India', 'Tamil Nadu, India', 'Maharashtra, India', 'Maharashtra, India', 'Delhi, India', 'Dubai, United Arab Emirates', 'Illinois, United States', 'Telangana, India'];
-const MAP_GEO_URL = '/assets/markets-map.json?v=2026-10-19-1';
-const INDIA_LABELS = { Bangalore: [-7, 3, 'end'], Chennai: [7, 3, 'start'], Hyderabad: [7, 2, 'start'], Pune: [7, 5, 'start'], Mumbai: [-7, -1, 'end'], Delhi: [7, 2, 'start'] };
+const MAP_GEO_URL = '/assets/markets-map.json?v=2026-10-19-3';
+const CLOSEUP_LABELS = { Bangalore: [-7, 3, 'end'], Chennai: [7, 3, 'start'], Hyderabad: [7, 2, 'start'], Pune: [7, 5, 'start'], Mumbai: [-7, -1, 'end'], Delhi: [7, 2, 'start'], Dubai: [-8, 3, 'end'] };
+const CLOSEUPS = {
+  india: { kicker: 'A closer view of India', pins: [0, 1, 2, 3, 4, 7], label: 'India on its official boundary, drawn as a dot grid, with labeled Bangalore, Chennai, Hyderabad, Pune, Mumbai and Delhi pins' },
+  uae: { kicker: 'A closer view of Dubai', pins: [5], label: 'The United Arab Emirates drawn as a dot grid, lit around a labeled Dubai pin' },
+};
 const GLOBE_R = 146, GLOBE_CX = 162, GLOBE_CY = 166, GLOBE_RAD = Math.PI / 180;
 const GLOBE_VIEWS = { India: [78, 22], Dubai: [52, 27], Chicago: [-88, 38] };
 const GLOBE_CAPTIONS = { India: ['India', 'Bangalore · Chennai · Hyderabad · Pune · Mumbai · Delhi'], Dubai: ['Dubai', 'United Arab Emirates'], Chicago: ['Chicago', 'Illinois, United States'] };
@@ -7748,8 +7754,8 @@ function globeRoute(view, a, b, lift) {
 }
 
 function MarketsGlobe({ geo, market }) {
-  const [view, setView] = useState(GLOBE_VIEWS.India);
-  const viewRef = useRef(GLOBE_VIEWS.India), raf = useRef(0), drag = useRef(null), svg = useRef(null);
+  const [view, setView] = useState(GLOBE_VIEWS[market]);
+  const viewRef = useRef(GLOBE_VIEWS[market]), raf = useRef(0), drag = useRef(null), svg = useRef(null);
   const apply = (v) => { viewRef.current = v; setView(v); };
   const nudge = (dl, dp) => { const [l, p] = viewRef.current; apply([l + dl, Math.max(-60, Math.min(75, p + dp))]); };
   useEffect(() => {
@@ -7806,17 +7812,17 @@ function MarketsGlobe({ geo, market }) {
   );
 }
 
-function IndiaDots({ geo, active, pick }) {
-  const vb = geo ? geo.vb.join(' ') : '0 0 324 345';
-  const lit = MAP_CITIES[active], [cx, cy] = geo ? geo.cities[lit[0]] : [0, 0];
+function CloseupDots({ geo, place, active, pick }) {
+  const spec = CLOSEUPS[place], vb = geo ? geo.vb.join(' ') : '0 0 324 345';
+  const [cx, cy] = geo ? geo.cities[MAP_CITIES[active][0]] : [0, 0];
   const dots = geo ? geo.dots.map(([x, y], k) => {
     const t = Math.max(0, 1 - Math.hypot(x - cx, y - cy) / 70);
     return t > 0
       ? React.createElement('circle', { key: k, className: "on", cx: x, cy: y, r: (1.45 + t * 0.5).toFixed(2), style: { opacity: (0.3 + t * 0.7).toFixed(2) },})
       : React.createElement('circle', { key: k, cx: x, cy: y, r: 1.45,});
   }) : null;
-  const pins = geo ? [0, 1, 2, 3, 4, 7].map((i) => {
-    const name = MAP_CITIES[i][0], [x, y] = geo.cities[name], [dx, dy, anchor] = INDIA_LABELS[name];
+  const pins = geo ? spec.pins.map((i) => {
+    const name = MAP_CITIES[i][0], [x, y] = geo.cities[name], [dx, dy, anchor] = CLOSEUP_LABELS[name];
     return React.createElement('g', { key: name, transform: 'translate(' + x + ',' + y + ')', className: 'qd-india-pin' + (active === i ? ' on' : ''), role: "button", tabIndex: 0,
         'aria-label': name + ', ' + MAP_REGIONS[i], 'aria-pressed': active === i, onClick: pick(i), onKeyDown: pick(i),}
       , React.createElement('title', null, name + ', ' + MAP_REGIONS[i])
@@ -7824,7 +7830,11 @@ function IndiaDots({ geo, active, pick }) {
       , React.createElement('text', { x: dx, y: dy, textAnchor: anchor,}, name));
   }) : null;
   return (
-    React.createElement('svg', { viewBox: vb, role: "img", 'aria-label': "India on its official boundary, drawn as a dot grid, with labeled Bangalore, Chennai, Hyderabad, Pune, Mumbai and Delhi pins",}
+    React.createElement('svg', { viewBox: vb, role: "img", 'aria-label': spec.label,}
+      , geo && geo.neighbours && React.createElement('defs', null
+        , React.createElement('radialGradient', { id: "qd-closeup-fade-g", r: "60%",}, React.createElement('stop', { offset: "0.55", stopColor: "#fff",}), React.createElement('stop', { offset: "1", stopColor: "#000",}))
+        , React.createElement('mask', { id: "qd-closeup-fade",}, React.createElement('rect', { width: geo.vb[2], height: geo.vb[3], fill: "url(#qd-closeup-fade-g)",})))
+      , geo && geo.neighbours && React.createElement('path', { className: "qd-closeup-neighbours", d: geo.neighbours, mask: "url(#qd-closeup-fade)",})
       , React.createElement('g', { className: "qd-dots",}, dots)
       , geo && React.createElement('path', { className: "qd-india-outline", d: geo.outline,})
       , pins)
@@ -7832,19 +7842,26 @@ function IndiaDots({ geo, active, pick }) {
 }
 
 function MarketsMap() {
+  const dubai = false;
   const [geo, setGeo] = useState(null);
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(dubai ? 5 : 0);
   const [indiaCity, setIndiaCity] = useState(0);
+  const [place, setPlace] = useState(dubai ? 'uae' : 'india');
   useEffect(() => {
     let live = true;
     fetch(MAP_GEO_URL).then((r) => r.json()).then((d) => { if (live) setGeo(d); })
       .catch((err) => console.warn('markets map: geometry failed to load', err));
     return () => { live = false; };
   }, []);
-  const select = (i) => { setActive(i); if (i !== 5 && i !== 6) setIndiaCity(i); };
+  /* The close-up follows the market on /dubai/; Chicago keeps whichever is showing. */
+  const select = (i) => {
+    setActive(i);
+    if (i !== 5 && i !== 6) { setIndiaCity(i); setPlace('india'); }
+    if (i === 5 && dubai) setPlace('uae');
+  };
   const pick = (i) => (e) => { if (!e.key || e.key === 'Enter' || e.key === ' ') { if (e.key) e.preventDefault(); select(i); } };
   const market = active === 5 ? 'Dubai' : active === 6 ? 'Chicago' : 'India';
-  const city = MAP_CITIES[indiaCity];
+  const closeCity = place === 'uae' ? 5 : indiaCity, city = MAP_CITIES[closeCity];
   const regions = [['01', 'India', 'Bangalore · Chennai · Hyderabad · Pune · Mumbai · Delhi', 'Karnataka · Tamil Nadu · Telangana · Maharashtra · Delhi', 0], ['02', 'United Arab Emirates', 'Dubai', 'Dubai', 5], ['03', 'United States', 'Chicago', 'Illinois', 6]];
   return (
     React.createElement('section', { id: "worldwide", className: "qd-map relative px-4 sm:px-7 md:px-10", 'aria-labelledby': "worldwide-heading",}
@@ -7866,9 +7883,9 @@ function MarketsMap() {
               , React.createElement('span', { className: "qd-atlas-hint",}, "Drag to turn the globe"))
           )
           , React.createElement('div', { className: "qd-atlas-card",}
-            , React.createElement('div', { className: "qd-atlas-kicker",}, "A closer view of India")
-            , React.createElement(IndiaDots, { geo: geo && geo.india, active: indiaCity, pick: pick,})
-            , React.createElement('div', { className: "qd-atlas-caption", 'aria-live': "polite",}, React.createElement('strong', null, city[0]), React.createElement('br', null), MAP_REGIONS[indiaCity])
+            , React.createElement('div', { className: "qd-atlas-kicker",}, CLOSEUPS[place].kicker)
+            , React.createElement(CloseupDots, { key: place, geo: geo && geo[place], place: place, active: closeCity, pick: pick,})
+            , React.createElement('div', { className: "qd-atlas-caption", 'aria-live': "polite",}, React.createElement('strong', null, city[0]), React.createElement('br', null), MAP_REGIONS[closeCity])
           )
         )
         , React.createElement('div', { className: "qd-regions",}
