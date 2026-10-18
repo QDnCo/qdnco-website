@@ -4124,6 +4124,89 @@ html[data-theme="light"] #contact .footer-cols{background:rgba(255,255,255,.78)}
 @media (max-width:900px){.qd-atlas,.qd-regions{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.qd-pin .halo,.qd-beacon{animation:none}}
 </style>
+<style id="glass-cards">
+/* Glass cards (UI/UX Pro Max: glassmorphism). The content cards were solid
+   off-white in both themes, which read as light mode on the dark page and hid
+   the wallpaper. They are now translucent, blurred surfaces with a lit top
+   edge and layered shadow for depth; text inside follows the theme so it
+   keeps at least 4.5:1 against the card. */
+:root{
+  --glass-bg:rgba(22,26,36,.58);
+  --glass-bg-alt:rgba(40,30,72,.5);
+  --glass-on:rgba(48,36,92,.62);
+  --glass-sheen:rgba(255,255,255,.07);
+  --glass-line:rgba(255,255,255,.12);
+  --glass-line-hover:rgba(185,162,255,.55);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 1px 2px rgba(0,0,0,.35),0 18px 44px -16px rgba(0,0,0,.65);
+  --glass-shadow-hover:inset 0 1px 0 rgba(255,255,255,.14),0 2px 4px rgba(0,0,0,.35),0 30px 60px -18px rgba(0,0,0,.75);
+  --glass-glare:rgba(255,255,255,.1);
+  --card-ink:#f4f6f8; --card-ink-rgb:244,246,248;
+  --card-accent:#b9a2ff;
+}
+html[data-theme="light"]{
+  --glass-bg:rgba(255,255,255,.6);
+  --glass-bg-alt:rgba(246,242,255,.62);
+  --glass-on:rgba(255,255,255,.86);
+  --glass-sheen:rgba(255,255,255,.55);
+  --glass-line:rgba(255,255,255,.75);
+  --glass-line-hover:rgba(91,50,200,.45);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 0 0 0 1px rgba(10,13,18,.05),0 1px 2px rgba(40,30,90,.06),0 14px 34px -14px rgba(60,40,140,.24);
+  --glass-shadow-hover:inset 0 1px 0 #fff,inset 0 0 0 1px rgba(91,50,200,.12),0 2px 4px rgba(40,30,90,.08),0 26px 54px -18px rgba(60,40,140,.34);
+  --glass-glare:rgba(255,255,255,.45);
+  --card-ink:#0a0d12; --card-ink-rgb:10,13,18;
+  --card-accent:#5b32c8;
+}
+
+.qd-proof-card,.qd-res-card,.qd-svc-col,.qd-proj .qd-card,.qd-step,.qd-atlas-card,.qd-regions button{
+  position:relative;color:var(--card-ink);
+  background:linear-gradient(150deg,var(--glass-sheen),transparent 46%),var(--glass-bg);
+  -webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);
+  border:1px solid var(--glass-line);box-shadow:var(--glass-shadow);
+  transition:border-color 220ms ease,box-shadow 260ms ease,transform 260ms cubic-bezier(.2,.8,.2,1),rotate 380ms cubic-bezier(.2,.8,.2,1);
+}
+.qd-svc-col-1{background:linear-gradient(150deg,var(--glass-sheen),transparent 46%),var(--glass-bg-alt)}
+.qd-proof-card:hover,.qd-res-card:hover,.qd-svc-col:hover,.qd-proj .qd-card:hover,.qd-step:hover,.qd-regions button:hover{border-color:var(--glass-line-hover);box-shadow:var(--glass-shadow-hover)}
+.qd-step[aria-pressed="true"],.qd-regions button.on{background:linear-gradient(150deg,var(--glass-sheen),transparent 46%),var(--glass-on);
+  border-color:var(--card-accent);box-shadow:inset 0 0 0 1px var(--card-accent),var(--glass-shadow)}
+
+/* Light that follows the pointer (set by the tilt script). */
+.qd-proof-card::after,.qd-res-card::after,.qd-svc-col::after,.qd-proj .qd-card::after,.qd-step::after,.qd-regions button::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),var(--glass-glare),transparent 42%);
+  transition:opacity 300ms ease}
+.qd-proof-card:hover::after,.qd-res-card:hover::after,.qd-svc-col:hover::after,.qd-proj .qd-card:hover::after,.qd-step:hover::after,.qd-regions button:hover::after{opacity:1}
+.qd-proof-grid,.qd-res-grid,.qd-svc-cols,.rm-steps,.qd-regions{perspective:1200px}
+.rm-steps>li{transform-style:preserve-3d}
+
+/* Text inside the cards follows the theme. */
+.qd-proj .qd-card-cat,.qd-proj .qd-card-stat span,.qd-step-dur,.qd-svc-copy{color:rgba(var(--card-ink-rgb),.68)}
+.qd-svc-colhead p,.qd-proof-who,.qd-atlas-caption,.qd-regions p{color:rgba(var(--card-ink-rgb),.74)}
+.qd-atlas-kicker,.qd-regions small{color:rgba(var(--card-ink-rgb),.64)}
+.qd-atlas-caption strong{color:var(--card-ink)}
+.qd-step-n{color:rgba(var(--card-ink-rgb),.58)}
+.qd-gate-pre{background:rgba(var(--card-ink-rgb),.08);color:rgba(var(--card-ink-rgb),.76)}
+.qd-gate-post{background:rgba(185,162,255,.14);color:var(--card-accent)}
+.qd-svc-item{border-top-color:rgba(var(--card-ink-rgb),.12)}
+.qd-svc-plus{border-color:rgba(var(--card-ink-rgb),.22)}
+.qd-svc-cta,.qd-proj .qd-card-cta{color:var(--card-ink);border-color:rgba(var(--card-ink-rgb),.26)}
+.qd-proof-kind,.qd-res-card>span,.qd-svc-colhead span,.qd-region-n,.qd-proof-who b,
+.qd-proj .qd-card-stat strong,.qd-proj .qd-card-arrow,.qd-step[aria-pressed="true"] .qd-step-n{color:var(--card-accent)}
+.qd-svc-item li:before{border-color:var(--card-accent)}
+.qd-proj .qd-card-stat{border-top-color:rgba(185,162,255,.22)}
+.qd-proj .qd-card-media.is-plain{background:linear-gradient(160deg,rgba(var(--card-ink-rgb),.05),rgba(var(--card-ink-rgb),.1))}
+/* Map inside the glass card. */
+html:not([data-theme="light"]) .qd-map .land path{fill:rgba(255,255,255,.16);stroke:rgba(255,255,255,.05)}
+html:not([data-theme="light"]) .qd-pin .badge{fill:#1b2030;stroke:rgba(255,255,255,.22)}
+html:not([data-theme="light"]) .qd-pin .lbl{fill:#f4f6f8}
+html:not([data-theme="light"]) .qd-pin-sm .leader{stroke:rgba(255,255,255,.35)}
+html:not([data-theme="light"]) .qd-pin-sm.on .badge{fill:#7a5cf0;stroke:#7a5cf0}
+
+@media (prefers-reduced-motion:reduce){.qd-proof-card,.qd-res-card,.qd-svc-col,.qd-proj .qd-card,.qd-step,.qd-atlas-card,.qd-regions button{transition:none}.qd-proof-card::after,.qd-res-card::after,.qd-svc-col::after,.qd-proj .qd-card::after,.qd-step::after,.qd-regions button::after{display:none}}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
+  :root{--glass-bg:rgba(22,26,36,.92);--glass-bg-alt:rgba(36,28,62,.92)}
+  html[data-theme="light"]{--glass-bg:rgba(255,255,255,.94);--glass-bg-alt:rgba(246,242,255,.94)}
+}
+</style>
 </head>
 <body>
 <script>
@@ -9334,5 +9417,32 @@ ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(
 
 </script>
 <script defer src="/js/estimate/embed.js?v=2026-10-16-12"></script>
+<script>
+/* Glass cards: a small 3D tilt toward the pointer plus a moving light. Uses
+   the individual `rotate` property, so it composes with the cards' own hover
+   translate and with their scroll-entrance transform animation instead of
+   being overridden by it. Fine pointers only; off under reduced motion. */
+(function () {
+  if (!window.matchMedia || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var SEL = '.qd-proof-card,.qd-res-card,.qd-svc-col,.qd-step,.qd-regions button';
+  var MAX = 6, current = null;
+  function reset(el) { el.style.rotate = ''; }
+  document.addEventListener('pointermove', function (e) {
+    var el = e.target && e.target.closest ? e.target.closest(SEL) : null;
+    if (current && current !== el) reset(current);
+    current = el;
+    if (!el) return;
+    var r = el.getBoundingClientRect();
+    var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+    var big = r.width * r.height > 160000 ? 0.4 : 1;          // tall service columns tilt less
+    var deg = Math.min(1, Math.hypot(x, y) * 2) * MAX * big;
+    el.style.rotate = (-y).toFixed(3) + ' ' + x.toFixed(3) + ' 0 ' + deg.toFixed(2) + 'deg';
+    el.style.setProperty('--mx', ((x + 0.5) * 100).toFixed(1) + '%');
+    el.style.setProperty('--my', ((y + 0.5) * 100).toFixed(1) + '%');
+  }, { passive: true });
+  document.addEventListener('pointerleave', function () { if (current) reset(current); current = null; });
+})();
+</script>
 </body>
 </html>
