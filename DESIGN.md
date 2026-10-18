@@ -299,6 +299,8 @@ Soft-ink panel before the contact form: headline + violet second line, three tic
 
 Two equal cards. Left: a draggable globe (pointer, or arrow keys when focused) with India, the UAE and the United States filled in violet and a great-circle route Chicago → Dubai → India. It opens on India and turns to the market picked in the region cards or city pills. Right: an India close-up drawn as a dot grid under the official outline; dots light up around the selected city, and the pins are keyboard-selectable. Region cards, city pills, pins and the globe stay in sync. Pins mark market coverage, not offices.
 
+On `/dubai/` the map opens on Dubai: the globe faces the UAE and the close-up is "A closer view of Dubai" (the UAE as a dot grid lit around Dubai, neighbours faded grey). Picking India or an Indian city swaps the close-up to India; Dubai swaps it back; Chicago keeps whichever is showing. The India page always shows the India close-up.
+
 **Boundary rule:** geometry comes from Natural Earth's India point-of-view release, so India is drawn on its official boundary (all of J&K, Ladakh with Aksai Chin, Arunachal Pradesh, Andaman & Nicobar, Lakshadweep). Never swap in the default "de facto" world file. `scripts/generate/make-markets-map.py` builds `assets/markets-map.json` (download steps in its docstring); bump `MAP_GEO_URL`'s `?v=` when it changes. The static prerender omits map paths (they load at runtime).
 
 ### 6.17 Marketing cost calculator, lead-gated (`/js/estimate/`): homepage `#pricing`, `/dubai/`, `/tools/marketing-cost-calculator.html`, About, blog embeds
