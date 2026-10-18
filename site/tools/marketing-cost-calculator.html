@@ -310,6 +310,22 @@ h2,h3{letter-spacing:-.015em}
 @media (pointer:coarse){.social-icon{width:44px;height:44px}}
 @media (prefers-reduced-motion:reduce){.social-icon{transition:none}.social-icon:hover{transform:none}}
 </style>
+<style id="wall-visible">
+/* Let the background animation show (matches the homepage). The full-screen
+   veil and wash are thin; the article sits on a frosted card instead, so long
+   copy keeps its contrast while the motion reads around it and, blurred,
+   behind it. In light mode the clip is inverted with its hue turned back, so
+   the ribbon lies on a white ground rather than greying the page. */
+.wall::after{background:rgba(var(--page-rgb),.3)}
+.wall .wash{background:rgba(0,0,0,.22)}
+:root[data-theme="light"] .wall .wash{background:rgba(255,255,255,.4)}
+:root[data-theme="light"] .wall video{filter:invert(1) hue-rotate(180deg) saturate(1.4) brightness(1.04)}
+.wrap{background:rgba(var(--page-rgb),.8);
+  -webkit-backdrop-filter:blur(22px) saturate(1.15);backdrop-filter:blur(22px) saturate(1.15);
+  border:1px solid rgba(var(--ink-rgb),.12);border-radius:clamp(20px,2.4vw,32px);
+  box-shadow:0 30px 90px -50px rgba(0,0,0,.45)}
+:root[data-theme="light"] .wrap{background:rgba(255,255,255,.82)}
+</style>
 </head>
 <body>
 <div class="wall" aria-hidden="true"><video id="wall" muted playsinline loop preload="none"></video><div class="wash"></div></div>
