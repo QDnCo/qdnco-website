@@ -65,8 +65,14 @@ def put_verified(ftp, path, data):
         raise ValueError('Upload verification failed: ' + path)
 
 
-def plan(desired, previous, actual):
-    if set(previous) - set(desired):
+def load_removals(path='ci/removals.json'):
+    """Paths a rollback may delete: the explicit migration plan() asks for."""
+    p = Path(path)
+    return set(json.loads(p.read_text())) if p.exists() else set()
+
+
+def plan(desired, previous, actual, removals=frozenset()):
+    if set(previous) - set(desired) - set(removals):
         raise ValueError('File removals require an explicit migration; refusing silent leftovers')
     for name, expected in previous.items():
         if actual.get(name) != expected:
@@ -123,9 +129,11 @@ def main(*, artifact='release', manifest='release-manifest.json', validator=None
                 actual[name] = value
                 if value != desired.get(name):
                     originals[name] = data
-    changes = plan(desired, previous, actual)
+    removals = load_removals()
+    changes = plan(desired, previous, actual, removals)
+    removed = sorted(set(previous) - set(desired))
     ftp = connect()
-    print(f'Drift checks passed; {len(changes)} files to update', flush=True)
+    print(f'Drift checks passed; {len(changes)} files to update, {len(removed)} to remove', flush=True)
     if '--dry-run' in sys.argv:
         ftp.quit()
         return
@@ -149,6 +157,12 @@ def main(*, artifact='release', manifest='release-manifest.json', validator=None
             changed.append(name)
             if digest(get(ftp, root + '/' + name)) != desired[name]:
                 raise ValueError('Post-deploy file mismatch: ' + name)
+        for name in removed:
+            # Back up, then delete; the rollback below re-uploads it on failure.
+            mkdirs(ftp, backup + '/' + str(PurePosixPath(name).parent))
+            put_verified(ftp, backup + '/' + name, originals[name])
+            ftp.delete(root + '/' + name)
+            changed.append(name)
         for name in (public_paths or ['index.html', 'dubai/index.html']):
             public_name = name if scope else ('' if name == 'index.html' else 'dubai/')
             url = 'https://qdnco.com/' + (scope + '/' if scope else '') + public_name + '?deploy=' + sha
