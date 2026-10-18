@@ -100,7 +100,7 @@
       "@type": "Person",
       "@id": "https://qdnco.com/#adarsh",
       "name": "Adarsh Jee Pandey",
-      "jobTitle": "Chief Executive Officer",
+      "jobTitle": "CEO & co-founder",
       "worksFor": {
         "@id": "https://qdnco.com/#organization"
       },
@@ -112,7 +112,7 @@
       "@type": "Person",
       "@id": "https://qdnco.com/#vinayak-tiwari",
       "name": "Vinayak Tiwari",
-      "jobTitle": "Chief Technology Officer",
+      "jobTitle": "CTO & co-founder",
       "worksFor": {
         "@id": "https://qdnco.com/#organization"
       },
