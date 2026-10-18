@@ -15,6 +15,8 @@ Run:  python3 scripts/generate/make-markets-map.py /tmp/ne_ind_10m.geojson
 Output:
   india  India close-up, pre-projected (plate carree, 22N standard parallel):
          viewBox, outline path, dot grid and city points.
+  uae    The same for the UAE (24.5N standard parallel), plus grey neighbours;
+         the Dubai homepage opens on it.
   globe  Simplified lon/lat rings for the draggable globe, projected in the
          browser: land, plus India / United States / UAE highlighted.
 """
@@ -23,14 +25,19 @@ import math
 import sys
 
 OUT = 'site/assets/markets-map.json'
-CITIES = {'Bangalore': (77.59, 12.97), 'Chennai': (80.27, 13.08), 'Pune': (73.85, 18.52), 'Mumbai': (72.88, 19.08),
-          'Delhi': (77.21, 28.61), 'Hyderabad': (78.49, 17.39)}
 HIGHLIGHT = {'india': 'IND', 'usa': 'USA', 'uae': 'ARE'}
 SKIP = {'ATA'}
+HEIGHT_PX = 345
 
-# India close-up projection: 10 px per degree of latitude, longitude scaled by cos(22N).
-K = math.cos(math.radians(22))
-LON0, LAT1, WIDTH_DEG, HEIGHT_PX = 66.0, 38.5, 35, 345
+# Close-up frames, all 324 x 345 so the cards line up. scale = px per degree of latitude,
+# longitude is scaled by cos(standard parallel); pitch is the dot spacing in degrees.
+CLOSEUPS = {
+    'india': {'code': 'IND', 'lon0': 66.0, 'lat1': 38.5, 'width_deg': 35, 'scale': 10, 'std': 22, 'pitch': 0.5, 'neighbours': [],
+              'cities': {'Bangalore': (77.59, 12.97), 'Chennai': (80.27, 13.08), 'Pune': (73.85, 18.52), 'Mumbai': (72.88, 19.08),
+                         'Delhi': (77.21, 28.61), 'Hyderabad': (78.49, 17.39)}},
+    'uae': {'code': 'ARE', 'lon0': 50.6, 'lat1': 27.4, 'width_deg': 6.4, 'scale': HEIGHT_PX / 6.2, 'std': 24.5, 'pitch': 0.09,
+            'neighbours': ['OMN', 'SAU', 'QAT', 'BHR', 'IRN'], 'cities': {'Dubai': (55.27, 25.20)}},
+}
 
 
 def polys(geometry):
@@ -74,14 +81,40 @@ def outer_rings(feature, min_area):
     return [p[0] for p in polys(feature['geometry']) if ring_area(p[0]) >= min_area]
 
 
-def project_india(lon, lat):
-    return (lon - LON0) * 10 * K, (LAT1 - lat) * 10
+def projector(frame):
+    k = math.cos(math.radians(frame['std']))
+    return lambda lon, lat: ((lon - frame['lon0']) * frame['scale'] * k, (frame['lat1'] - lat) * frame['scale'])
 
 
-def india_outline(feature):
+def clip_to_box(pts, box):
+    """Sutherland-Hodgman: clip a projected ring to box = (x0, y0, x1, y1)."""
+    edges = [(0, box[0], 1), (0, box[2], -1), (1, box[1], 1), (1, box[3], -1)]
+    for axis, limit, side in edges:
+        if not pts:
+            break
+        out = []
+        for i in range(len(pts)):
+            cur, prev = pts[i], pts[i - 1]
+            cur_in, prev_in = (cur[axis] - limit) * side >= 0, (prev[axis] - limit) * side >= 0
+            if cur_in != prev_in:
+                t = (limit - prev[axis]) / (cur[axis] - prev[axis])
+                out.append((prev[0] + t * (cur[0] - prev[0]), prev[1] + t * (cur[1] - prev[1])))
+            if cur_in:
+                out.append(cur)
+        pts = out
+    return pts
+
+
+def outline_path(feature, project, tol, min_area, box=None):
     out = []
-    for ring in outer_rings(feature, 0):
-        pts = simplify_ring([project_india(*p) for p in ring], 0.35)
+    for ring in outer_rings(feature, min_area):
+        pts = [project(*p) for p in ring]
+        if box:
+            pts = clip_to_box(pts, box)
+            if len(pts) < 3:
+                continue
+            pts.append(pts[0])
+        pts = simplify_ring(pts, tol)
         if len(pts) >= 3:
             out.append('M' + 'L'.join('%.1f,%.1f' % p for p in pts) + 'Z')
     return ''.join(out)
@@ -97,19 +130,34 @@ def point_in_ring(pt, ring):
     return inside
 
 
-def india_dots(feature, pitch=0.5):
-    """Hex grid of dots inside India's official outline."""
-    rings = outer_rings(feature, 0.002)
-    dots, lat, row = [], 37.2, 0
-    while lat > 6:
-        lon = 68 + (pitch / 2 if row % 2 else 0)
-        while lon < 97.5:
+def dot_grid(feature, project, frame):
+    """Hex grid of dots inside the country's outline (official boundary for India)."""
+    pitch, k = frame['pitch'], math.cos(math.radians(frame['std']))
+    rings = outer_rings(feature, pitch * pitch * 0.01)
+    lons = [p[0] for r in rings for p in r]; lats = [p[1] for r in rings for p in r]
+    dots, lat, row = [], max(lats) - pitch / 2, 0
+    while lat > min(lats):
+        lon = min(lons) + (pitch / 2 if row % 2 else 0)
+        while lon < max(lons):
             if any(point_in_ring((lon, lat), r) for r in rings):
-                dots.append([round(v, 1) for v in project_india(lon, lat)])
-            lon += pitch / K
+                dots.append([round(v, 1) for v in project(lon, lat)])
+            lon += pitch / k
         lat -= pitch * 0.866
         row += 1
     return dots
+
+
+def closeup(by_code, frame):
+    project, k = projector(frame), math.cos(math.radians(frame['std']))
+    country, width = by_code[frame['code']], round(frame['width_deg'] * frame['scale'] * k)
+    box = (-10, -10, width + 10, HEIGHT_PX + 10)
+    return {
+        'vb': [0, 0, width, HEIGHT_PX],
+        'outline': outline_path(country, project, 0.35, 0),
+        'neighbours': ''.join(outline_path(by_code[c], project, 0.6, 0.0005, box) for c in frame['neighbours']),
+        'dots': dot_grid(country, project, frame),
+        'cities': {name: [round(v, 1) for v in project(*ll)] for name, ll in frame['cities'].items()},
+    }
 
 
 def lonlat_rings(feature, tol, min_area):
@@ -123,22 +171,16 @@ def lonlat_rings(feature, tol, min_area):
 
 def main(src):
     by_code = {f['properties']['ADM0_A3']: f for f in json.load(open(src))['features']}
-    india = by_code['IND']
     land = [r for code, f in by_code.items() if code not in SKIP and code not in HIGHLIGHT.values()
             for r in lonlat_rings(f, 0.35, 0.6)]
     detail = {'india': (0.12, 0.002), 'usa': (0.25, 0.05), 'uae': (0.04, 0.01)}
     data = {
-        'india': {
-            'vb': [0, 0, round(WIDTH_DEG * 10 * K), HEIGHT_PX],
-            'outline': india_outline(india),
-            'dots': india_dots(india),
-            'cities': {name: [round(v, 1) for v in project_india(*ll)] for name, ll in CITIES.items()},
-        },
+        **{name: closeup(by_code, frame) for name, frame in CLOSEUPS.items()},
         'globe': dict({'land': land}, **{k: lonlat_rings(by_code[code], *detail[k]) for k, code in HIGHLIGHT.items()}),
     }
     with open(OUT, 'w') as fh:
         json.dump(data, fh, separators=(',', ':'))
-    print('wrote', OUT, 'dots', len(data['india']['dots']), 'globe rings', len(land))
+    print('wrote', OUT, {name: len(data[name]['dots']) for name in CLOSEUPS}, 'dots; globe rings', len(land))
 
 
 if __name__ == '__main__':
