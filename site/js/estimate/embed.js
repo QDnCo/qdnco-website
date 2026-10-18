@@ -13,7 +13,7 @@
 (function (root) {
   'use strict';
 
-  const VERSION = '2026-10-16-12';
+  const VERSION = '2026-10-19-1';
   const BASE = '/js/estimate/';
   const CSS = '/css/estimate.css';
   /** @type {Array<[string, string]>} script URL, global it defines */
