@@ -305,14 +305,14 @@
       "stream": "Social content",
       "title": "X nine-post queue and graphics",
       "status": "Scheduled",
-      "detail": "Nine posts recorded through October 24 at 10 AM IST; graphics added to October 3, 5 and 17.",
+      "detail": "October 17 Bangalore measurement post with graphic and October 21 Chennai sales-feedback post are verified published. October 24 retains its previously recorded scheduled state; native queue access remains unavailable.",
       "next": "Restore X brand session in QDnCo Chrome, then inspect remaining native schedules before adding any posts.",
       "owner": "Agent",
       "url": "https://x.com/qdnco_official",
       "steps": [],
-      "checked": "2026-10-14",
-      "evidence": "October 14 public profile screenshot and exact post links in delivery ledger",
-      "delivery_note": "October 14 Dubai launch post and October 7/10 posts visibly published. Remaining future dates are previously recorded schedules, not newly verified delivery.",
+      "checked": "2026-10-22",
+      "evidence": "October 22 fresh public X profile displays dated posts: https://x.com/qdnco_official/status/2111313755812340160 and https://x.com/qdnco_official/status/2112763306561970445 . DOM and screenshot retained locally.",
+      "delivery_note": "October 7/10/14 delivery verified previously; October 17/21 verified October 22. October 24 is not yet claimed published.",
       "access_note": "QDnCo Chrome X session is signed out; owner login required for native queue access."
     },
     {
@@ -1289,7 +1289,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-22T03:15:27.820527+00:00",
-  "reconciliation_note": "Reconciled verified GBP campaign-scope publication and LinkedIn access limitation; historical scheduling remains distinct from verified delivery.",
-  "updated_at": "2026-10-22T03:15:28.151329+00:00"
+  "reconciled_at": "2026-10-22T13:34:24.468257+00:00",
+  "reconciliation_note": "Verified October 17 and 21 X publication; October 24 remains previously scheduled, not delivered. Other evidence-based states preserved.",
+  "updated_at": "2026-10-22T13:34:24.860736+00:00"
 }
