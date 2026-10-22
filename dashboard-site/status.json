@@ -333,15 +333,16 @@
       "stream": "Social content",
       "title": "LinkedIn queue",
       "status": "Scheduled",
-      "detail": "October 8 and 11 posts visibly published. Four existing posts remain scheduled October 14, 17, 20 and 22. New lead-handoff checklist scheduled October 26 at 10 AM IST.",
-      "next": "Verify delivery on each date; scheduled is not published.",
+      "detail": "October 8 and 11 posts were verified published. October 14, 17, 20 and 22 posts and October 26 lead-handoff checklist were previously verified scheduled; subsequent delivery is unverified while admin access is unavailable.",
+      "next": "Restore existing LinkedIn page-admin login, then verify overdue delivery and the October 26 native schedule without duplicating posts.",
       "owner": "Agent",
       "url": "https://www.linkedin.com/company/117074503/admin/page-posts/published/",
       "steps": [],
       "checked": "2026-10-12",
       "evidence": "2026-10-12-growth-recovery: authenticated dashboard observations and saved proof",
       "url_label": "LinkedIn published posts · admin required",
-      "delivery_note": "October 26 scheduling confirmation observed in LinkedIn. Copy and proof retained in October 12 growth-recovery run."
+      "delivery_note": "October 26 scheduling confirmation observed in LinkedIn. Copy and proof retained in October 12 growth-recovery run.",
+      "access_note": "October 18: QDnCo Chrome LinkedIn session is signed out. Existing-account sign-in is open for the owner; October 14/17 delivery is not freshly verified."
     },
     {
       "id": "SOC-06",
@@ -360,15 +361,15 @@
       "id": "SOC-07",
       "stream": "Social content",
       "title": "Google Business posts",
-      "status": "Scheduled",
-      "detail": "Chennai, October 15 Dubai buyer-fit and October 17 CRM handoff updates are published. October 20 campaign-scope update retains its previously verified scheduled status.",
-      "next": "Verify October 20 delivery after 10:00 IST; do not duplicate published posts.",
+      "status": "Completed",
+      "detail": "Chennai, Dubai buyer-fit, CRM handoff and campaign-scope updates are verified published in the authenticated Google Business posts list. The campaign-scope item was previously scheduled for October 20.",
+      "next": "Plan the next factual update batch separately; do not republish this completed queue.",
       "owner": "Agent",
-      "url": "https://business.google.com/",
+      "url": "https://www.google.com/maps/place/QDnCo/data=!4m2!3m1!1s0x0:0xe326a1ffe2eff10a",
       "steps": [],
-      "checked": "2026-10-17",
-      "evidence": "October 17 authenticated Google Search business panel shows CRM handoff update 23 minutes ago with matching tagged guide link. DOM and screenshot retained.",
-      "url_label": "Google Business Profile · verify delivery",
+      "checked": "2026-10-22",
+      "evidence": "October 22 authenticated Your posts list marks the matching campaign-scope copy Published yesterday. Relative label retained as observed; exact publication timestamp and individual permalink not exposed. Local DOM and screenshot: gbp-scope-delivery-oct22.",
+      "url_label": "Google Maps · QDnCo",
       "delivery_note": "Published and scheduled states checked separately in the authenticated owner dashboard."
     },
     {
@@ -1288,7 +1289,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-17T04:58:01.206112+00:00",
-  "reconciliation_note": "Reconciled October 17 GBP delivery, Phase 0 publication, verified locale metadata repair and Crunchbase moderator-deletion report. Remaining scheduled, blocked and incomplete work retains its evidence-based status.",
-  "updated_at": "2026-10-17T04:58:01.231900+00:00"
+  "reconciled_at": "2026-10-22T03:15:27.820527+00:00",
+  "reconciliation_note": "Reconciled verified GBP campaign-scope publication and LinkedIn access limitation; historical scheduling remains distinct from verified delivery.",
+  "updated_at": "2026-10-22T03:15:28.151329+00:00"
 }
