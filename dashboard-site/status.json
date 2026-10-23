@@ -169,13 +169,13 @@
       "stream": "Search & measurement",
       "title": "Current search scoreboard",
       "status": "In progress",
-      "detail": "October 14 Search Console comparison: last seven days 8 clicks, 352 impressions, 2.3% CTR, average position 10.5; previous seven days 11 clicks, 331 impressions, 3.3% CTR, position 10.9. This does not establish the cause of reduced enquiries or total website traffic.",
-      "next": "Prioritise useful service/guide pages; inspect crawl readiness and content quality before requesting indexing.",
+      "detail": "October 23 authenticated Search Console: September 24–October 21 recorded 38 web-search clicks, 1,144 impressions, 3.3% CTR and average position 10. These are search clicks, not total visits or leads; no matched-period trend is established.",
+      "next": "Compare matched periods and inspect priority India/Dubai URLs. The indexing report remains dated October 9; do not treat its totals as current coverage.",
       "owner": "Agent",
       "url": "https://search.google.com/search-console",
       "steps": [],
-      "checked": "2026-10-14",
-      "evidence": "runs/2026-10-14-growth-recovery/gsc-week-comparison.txt",
+      "checked": "2026-10-23",
+      "evidence": "October 23 authenticated performance and indexing UI records; no manual actions detected.",
       "url_label": "Search Console · sign-in required"
     },
     {
@@ -898,13 +898,13 @@
       "stream": "Knowledge & operations",
       "title": "SEO knowledge bank",
       "status": "In progress",
-      "detail": "Prior196 caption records and two full carousels retained. Latest21 visible saved tiles inventoried,19 absent from the prior inventory. Relevant caption lessons validated and mapped to actions; full saved-video review remains incomplete. One additional tool assessed from sampled reel frames and official product documentation; full audio coverage remains pending.",
-      "next": "Continue remaining collection pagination and full-media review; validate claims before implementation.",
+      "detail": "Caption inventory and two fully reviewed carousels retained; full saved-video coverage remains incomplete. October 22 direct-source review corrected one mismatched inventory attribution. Tile metadata remains provisional until checked against the original post.",
+      "next": "Continue direct source verification and full-media review before implementing lessons.",
       "owner": "Agent",
       "url": "",
       "steps": [],
-      "checked": "2026-10-14",
-      "evidence": "Private roadmap knowledge-bank review ledgers; no private source transcripts exposed.",
+      "checked": "2026-10-22",
+      "evidence": "Private coverage ledger and source-identity correction; private sources and transcripts excluded.",
       "access_note": "Private research task. Saved collections and source transcripts remain local and are not exposed on this shareable page."
     },
     {
@@ -1019,15 +1019,18 @@
       "id": "DIR-14",
       "stream": "Directories",
       "title": "Restore business mailbox access",
-      "status": "Completed",
-      "detail": "Existing connect@qdnco.com inbox is accessible in QDnCo Chrome through its working mailbox tab. Read the Sulekha support outcome and independently verified publication.",
-      "next": "Continue checking relevant support replies in the existing mailbox.",
-      "owner": "Agent",
+      "status": "Owner action",
+      "detail": "Mailbox access worked October 13 but the Hostinger session expired by October 22. New support replies cannot currently be verified.",
+      "next": "Restore the existing business mailbox session in the retained Chrome tab.",
+      "owner": "Owner",
       "url": "https://mail.hostinger.com/",
       "url_label": "Hostinger Mail",
-      "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "October 13 native Chrome mailbox access and Sulekha public verification."
+      "steps": [
+        "Sign in to the existing business mailbox in QDnCo Chrome.",
+        "Complete any verification yourself; do not create another mailbox."
+      ],
+      "checked": "2026-10-22",
+      "evidence": "October 22 listing monitor: login screen observed; owner already notified."
     },
     {
       "id": "SOC-17",
@@ -1145,7 +1148,7 @@
       "name": "Threads",
       "priority": "Priority 2",
       "role": "Short practical ideas and conversations linked to the brand Instagram identity.",
-      "state": "Branded profile; first post published; next post scheduled October 16 10:00 IST",
+      "state": "Branded profile; October 16 post verified published",
       "url": "https://www.threads.com/@qdnco.official"
     },
     {
@@ -1289,7 +1292,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-22T13:34:24.468257+00:00",
-  "reconciliation_note": "Verified October 17 and 21 X publication; October 24 remains previously scheduled, not delivered. Other evidence-based states preserved.",
-  "updated_at": "2026-10-22T13:34:24.860736+00:00"
+  "reconciled_at": "2026-10-23T08:44:27.436582+00:00",
+  "reconciliation_note": "Reconciled dated Search Console evidence, expired mailbox access, saved-source identity correction and verified Threads delivery. Incomplete work remains incomplete.",
+  "updated_at": "2026-10-23T08:44:28.106834+00:00"
 }
