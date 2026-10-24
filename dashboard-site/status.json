@@ -169,13 +169,13 @@
       "stream": "Search & measurement",
       "title": "Current search scoreboard",
       "status": "In progress",
-      "detail": "October 23 authenticated Search Console: September 24–October 21 recorded 38 web-search clicks, 1,144 impressions, 3.3% CTR and average position 10. These are search clicks, not total visits or leads; no matched-period trend is established.",
-      "next": "Compare matched periods and inspect priority India/Dubai URLs. The indexing report remains dated October 9; do not treat its totals as current coverage.",
+      "detail": "October 23 matched comparison, October 15–21 versus October 8–14: 8 versus 6 search clicks, 211 versus 378 impressions, CTR 3.8% versus 1.6%, average position 9.8 versus 8.8. Trakheesi guide impressions fell 219 to 31; zero clicks in both periods. Small samples do not establish total traffic or lead trends.",
+      "next": "Investigate page-filtered query and position changes. Trakheesi URL Inspection reports indexed with its own canonical; last recorded crawl September 26. No delisting established.",
       "owner": "Agent",
       "url": "https://search.google.com/search-console",
       "steps": [],
       "checked": "2026-10-23",
-      "evidence": "October 23 authenticated performance and indexing UI records; no manual actions detected.",
+      "evidence": "Authenticated weekly comparison, exact date-dialog proof and Trakheesi URL Inspection recorded October 23.",
       "url_label": "Search Console · sign-in required"
     },
     {
@@ -195,7 +195,8 @@
       ],
       "checked": "2026-10-14",
       "evidence": "October 14 AI visibility audit; GitHub commit 961bd60; authenticated Google report and saved engine answers",
-      "url_label": "Perplexity · baseline remains incomplete"
+      "url_label": "Perplexity · baseline remains incomplete",
+      "access_note": "Browser diagnostics await shared-browser availability confirmation after repeated coordination-tool failures. Owner notified October 24; no takeover or speculative account changes."
     },
     {
       "id": "SEO-06",
@@ -1292,7 +1293,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-23T08:44:27.436582+00:00",
-  "reconciliation_note": "Reconciled dated Search Console evidence, expired mailbox access, saved-source identity correction and verified Threads delivery. Incomplete work remains incomplete.",
-  "updated_at": "2026-10-23T08:44:28.106834+00:00"
+  "reconciled_at": "2026-10-24T04:56:19.878824+00:00",
+  "reconciliation_note": "Added matched-period search evidence and dated URL Inspection; retained unfinished work and historical scheduling distinctions.",
+  "updated_at": "2026-10-24T04:56:20.283393+00:00"
 }
