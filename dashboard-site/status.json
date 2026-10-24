@@ -196,7 +196,7 @@
       "checked": "2026-10-14",
       "evidence": "October 14 AI visibility audit; GitHub commit 961bd60; authenticated Google report and saved engine answers",
       "url_label": "Perplexity · baseline remains incomplete",
-      "access_note": "Browser diagnostics await shared-browser availability confirmation after repeated coordination-tool failures. Owner notified October 24; no takeover or speculative account changes."
+      "access_note": "Compact task-status checks restored safe read-only browser work October 24. Individual engine sessions and the full fixed-query matrix still require verification; no blanket browser coordination blocker remains."
     },
     {
       "id": "SEO-06",
@@ -305,15 +305,15 @@
       "id": "SOC-03",
       "stream": "Social content",
       "title": "X nine-post queue and graphics",
-      "status": "Scheduled",
-      "detail": "October 17 Bangalore measurement post with graphic and October 21 Chennai sales-feedback post are verified published. October 24 retains its previously recorded scheduled state; native queue access remains unavailable.",
+      "status": "In progress",
+      "detail": "October 24 Dubai brokerage buyer-research post verified published at 10:00 as displayed by X. October 17 and 21 delivery was verified previously. Remaining native queue coverage is unverified while signed out.",
       "next": "Restore X brand session in QDnCo Chrome, then inspect remaining native schedules before adding any posts.",
       "owner": "Agent",
       "url": "https://x.com/qdnco_official",
       "steps": [],
-      "checked": "2026-10-22",
-      "evidence": "October 22 fresh public X profile displays dated posts: https://x.com/qdnco_official/status/2111313755812340160 and https://x.com/qdnco_official/status/2112763306561970445 . DOM and screenshot retained locally.",
-      "delivery_note": "October 7/10/14 delivery verified previously; October 17/21 verified October 22. October 24 is not yet claimed published.",
+      "checked": "2026-10-24",
+      "evidence": "Public post and timestamp visibly verified: https://x.com/qdnco_official/status/2113850470208835618 ; local screenshot and accessibility record retained.",
+      "delivery_note": "October 7/10/14/17/21/24 deliveries verified in dated records. No future schedule claimed without native queue evidence.",
       "access_note": "QDnCo Chrome X session is signed out; owner login required for native queue access."
     },
     {
@@ -1293,7 +1293,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-24T04:56:19.878824+00:00",
-  "reconciliation_note": "Added matched-period search evidence and dated URL Inspection; retained unfinished work and historical scheduling distinctions.",
-  "updated_at": "2026-10-24T04:56:20.283393+00:00"
+  "reconciled_at": "2026-10-24T21:51:10.880681+00:00",
+  "reconciliation_note": "Reconciled October24 X publication proof and restored read-only browser access; incomplete engine checks and future native schedules remain unverified.",
+  "updated_at": "2026-10-24T21:51:10.915686+00:00"
 }
