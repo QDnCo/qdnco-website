@@ -768,13 +768,13 @@
       "title": "Threads brand account",
       "status": "Completed",
       "detail": "QDnCo Threads account authenticated; service bio and official website link saved. Original lead-quality post and October 16 campaign-scope post visibly published.",
-      "next": "Monitor relevant responses; avoid reposting the delivered campaign-scope checklist.",
+      "next": "Verify October26 sales-feedback delivery and capture its public permalink; do not recreate the scheduled item.",
       "owner": "Agent",
       "url": "https://www.threads.com/@qdnco.official/post/DeZ6SXEj4Xu",
       "steps": [],
-      "checked": "2026-10-16",
+      "checked": "2026-10-25",
       "evidence": "October 16 authenticated profile DOM shows matching campaign-scope copy and public permalink; screenshot and snapshot saved in growth-recovery records.",
-      "delivery_note": "October 16 scheduled post verified published: https://www.threads.com/@qdnco.official/post/DeirdcMkc8V (profile displays 6 hours ago). Original post: https://www.threads.com/@qdnco.official/post/DeZ6SXEj4Xu"
+      "delivery_note": "Two prior posts verified published. New distinct sales-feedback post natively scheduled for October26,2026 at10:00 GMT+5:30; persisted Drafts entry verified October25. Not yet published."
     },
     {
       "id": "COM-07",
@@ -1293,7 +1293,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-24T21:51:10.880681+00:00",
-  "reconciliation_note": "Reconciled October24 X publication proof and restored read-only browser access; incomplete engine checks and future native schedules remain unverified.",
-  "updated_at": "2026-10-24T21:51:10.915686+00:00"
+  "reconciled_at": "2026-10-25T04:55:46.909530+00:00",
+  "reconciliation_note": "October26 Threads update verified natively scheduled; delivery not yet claimed. Prior completed account setup and unresolved access states preserved.",
+  "updated_at": "2026-10-25T04:55:47.295824+00:00"
 }
