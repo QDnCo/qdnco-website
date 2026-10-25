@@ -169,13 +169,13 @@
       "stream": "Search & measurement",
       "title": "Current search scoreboard",
       "status": "In progress",
-      "detail": "October 23 matched comparison, October 15–21 versus October 8–14: 8 versus 6 search clicks, 211 versus 378 impressions, CTR 3.8% versus 1.6%, average position 9.8 versus 8.8. Trakheesi guide impressions fell 219 to 31; zero clicks in both periods. Small samples do not establish total traffic or lead trends.",
-      "next": "Investigate page-filtered query and position changes. Trakheesi URL Inspection reports indexed with its own canonical; last recorded crawl September 26. No delisting established.",
+      "detail": "October 25 page-filtered Search Console comparison, October 17–23 versus October 10–16: Trakheesi guide 6 versus 189 impressions, zero clicks both periods, aggregate position 46.3 versus 8.6. Disclosed query/country/device rows are partial and do not reconcile to headline totals; they do not establish the cause.",
+      "next": "Monitor the revised guide after recrawl. Application and Madmoun verification guidance plus timing/penalty clarifications deployed through GitHub and verified by live hash; no ranking recovery claimed.",
       "owner": "Agent",
       "url": "https://search.google.com/search-console",
       "steps": [],
-      "checked": "2026-10-23",
-      "evidence": "Authenticated weekly comparison, exact date-dialog proof and Trakheesi URL Inspection recorded October 23.",
+      "checked": "2026-10-25",
+      "evidence": "Authenticated date/filter/table captures; production commit e995563 and successful run40219983484; exact guide hash and unchanged homepages verified.",
       "url_label": "Search Console · sign-in required"
     },
     {
@@ -196,7 +196,8 @@
       "checked": "2026-10-14",
       "evidence": "October 14 AI visibility audit; GitHub commit 961bd60; authenticated Google report and saved engine answers",
       "url_label": "Perplexity · baseline remains incomplete",
-      "access_note": "Compact task-status checks restored safe read-only browser work October 24. Individual engine sessions and the full fixed-query matrix still require verification; no blanket browser coordination blocker remains."
+      "access_note": "Compact task-status checks restored safe read-only browser work October 24. Individual engine sessions and the full fixed-query matrix still require verification; no blanket browser coordination blocker remains.",
+      "delivery_note": "October 25 authenticated Google generative AI report: 37 impressions October 17–23 versus 84 October 10–16. This establishes some Google AI visibility, not rank one or visibility in other engines."
     },
     {
       "id": "SEO-06",
@@ -724,13 +725,14 @@
       "title": "Reddit account",
       "status": "In progress",
       "detail": "Owner-created u/qdnco verified with logo, banner, bio and website link. Introductory post published and pinned; October 16 lead-qualification checklist now publicly verified.",
-      "next": "Monitor genuine responses and verify community rules and new-account eligibility before participation. Do not duplicate the delivered checklist.",
+      "next": "Complete the existing Pro verification handoff; then verify scheduling access. Do not create another account or duplicate existing posts. Genuine community replies still require eligibility and current rules.",
       "owner": "Agent",
       "url": "https://www.reddit.com/user/qdnco/",
       "steps": [],
-      "checked": "2026-10-16",
+      "checked": "2026-10-25",
       "evidence": "Public profile and direct checklist permalink verified October 16 at 10:12 IST; author u/qdnco and matching full copy visible.",
-      "delivery_note": "October 16 checklist published: https://www.reddit.com/user/qdnco/comments/1x76tvm/real_estate_lead_qualification_a_fivepoint/"
+      "delivery_note": "October 16 checklist published: https://www.reddit.com/user/qdnco/comments/1x76tvm/real_estate_lead_qualification_a_fivepoint/",
+      "access_note": "October 25: free Reddit Pro onboarding for existing u/qdnco remains unsubmitted after a reCAPTCHA service error. Owner verification/agreement is required before scheduling access can be confirmed."
     },
     {
       "id": "COM-04",
@@ -1293,7 +1295,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-25T04:55:46.909530+00:00",
-  "reconciliation_note": "October26 Threads update verified natively scheduled; delivery not yet claimed. Prior completed account setup and unresolved access states preserved.",
-  "updated_at": "2026-10-25T04:55:47.295824+00:00"
+  "reconciled_at": "2026-10-25T22:08:34.881387+00:00",
+  "reconciliation_note": "October25 search evidence, verified Trakheesi release and Reddit Pro verification gate reconciled. October26 Threads update remains natively scheduled, not delivered. Incomplete research and engine checks remain open.",
+  "updated_at": "2026-10-25T22:08:34.907364+00:00"
 }
