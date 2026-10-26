@@ -1102,6 +1102,21 @@
       "steps": [],
       "checked": "2026-10-13",
       "evidence": "October 13: commit 1478c81, workflow 38303567080 succeeded; all 38 changed public files independently matched local SHA-256 hashes."
+    },
+    {
+      "id": "SOC-22",
+      "stream": "Social content",
+      "title": "GBP landing-page consistency update",
+      "status": "Scheduled",
+      "detail": "A distinct educational update about matching property ads, landing pages and enquiry routing is saved in the native Google Business scheduler for October 28, 2026 at 10:00 as entered. The editor did not expose a timezone.",
+      "next": "Verify delivery on or after October 28 and capture publication evidence. Do not recreate this scheduled post.",
+      "owner": "Agent",
+      "url": "https://www.google.com/local/business/15394889459981688083/promote/updates",
+      "url_label": "Google Business posts · owner access required",
+      "steps": [],
+      "checked": "2026-10-26",
+      "evidence": "Persisted list shows Scheduled 28 Oct with matching copy after initial review. Snapshot and screenshot retained locally.",
+      "delivery_note": "Native scheduling verified; not yet published. No public permalink available."
     }
   ],
   "platforms": [
@@ -1295,7 +1310,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-26T08:16:42.109210+00:00",
-  "reconciliation_note": "October26 Threads scheduled delivery verified by public permalink and matching copy. Earlier search evidence, Trakheesi release and Reddit verification gate retained. Incomplete research and engine checks remain open.",
-  "updated_at": "2026-10-26T08:16:42.137013+00:00"
+  "reconciled_at": "2026-10-26T20:16:20.061472+00:00",
+  "reconciliation_note": "October26 Threads delivery and October28 native GBP schedule are tracked separately. Earlier completed GBP queue remains completed. Full saved-media and engine review remain open.",
+  "updated_at": "2026-10-26T20:16:20.089181+00:00"
 }
