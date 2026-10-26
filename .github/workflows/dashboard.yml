@@ -2,6 +2,10 @@ name: Growth dashboard only
 on:
   workflow_dispatch:
     inputs:
+      recover_oct25:
+        description: Reconcile only the verified October25 interrupted state write
+        type: boolean
+        default: false
       audit_only:
         description: Read dashboard state and hashes without server writes
         type: boolean
@@ -31,13 +35,16 @@ jobs:
           test "$current" = "$GITHUB_SHA"
       - name: Deploy only growth-status with drift protection and rollback
         env:
+          RECOVER_OCT25: ${{ inputs.recover_oct25 }}
           AUDIT_ONLY: ${{ inputs.audit_only }}
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USER: ${{ secrets.FTP_USER }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_REMOTE: ${{ secrets.FTP_REMOTE }}
         run: |
-          if [ "$AUDIT_ONLY" = "true" ]; then
+          if [ "$RECOVER_OCT25" = "true" ]; then
+            python3 ci/recover_dashboard.py
+          elif [ "$AUDIT_ONLY" = "true" ]; then
             python3 ci/audit-dashboard-state.py
           else
             python3 ci/dashboard.py --deploy
