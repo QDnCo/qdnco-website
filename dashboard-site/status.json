@@ -770,13 +770,13 @@
       "title": "Threads brand account",
       "status": "Completed",
       "detail": "QDnCo Threads account authenticated; service bio and official website link saved. Original lead-quality post and October 16 campaign-scope post visibly published.",
-      "next": "Verify October26 sales-feedback delivery and capture its public permalink; do not recreate the scheduled item.",
+      "next": "Review genuine replies and post-level engagement before preparing the next distinct educational post; do not duplicate delivered posts.",
       "owner": "Agent",
-      "url": "https://www.threads.com/@qdnco.official/post/DeZ6SXEj4Xu",
+      "url": "https://www.threads.com/@qdnco.official/post/De8bZ7eAgSF",
       "steps": [],
-      "checked": "2026-10-25",
-      "evidence": "October 16 authenticated profile DOM shows matching campaign-scope copy and public permalink; screenshot and snapshot saved in growth-recovery records.",
-      "delivery_note": "Two prior posts verified published. New distinct sales-feedback post natively scheduled for October26,2026 at10:00 GMT+5:30; persisted Drafts entry verified October25. Not yet published."
+      "checked": "2026-10-26",
+      "evidence": "October 26 authenticated profile and direct post show matching sales-feedback copy, 13 views and no replies at check. Screenshot and snapshot retained locally; views are not leads.",
+      "delivery_note": "Three posts verified published. October 26 sales-feedback post delivered from the native schedule; public permalink and matching copy verified. No further schedule confirmed."
     },
     {
       "id": "COM-07",
@@ -1295,7 +1295,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-25T22:08:34.881387+00:00",
-  "reconciliation_note": "October25 search evidence, verified Trakheesi release and Reddit Pro verification gate reconciled. October26 Threads update remains natively scheduled, not delivered. Incomplete research and engine checks remain open.",
-  "updated_at": "2026-10-25T22:08:34.907364+00:00"
+  "reconciled_at": "2026-10-26T08:16:42.109210+00:00",
+  "reconciliation_note": "October26 Threads scheduled delivery verified by public permalink and matching copy. Earlier search evidence, Trakheesi release and Reddit verification gate retained. Incomplete research and engine checks remain open.",
+  "updated_at": "2026-10-26T08:16:42.137013+00:00"
 }
