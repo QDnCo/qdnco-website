@@ -1,6 +1,11 @@
 name: Growth dashboard only
 on:
   workflow_dispatch:
+    inputs:
+      audit_only:
+        description: Read dashboard state and hashes without server writes
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -26,8 +31,14 @@ jobs:
           test "$current" = "$GITHUB_SHA"
       - name: Deploy only growth-status with drift protection and rollback
         env:
+          AUDIT_ONLY: ${{ inputs.audit_only }}
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USER: ${{ secrets.FTP_USER }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_REMOTE: ${{ secrets.FTP_REMOTE }}
-        run: python3 ci/dashboard.py --deploy
+        run: |
+          if [ "$AUDIT_ONLY" = "true" ]; then
+            python3 ci/audit-dashboard-state.py
+          else
+            python3 ci/dashboard.py --deploy
+          fi
