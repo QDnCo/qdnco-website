@@ -915,13 +915,13 @@
       "stream": "Knowledge & operations",
       "title": "Lead-generation knowledge bank",
       "status": "In progress",
-      "detail": "103 saved items captured from the personal collection, with source URLs and captions.",
-      "next": "Analyse each source, verify tool claims and map useful lessons to implementation; full audio review not complete.",
+      "detail": "103 saved lead-generation items have caption records. A referenced original sales video received full auto-caption transcript review on October 27, producing an internal diagnostic role-play module. Saved Instagram audiovisual coverage remains incomplete.",
+      "next": "Continue full-media review and validate source claims. The practice module is prepared internally; no outreach or conversion result is claimed.",
       "owner": "Agent",
       "url": "",
       "steps": [],
-      "checked": "2026-10-01",
-      "evidence": "Dated execution record; details retained locally",
+      "checked": "2026-10-27",
+      "evidence": "Private source-review ledger and original-reference transcript review; source transcripts and personal collection details excluded from this page.",
       "access_note": "Private research task. Saved collections and source transcripts remain local and are not exposed on this shareable page."
     },
     {
@@ -983,13 +983,13 @@
       "stream": "Knowledge & operations",
       "title": "Completion-time dashboard updates",
       "status": "Completed",
-      "detail": "GitHub-only dashboard delivery is operational. Latest verified release 21fe92e passed guarded deployment and all six live file hash checks.",
+      "detail": "GitHub-only dashboard delivery is operational, with scoped file validation, drift protection and live hash verification.",
       "next": "Reconcile meaningful verified outcomes and dispatch the scoped GitHub workflow.",
       "owner": "Agent",
       "url": "https://qdnco.com/growth-status/",
       "steps": [],
       "checked": "2026-10-14",
-      "evidence": "October 14: workflow 38520355908 succeeded; six-file release verified. Subsequent reconciliation is not counted as deployed until checked."
+      "evidence": "Guarded GitHub workflow and per-release six-file verification records. A new reconciliation is counted as deployed only after its own live checks."
     },
     {
       "id": "WEB-10",
@@ -1312,5 +1312,5 @@
   ],
   "reconciled_at": "2026-10-26T20:16:20.061472+00:00",
   "reconciliation_note": "October26 Threads delivery and October28 native GBP schedule are tracked separately. Earlier completed GBP queue remains completed. Full saved-media and engine review remain open.",
-  "updated_at": "2026-10-26T20:16:20.089181+00:00"
+  "updated_at": "2026-10-27T05:02:19.615410+00:00"
 }
