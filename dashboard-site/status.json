@@ -1108,16 +1108,16 @@
       "id": "SOC-22",
       "stream": "Social content",
       "title": "GBP landing-page consistency update",
-      "status": "Scheduled",
-      "detail": "A distinct educational update about matching property ads, landing pages and enquiry routing is saved in the native Google Business scheduler for October 28, 2026 at 10:00 as entered. The editor did not expose a timezone.",
-      "next": "Verify delivery on or after October 28 and capture publication evidence. Do not recreate this scheduled post.",
+      "status": "Completed",
+      "detail": "The October 28 educational update about matching property ads, landing pages and enquiry routing is published. The native Google Business posts list displayed the matching full copy with a Published label.",
+      "next": "Review subsequent engagement when available. Do not duplicate this delivered post.",
       "owner": "Agent",
       "url": "https://www.google.com/local/business/15394889459981688083/promote/updates",
       "url_label": "Google Business posts · owner access required",
       "steps": [],
-      "checked": "2026-10-26",
-      "evidence": "Persisted list shows Scheduled 28 Oct with matching copy after initial review. Snapshot and screenshot retained locally.",
-      "delivery_note": "Native scheduling verified; not yet published. No public permalink available."
+      "checked": "2026-10-28",
+      "evidence": "Refreshed native posts list around 04:30 UTC showed Published 25 seconds ago with matching copy. Screenshot and accessibility evidence retained locally.",
+      "delivery_note": "Native publication verified October 28. Management URL requires owner access; no public post permalink was exposed."
     }
   ],
   "platforms": [
@@ -1311,7 +1311,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-28T04:24:54.735772+00:00",
-  "reconciliation_note": "October 28 reconciliation: Reddit restriction review is waiting, not restored; GA4 configuration audit is in progress with owner confirmation needed for linking. Scheduled content retains its existing delivery state.",
-  "updated_at": "2026-10-28T04:25:07.580823+00:00"
+  "reconciled_at": "2026-10-28T05:00:56.369825+00:00",
+  "reconciliation_note": "October 28 reconciliation: GBP landing-page consistency update is verified published. Reddit restriction review remains waiting; GA4 configuration audit remains in progress with owner confirmation needed for linking.",
+  "updated_at": "2026-10-28T05:00:56.395637+00:00"
 }
