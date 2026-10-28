@@ -249,15 +249,16 @@
       "id": "SEO-09",
       "stream": "Search & measurement",
       "title": "GA4–Search Console link and internal traffic",
-      "status": "Yet to do",
-      "detail": "Lead event is tested; property linking and broader internal-traffic controls are not confirmed.",
-      "next": "Verify actual property linkage and appropriate filters.",
+      "status": "In progress",
+      "detail": "GA4 configuration audit started for the existing India and Dubai stream. Search Console links remain absent; the prepared link was not submitted. The internal-traffic exclusion filter is in Testing and its tagging rules remain unverified.",
+      "next": "Owner must confirm the prepared Search Console access expansion before submission. Validate internal-traffic tagging and test results before activating exclusion; then verify the saved integration.",
       "owner": "Agent",
       "url": "https://analytics.google.com/",
       "steps": [],
-      "checked": "2026-10-01",
-      "evidence": "Dated execution record; details retained locally",
-      "url_label": "Google Analytics · sign-in required"
+      "checked": "2026-10-27",
+      "evidence": "Authenticated GA4 integration table showed No links yet. Stream configuration and Testing filter inspected; final integration review saved without submission.",
+      "url_label": "Google Analytics · sign-in required",
+      "access_note": "Search Console linking requires owner confirmation because Analytics property users gain access to Search Console data. No permissions or filters have been changed."
     },
     {
       "id": "SEO-10",
@@ -723,16 +724,16 @@
       "id": "COM-03",
       "stream": "Community & PR",
       "title": "Reddit account",
-      "status": "In progress",
-      "detail": "Owner-created u/qdnco verified with logo, banner, bio and website link. Introductory post published and pinned; October 16 lead-qualification checklist now publicly verified.",
-      "next": "Complete the existing Pro verification handoff; then verify scheduling access. Do not create another account or duplicate existing posts. Genuine community replies still require eligibility and current rules.",
+      "status": "Waiting",
+      "detail": "The branded u/qdnco profile and earlier posts were verified historically. October 27 checks found the profile empty and post links unavailable. Reddit acknowledged an account-restriction review on October 28; restoration is not confirmed.",
+      "next": "Await the existing Reddit review outcome and verify profile and direct-post visibility before further publishing. Do not repeat the appeal, recreate the account or repost content.",
       "owner": "Agent",
       "url": "https://www.reddit.com/user/qdnco/",
       "steps": [],
-      "checked": "2026-10-25",
-      "evidence": "Public profile and direct checklist permalink verified October 16 at 10:12 IST; author u/qdnco and matching full copy visible.",
-      "delivery_note": "October 16 checklist published: https://www.reddit.com/user/qdnco/comments/1x76tvm/real_estate_lead_qualification_a_fivepoint/",
-      "access_note": "October 25: free Reddit Pro onboarding for existing u/qdnco remains unsubmitted after a reCAPTCHA service error. Owner verification/agreement is required before scheduling access can be confirmed."
+      "checked": "2026-10-28",
+      "evidence": "Official appeals page displayed Appeal received for u/qdnco. Exact restriction category and review deadline were not disclosed; receipt retained locally.",
+      "delivery_note": "The October 27 enquiry-checklist submission appeared briefly in the authenticated feed but its permalink failed. It is submitted, not verified publicly published.",
+      "access_note": "Reddit publishing is on hold pending restriction review. Earlier Pro onboarding and scheduling verification remain incomplete."
     },
     {
       "id": "COM-04",
@@ -1310,7 +1311,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-26T20:16:20.061472+00:00",
-  "reconciliation_note": "October26 Threads delivery and October28 native GBP schedule are tracked separately. Earlier completed GBP queue remains completed. Full saved-media and engine review remain open.",
-  "updated_at": "2026-10-27T05:02:19.615410+00:00"
+  "reconciled_at": "2026-10-28T04:24:54.735772+00:00",
+  "reconciliation_note": "October 28 reconciliation: Reddit restriction review is waiting, not restored; GA4 configuration audit is in progress with owner confirmation needed for linking. Scheduled content retains its existing delivery state.",
+  "updated_at": "2026-10-28T04:25:07.580823+00:00"
 }
