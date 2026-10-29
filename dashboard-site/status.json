@@ -170,14 +170,14 @@
       "title": "Current search scoreboard",
       "status": "In progress",
       "detail": "October 29 page-filtered Search Console comparison, October 20–26 versus October 13–19: Trakheesi guide 12 versus 113 impressions, zero clicks both periods, aggregate position 26 versus 8.2. Filtered device rows do not reconcile to summary totals; no cause or recovery is established.",
-      "next": "Investigate the video-library redirect error identified in the live test. Monitor search impact separately from crawl eligibility; avoid duplicate indexing requests.",
+      "next": "Monitor search impact separately from crawl eligibility. The scoped video-library redirect correction is deployed and passed a fresh Google live test; avoid duplicate indexing requests.",
       "owner": "Agent",
       "url": "https://search.google.com/search-console",
       "steps": [],
       "checked": "2026-10-29",
-      "evidence": "Authenticated comparison dates and URL inspection saved October 29. Indexed snapshot reports matching canonical and September 26 crawl. Live test fetched HTTP 200 with indexing allowed and one valid breadcrumb; one of six resources had a redirect error.",
+      "evidence": "October 29 authenticated comparison and URL inspection retained locally. Historical indexed snapshot has matching canonical and September 26 crawl. After the scoped library URL correction, the 14:10 live test returned HTTP 200, all resources loaded, no console messages and one valid breadcrumb.",
       "url_label": "Search Console · sign-in required",
-      "delivery_note": "The guide is indexed in the stored snapshot and available to Google in the live test. This does not prove October revisions entered the index or improved rankings."
+      "delivery_note": "The guide is indexed in the stored snapshot and available to Google in the live test. Resource loading is verified after the correction; ranking improvement and index refresh are not established."
     },
     {
       "id": "SEO-05",
@@ -1312,7 +1312,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-29T05:02:19+00:00",
-  "reconciliation_note": "October 29 reconciliation: updated the scoped search comparison and distinguished indexed snapshot, live crawl eligibility and unresolved resource diagnosis. Social delivery, directory outcomes and incomplete research states preserved.",
-  "updated_at": "2026-10-29T05:02:45.950192+00:00"
+  "reconciled_at": "2026-10-29T12:29:56+00:00",
+  "reconciliation_note": "October 29: guide resource correction deployed and verified in a fresh Google live test. Search outcomes remain in progress; delivery and review states require separate evidence.",
+  "updated_at": "2026-10-29T13:50:07.066331+00:00"
 }
