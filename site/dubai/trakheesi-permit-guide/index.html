@@ -513,7 +513,7 @@ var c=navigator.connection; if(c&&(c.saveData||/2g/.test(c.effectiveType||'')))r
 var native=function(){if(!v.canPlayType('application/vnd.apple.mpegurl'))return;
 v.src='https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8';v.play().catch(function(){})};
 var start=function(){var s=document.createElement('script');
-s.src='https://unpkg.com/hls.js@1/dist/hls.min.js';
+s.src='https://unpkg.com/hls.js@1.7.4/dist/hls.min.js';
 s.onload=function(){if(!window.Hls||!window.Hls.isSupported()){native();return}
 var h=new window.Hls({capLevelToPlayerSize:true});h.loadSource('https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8');h.attachMedia(v);
 h.on(window.Hls.Events.MANIFEST_PARSED,function(){v.play().catch(function(){})});};
