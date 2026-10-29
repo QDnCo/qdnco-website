@@ -169,14 +169,15 @@
       "stream": "Search & measurement",
       "title": "Current search scoreboard",
       "status": "In progress",
-      "detail": "October 25 page-filtered Search Console comparison, October 17–23 versus October 10–16: Trakheesi guide 6 versus 189 impressions, zero clicks both periods, aggregate position 46.3 versus 8.6. Disclosed query/country/device rows are partial and do not reconcile to headline totals; they do not establish the cause.",
-      "next": "Monitor the revised guide after recrawl. Application and Madmoun verification guidance plus timing/penalty clarifications deployed through GitHub and verified by live hash; no ranking recovery claimed.",
+      "detail": "October 29 page-filtered Search Console comparison, October 20–26 versus October 13–19: Trakheesi guide 12 versus 113 impressions, zero clicks both periods, aggregate position 26 versus 8.2. Filtered device rows do not reconcile to summary totals; no cause or recovery is established.",
+      "next": "Investigate the video-library redirect error identified in the live test. Monitor search impact separately from crawl eligibility; avoid duplicate indexing requests.",
       "owner": "Agent",
       "url": "https://search.google.com/search-console",
       "steps": [],
-      "checked": "2026-10-25",
-      "evidence": "Authenticated date/filter/table captures; production commit e995563 and successful run40219983484; exact guide hash and unchanged homepages verified.",
-      "url_label": "Search Console · sign-in required"
+      "checked": "2026-10-29",
+      "evidence": "Authenticated comparison dates and URL inspection saved October 29. Indexed snapshot reports matching canonical and September 26 crawl. Live test fetched HTTP 200 with indexing allowed and one valid breadcrumb; one of six resources had a redirect error.",
+      "url_label": "Search Console · sign-in required",
+      "delivery_note": "The guide is indexed in the stored snapshot and available to Google in the live test. This does not prove October revisions entered the index or improved rankings."
     },
     {
       "id": "SEO-05",
@@ -1311,7 +1312,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-28T05:00:56.369825+00:00",
-  "reconciliation_note": "October 28 reconciliation: GBP landing-page consistency update is verified published. Reddit restriction review remains waiting; GA4 configuration audit remains in progress with owner confirmation needed for linking.",
-  "updated_at": "2026-10-28T05:00:56.395637+00:00"
+  "reconciled_at": "2026-10-29T05:02:19+00:00",
+  "reconciliation_note": "October 29 reconciliation: updated the scoped search comparison and distinguished indexed snapshot, live crawl eligibility and unresolved resource diagnosis. Social delivery, directory outcomes and incomplete research states preserved.",
+  "updated_at": "2026-10-29T05:02:45.950192+00:00"
 }
