@@ -266,14 +266,15 @@
       "stream": "Search & measurement",
       "title": "Structured-data and mobile performance audit",
       "status": "In progress",
-      "detail": "Rendered Dubai page has one H1, self-canonical, three hreflang links and parseable JSON-LD. First external arrival from an India-time browser redirects to India under the newer location-default code. India duplicate hreflang tags reduced from 45 to three; GitHub deployment and live byte match verified.",
-      "next": "Complete mobile/performance and schema eligibility checks; review explicit Dubai-link routing for Indian buyers without overriding newer owner-selected behavior.",
+      "detail": "October 30 Trakheesi guide mobile lab baseline: performance 100, accessibility 98, best practices 100 and SEO 100; no real-user field data. The missing main landmark was subsequently corrected and verified in the live DOM. Earlier regional routing and hreflang work remains recorded.",
+      "next": "Complete manual mobile/accessibility and supported structured-data property checks. Attribute unused JavaScript before optimizing. Preserve owner-selected regional routing; do not infer rankings from lab scores.",
       "owner": "Agent",
-      "url": "https://pagespeed.web.dev/",
+      "url": "https://pagespeed.web.dev/analysis/https-qdnco-com-dubai-trakheesi-permit-guide/zkullx2gjw?form_factor=mobile",
       "steps": [],
-      "checked": "2026-10-17",
-      "evidence": "October 17 rendered DOM records in growth-recovery: dubai-rendered-schema-oct17.json and dubai-rendered-schema-second-navigation-oct17.json. Syntax checks are not rich-result eligibility or ranking proof. Workflow 38996778158 succeeded; live HTTP 200 and local SHA-256 match recorded in hreflang-live-oct17.json.",
-      "url_label": "PageSpeed Insights"
+      "checked": "2026-10-30",
+      "evidence": "Official PageSpeed report: emulated Moto G Power, Slow 4G; LCP 1.0s, TBT 50ms, CLS 0. Guarded landmark release 41005445992 succeeded; live hashes and one main containing the H1 verified. All 38 FAQ pairs across three pages match static HTML text; this is not rendered visibility or eligibility proof. Earlier October17: Rendered Dubai page has one H1, self-canonical, three hreflang links and parseable JSON-LD. First external arrival from an India-time browser redirects to India under the newer location-default code. India duplicate hreflang tags reduced from 45 to three; GitHub deployment and live byte match verified. October 17 rendered DOM records in growth-recovery: dubai-rendered-schema-oct17.json and dubai-rendered-schema-second-navigation-oct17.json. Syntax checks are not rich-result eligibility or ranking proof. Workflow 38996778158 succeeded; live HTTP 200 and local SHA-256 match recorded in hreflang-live-oct17.json.",
+      "url_label": "PageSpeed Insights",
+      "delivery_note": "Lab scores precede the landmark fix; no new score or full accessibility compliance claimed. Google retired FAQ rich results; existing FAQ content was preserved."
     },
     {
       "id": "SOC-01",
@@ -1312,7 +1313,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-29T12:29:56+00:00",
-  "reconciliation_note": "October 29: guide resource correction deployed and verified in a fresh Google live test. Search outcomes remain in progress; delivery and review states require separate evidence.",
-  "updated_at": "2026-10-29T13:50:07.066331+00:00"
+  "reconciled_at": "2026-10-30T05:01:26+00:00",
+  "reconciliation_note": "October 30: added scoped mobile lab evidence and verified landmark correction. All task completion states, unverified social delivery and incomplete saved-media review remain distinct.",
+  "updated_at": "2026-10-30T05:02:02.003777+00:00"
 }
