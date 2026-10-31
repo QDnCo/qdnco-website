@@ -267,12 +267,12 @@
       "title": "Structured-data and mobile performance audit",
       "status": "In progress",
       "detail": "October 30 Trakheesi guide mobile lab baseline: performance 100, accessibility 98, best practices 100 and SEO 100; no real-user field data. The missing main landmark was subsequently corrected and verified in the live DOM. Earlier regional routing and hreflang work remains recorded.",
-      "next": "Complete manual mobile/accessibility and supported structured-data property checks. Attribute unused JavaScript before optimizing. Preserve owner-selected regional routing; do not infer rankings from lab scores.",
+      "next": "Complete manual mobile/accessibility checks and validate supported Article markup in a native test before proposing enrichment. Preserve regional routing; lab scores do not establish rankings.",
       "owner": "Agent",
       "url": "https://pagespeed.web.dev/analysis/https-qdnco-com-dubai-trakheesi-permit-guide/zkullx2gjw?form_factor=mobile",
       "steps": [],
-      "checked": "2026-10-30",
-      "evidence": "Official PageSpeed report: emulated Moto G Power, Slow 4G; LCP 1.0s, TBT 50ms, CLS 0. Guarded landmark release 41005445992 succeeded; live hashes and one main containing the H1 verified. All 38 FAQ pairs across three pages match static HTML text; this is not rendered visibility or eligibility proof. Earlier October17: Rendered Dubai page has one H1, self-canonical, three hreflang links and parseable JSON-LD. First external arrival from an India-time browser redirects to India under the newer location-default code. India duplicate hreflang tags reduced from 45 to three; GitHub deployment and live byte match verified. October 17 rendered DOM records in growth-recovery: dubai-rendered-schema-oct17.json and dubai-rendered-schema-second-navigation-oct17.json. Syntax checks are not rich-result eligibility or ranking proof. Workflow 38996778158 succeeded; live HTTP 200 and local SHA-256 match recorded in hreflang-live-oct17.json.",
+      "checked": "2026-10-31",
+      "evidence": "Official PageSpeed report: emulated Moto G Power, Slow 4G; LCP 1.0s, TBT 50ms, CLS 0. Guarded landmark release 41005445992 succeeded; live hashes and one main containing the H1 verified. All 38 FAQ pairs across three pages match static HTML text; this is not rendered visibility or eligibility proof. Earlier October17: Rendered Dubai page has one H1, self-canonical, three hreflang links and parseable JSON-LD. First external arrival from an India-time browser redirects to India under the newer location-default code. India duplicate hreflang tags reduced from 45 to three; GitHub deployment and live byte match verified. October 17 rendered DOM records in growth-recovery: dubai-rendered-schema-oct17.json and dubai-rendered-schema-second-navigation-oct17.json. Syntax checks are not rich-result eligibility or ranking proof. Workflow 38996778158 succeeded; live HTTP 200 and local SHA-256 match recorded in hreflang-live-oct17.json. October30-31: unused-JavaScript estimate attributed to HLS and GA4; initial-load coverage alone does not justify removing either. Article author/publisher reference matches the Organization identity on the homepage; no broken-reference finding or individual authorship claim. Supported Article property review does not establish full eligibility.",
       "url_label": "PageSpeed Insights",
       "delivery_note": "Lab scores precede the landmark fix; no new score or full accessibility compliance claimed. Google retired FAQ rich results; existing FAQ content was preserved."
     },
@@ -1313,7 +1313,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-10-30T05:01:26+00:00",
-  "reconciliation_note": "October 30: added scoped mobile lab evidence and verified landmark correction. All task completion states, unverified social delivery and incomplete saved-media review remain distinct.",
-  "updated_at": "2026-10-30T05:02:02.003777+00:00"
+  "reconciled_at": "2026-10-31T06:35:12+00:00",
+  "reconciliation_note": "October 31: reconciled JavaScript attribution and Article identity checks; preserved all statuses, historical evidence and incomplete review distinctions.",
+  "updated_at": "2026-10-31T06:35:30.155691+00:00"
 }
