@@ -777,22 +777,22 @@
       "owner": "Agent",
       "url": "https://www.threads.com/@qdnco.official/post/De8bZ7eAgSF",
       "steps": [],
-      "checked": "2026-10-26",
-      "evidence": "October 26 authenticated profile and direct post show matching sales-feedback copy, 13 views and no replies at check. Screenshot and snapshot retained locally; views are not leads.",
-      "delivery_note": "Three posts verified published. October 26 sales-feedback post delivered from the native schedule; public permalink and matching copy verified. No further schedule confirmed."
+      "checked": "2026-11-07",
+      "evidence": "The November 7 native post check showed October 25 as the displayed post date, 14 views, one like and no replies.",
+      "delivery_note": "Three published posts have been verified. The sales-feedback post has a verified permalink and matching copy. Further scheduling remains unconfirmed."
     },
     {
       "id": "COM-07",
       "stream": "Community & PR",
       "title": "Pinterest business resources",
       "status": "In progress",
-      "detail": "Existing qdnco01 Pinterest account has QDnCo name, relevant real estate marketing bio, qdnco.com website link and official logo visibly saved. Logo retry succeeded. Original resource pins remain pending.",
-      "next": "Create useful original resource pins with relevant guide links; do not create another account.",
+      "detail": "Existing qdnco01 Pinterest account has QDnCo name, relevant real estate marketing bio, qdnco.com website link and official logo visibly saved. Logo retry succeeded. The first resource pin has local copy and artwork for the Dubai Trakheesi guide.",
+      "next": "Check Pinterest drafts, scheduled pins and the Created tab for duplicates before publishing the checklist.",
       "owner": "Agent",
       "url": "https://in.pinterest.com/qdnco01/_profile/",
       "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "Native Chrome screenshot: runs/2026-10-13-growth-recovery/pinterest-profile.png",
+      "checked": "2026-11-07",
+      "evidence": "The November 7 Created tab prompted QDnCo to create its first pin. The guide and its share image loaded successfully. Native scheduling and publication are unconfirmed.",
       "url_label": "Pinterest profile"
     },
     {
@@ -918,12 +918,12 @@
       "stream": "Knowledge & operations",
       "title": "Lead-generation knowledge bank",
       "status": "In progress",
-      "detail": "103 saved lead-generation items have caption records. A referenced original sales video received full auto-caption transcript review on October 27, producing an internal diagnostic role-play module. Saved Instagram audiovisual coverage remains incomplete.",
+      "detail": "103 saved lead-generation items have caption records. A referenced original sales video received full auto-caption transcript review on October 27, producing an internal diagnostic role-play module. Saved Instagram audiovisual coverage remains incomplete. Across the detailed saved-media ledger, 11 sources have partial reviews and none has a complete audiovisual review.",
       "next": "Continue full-media review and validate source claims. The practice module is prepared internally; no outreach or conversion result is claimed.",
       "owner": "Agent",
       "url": "",
       "steps": [],
-      "checked": "2026-10-27",
+      "checked": "2026-11-08",
       "evidence": "Private source-review ledger and original-reference transcript review; source transcripts and personal collection details excluded from this page.",
       "access_note": "Private research task. Saved collections and source transcripts remain local and are not exposed on this shareable page."
     },
@@ -1314,6 +1314,6 @@
     }
   ],
   "reconciled_at": "2026-11-01T05:03:57+00:00",
-  "reconciliation_note": "November 1: reconciled verified organization schema correction and limited mobile/keyboard checks. All statuses, historical evidence and incomplete social/media distinctions preserved.",
-  "updated_at": "2026-11-01T05:04:16.014762+00:00"
+  "reconciliation_note": "November 8: updated Threads delivery evidence, Pinterest checklist preparation and saved-media coverage. Directory checks confirmed existing listings.",
+  "updated_at": "2026-11-08T04:59:01.017205+00:00"
 }
