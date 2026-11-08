@@ -786,14 +786,14 @@
       "stream": "Community & PR",
       "title": "Pinterest business resources",
       "status": "In progress",
-      "detail": "Existing qdnco01 Pinterest account has QDnCo name, relevant real estate marketing bio, qdnco.com website link and official logo visibly saved. Logo retry succeeded. The first resource pin has local copy and artwork for the Dubai Trakheesi guide.",
-      "next": "Check Pinterest drafts, scheduled pins and the Created tab for duplicates before publishing the checklist.",
+      "detail": "QDnCo’s Pinterest profile is complete. Its first original resource pin, a Trakheesi pre-launch checklist, was published to Dubai Property Marketing Guides.",
+      "next": "Review engagement before preparing another original guide pin.",
       "owner": "Agent",
-      "url": "https://in.pinterest.com/qdnco01/_profile/",
+      "url": "https://in.pinterest.com/pin/1088252697494811215/",
       "steps": [],
-      "checked": "2026-11-07",
-      "evidence": "The November 7 Created tab prompted QDnCo to create its first pin. The guide and its share image loaded successfully. Native scheduling and publication are unconfirmed.",
-      "url_label": "Pinterest profile"
+      "checked": "2026-11-08",
+      "evidence": "Pinterest confirmed publication and returned the created pin permalink. The draft linked to the QDnCo Trakheesi guide.",
+      "url_label": "Published Trakheesi checklist"
     },
     {
       "id": "COM-08",
@@ -1315,5 +1315,5 @@
   ],
   "reconciled_at": "2026-11-01T05:03:57+00:00",
   "reconciliation_note": "November 8: updated Threads delivery evidence, Pinterest checklist preparation and saved-media coverage. Directory checks confirmed existing listings.",
-  "updated_at": "2026-11-08T04:59:01.017205+00:00"
+  "updated_at": "2026-11-08T15:30:06.374223+00:00"
 }
