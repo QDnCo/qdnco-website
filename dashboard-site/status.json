@@ -339,15 +339,15 @@
       "title": "LinkedIn queue",
       "status": "Scheduled",
       "detail": "October 8 and 11 posts were verified published. October 14, 17, 20 and 22 posts and October 26 lead-handoff checklist were previously verified scheduled; subsequent delivery is unverified while admin access is unavailable.",
-      "next": "Restore existing LinkedIn page-admin login, then verify overdue delivery and the October 26 native schedule without duplicating posts.",
+      "next": "Restore the existing page-admin session and check the five posts against the published list.",
       "owner": "Agent",
       "url": "https://www.linkedin.com/company/117074503/admin/page-posts/published/",
       "steps": [],
-      "checked": "2026-10-12",
-      "evidence": "2026-10-12-growth-recovery: authenticated dashboard observations and saved proof",
+      "checked": "2026-11-09",
+      "evidence": "October native scheduling confirmations and November 9 admin access check.",
       "url_label": "LinkedIn published posts · admin required",
       "delivery_note": "October 26 scheduling confirmation observed in LinkedIn. Copy and proof retained in October 12 growth-recovery run.",
-      "access_note": "October 18: QDnCo Chrome LinkedIn session is signed out. Existing-account sign-in is open for the owner; October 14/17 delivery is not freshly verified."
+      "access_note": "The LinkedIn page-admin URL required sign-in on November 9. Delivery of the five October posts remains unverified."
     },
     {
       "id": "SOC-06",
@@ -792,7 +792,7 @@
       "url": "https://in.pinterest.com/pin/1088252697494811215/",
       "steps": [],
       "checked": "2026-11-08",
-      "evidence": "Pinterest confirmed publication and returned the created pin permalink. The draft linked to the QDnCo Trakheesi guide.",
+      "evidence": "The published pin links to the Trakheesi guide. Its booking link reaches the Dubai enquiry form. The form records the immediate referring site, so a lead arriving through the guide cannot be attributed to Pinterest from that field alone.",
       "url_label": "Published Trakheesi checklist"
     },
     {
@@ -918,12 +918,12 @@
       "stream": "Knowledge & operations",
       "title": "Lead-generation knowledge bank",
       "status": "In progress",
-      "detail": "103 saved lead-generation items have caption records. A referenced original sales video received full auto-caption transcript review on October 27, producing an internal diagnostic role-play module. Saved Instagram audiovisual coverage remains incomplete. Across the detailed saved-media ledger, 11 sources have partial reviews and none has a complete audiovisual review.",
+      "detail": "103 saved lead-generation items have caption records. A referenced original sales video received full auto-caption transcript review on October 27, producing an internal diagnostic role-play module. Saved Instagram audiovisual coverage remains incomplete. Across the detailed saved-media ledger, 13 sources have partial reviews and none has a complete audiovisual review.",
       "next": "Continue full-media review and validate source claims. The practice module is prepared internally; no outreach or conversion result is claimed.",
       "owner": "Agent",
       "url": "",
       "steps": [],
-      "checked": "2026-11-08",
+      "checked": "2026-11-09",
       "evidence": "Private source-review ledger and original-reference transcript review; source transcripts and personal collection details excluded from this page.",
       "access_note": "Private research task. Saved collections and source transcripts remain local and are not exposed on this shareable page."
     },
@@ -1313,7 +1313,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-11-01T05:03:57+00:00",
-  "reconciliation_note": "November 8: updated Threads delivery evidence, Pinterest checklist preparation and saved-media coverage. Directory checks confirmed existing listings.",
-  "updated_at": "2026-11-08T15:30:06.374223+00:00"
+  "reconciled_at": "2026-11-09T05:00:15+00:00",
+  "reconciliation_note": "November 9 checks covered the published Pinterest link, saved-media review progress and LinkedIn admin access.",
+  "updated_at": "2026-11-09T05:01:54.773115+00:00"
 }
