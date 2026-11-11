@@ -313,10 +313,10 @@
       "detail": "October 24 Dubai brokerage buyer-research post verified published at 10:00 as displayed by X. October 17 and 21 delivery was verified previously. Remaining native queue coverage is unverified while signed out.",
       "next": "Restore X brand session in QDnCo Chrome, then inspect remaining native schedules before adding any posts.",
       "owner": "Agent",
-      "url": "https://x.com/qdnco_official",
+      "url": "https://x.com/qdnco_official/status/2113850470208835618",
       "steps": [],
-      "checked": "2026-10-24",
-      "evidence": "Public post and timestamp visibly verified: https://x.com/qdnco_official/status/2113850470208835618 ; local screenshot and accessibility record retained.",
+      "checked": "2026-11-11",
+      "evidence": "On November 10 the October 24 post showed one view and zero replies, reposts, likes or bookmarks. Its link reaches the Dubai real estate marketing page and enquiry form. The form fields alone cannot trace enquiries back to this post.",
       "delivery_note": "October 7/10/14/17/21/24 deliveries verified in dated records. No future schedule claimed without native queue evidence.",
       "access_note": "QDnCo Chrome X session is signed out; owner login required for native queue access."
     },
@@ -777,8 +777,8 @@
       "owner": "Agent",
       "url": "https://www.threads.com/@qdnco.official/post/De8bZ7eAgSF",
       "steps": [],
-      "checked": "2026-11-07",
-      "evidence": "The November 7 native post check showed October 25 as the displayed post date, 14 views, one like and no replies.",
+      "checked": "2026-11-10",
+      "evidence": "On November 10 native insights showed 20 lifetime views for the October 13 post, one for October 16 and 14 for October 25. All three showed zero profile visits and follows. The October 25 post showed one like and zero replies. Account insights for the last 30 days showed 35 views, one interaction and zero net followers.",
       "delivery_note": "Three published posts have been verified. The sales-feedback post has a verified permalink and matching copy. Further scheduling remains unconfirmed."
     },
     {
@@ -1313,7 +1313,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-11-10T04:59:19+00:00",
-  "reconciliation_note": "November 9–10 checks covered Pinterest engagement, Reddit appeal notifications and saved-media review coverage.",
-  "updated_at": "2026-11-10T05:00:04.425312+00:00"
+  "reconciled_at": "2026-11-11T05:00:34+00:00",
+  "reconciliation_note": "November 10–11 checks covered Threads engagement and the October 24 X post’s path to the Dubai enquiry form.",
+  "updated_at": "2026-11-11T05:01:22.654166+00:00"
 }
