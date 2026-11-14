@@ -343,11 +343,11 @@
       "owner": "Agent",
       "url": "https://www.linkedin.com/company/117074503/admin/page-posts/published/",
       "steps": [],
-      "checked": "2026-11-12",
+      "checked": "2026-11-14",
       "evidence": "October native scheduling confirmations and November 12 admin access check.",
       "url_label": "LinkedIn published posts · admin required",
       "delivery_note": "October 26 scheduling confirmation observed in LinkedIn. Copy and proof retained in October 12 growth-recovery run.",
-      "access_note": "The LinkedIn page-admin URL required sign-in on November 12. Delivery of the five October posts remains unverified."
+      "access_note": "The LinkedIn page-admin URL required sign-in on November 14. Delivery of the five October posts remains unverified."
     },
     {
       "id": "SOC-06",
@@ -918,12 +918,12 @@
       "stream": "Knowledge & operations",
       "title": "Lead-generation knowledge bank",
       "status": "In progress",
-      "detail": "103 saved lead-generation items have caption records. A referenced original sales video received full auto-caption transcript review on October 27, producing an internal diagnostic role-play module. Saved Instagram audiovisual coverage remains incomplete. Across the detailed saved-media ledger, 20 sources have partial reviews and none has a complete audiovisual review. All ten images in each of two saved carousels have been reviewed. Audio coverage remains unverified.",
+      "detail": "103 saved lead-generation items have caption records. A referenced original sales video received full auto-caption transcript review on October 27, producing an internal diagnostic role-play module. Saved Instagram audiovisual coverage remains incomplete. Across the detailed saved-media ledger, 21 sources have partial reviews and none has a complete audiovisual review. All ten images in each of two saved carousels have been reviewed. Audio coverage remains unverified.",
       "next": "Continue full-media review and validate source claims. The practice module is prepared internally; no outreach or conversion result is claimed.",
       "owner": "Agent",
       "url": "",
       "steps": [],
-      "checked": "2026-11-13",
+      "checked": "2026-11-14",
       "evidence": "Private source-review ledger and original-reference transcript review; source transcripts and personal collection details excluded from this page.",
       "access_note": "Private research task. Saved collections and source transcripts remain local and are not exposed on this shareable page."
     },
@@ -1314,6 +1314,6 @@
     }
   ],
   "reconciled_at": "2026-11-13T04:55:19+00:00",
-  "reconciliation_note": "November 13 review confirmed visual coverage of two ten-card carousels. Delivery of five scheduled LinkedIn posts still awaits verification.",
-  "updated_at": "2026-11-13T04:55:49.987017+00:00"
+  "reconciliation_note": "November 14 review records 21 sources with partial saved-media reviews. Audiovisual coverage and delivery verification for five LinkedIn posts remain open.",
+  "updated_at": "2026-11-14T04:57:27.625043+00:00"
 }
