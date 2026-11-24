@@ -3,6 +3,7 @@ import fs from 'node:fs'
 import vm from 'node:vm'
 import test from 'node:test'
 import ts from 'typescript'
+import { fileURLToPath } from 'node:url'
 
 const dir = new URL('../site/js/estimate/', import.meta.url)
 const read = name => fs.readFileSync(new URL(name, dir), 'utf8')
@@ -96,7 +97,7 @@ test('phone validation matches the backend rule', () => {
   for (const bad of ['', '1234', 'letters12345678', '+1 234567890123456']) assert.equal(engine.validPhone(bad), false, bad)
 })
 test('estimate scripts type-check under TypeScript strict mode', () => {
-  const files = ['types.d.ts', 'catalog.js', 'engine.js', 'listbox.js', 'widget.js', 'embed.js'].map(f => new URL(f, dir).pathname)
+  const files = ['types.d.ts', 'catalog.js', 'engine.js', 'listbox.js', 'widget.js', 'embed.js'].map(f => fileURLToPath(new URL(f, dir)))
   const program = ts.createProgram(files, {
     allowJs: true, checkJs: true, strict: true, noEmit: true,
     target: ts.ScriptTarget.ES2022, lib: ['lib.es2022.d.ts', 'lib.dom.d.ts', 'lib.dom.iterable.d.ts'],
