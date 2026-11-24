@@ -522,13 +522,13 @@
       "stream": "Directories",
       "title": "Bing Places",
       "status": "Waiting",
-      "detail": "Verified listing remains Pending publish beyond the stated 7–12 days. Official support inquiry sent after checking self-service controls.",
-      "next": "Await written diagnosis/publication or a specific correction request; do not resubmit.",
+      "detail": "Last authenticated Bing Places check on October 17 showed Pending publish with a 7–12-day estimate. On November 23, the public lookup redirected to Bing for Business sign-in, so the current dashboard state and any public QDnCo listing URL could not be verified.",
+      "next": "Owner restores access to the existing Bing Places record; then inspect its status and any support reply. Do not resubmit.",
       "owner": "Bing",
       "url": "https://www.bing.com/forbusiness/singleEntity?setlang=en&bizid=9486ec83-1da7-4e3a-b725-05dafd27d8e9&sc=5",
       "steps": [],
-      "checked": "2026-10-14",
-      "evidence": "October 14 signed-in self-service checks and verified support submission; no publication or recovery claimed.",
+      "checked": "2026-11-23",
+      "evidence": "November 23 public lookup redirected to https://www.bing.com/forbusiness/; October 17 signed-in Pending publish/ETA remains historical evidence only. No resubmission.",
       "url_label": "Existing Bing listing · sign-in required"
     },
     {
@@ -541,8 +541,8 @@
       "owner": "Agent",
       "url": "https://clutch.co/profile/qdnco",
       "steps": [],
-      "checked": "2026-10-12",
-      "evidence": "2026-10-12-growth-recovery: authenticated dashboard observations and saved proof"
+      "checked": "2026-11-23",
+      "evidence": "Public QDnCo profile retrieved November 23 at https://clutch.co/profile/qdnco and showed “Not yet reviewed”; retrieval metadata said crawled last week. Confirms the previously verified publication; no profile change inferred."
     },
     {
       "id": "DIR-03",
@@ -554,8 +554,8 @@
       "owner": "Agent",
       "url": "https://www.goodfirms.co/company/qdnco",
       "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "October 12 listing follow-up: public QDnCo profile, services and website verified."
+      "checked": "2026-11-23",
+      "evidence": "Public QDnCo page retrieved November 23 at https://www.goodfirms.co/company/qdnco; retrieval metadata said crawled last week. Previously verified activation/publication remains; no status change inferred."
     },
     {
       "id": "DIR-04",
@@ -567,8 +567,8 @@
       "owner": "Codex",
       "url": "https://www.goodfirms.co/company/qdnco",
       "steps": [],
-      "checked": "2026-10-13",
-      "evidence": "runs/2026-10-13-growth-recovery/goodfirms-godrej-public.png; public profile shows Portfolios: 4. No duplicate company or paid plan.",
+      "checked": "2026-11-23",
+      "evidence": "November 23 public page retrieval at https://www.goodfirms.co/company/qdnco still exposed four portfolios; retrieval metadata said crawled last week. This confirms the previously recorded portfolio state, not a new profile edit.",
       "url_label": "GoodFirms profile"
     },
     {
@@ -581,8 +581,8 @@
       "owner": "Agent",
       "url": "https://www.designrush.com/agency/profile/qdnco",
       "steps": [],
-      "checked": "2026-10-12",
-      "evidence": "October 12 listing follow-up: public QDnCo profile, services and team verified. Owner restored session. Facebook URL corrected; X and YouTube added and saved October 12. Screenshot: designrush-social-links.png."
+      "checked": "2026-11-23",
+      "evidence": "November 23 public page retrieval at https://www.designrush.com/agency/profile/qdnco showed the QDnCo profile and listed services, team and portfolio sections. This confirms prior publication; no new approval or profile change inferred."
     },
     {
       "id": "DIR-06",
@@ -631,13 +631,13 @@
       "stream": "Directories",
       "title": "Justdial dashboard recovery",
       "status": "Waiting",
-      "detail": "Existing listing access remains unresolved. New recovery request accepted, referencing the earlier closed case; email resolution requested.",
-      "next": "Await canonical public listing URL and free owner editing access; verify both before marking recovered.",
+      "detail": "Existing listing access and canonical public URL remain unresolved. The last accessible support update said an agent was reviewing the recovery request; November 23 public lookup was blocked by robots.txt, so no new listing URL or case outcome was verified.",
+      "next": "Await the existing case response or restored owner access; verify the canonical public listing URL and free editing access before marking recovered.",
       "owner": "Justdial",
       "url": "https://cs.justdial.com/csportal/?source=77&type=user",
       "steps": [],
-      "checked": "2026-10-14",
-      "evidence": "October 14 signed-in self-service checks and verified support submission; no publication or recovery claimed.",
+      "checked": "2026-11-23",
+      "evidence": "November 23 public lookup to https://www.justdial.com/ was blocked by robots.txt; October 16 support update remains the last known case outcome. No follow-up sent.",
       "url_label": "Existing Justdial support portal"
     },
     {
@@ -1009,6 +1009,19 @@
       "evidence": "October 10 service selection, role/count changes and synchronized enquiry dropdown verified locally. Monetary tiers retained; form remains preview-only."
     },
     {
+      "id": "WEB-11",
+      "stream": "Website",
+      "title": "Three-month booking forecast calculator",
+      "status": "Completed",
+      "detail": "Public responsive calculator published with a browser-only planning model, three-month lead, qualified-lead, site-visit and booking estimates, structured data, FAQ, and model JSON/schema.",
+      "next": "Validate planning assumptions against permitted historical performance records before treating projections as benchmarks; refine only when verified data is available.",
+      "owner": "Agent",
+      "url": "https://qdnco.com/tools/real-estate-booking-forecast-calculator.html",
+      "steps": [],
+      "checked": "2026-11-24",
+      "evidence": "PR #1 merged to main commit 5f153cf; guarded production workflow 45324768600 succeeded. Live page/model/engine returned HTTP 200 and exact release-manifest SHA-256 matches. Detailed model limits are in the dated local implementation record."
+    },
+    {
       "id": "SOC-20",
       "stream": "Social content",
       "title": "Approved Adarsh Short published",
@@ -1313,7 +1326,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-11-13T04:55:19+00:00",
-  "reconciliation_note": "November 14 review records 21 sources with partial saved-media reviews. Audiovisual coverage and delivery verification for five LinkedIn posts remain open.",
-  "updated_at": "2026-11-14T04:57:27.625043+00:00"
+  "reconciled_at": "2026-11-23T07:27:09+00:00",
+  "reconciliation_note": "November 24: booking forecast calculator deployed and live; its projections are assumption-led and not performance guarantees. The latest listing reconciliation remains November 23: previously published Clutch, GoodFirms and DesignRush profiles were reconfirmed; Bing publication and Justdial recovery remain unresolved. No pending submission was reclassified as published.",
+  "updated_at": "2026-11-24T04:25:42.128925+00:00"
 }
