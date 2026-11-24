@@ -1306,9 +1306,9 @@
     },
     {
       "name": "G2 / Capterra / Product Hunt",
-      "priority": "Not selected",
-      "role": "Software/product discovery is a poor fit for an agency without a qualifying product.",
-      "state": "No irrelevant listings planned",
+      "priority": "Mixed fit",
+      "role": "G2 and Capterra are software-focused and are not a fit for QDnCo itself. Product Hunt is a candidate for the free booking forecast calculator only.",
+      "state": "Product Hunt: listing assets prepared; prior draft needs authenticated recheck. New calculator submission not verified. G2/Capterra remain unselected.",
       "url": "https://www.g2.com/"
     },
     {
@@ -1326,7 +1326,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-11-23T07:27:09+00:00",
-  "reconciliation_note": "November 24: booking forecast calculator deployed and live; its projections are assumption-led and not performance guarantees. The latest listing reconciliation remains November 23: previously published Clutch, GoodFirms and DesignRush profiles were reconfirmed; Bing publication and Justdial recovery remain unresolved. No pending submission was reclassified as published.",
-  "updated_at": "2026-11-24T04:25:42.128925+00:00"
+  "reconciled_at": "2026-11-24T04:47:19+00:00",
+  "reconciliation_note": "November 24: booking forecast calculator deployed and live; its projections are assumption-led and not performance guarantees. The latest listing reconciliation remains November 23: previously published Clutch, GoodFirms and DesignRush profiles were reconfirmed; Bing publication and Justdial recovery remain unresolved. No pending submission was reclassified as published. Product Hunt scope clarified after the free booking-forecast calculator went live on November 24: it is a candidate tool listing, not an agency software listing. Existing Product Hunt submission state is unverified; the new calculator has not been confirmed submitted or published. Listing visuals are prepared locally; no external account or listing changed.",
+  "updated_at": "2026-11-24T04:47:19.714631+00:00"
 }
