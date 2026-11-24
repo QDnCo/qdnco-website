@@ -1,0 +1,44 @@
+{
+  "modelVersion": "2026-11-24",
+  "currency": "INR",
+  "status": "planning-model-not-a-guarantee",
+  "source": {
+    "description": "QDnCo house planning model, anchored to an owner-reported ₹40,000 premium Bengaluru residential test: 150+ leads at ₹266 CPL and 51% sales-ready, scored by the developer team. The source export and CRM cohort have not been independently reconciled.",
+    "googleAds": "No verified QDnCo Google Ads campaign cohort is available. Google channel adjustments below are explicit planning assumptions, not measured QDnCo results or an industry benchmark.",
+    "qualificationDefinition": "A lead is qualified when location, configuration and stated budget all match; the developer's sales team scores it."
+  },
+  "limits": {
+    "budgetMin": 50000,
+    "budgetMax": 5000000,
+    "qualificationMin": 0.2,
+    "qualificationMax": 0.75,
+    "market": "India planning model; Dubai campaigns are planned separately.",
+    "notModeled": ["location-level search demand", "inventory", "competitor pricing", "creative quality", "seasonality", "sales capacity", "attribution lag", "agency fees", "taxes"]
+  },
+  "months": {
+    "1": { "liveDayShare": 0.5333333333333333, "blendedCplInr": 850, "cplRangeInr": [750, 950], "qualificationRate": 0.45, "qualifiedToVisitRate": 0.156, "visitToBookingRate": 0.07 },
+    "2": { "liveDayShare": 1, "blendedCplInr": 625, "cplRangeInr": [550, 700], "qualificationRate": 0.52, "qualifiedToVisitRate": 0.2, "visitToBookingRate": 0.098 },
+    "3": { "liveDayShare": 1, "blendedCplInr": 450, "cplRangeInr": [350, 550], "qualificationRate": 0.6, "qualifiedToVisitRate": 0.25, "visitToBookingRate": 0.118 }
+  },
+  "channels": {
+    "meta": { "cplMultiplier": 0.85, "qualificationPointAdjustment": -0.05 },
+    "google": { "cplMultiplier": 1.2, "qualificationPointAdjustment": 0.07 }
+  },
+  "ticketBands": {
+    "under-75l": { "label": "Under ₹75 L", "cplMultiplier": 0.8, "visitToBookingMultiplier": 1.15 },
+    "75l-1.5cr": { "label": "₹75 L–1.5 Cr", "cplMultiplier": 1, "visitToBookingMultiplier": 1 },
+    "1.5-3cr": { "label": "₹1.5–3 Cr", "cplMultiplier": 1.25, "visitToBookingMultiplier": 0.85 },
+    "above-3cr": { "label": "Above ₹3 Cr", "cplMultiplier": 1.6, "visitToBookingMultiplier": 0.7 }
+  },
+  "followUpSpeed": {
+    "5min": { "label": "Within 5 min", "siteVisitMultiplier": 1 },
+    "1h": { "label": "Within 1 hour", "siteVisitMultiplier": 0.9 },
+    "sameday": { "label": "Same day", "siteVisitMultiplier": 0.75 },
+    "nextday": { "label": "Next day or later", "siteVisitMultiplier": 0.55 }
+  },
+  "formula": "For each month and channel: spend = monthlyBudget × channelShare × liveDayShare; CPL = baseCPL × channelCPLMultiplier × ticketCPLMultiplier; leads = spend ÷ CPL; qualified = leads × clamp(baseQualification + channelPointAdjustment); visits = qualified × qualifiedToVisitRate × followUpSpeedMultiplier; bookings = visits × visitToBookingRate × ticketVisitToBookingMultiplier.",
+  "referenceVector": {
+    "input": { "budgetInr": 308000, "metaShare": 0.5, "ticketBand": "75l-1.5cr", "followUpSpeed": "5min" },
+    "expectedThreeMonthTotals": { "leads": 1378, "qualifiedLeads": 756, "siteVisits": 168, "bookings": 18.2 }
+  }
+}

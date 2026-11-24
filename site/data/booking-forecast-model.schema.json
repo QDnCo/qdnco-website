@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qdnco.com/data/booking-forecast-model.schema.json",
+  "title": "QDnCo booking forecast model contract",
+  "type": "object",
+  "required": ["modelVersion", "currency", "status", "source", "limits", "months", "channels", "ticketBands", "followUpSpeed", "formula", "referenceVector"],
+  "properties": {
+    "modelVersion": { "type": "string" },
+    "currency": { "const": "INR" },
+    "status": { "const": "planning-model-not-a-guarantee" },
+    "source": {
+      "type": "object",
+      "required": ["description", "googleAds", "qualificationDefinition"],
+      "properties": {
+        "description": { "type": "string" },
+        "googleAds": { "type": "string" },
+        "qualificationDefinition": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "limits": {
+      "type": "object",
+      "required": ["budgetMin", "budgetMax", "qualificationMin", "qualificationMax", "market", "notModeled"],
+      "properties": {
+        "budgetMin": { "type": "integer", "minimum": 1 },
+        "budgetMax": { "type": "integer", "minimum": 1 },
+        "qualificationMin": { "type": "number", "minimum": 0, "maximum": 1 },
+        "qualificationMax": { "type": "number", "minimum": 0, "maximum": 1 },
+        "market": { "type": "string" },
+        "notModeled": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true
+    },
+    "months": {
+      "type": "object",
+      "required": ["1", "2", "3"],
+      "patternProperties": {
+        "^[123]$": {
+          "type": "object",
+          "required": ["liveDayShare", "blendedCplInr", "cplRangeInr", "qualificationRate", "qualifiedToVisitRate", "visitToBookingRate"],
+          "properties": {
+            "liveDayShare": { "type": "number", "minimum": 0, "maximum": 1 },
+            "blendedCplInr": { "type": "number", "exclusiveMinimum": 0 },
+            "cplRangeInr": { "type": "array", "prefixItems": [{ "type": "number", "exclusiveMinimum": 0 }, { "type": "number", "exclusiveMinimum": 0 }], "minItems": 2, "maxItems": 2 },
+            "qualificationRate": { "type": "number", "minimum": 0, "maximum": 1 },
+            "qualifiedToVisitRate": { "type": "number", "minimum": 0, "maximum": 1 },
+            "visitToBookingRate": { "type": "number", "minimum": 0, "maximum": 1 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "channels": {
+      "type": "object",
+      "required": ["meta", "google"],
+      "properties": {
+        "meta": { "$ref": "#/$defs/channel" },
+        "google": { "$ref": "#/$defs/channel" }
+      },
+      "additionalProperties": false
+    },
+    "ticketBands": { "type": "object", "minProperties": 4, "additionalProperties": { "$ref": "#/$defs/ticketBand" } },
+    "followUpSpeed": { "type": "object", "minProperties": 4, "additionalProperties": { "$ref": "#/$defs/followUp" } },
+    "formula": { "type": "string" },
+    "referenceVector": {
+      "type": "object",
+      "required": ["input", "expectedThreeMonthTotals"],
+      "properties": {
+        "input": {
+          "type": "object",
+          "required": ["budgetInr", "metaShare", "ticketBand", "followUpSpeed"],
+          "properties": {
+            "budgetInr": { "type": "number", "minimum": 1 },
+            "metaShare": { "type": "number", "minimum": 0, "maximum": 1 },
+            "ticketBand": { "type": "string" },
+            "followUpSpeed": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "expectedThreeMonthTotals": {
+          "type": "object",
+          "required": ["leads", "qualifiedLeads", "siteVisits", "bookings"],
+          "properties": {
+            "leads": { "type": "integer", "minimum": 0 },
+            "qualifiedLeads": { "type": "integer", "minimum": 0 },
+            "siteVisits": { "type": "integer", "minimum": 0 },
+            "bookings": { "type": "number", "minimum": 0 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "channel": {
+      "type": "object",
+      "required": ["cplMultiplier", "qualificationPointAdjustment"],
+      "properties": {
+        "cplMultiplier": { "type": "number", "exclusiveMinimum": 0 },
+        "qualificationPointAdjustment": { "type": "number", "minimum": -1, "maximum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "ticketBand": {
+      "type": "object",
+      "required": ["label", "cplMultiplier", "visitToBookingMultiplier"],
+      "properties": {
+        "label": { "type": "string" },
+        "cplMultiplier": { "type": "number", "exclusiveMinimum": 0 },
+        "visitToBookingMultiplier": { "type": "number", "exclusiveMinimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "followUp": {
+      "type": "object",
+      "required": ["label", "siteVisitMultiplier"],
+      "properties": {
+        "label": { "type": "string" },
+        "siteVisitMultiplier": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
