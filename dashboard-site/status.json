@@ -1013,13 +1013,13 @@
       "stream": "Website",
       "title": "Three-month booking forecast calculator",
       "status": "Completed",
-      "detail": "Public responsive calculator published with a browser-only planning model, three-month lead, qualified-lead, site-visit and booking estimates, structured data, FAQ, and model JSON/schema.",
+      "detail": "Public responsive calculator published with a browser-only planning model, three-month lead, qualified-lead, site-visit and booking estimates, structured data, FAQ, and model JSON/schema. A dedicated discovery card now links to it from the main homepage’s “Free tools for your sales team” section.",
       "next": "Validate planning assumptions against permitted historical performance records before treating projections as benchmarks; refine only when verified data is available.",
       "owner": "Agent",
       "url": "https://qdnco.com/tools/real-estate-booking-forecast-calculator.html",
       "steps": [],
       "checked": "2026-11-24",
-      "evidence": "PR #1 merged to main commit 5f153cf; guarded production workflow 45324768600 succeeded. Live page/model/engine returned HTTP 200 and exact release-manifest SHA-256 matches. Detailed model limits are in the dated local implementation record."
+      "evidence": "PR #1 merged to main commit 5f153cf; guarded production workflow 45324768600 succeeded. Live page/model/engine returned HTTP 200 and exact release-manifest SHA-256 matches. Homepage card addition: PR #4 merged as b7f5e428365f0066afc31c9fcc1b725fc12b6d21; guarded production workflow 45449699887 succeeded. Live homepage and calculator returned HTTP 200, exact source hashes matched, and live HTML contained exactly one card link to the calculator. Detailed evidence: runs/2026-11-24-growth-execution/STATUS.md."
     },
     {
       "id": "SOC-20",
@@ -1326,7 +1326,7 @@
       "url": "https://www.naredco.in/"
     }
   ],
-  "reconciled_at": "2026-11-24T04:47:19+00:00",
-  "reconciliation_note": "November 24: booking forecast calculator deployed and live; its projections are assumption-led and not performance guarantees. The latest listing reconciliation remains November 23: previously published Clutch, GoodFirms and DesignRush profiles were reconfirmed; Bing publication and Justdial recovery remain unresolved. No pending submission was reclassified as published. Product Hunt scope clarified after the free booking-forecast calculator went live on November 24: it is a candidate tool listing, not an agency software listing. Existing Product Hunt submission state is unverified; the new calculator has not been confirmed submitted or published. Listing visuals are prepared locally; no external account or listing changed.",
-  "updated_at": "2026-11-24T04:47:19.714631+00:00"
+  "reconciled_at": "2026-11-25T05:03:31+00:00",
+  "reconciliation_note": "November 24: booking forecast calculator deployed and live; its projections are assumption-led and not performance guarantees. The latest listing reconciliation remains November 23: previously published Clutch, GoodFirms and DesignRush profiles were reconfirmed; Bing publication and Justdial recovery remain unresolved. No pending submission was reclassified as published. Product Hunt scope clarified after the free booking-forecast calculator went live on November 24: it is a candidate tool listing, not an agency software listing. Existing Product Hunt submission state is unverified; the new calculator has not been confirmed submitted or published. Listing visuals are prepared locally; no external account or listing changed. Homepage discovery updated November 24: the live homepage now has one dedicated card linking to the published booking forecast calculator; PR #4 and guarded deployment are verified in the dated execution record. No other task status changed, and the Product Hunt listing remains unsubmitted/unverified.",
+  "updated_at": "2026-11-25T05:04:47.457773+00:00"
 }
