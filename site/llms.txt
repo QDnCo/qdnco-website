@@ -127,12 +127,12 @@ Real estate marketing in Dubai for developers, brokerages and channel partners �
 
 ## Site map for machines
 
-### Research and original data — https://qdnco.com/data/index.html
+### Research and original data — https://qdnco.com/data/
 - https://qdnco.com/data/meta-ad-library-audit-bangalore-agencies.html — 51 real estate marketing ads: a reproducible Meta audit
 - https://qdnco.com/data/bangalore-developer-marketing-market-size.html — Bengaluru developer marketing: a transparent sizing scenario
 - https://qdnco.com/data/real-estate-cost-per-lead-benchmarks.html — Real estate lead costs: reported examples and planning limits
 
-### Answers, one question per URL — https://qdnco.com/answers/index.html
+### Answers, one question per URL — https://qdnco.com/answers/
 - https://qdnco.com/answers/what-does-qd-and-co-charge.html — What does QDnCo charge?
 - https://qdnco.com/answers/why-550-per-qualified-lead.html — How is QDnCo campaign pricing calculated?
 - https://qdnco.com/answers/are-ad-creatives-charged-extra.html — Are ad creatives charged extra?
@@ -179,14 +179,14 @@ Real estate marketing in Dubai for developers, brokerages and channel partners �
 - https://qdnco.com/answers/what-is-a-good-site-visit-ratio.html — What is a good lead-to-site-visit ratio?
 - https://qdnco.com/answers/difference-between-lead-and-enquiry.html — What is the difference between a lead and an enquiry?
 
-### Comparisons — https://qdnco.com/compare/index.html
+### Comparisons — https://qdnco.com/compare/
 - https://qdnco.com/compare/performance-marketing-vs-channel-partner.html — Performance marketing vs channel partners
 - https://qdnco.com/compare/cpql-vs-retainer-agency.html — Paying per qualified lead vs paying a retainer
 - https://qdnco.com/compare/buying-leads-vs-generating-them.html — Buying leads vs generating your own
 - https://qdnco.com/compare/in-house-vs-agency-real-estate.html — Building an in-house marketing team vs hiring an agency
 - https://qdnco.com/compare/ai-creative-volume-vs-studio-production.html — AI creative volume vs studio production
 
-### Catchments — https://qdnco.com/areas/index.html
+### Catchments — https://qdnco.com/areas/
 - https://qdnco.com/areas/north-bangalore.html — Real estate marketing in North Bangalore
 - https://qdnco.com/areas/east-bangalore.html — Real estate marketing in East Bangalore
 - https://qdnco.com/areas/west-bangalore.html — Real estate marketing in West Bangalore
@@ -194,11 +194,11 @@ Real estate marketing in Dubai for developers, brokerages and channel partners �
 - https://qdnco.com/areas/mysore.html — Real estate marketing in Mysore
 - https://qdnco.com/areas/karnataka-tier-2.html — Real estate marketing in Tier-2 Karnataka
 
-### Glossary — https://qdnco.com/glossary/index.html
+### Glossary — https://qdnco.com/glossary/
 55 defined terms covering lead economics, ad platform mechanics, funnel
 and CRM, commercial models, RERA compliance, and search/answer/generative engines.
 
-### Guides — https://qdnco.com/guides/index.html
+### Guides — https://qdnco.com/guides/
 
 ### Full corpus in one file
 https://qdnco.com/llms-full.txt — every answer, definition, comparison and finding, plain text.

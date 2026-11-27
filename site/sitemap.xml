@@ -7,13 +7,13 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://qdnco.com/pricing/index.html</loc>
+    <loc>https://qdnco.com/pricing/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://qdnco.com/work/index.html</loc>
+    <loc>https://qdnco.com/work/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -127,7 +127,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://qdnco.com/guides/index.html</loc>
+    <loc>https://qdnco.com/guides/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -199,7 +199,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://qdnco.com/answers/index.html</loc>
+    <loc>https://qdnco.com/answers/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -475,7 +475,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://qdnco.com/data/index.html</loc>
+    <loc>https://qdnco.com/data/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -499,7 +499,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://qdnco.com/compare/index.html</loc>
+    <loc>https://qdnco.com/compare/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -535,7 +535,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://qdnco.com/areas/index.html</loc>
+    <loc>https://qdnco.com/areas/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -577,7 +577,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://qdnco.com/glossary/index.html</loc>
+    <loc>https://qdnco.com/glossary/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
