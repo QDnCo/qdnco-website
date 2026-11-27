@@ -5,8 +5,13 @@
 # reason, and HSTS tells browsers to stop asking.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTP_HOST} ^www\.qdnco\.com$ [NC]
-  RewriteRule ^(.*)$ https://qdnco.com/$1 [R=301,L]
+  # /x/index.html → /x/ so each page has one URL (the canonical and the sitemap use /x/).
+  # THE_REQUEST matches only what the client asked for, not Apache's internal
+  # DirectoryIndex lookup, so this cannot loop.
+  RewriteCond %{THE_REQUEST} \s/+((?:[^\s?]*/)?)index\.html[\s?]
+  RewriteRule ^(.*/)?index\.html$ https://qdnco.com/%1 [R=301,L]
+  # One hop for every variant: http://, www. or both go straight to https://qdnco.com.
+  RewriteCond %{HTTP_HOST} ^www\. [NC,OR]
   RewriteCond %{HTTPS} !=on
   RewriteRule ^(.*)$ https://qdnco.com/$1 [R=301,L]
 </IfModule>
@@ -52,18 +57,18 @@ AddType application/manifest+json .webmanifest
 # ── Legacy URLs from the pre-2026 site (Google still lists some as sitelinks) → 301 to the live equivalent ──
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteRule ^inner_pages/blog\.html$ /guides/index.html [R=301,L]
-  RewriteRule ^inner_pages/(blog|blogs|insights|articles|resources)[^/]*$ /guides/index.html [R=301,L]
-  RewriteRule ^(blog|blogs|articles)(/.*)?$ /guides/index.html [R=301,L]
+  RewriteRule ^inner_pages/blog\.html$ /guides/ [R=301,L]
+  RewriteRule ^inner_pages/(blog|blogs|insights|articles|resources)[^/]*$ /guides/ [R=301,L]
+  RewriteRule ^(blog|blogs|articles)(/.*)?$ /guides/ [R=301,L]
   # /insights/ and /resources/ are live sections again; only old URLs that no
   # longer exist as a file or folder still go to the guides hub.
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(insights|resources)(/.*)?$ /guides/index.html [R=301,L]
+  RewriteRule ^(insights|resources)(/.*)?$ /guides/ [R=301,L]
   RewriteRule ^inner_pages/(about|about-us|team|who-we-are)[^/]*$ /about/ [R=301,L]
   RewriteRule ^(about-us|team)(\.html)?/?$ /about/ [R=301,L]
-  RewriteRule ^inner_pages/(portfolio|work|projects|case-stud)[^/]*$ /work/index.html [R=301,L]
-  RewriteRule ^inner_pages/(pricing|plans|packages)[^/]*$ /pricing/index.html [R=301,L]
+  RewriteRule ^inner_pages/(portfolio|work|projects|case-stud)[^/]*$ /work/ [R=301,L]
+  RewriteRule ^inner_pages/(pricing|plans|packages)[^/]*$ /pricing/ [R=301,L]
   RewriteRule ^inner_pages/(privacy)[^/]*$ /legal/privacy.html [R=301,L]
   RewriteRule ^inner_pages/(terms)[^/]*$ /legal/terms.html [R=301,L]
   RewriteRule ^inner_pages/(contact|contact-us|get-in-touch)[^/]*$ https://qdnco.com/#contact [R=301,NE,L]
