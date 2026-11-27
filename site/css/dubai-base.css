@@ -1,0 +1,2237 @@
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* Base is a deep blue-charcoal rather than pure black — it holds a gradient,
+     gives the white type something to sit against, and keeps the coral and
+     magenta accents from looking like they are floating in a void. */
+  html, body, #root { background: #0A0D12; }
+  body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #0A0D12;
+    background-image:
+      radial-gradient(120% 55% at 50% -8%, rgba(72,104,140,0.20) 0%, transparent 62%),
+      radial-gradient(90% 50% at 8% 105%, rgba(182,0,168,0.10) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+
+  /* Panel fill used anywhere a surface has to be opaque enough to hide a seam. */
+  /* ── Palette ──
+     One set of semantic tokens, flipped wholesale for white mode. The RGB
+     triplets are variables of their own so the ~75 rgba() calls scattered
+     through the page keep their individual alphas and only change hue — a
+     per-colour rewrite would have meant auditing every one of them.
+
+     --on-accent is the exception that proves the rule: it paints the dot inside
+     the white "Live" pill and the text on a filled chip, so it must stay dark in
+     BOTH modes. It is the one place a hardcoded #0A0D12 was correct. */
+  :root {
+    --page: #0A0D12;
+    --panel: #0E1319;
+    --panel-2: #0B1015;
+    --panel-edge: rgba(var(--ink-rgb),0.30);
+    --ink: #F2F6F8;
+    --ink-body: #D7E2EA;
+    --ink-rgb: 215,226,234;
+    --fill-rgb: 255,255,255;
+    /* The page colour as a triplet, so a section can hold it at partial alpha
+       over the shared wallpaper instead of covering it. --veil is for sections
+       carrying dense reading matter; --veil-soft is for the ones that are mostly
+       display type and can let more of the video through. */
+    --page-rgb: 10,13,18;
+    --accent: #A87BFF;
+    /* Section veils sit over the fixed wallpaper video. Kept light enough that
+       the animation reads through; cards carry their own solid surfaces, so
+       text never depends on the veil alone for contrast. */
+    --veil: rgba(10,13,18,0.5);
+    --veil-soft: rgba(10,13,18,0.38);
+    --on-accent: #0A0D12;
+    --on-steel: #0A0D12;
+    --on-accent-fill: #0A0D12;
+    --accent-rgb: 168,123,255;
+    --tint-primary: #7DF0B4;
+    --tint-secondary: #E85BD0;
+    --tint-historical: #8FB8FF;
+    --reveal-dim: 0.2;
+    --mark-filter: none;
+  }
+  html[data-theme="light"] {
+    --page: #FFFFFF;
+    --panel: #F7F7F5;
+    --panel-2: #FAFAF8;
+    --panel-edge: rgba(10,13,18,0.16);
+    --ink: #0A0D12;
+    --ink-body: #1B2430;
+    --ink-rgb: 10,13,18;
+    --fill-rgb: 10,13,18;
+    /* Light mode veils harder: the wallpaper is a saturated violet and black
+       type needs a genuinely pale ground under it. */
+    --page-rgb: 255,255,255;
+    --accent: #5E0ED7;
+    --veil: rgba(255,255,255,0.58);
+    --veil-soft: rgba(255,255,255,0.46);
+    --on-accent: #0A0D12;
+    --on-steel: #FFFFFF;
+    --on-accent-fill: #FFFFFF;
+    --accent-rgb: 94,14,215;
+    /* Mint and pale blue have no contrast on white; these are the saturated
+       equivalents the light variant of the research tree already used. */
+    --tint-primary: #0E8F5B;
+    --tint-secondary: #A8129C;
+    --tint-historical: #2A5FAE;
+    --reveal-dim: 0.34;
+    --mark-filter: invert(1);
+  }
+
+  /* Header CTA. The one action the page exists for, so it is the only filled
+     accent in the bar: violet in both themes, text from --on-accent-fill so it
+     holds contrast on each (dark on light violet, white on deep violet). A soft
+     ring radiates every few seconds to catch the eye without flashing; it stops
+     under reduced motion. When the contact section is on screen the inline
+     style swaps it for an outline so it does not compete with the active item. */
+  .nav-cta {
+    position: relative;
+    overflow: hidden; /* clips the sheen to the pill; its own box-shadow ring is not clipped */
+    isolation: isolate;
+    background: var(--accent);
+    color: var(--on-accent-fill);
+    box-shadow: 0 6px 18px -8px rgba(var(--accent-rgb),0.9);
+    animation: nav-cta-ring 3.2s ease-out infinite;
+    transition: transform 200ms ease, filter 200ms ease, background-color 260ms ease, color 260ms ease;
+  }
+  .nav-cta:hover { transform: translateY(-1px); filter: brightness(1.08); }
+  .nav-cta:active { transform: translateY(0); filter: brightness(0.96); }
+  .nav-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  /* Sheen: one diagonal highlight crossing the pill once per cycle, after the
+     ring has fired, so the two never compete. Only transform animates, which
+     stays on the compositor. */
+  .nav-cta::after {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.55) 48%, rgba(255,255,255,0.15) 56%, transparent 70%);
+    transform: translateX(-130%);
+    animation: nav-cta-shine 3.2s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1; /* above the pill fill (isolation: isolate), below the text */
+  }
+  .nav-cta.is-quiet::after { display: none; }
+  @keyframes nav-cta-shine {
+    0%, 52% { transform: translateX(-130%); }
+    82%, 100% { transform: translateX(130%); }
+  }
+  .nav-cta .nav-cta-arrow { transition: transform 200ms ease; }
+  .nav-cta:hover .nav-cta-arrow, .nav-cta:focus-visible .nav-cta-arrow { transform: translate(2px,-2px); }
+  @keyframes nav-cta-ring {
+    0%   { box-shadow: 0 6px 18px -8px rgba(var(--accent-rgb),0.9), 0 0 0 0 rgba(var(--accent-rgb),0.5); }
+    60%  { box-shadow: 0 6px 18px -8px rgba(var(--accent-rgb),0.9), 0 0 0 9px rgba(var(--accent-rgb),0); }
+    100% { box-shadow: 0 6px 18px -8px rgba(var(--accent-rgb),0.9), 0 0 0 0 rgba(var(--accent-rgb),0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav-cta, .nav-cta::after { animation: none; }
+    .nav-cta::after { display: none; }
+    .nav-cta, .nav-cta .nav-cta-arrow { transition: none; }
+  }
+
+  /* Section headings — Projects, Services, About, the roadmap, the FAQ.
+   *
+   * These were filled with --heading-ramp, a vertical gradient clipped to the
+   * text. It cost contrast at both ends and gained nothing: on the dark theme
+   * the ramp ran #646973 to #BBCCD7, so a heading never reached white and the
+   * top of every letter sat at mid grey against a near-black page; on the light
+   * theme it fell away to #4A5563 by the baseline. The effect read as a heading
+   * that had been faded out rather than one that had been styled, which is the
+   * opposite of what the largest type on the page should do.
+   *
+   * Solid --ink instead. It is the page's own foreground, so it is maximally
+   * separated from the ground it sits on in either theme, and one value keeps
+   * both themes correct without a second ramp to maintain. */
+  .hero-heading {
+    color: var(--ink);
+    /* Belt and braces: the ramp set -webkit-text-fill-color, which overrides
+       `color` wherever it survives in a cached stylesheet or a vendor default. */
+    -webkit-text-fill-color: currentColor;
+    background: none;
+  }
+
+  /* The proof line reads over a moving video, so legibility cannot rely on the
+     colour alone. The halo is the page's own colour, which means it darkens the
+     surround on the dark theme and lightens it on white. */
+  .hero-proof {
+    text-shadow: 0 1px 10px rgba(var(--page-rgb),0.85),
+                 0 0 26px rgba(var(--page-rgb),0.6);
+  }
+
+  /* The one word the section is named for, marked rather than merely coloured
+     so it holds on the video ground in both themes. */
+  .roadmap-mark {
+    color: var(--accent);
+    font-weight: 700;
+    background: rgba(182,0,168,0.14);
+    border-bottom: 2px solid rgba(182,0,168,0.75);
+    border-radius: 5px;
+    padding: 0.06em 0.36em;
+  }
+
+  /* ── Roadmap summary card ──
+     One row per phase: number, name, what it settles, how long it takes, and
+     whether money is in market yet. This is what a reader gets without opening
+     anything, so it has to answer the timing question on its own. */
+  .phase-sum {
+    margin-top: clamp(1.4rem, 3vw, 2.2rem);
+    border: 1px solid rgba(var(--ink-rgb),0.16);
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(var(--fill-rgb),0.03);
+  }
+  .phase-sum-row {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: clamp(0.7rem, 1.6vw, 1.4rem);
+    padding: clamp(0.8rem, 1.7vh, 1.15rem) clamp(0.9rem, 2vw, 1.5rem);
+    border-top: 1px solid rgba(var(--ink-rgb),0.11);
+  }
+  .phase-sum-row:first-child { border-top: 0; }
+  .phase-sum-row.is-live { background: rgba(182,0,168,0.055); }
+  .phase-sum-id {
+    font-weight: 900; font-variant-numeric: tabular-nums;
+    color: rgba(var(--ink-rgb),0.62);
+    font-size: clamp(1rem, 1.5vw, 1.4rem); line-height: 1;
+  }
+  .phase-sum-main { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+  .phase-sum-title {
+    color: var(--ink); font-weight: 600;
+    font-size: clamp(0.92rem, 1.25vw, 1.12rem); line-height: 1.25;
+  }
+  .phase-sum-lead {
+    color: rgba(var(--ink-rgb),0.66); font-weight: 300;
+    font-size: var(--fs-text); line-height: 1.4;
+  }
+  .phase-sum-dur {
+    white-space: nowrap; text-align: right;
+    color: var(--accent); font-weight: 600;
+    font-size: var(--fs-caption);
+  }
+  .phase-sum-gate {
+    white-space: nowrap;
+    border-radius: 999px; padding: 0.26rem 0.66rem;
+    border: 1px solid rgba(var(--ink-rgb),0.2);
+    color: rgba(var(--ink-rgb),0.66);
+    font-size: var(--fs-micro);
+    text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  .phase-sum-row.is-live .phase-sum-gate {
+    border-color: rgba(182,0,168,0.5); color: var(--accent);
+  }
+  /* Below the breakpoint the four columns crush; the timing moves under the
+     title rather than being truncated, since it is half the point of the row. */
+  @media (max-width: 719px) {
+    .phase-sum-row { grid-template-columns: auto minmax(0, 1fr); }
+    .phase-sum-dur { grid-column: 2; text-align: left; }
+    .phase-sum-gate { display: none; }
+  }
+
+  .phase-toggle {
+    appearance: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    margin-top: clamp(1rem, 2.2vw, 1.5rem);
+    padding: 0.8rem 1.5rem; min-height: 50px;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid rgba(var(--ink-rgb),0.34);
+    font-family: 'Barlow', sans-serif; font-weight: 600;
+    font-size: clamp(0.88rem, 1.08vw, 1rem);
+    transition: border-color 200ms ease, background 200ms ease;
+  }
+  .phase-toggle:hover {
+    border-color: var(--accent);
+    background: rgba(182,0,168,0.08);
+  }
+  .phase-toggle-caret { transition: transform 240ms ease; font-size: 0.9em; }
+  .phase-toggle-caret[data-open="1"] { transform: rotate(180deg); }
+
+  /* Marquee ends.
+     Overlay gradients were painting a colour ON TOP of a surface that already
+     had one, so the ends composited to a different tone than the section and
+     read as a band with visible seams — and the hero bridge's pair were
+     hardcoded #0A0D12, which on the white theme was a black smear at each end.
+     A mask fades the CONTENT instead, adding no colour at all, so whatever the
+     section's background is shows through untouched. */
+  .edge-fade {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+  }
+
+  /* The team cards' entrance is written as an inline transform from scroll
+     progress, so it cannot be disabled by a media query alone — the transform
+     is neutralised here and only the fade remains. */
+  @media (prefers-reduced-motion: reduce) {
+    .intro-member { transform: none !important; }
+  }
+
+  /* Scope split on the pricing page. */
+  .scope-split {
+    display: grid; gap: clamp(0.9rem, 2vw, 1.4rem);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    margin-top: clamp(1.6rem, 3.4vw, 2.6rem);
+  }
+  .scope-col {
+    border-radius: 20px;
+    padding: clamp(1.1rem, 2.4vw, 1.7rem);
+    border: 1px solid rgba(var(--ink-rgb),0.16);
+    background: rgba(var(--fill-rgb),0.035);
+  }
+  .scope-in  { border-color: rgba(var(--ink-rgb),0.22); }
+  .scope-out { border-color: rgba(182,0,168,0.4); background: rgba(182,0,168,0.055); }
+  .scope-h {
+    font-family: 'Barlow', sans-serif; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.14em; font-size: var(--fs-micro);
+    color: var(--ink); margin-bottom: 0.9rem;
+  }
+  .scope-out .scope-h { color: var(--accent); }
+  .scope-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+  .scope-col li {
+    position: relative; padding-left: 1.15rem;
+    color: rgba(var(--ink-rgb),0.86); line-height: 1.5;
+    font-size: var(--fs-text);
+  }
+  .scope-in li::before {
+    content: '+'; position: absolute; left: 0; top: -0.06em;
+    color: var(--ink); font-weight: 700; opacity: 0.55;
+  }
+  .scope-out li::before {
+    content: '•'; position: absolute; left: 0.15rem; top: -0.02em;
+    color: var(--accent); font-weight: 700;
+  }
+  .scope-note {
+    margin-top: 0.95rem; padding-top: 0.8rem;
+    border-top: 1px solid rgba(182,0,168,0.28);
+    color: rgba(var(--ink-rgb),0.76); line-height: 1.55;
+    font-size: var(--fs-text);
+  }
+
+  /* The scope note under the reel. Sits as a quiet plate rather than more
+     centred body copy, so it reads as terms rather than as another claim. */
+  .reel-scope {
+    position: relative; z-index: 10;
+    max-width: min(760px, 92%);
+    margin: clamp(1.1rem, 2.4vw, 1.8rem) auto 0;
+    padding: clamp(0.9rem, 2vw, 1.3rem) clamp(1rem, 2.2vw, 1.5rem);
+    border-radius: 16px;
+    border: 1px solid rgba(var(--ink-rgb),0.16);
+    background: rgba(var(--fill-rgb),0.04);
+    display: grid; gap: 0.6rem;
+  }
+  .reel-scope p {
+    margin: 0; text-align: left;
+    color: rgba(var(--ink-rgb),0.76); line-height: 1.55;
+    font-size: var(--fs-text);
+  }
+  .reel-scope strong { color: var(--ink); font-weight: 600; }
+
+  /* Handover sparkle. Each star runs the same keyframe on its own delay, so
+     they twinkle out of step without needing a value per star. */
+  @keyframes sparkle-twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.4); }
+    42%      { opacity: 0.95; transform: scale(1); }
+    70%      { opacity: 0.25; transform: scale(0.72); }
+  }
+  .site-sparkle > g {
+    animation: sparkle-twinkle 2.6s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .site-sparkle > g { animation: none; opacity: 0.5; }
+  }
+
+  /* ── Theme switch ──
+     A two-halved pill: parallel top and bottom edges, semicircular ends, moon
+     on the left half and sun on the right, with a knob that travels between
+     them.
+
+     The easing is the point. cubic-bezier(0.32, 0.72, 0, 1) is the curve Apple
+     uses across its interface transitions — it leaves fast and arrives slowly,
+     which is what makes a slide read as a physical object settling rather than
+     as a value being tweened. The knob's width also swells slightly in flight
+     and returns, the small squash-and-settle that sells the weight. */
+  .theme-switch {
+    --sw-w: 68px; --sw-h: 34px; --sw-pad: 3px;
+    position: relative; flex-shrink: 0;
+    width: var(--sw-w); height: var(--sw-h);
+    padding: 0; border-radius: 999px; cursor: pointer;
+    appearance: none;
+    border: 1px solid rgba(var(--ink-rgb), 0.22);
+    background: rgba(var(--ink-rgb), 0.10);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.28);
+    transition: background 420ms cubic-bezier(0.32,0.72,0,1),
+                border-color 420ms cubic-bezier(0.32,0.72,0,1);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .theme-switch.is-compact { --sw-w: 58px; --sw-h: 30px; }
+  .theme-switch:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 3px;
+  }
+
+  .theme-switch-ico {
+    position: absolute; top: 0; bottom: 0;
+    width: calc(var(--sw-w) / 2);
+    display: grid; place-items: center;
+    pointer-events: none;
+    z-index: 2;
+    transition: color 420ms cubic-bezier(0.32,0.72,0,1),
+                opacity 420ms cubic-bezier(0.32,0.72,0,1);
+  }
+  .theme-switch-ico svg {
+    width: calc(var(--sw-h) * 0.47); height: calc(var(--sw-h) * 0.47);
+    display: block;
+  }
+  .theme-switch-moon { left: 0; }
+  .theme-switch-sun  { right: 0; }
+
+  /* The icon under the knob goes dark against the pale knob; the one on the
+     open half stays light but recedes, so only one reads as selected. */
+  .theme-switch[data-on="dark"]  .theme-switch-moon { color: #0A0D12; opacity: 1; }
+  .theme-switch[data-on="dark"]  .theme-switch-sun  { color: rgb(var(--ink-rgb)); opacity: 0.42; }
+  .theme-switch[data-on="light"] .theme-switch-sun  { color: #FFFFFF; opacity: 1; }
+  .theme-switch[data-on="light"] .theme-switch-moon { color: rgb(var(--ink-rgb)); opacity: 0.42; }
+
+  .theme-switch-knob {
+    position: absolute; top: var(--sw-pad); left: var(--sw-pad);
+    height: calc(var(--sw-h) - var(--sw-pad) * 2 - 2px);
+    width: calc(var(--sw-w) / 2 - var(--sw-pad));
+    border-radius: 999px;
+    z-index: 1;
+    background: linear-gradient(180deg, #FFFFFF 0%, #ECEEF1 100%);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.34), 0 0 0 0.5px rgba(0,0,0,0.06);
+    transition: transform 460ms cubic-bezier(0.32,0.72,0,1),
+                width   460ms cubic-bezier(0.32,0.72,0,1),
+                background 420ms cubic-bezier(0.32,0.72,0,1);
+    will-change: transform;
+  }
+  .theme-switch[data-on="light"] .theme-switch-knob {
+    transform: translateX(calc(var(--sw-w) / 2));
+    background: linear-gradient(180deg, #2B2F36 0%, #14171C 100%);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4), 0 0 0 0.5px rgba(255,255,255,0.08);
+  }
+  /* Squash on press — the knob stretches toward where it is going. */
+  .theme-switch:active .theme-switch-knob { width: calc(var(--sw-w) / 2 + 5px); }
+  .theme-switch[data-on="light"]:active .theme-switch-knob {
+    transform: translateX(calc(var(--sw-w) / 2 - 5px));
+  }
+
+  html[data-theme="light"] .theme-switch {
+    background: rgba(10,13,18,0.10);
+    border-color: rgba(10,13,18,0.20);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.14);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .theme-switch, .theme-switch-knob, .theme-switch-ico { transition-duration: 1ms; }
+  }
+
+  /* ── Closing section: form beside the sign-off ── */
+  .closing-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+    margin-top: clamp(1.5rem, 4vh, 3rem);
+  }
+  .closing-right { min-width: 0; display: flex; flex-direction: column; align-items: flex-end; }
+  /* Everything in this column hangs off the heading's own width, so the rail
+     and the subtitle stay inside it instead of running the full column. */
+  .closing-head { width: 100%; }
+  .closing-title { display: block; }
+  .closing-note {
+    max-width: min(100%, 30ch);
+    margin-top: clamp(0.9rem, 2vh, 1.4rem);
+    text-align: right;
+    color: rgba(var(--ink-rgb),0.78);
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, sans-serif; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    /* A full sentence, not a label — it closes the page, so it is set at a
+       reading size even though it keeps the uppercase treatment. */
+    font-size: var(--fs-text); line-height: 1.6;
+  }
+  .closing-rail {
+    display: flex; flex-direction: column; align-items: flex-end;
+    gap: 0.55rem; margin-top: clamp(1.1rem, 2.4vh, 1.7rem);
+  }
+  .closing-rail-row {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: flex-end;
+  }
+  @media (max-width: 1023px) {
+    .closing-right { align-items: flex-start; }
+    .closing-note { text-align: left; }
+    .closing-rail { align-items: flex-start; }
+    .closing-rail-row { justify-content: flex-start; }
+  }
+  /* Below this the two columns each get too narrow to hold their own content:
+     the form's fields stop fitting a phone number on one line and the display
+     serif drops to three words a line. Stacked, with the form first, because
+     the form is the thing this section exists for. */
+  @media (max-width: 1023px) {
+    .closing-grid { grid-template-columns: 1fr; }
+  }
+
+  .lead-embed {
+    border-radius: 24px;
+    padding: clamp(1.25rem, 2.6vw, 1.9rem);
+    background: rgba(var(--page-rgb), 0.72);
+    backdrop-filter: blur(24px) saturate(1.2);
+    -webkit-backdrop-filter: blur(24px) saturate(1.2);
+    border: 1px solid rgba(var(--ink-rgb), 0.16);
+    box-shadow: 0 30px 70px -34px rgba(0,0,0,0.6),
+                inset 0 1px 1px rgba(255,255,255,0.08);
+  }
+  /* In the page the dialog's entrance would fire on every re-render, and the
+     panel's own max-height belongs to a dialog, not to a column. */
+  .lead-embed .lead-title { font-size: clamp(26px, 2.6vw, 34px); }
+
+  /* ── Sector break ──
+     A tall band gives the scroll room for the approach; without it the whole
+     movement would resolve in a few pixels. transform-origin is the band's own
+     centre, so the title grows out of the middle of the page rather than out of
+     a corner. */
+  /* Sized to the title alone. It was tall enough to hold a caption strip that
+     no longer exists, which left the next card marooned below a screen of gap. */
+  .group-break {
+    position: relative;
+    min-height: clamp(110px, 14vh, 180px);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-end;
+    margin: clamp(0.35rem, 1.2vh, 0.9rem) 0 clamp(0.85rem, 2.2vh, 1.4rem);
+    padding-bottom: 0.15rem;
+  }
+  .group-break-stage {
+    transform-origin: 50% 50%;
+    will-change: transform, opacity, filter;
+    text-align: center;
+  }
+  .group-break-label {
+    display: inline-block;
+    font-family: 'Kanit', sans-serif; font-weight: 900; text-transform: uppercase;
+    color: var(--ink);
+    font-size: var(--fs-display);
+    line-height: 0.94; letter-spacing: -0.02em;
+    text-shadow: 0 2px 30px rgba(var(--page-rgb), 0.7);
+    border-bottom: 2px solid rgba(var(--ink-rgb), 0.55);
+    padding-bottom: 0.18em;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .group-break { min-height: 0; }
+    .group-break-stage { transform: none !important; opacity: 1 !important; filter: none !important; }
+  }
+
+  /* V3 liquid glass */
+  .liquid-glass {
+    background: rgba(var(--fill-rgb),0.01); background-blend-mode: luminosity;
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    border: none; box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
+    position: relative; overflow: hidden;
+  }
+  /* The plate the bar takes once the page is scrolled. Tinted from --page-rgb
+     so it reads as the page's own surface in both themes, and blurred hard
+     enough that whatever passes underneath is suggested rather than legible. */
+  .nav-plated {
+    background: rgba(var(--page-rgb), 0.86) !important;
+    backdrop-filter: blur(26px) saturate(1.35) !important;
+    -webkit-backdrop-filter: blur(26px) saturate(1.35) !important;
+    box-shadow: 0 10px 30px -18px rgba(0,0,0,0.6),
+                inset 0 1px 1px rgba(255,255,255,0.12) !important;
+    transition: background 260ms ease, backdrop-filter 260ms ease;
+  }
+
+  /* Retired. This was a blurred, page-coloured band the full height of the
+     chrome plus 26px, laid over the top of the viewport to cover the bare gaps
+     either side of the floating desktop pill. What it actually did was fog the
+     first 140px of every section: the intro card's "Build buyer demand, faster",
+     the Services headline and the word "roadmap" all sat under it and read as
+     smeared. The bar carries its own blur and its own plate, which is the
+     correct place for it — blur the chrome, never the page behind it.
+
+     Kept as a no-op rule rather than deleted so the element in the markup has a
+     definition and cannot inherit anything unexpected. */
+  .nav-scrim { display: none; }
+
+  .liquid-glass::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.4px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%,
+      rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+  }
+  .liquid-glass-strong {
+    background: rgba(var(--fill-rgb),0.01); background-blend-mode: luminosity;
+    backdrop-filter: blur(50px); -webkit-backdrop-filter: blur(50px);
+    border: none; box-shadow: 4px 4px 4px rgba(0,0,0,0.05), inset 0 1px 1px rgba(255,255,255,0.15);
+    position: relative; overflow: hidden;
+  }
+  .liquid-glass-strong::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.4px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 20%,
+      rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.2) 80%, rgba(255,255,255,0.5) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+  }
+
+  /* Client logos: normalise every brand mark to white on the dark ground. */
+  .logo-white { filter: brightness(0) invert(1); }
+  /* The wordmark ships as white pixels. Over a light section it has to become
+     ink, which is the same trick in reverse. */
+  .logo-ink-flip { filter: brightness(0) saturate(0); }
+  .logo-ink   { filter: none; }
+
+  /* Cards drift on their own so the carousel still feels alive between scrolls.
+     Two durations, so neighbours never bob in lockstep. */
+  @keyframes card-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-9px); }
+  }
+  .card-float   { animation: card-float 6.5s ease-in-out infinite; }
+  .card-float-b { animation: card-float 8.2s ease-in-out infinite; animation-delay: -2.4s; }
+  @media (prefers-reduced-motion: reduce) { .card-float, .card-float-b { animation: none; } }
+
+  /* ── Hero colour field (white mode) ──
+     The reference is a look, not an asset, so this is three blurred radial
+     blobs on long offset drifts rather than a second video to download. The
+     periods share no common factor, so the composition never visibly loops. */
+  .hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    will-change: transform;
+  }
+  .hero-blob-a {
+    width: 58vw; height: 58vw; left: 6%; top: -14%;
+    background: radial-gradient(circle, rgba(124,92,255,0.55) 0%, rgba(124,92,255,0) 68%);
+    animation: blob-a 27s ease-in-out infinite;
+  }
+  .hero-blob-b {
+    width: 66vw; height: 66vw; right: -8%; top: 4%;
+    background: radial-gradient(circle, rgba(255,106,45,0.5) 0%, rgba(255,106,45,0) 68%);
+    animation: blob-b 34s ease-in-out infinite;
+  }
+  .hero-blob-c {
+    width: 50vw; height: 50vw; left: 26%; bottom: -22%;
+    background: radial-gradient(circle, rgba(232,91,208,0.42) 0%, rgba(232,91,208,0) 70%);
+    animation: blob-c 41s ease-in-out infinite;
+  }
+  @keyframes blob-a { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(9vw,7vh,0) scale(1.14); } }
+  @keyframes blob-b { 0%,100% { transform: translate3d(0,0,0) scale(1.06); } 50% { transform: translate3d(-11vw,9vh,0) scale(0.92); } }
+  @keyframes blob-c { 0%,100% { transform: translate3d(0,0,0) scale(0.96); } 50% { transform: translate3d(7vw,-8vh,0) scale(1.18); } }
+  @media (prefers-reduced-motion: reduce) { .hero-blob { animation: none; } }
+
+  /* ── Scroll orb ── the sphere turns on its own, unhurried; the arrows inside
+     only move when the page moves, so the scroll always has something to show. */
+  @keyframes orb-spin   { to { transform: rotate(360deg); } }
+  @keyframes orb-drift  { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+  @keyframes orb-twinkle{ 0%,100% { opacity: .12; transform: scale(.6); } 50% { opacity: 1; transform: scale(1); } }
+  .orb-shell   { animation: orb-drift 7s ease-in-out infinite; }
+  .orb-meridian{ animation: orb-spin 48s linear infinite; }
+  .orb-sheen   { animation: orb-spin 72s linear infinite reverse; }
+  .orb-star    { animation: orb-twinkle 3.4s ease-in-out infinite; }
+
+  /* Live badge: the dot pulses so the label reads as a real status, not a sticker. */
+  @keyframes live-pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .25; transform: scale(.72); } }
+  .live-dot { animation: live-pulse 1.5s ease-in-out infinite; }
+
+  /* Two rows moving against each other: the live ticker runs left, the client
+     row at the foot of the hero runs right. */
+  @keyframes ticker-left  { from { transform: translateX(0); }    to { transform: translateX(-50%); } }
+  @keyframes ticker-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+  .ticker-track  { animation: ticker-right 26s linear infinite; }
+  .clients-track { animation: ticker-left 38s linear infinite; }
+
+  /* The scroll orb is fixed to the bottom-left of the viewport, so anything the
+     hero places in that corner has to step around it. The offset belongs to the
+     bottom-left SLOT rather than to any particular line, so it travels with
+     whichever paragraph occupies that corner. Below md the orb is hidden and
+     the offset is unnecessary. */
+  @media (min-width: 768px) {
+    .hero-light-desc { margin-left: clamp(60px, 6vw, 96px); }
+  }
+
+  /* Same fixed orb, same corner, same fix — the footer's first column has to
+     start past it. */
+  @media (min-width: 768px) {
+    .footer-cols { padding-left: clamp(0px, 2vw, 34px); }
+  }
+
+  /* ── Ad reel: arc carousel ──
+     Tiles are absolutely positioned and driven from a single rAF loop, because
+     each one needs a different transform depending on where it currently sits
+     across the viewport — something no CSS keyframe can express. The stylesheet
+     only owns the box; the motion is all in AdReelCarousel. */
+  .adreel-viewport {
+    position: relative;
+    width: 100%;
+    height: clamp(300px, 29vw, 428px);
+    overflow: hidden;
+    /* Feathered ends instead of a hard cut, so tiles arrive and leave rather
+       than appearing at an edge. */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+  }
+  .adreel-track { position: absolute; inset: 0; }
+  .adreel-tile {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: clamp(178px, 17.5vw, 262px);
+    /* Shorter than the 9:16 artwork on purpose. The frame crops from the bottom
+       (object-position pins the top), which takes back the flat footer band the
+       9:16 conversion extended downward — so nothing with copy in it is lost and
+       the row reads as a tighter, more deliberate strip of tiles. */
+    aspect-ratio: 9 / 13.4;
+    margin: 0 clamp(0.8rem, 1.5vw, 1.6rem) 0 0;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(var(--ink-rgb),0.18);
+    background: rgba(var(--ink-rgb),0.06);
+    box-shadow: 0 24px 60px -34px rgba(0,0,0,0.6);
+    /* The rAF loop writes transform every frame; hint the compositor once. */
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
+  .adreel-tile img {
+    width: 100%; height: 100%; display: block;
+    /* Pinned to the top so the trim always comes off the bottom — the headline
+       and the offer sit in the upper two-thirds of every creative. */
+    object-fit: cover;
+    object-position: 50% 0%;
+  }
+
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .live-dot, .ticker-track, .clients-track, .adreel-track { animation: none; }
+  }
+
+  /* ── Brush stroke ──
+     Replaces the ruled band. Asymmetric radii on both axes give the swash the
+     uneven ends of a real stroke, and painting it is just scaleX from a left
+     origin, so it lays down left to right as the page scrolls. */
+  .brush-stroke {
+    background: linear-gradient(100deg, #F7F4E9 0%, #EFEADB 42%, #F4F1E6 74%, #E8E2D0 100%);
+    border-radius: 240px 18px 220px 22px / 22px 200px 20px 240px;
+    transform-origin: left center;
+    transition: transform 120ms linear, opacity 260ms linear;
+    box-shadow: 0 20px 55px -20px rgba(0,0,0,0.8);
+  }
+  /* the dry-brush flecks that keep the ends from looking like a plain rounded box */
+  .brush-stroke::after {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    background:
+      radial-gradient(60% 120% at 0% 50%, rgba(10,13,18,0.10) 0%, transparent 55%),
+      radial-gradient(50% 130% at 100% 45%, rgba(10,13,18,0.09) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* typewriter caret */
+  @keyframes tw-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  .tw-caret { animation: tw-blink 0.7s step-end infinite; margin-left: 0.04em; }
+  @media (prefers-reduced-motion: reduce) { .tw-caret { animation: none; } }
+
+  /* ── Platform chips flanking the figure ──
+     The border highlight grows and fades on a loop; each chip carries its own
+     delay so the cluster never pulses in unison. */
+  @keyframes plat-pulse {
+    0%, 100% { border-color: rgba(255,255,255,0.14); box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+    50%      { border-color: rgba(255,255,255,0.62); box-shadow: 0 0 16px 1px rgba(255,255,255,0.22), inset 0 0 12px rgba(var(--fill-rgb),0.08); }
+  }
+  /* Each mark drifts on its own cycle, keeping its own tilt via --rot, so the
+     cluster never bobs in unison. Two animations run on one element: the border
+     pulse and this float, each with its own delay. */
+  @keyframes plat-float {
+    0%, 100% { transform: rotate(var(--rot, 0deg)) translateY(0); }
+    50%      { transform: rotate(var(--rot, 0deg)) translateY(-11px); }
+  }
+  .plat-glow  { animation: plat-pulse 4.2s ease-in-out infinite; }
+  .plat-float { animation: plat-pulse 4.2s ease-in-out infinite, plat-float 6.5s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce) { .plat-glow, .plat-float { animation: none; transform: rotate(var(--rot, 0deg)); } }
+
+  /* ═══════════ DEVICE PARITY ═══════════ */
+
+  /* Mobile browsers count the collapsing address bar inside 100vh, so a pinned
+     h-screen frame gets its last ~10% cut off until the user scrolls. dvh tracks
+     the visible viewport instead. Guarded so older browsers keep the vh value. */
+  @supports (height: 100dvh) {
+    .h-screen     { height: 100dvh; }
+    .min-h-screen { min-height: 100dvh; }
+  }
+
+  /* Never allow a stray wide child to sideways-scroll the page.
+     `clip`, NOT `hidden`. Setting overflow-x:hidden on html/body forces the other
+     axis to compute as `auto`, which makes <html> a scroll container — and every
+     position:sticky on the page then has nothing to pin against, so all three
+     pinned sections silently stop pinning and their scroll animations whip past.
+     `clip` contains the overflow without creating a scroll container. */
+  html, body { max-width: 100%; overflow-x: clip; }
+  img, svg, video { max-width: 100%; }
+
+  /* Two-column bodies stack on small screens. These are the panels that were
+     built as 38/62 splits — unusable side by side under ~768px. */
+  .split-body { display: grid; grid-template-columns: minmax(0,38fr) minmax(0,62fr); }
+  @media (max-width: 860px) {
+    .split-body { grid-template-columns: minmax(0,1fr); grid-template-rows: auto minmax(0,1fr); }
+    .split-body > *:first-child { border-right: none !important; border-bottom: 1px solid rgba(var(--ink-rgb),0.14); }
+  }
+
+  /* The pinned scroll sections are budgeted in vh. On a phone that is a lot of
+     thumb travel for the same animation, so the budget shrinks with the screen. */
+  @media (max-width: 640px) {
+    .track-intro   { height: 240vh !important; }
+    .track-about   { height: 200vh !important; }
+  }
+
+  /* Fine-pointer affordances that mean nothing on touch. */
+  @media (hover: none) {
+    .desktop-only-hint { display: none; }
+  }
+
+  /* Keep tap targets reachable and stop iOS inflating type on rotate. */
+  a, button { -webkit-tap-highlight-color: rgba(255,255,255,0.12); }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+  /* ── Large displays ──
+     Every section was full-bleed, so on a 27" or an ultrawide the copy ran the
+     whole width of the glass — a measured 3,760px line at 4K, which is well past
+     the point where the eye can find the next line. The cap lands on the content
+     wrapper, never on the <section>, so backgrounds and the hero video stay
+     edge to edge and only the reading column is constrained.
+
+     A ladder, one rung per class of screen, rather than a single cap that only
+     engaged above 1800px. Without the lower rungs a 1440px laptop rendered a
+     1360px measure — around 160 characters a line, roughly twice a comfortable
+     read — because nothing constrained the column until the viewport was very
+     wide. Each rung is the width the layout is meant to be seen at on that
+     class of display, so the site opens at its intended proportions on a
+     laptop, a desktop, a 24-inch panel, an ultrawide and a projector alike
+     instead of only being correct at the extremes. */
+  /* ── Screen-tier design system ──
+     Continuous vw/vh clamps make the same page look different every time the
+     window is resized. These tokens lock at class boundaries so a laptop, a
+     desktop and a projector each open at their intended proportions — not at
+     whatever pixel width the browser happens to be.
+
+     Tiers (width × typical height):
+       phone      < 768
+       tablet     768–1023
+       laptop     1024–1439  (incl. short 720p / projector 1024×768)
+       desktop    1440–1919
+       wide       ≥ 1920     (24" 1080p, ultrawide, 4K, large projector)
+
+     Within a tier, sizes stay fixed. Across tiers they step — never float. */
+  /* ── Type scale: text tokens ──
+     The display sizes above are tuned per section and stepped per tier. Everything
+     smaller collapses onto these four, so a label or a paragraph is the same size
+     wherever it appears. See DESIGN.md §3.
+       micro   12 → 13.8px  uppercase labels, chips, meta, legal
+       caption 13.1 → 15px  kickers, secondary lines, short supporting text
+       text    16 → 16.8px  paragraphs and lists
+       text-lg 16 → 19.2px  section intros and ledes */
+  :root {
+    --fs-micro: clamp(0.75rem, 0.9vw, 0.86rem);
+    --fs-caption: clamp(0.82rem, 0.98vw, 0.94rem);
+    --fs-text: clamp(1rem, 1vw, 1.05rem);
+    --fs-text-lg: clamp(1rem, 1.3vw, 1.2rem);
+  }
+
+  :root {
+    --screen: phone;
+    --content-max: 960px;
+    --pad-x: 1.15rem;
+    --fs-display: 2.35rem;     /* SERVICES / PROJECTS mega titles */
+    --fs-h1: 1.7rem;           /* hero primary */
+    --fs-h2: 1.25rem;
+    --fs-body: 1rem;
+    --fs-lede: 1rem;
+    --fs-label: 0.75rem;
+    --fs-stat: 1.35rem;
+    --fs-stat-k: 0.75rem;
+    --fs-nav: 0.95rem;
+    --space-section: 3.25rem;
+    --space-block: 0.95rem;
+    --hero-gap: 0.65rem;
+    --hero-stat-gap: 0.9rem;
+    --brand-mark-h: 32px;
+    --brand-gap: 1.6rem;
+    --adreel-tile-w: 168px;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --screen: tablet;
+      --content-max: 920px;
+      --pad-x: 1.6rem;
+      --fs-display: 3.4rem;
+      --fs-h1: 2.35rem;
+      --fs-h2: 1.4rem;
+      --fs-body: 1rem;
+      --fs-lede: 1.02rem;
+      --fs-label: 0.76rem;
+      --fs-stat: 1.85rem;
+      --fs-stat-k: 0.75rem;
+      --fs-nav: 0.95rem;
+      --space-section: 4rem;
+      --space-block: 1.15rem;
+      --hero-gap: 0.9rem;
+      --hero-stat-gap: 1.35rem;
+      --brand-mark-h: 34px;
+      --brand-gap: 2.1rem;
+      --adreel-tile-w: 190px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --screen: laptop;
+      --content-max: 1080px;
+      --pad-x: 2rem;
+      --fs-display: 4.6rem;
+      --fs-h1: 3.1rem;
+      --fs-h2: 1.55rem;
+      --fs-body: 1.05rem;
+      --fs-lede: 1.08rem;
+      --fs-label: 0.78rem;
+      --fs-stat: 2.35rem;
+      --fs-stat-k: 0.78rem;
+      --fs-nav: 1.02rem;
+      --space-section: 4.75rem;
+      --space-block: 1.35rem;
+      --hero-gap: 1.1rem;
+      --hero-stat-gap: 1.75rem;
+      --brand-mark-h: 36px;
+      --brand-gap: 2.6rem;
+      --adreel-tile-w: 210px;
+    }
+  }
+
+  /* Short laptop / classic projector (1024×768, 1280×720, 1366×768):
+     lock a compact set so the fold never collapses into overlapping chrome. */
+  @media (min-width: 1024px) and (max-height: 820px) {
+    :root {
+      --fs-display: 3.6rem;
+      --fs-h1: 2.45rem;
+      --fs-stat: 1.85rem;
+      --fs-lede: 0.98rem;
+      --hero-gap: 0.7rem;
+      --space-section: 3.4rem;
+      --brand-mark-h: 32px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    :root {
+      --screen: desktop;
+      --content-max: 1240px;
+      --pad-x: 2.4rem;
+      --fs-display: 5.4rem;
+      --fs-h1: 3.6rem;
+      --fs-h2: 1.7rem;
+      --fs-body: 1.08rem;
+      --fs-lede: 1.12rem;
+      --fs-label: 0.8rem;
+      --fs-stat: 2.75rem;
+      --fs-stat-k: 0.82rem;
+      --fs-nav: 1.08rem;
+      --space-section: 5.5rem;
+      --space-block: 1.5rem;
+      --hero-gap: 1.25rem;
+      --hero-stat-gap: 2.1rem;
+      --brand-mark-h: 38px;
+      --brand-gap: 3rem;
+      --adreel-tile-w: 230px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    :root {
+      --screen: wide;
+      --content-max: 1400px;
+      --pad-x: 2.75rem;
+      --fs-display: 6rem;
+      --fs-h1: 4rem;
+      --fs-h2: 1.85rem;
+      --fs-body: 1.12rem;
+      --fs-lede: 1.18rem;
+      --fs-label: 0.84rem;
+      --fs-stat: 3.1rem;
+      --fs-stat-k: 0.86rem;
+      --fs-nav: 1.12rem;
+      --space-section: 6rem;
+      --space-block: 1.65rem;
+      --hero-gap: 1.4rem;
+      --hero-stat-gap: 2.4rem;
+      --brand-mark-h: 40px;
+      --brand-gap: 3.25rem;
+      --adreel-tile-w: 248px;
+    }
+  }
+
+  /* Ultrawide / 4K / large projector: widen the reading column, but DO NOT
+     keep growing type — that is what made the site feel different on every
+     panel. Type stays at the wide tier; only measure grows. */
+  @media (min-width: 2560px) {
+    :root { --content-max: 1560px; --pad-x: 3rem; }
+  }
+  @media (min-width: 3440px) {
+    :root { --content-max: 1680px; }
+  }
+
+  /* Applied from the first width at which the page is a two-column desktop
+     layout. Below this the phone and tablet rules already govern, and capping
+     there would only add gutters to a screen that has none to spare.
+
+     The cap lands on each section's child, never on the <section> itself, so
+     backgrounds, the hero video and the full-bleed marquees stay edge to edge
+     and only the reading column is constrained. */
+  @media (min-width: 1024px) {
+    #services > *, #projects > *, #roadmap > *, #faq > *, #contact > *,
+    #pricing > *, #adreel > *, .roadmap-detail > *,
+    .track-intro > .sticky, .track-about > .sticky {
+      max-width: var(--content-max);
+      margin-inline: auto;
+    }
+  }
+
+  /* Tier-locked type for the surfaces that previously floated on vw/vh. */
+  .hero-dark-h1 { font-size: var(--fs-h1) !important; }
+  .hero-dark-sub { font-size: var(--fs-lede) !important; }
+  .hero-dark-eyebrow { font-size: var(--fs-label) !important; }
+  .hero-proof span[class*="font-heading"] { font-size: var(--fs-stat) !important; }
+  .hero-proof span[class*="font-body"] { font-size: var(--fs-stat-k) !important; }
+  .hero-light-h1 { font-size: var(--fs-h1) !important; }
+  .hero-light-stat-n { font-size: var(--fs-stat) !important; }
+  .hero-light-stat .tracking-widest { font-size: var(--fs-stat-k) !important; }
+  .hero-light-desc { font-size: var(--fs-label) !important; }
+  .hero-stack { row-gap: var(--hero-gap) !important; }
+  .hero-proof { gap: var(--hero-stat-gap) !important; }
+  .hero-light-stats { gap: var(--hero-stat-gap); }
+  .adreel-tile { width: var(--adreel-tile-w) !important; }
+  .hero-heading { font-size: var(--fs-display) !important; }
+
+  .tier-body { font-size: var(--fs-body); }
+  .tier-lede { font-size: var(--fs-lede); }
+  .tier-label { font-size: var(--fs-label); }
+  .tier-section-pad {
+    padding-top: var(--space-section) !important;
+    padding-bottom: var(--space-section) !important;
+  }
+  #services, #projects, #roadmap, #faq, #pricing, #adreel, #contact {
+    --section-pad-y: var(--space-section);
+  }
+
+  /* Figure geometry for the intro stage. The phone gets a narrower figure and a
+     tighter gap so the two phrases can sit either side of the head instead of
+     being stacked above it. */
+  /* The name now overlaps the cutout instead of sitting in gutters beside it,
+     which is what lets the figure be this large — nothing has to fit alongside
+     it any more. Height is the binding constraint, not width. */
+  /* The figure is the subject of this section, so it is sized to the space it
+     actually has rather than to a flat vh fraction, and centred in that space.
+     Two obstructions bound it: the fixed nav at the top and the statement/call
+     band along the bottom. Everything between them is the figure's, less an
+     equal margin at each end.
+
+     Bottom-anchoring was the old behaviour and it is what left a third of the
+     stage empty overhead — the figure only ever grew upward from the floor, so
+     any height the band did not use went to the ceiling. */
+  :root {
+    /* --chrome-clear carries breathing room for headings that begin at a
+       panel's top edge; the nav's actual bottom sits about 16px above it, and
+       the figure has --intro-pad of its own below this. */
+    --intro-top: calc(var(--chrome-clear) - 16px);
+    /* A starting guess only. The band is three lines of type at one viewport and
+       two at another, so its height is not expressible as a clamp — a ResizeObserver
+       measures it and overwrites this on .intro-stage before first paint settles. */
+    --intro-bot: clamp(7rem, 16vh, 11rem);
+    --intro-pad: clamp(8px, 1.2vh, 18px);
+    /* The sideways backstop for wide, short screens where a height-filling
+       figure would run out of room across. It is the only part of the sizing
+       that differs by device: a phone can spend far more of its width on the
+       figure, bounded by how far "Kavshik" can travel before it leaves the
+       screen. */
+    --fig-cap: 46vw;
+    --fig-gap: clamp(16px, 2.2vw, 40px);
+    --fig-nudge: 19px;
+  }
+
+  /* --fig-w lives on the stage, not :root, because it depends on --intro-bot and
+     that is measured onto the stage. Height-bound first: whatever the clear band
+     allows, converted to a width through the cutout's 1.2926 aspect. The vw term
+     is the backstop for wide, short screens where a height-filling figure would
+     run out sideways. */
+  .intro-stage {
+    --fig-w: min(var(--fig-cap), calc((100vh - var(--intro-top) - var(--intro-bot) - var(--intro-pad) * 2) / 1.2926));
+  }
+
+  /* The box is exactly the figure's height and is centred between the two
+     obstructions — not in the viewport, which would push it under the band.
+     The name plate anchors off this box's bottom edge, so keeping the box flush
+     to the figure is what holds the words on the shoulder as it resizes.
+
+     The selector is doubled for specificity: the element carries Tailwind's
+     inset-0, the CDN injects its sheet after this one, and at equal specificity
+     the later rule wins — so a single .intro-figbox would silently lose top and
+     bottom to it. */
+  .intro-figbox.intro-figbox {
+    top: 50%;
+    bottom: auto;
+    height: calc(var(--fig-w) * 1.2926);
+    transform: translateY(calc(-50% + (var(--intro-top) - var(--intro-bot)) / 2));
+  }
+  /* White mode runs the figure a step smaller than dark mode. The name sits
+     alongside it here rather than being wrapped by it, so the plate needs open
+     ground on both flanks for "Kavshik" to land on. Dark mode keeps its own
+     size, since nothing there depends on clear background. */
+
+  @media (max-width: 767px) {
+    /* Only the cap changes; the height-bound term is shared, so the figure
+       fills a phone's clear band the same way it fills a laptop's. 76vw is set
+       by the name plate, not the figure: the surname is anchored outward from
+       centre by a fraction of the figure's width, and past this it runs off the
+       right edge. */
+    :root { --fig-cap: 82vw; --fig-gap: 6px; --fig-nudge: 5px; }
+
+    /* The orb reclaims the bottom-left corner once the nav leaves it, but that
+       is where the statement now sits. Decoration yields again. */
+    .orb-shell { display: none; }
+  }
+
+  /* The two name words. One face, one weight, very tight tracking — the
+     reference gets its impact from scale and letterfit rather than decoration. */
+  /* Height the fixed bar occupies, plus breathing room. Any section whose
+     heading starts at the top of its own panel clears this. */
+  :root { --chrome-clear: 112px; }
+  /* The compact bar is two rows — lockup with its tagline above, section chips
+     below — so everything that clears the chrome has further to clear. This
+     tracks the nav breakpoint below, not the phone breakpoint. */
+  /* Measured: the two-row bar renders 123px tall, so 132 keeps roughly the same
+     9px of breathing room the desktop value does. It was 140 when the lockup
+     was a size larger; leaving it there would have reserved 17px of empty band
+     on every phone, and vertical space in the phone hero is the budget that
+     decides whether the brand scroll lands inside the fold. */
+  @media (max-width: 1099px) { :root { --chrome-clear: 132px; } }
+
+  /* The full nav needs about 1100px to exist. Measured at 768: the links pill
+     is 561px, the lockup 210px and the toggle 68px — 839px of content in 720px
+     of usable width, so the pill overlapped both flanks anywhere from 768 to
+     1024. Every size inside it is already pinned to its clamp minimum (13.6px
+     type, 10px of horizontal padding), so there was nothing left to shrink; the
+     md breakpoint was simply lower than the bar's real width. The compact
+     two-row bar therefore runs until the full one genuinely fits.
+
+     Typed as nav.nav-* so these win against Tailwind's own single-class
+     md:grid / md:hidden without needing !important. */
+  @media (max-width: 1099px) {
+    nav.nav-desktop { display: none; }
+    nav.nav-mobile { display: flex; }
+  }
+
+  :root { --name-fs: clamp(2.15rem, 9.3vw, 8.2rem); }
+  /* Phones: the words sit beside the head rather than across it, and the
+     gutters either side are ~130px, so the type steps down to fit. */
+  @media (max-width: 767px) { :root { --name-fs: clamp(1.6rem, 7.7vw, 2.4rem); } }
+  .intro-name {
+    font-size: var(--name-fs);
+    letter-spacing: -0.045em;
+    text-transform: none;
+  }
+  .intro-statement { font-size: clamp(1rem, 2vw, 2rem); }
+
+  /* Footer primary call: oval, transparent, pressable. Sized in fixed px so
+     it stays a button rather than shrinking into the copy on a narrow window. */
+  .footer-cta {
+    appearance: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    white-space: nowrap;
+    background: transparent;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    border-radius: 999px;
+    padding: 0.72rem 1.5rem;
+    min-height: 52px;
+    font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 17px;
+    transition: background 200ms ease, color 200ms ease, transform 160ms ease;
+  }
+  .footer-cta:hover { background: var(--accent); color: #fff; }
+  .footer-cta:active { transform: translateY(1px); }
+
+  .footer-rail {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    justify-content: flex-end; margin-top: 1.25rem;
+  }
+  .footer-chip {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    min-height: 42px; padding: 0.5rem 0.9rem;
+    border-radius: 999px; text-decoration: none;
+    border: 1px solid rgba(var(--ink-rgb),0.22);
+    background: rgba(var(--fill-rgb),0.06);
+    color: rgba(var(--ink-rgb),0.9);
+    font-family: 'Barlow', sans-serif; font-weight: 500; font-size: 14px;
+    transition: border-color 180ms ease, background 180ms ease;
+  }
+  .footer-chip-icon {
+    width: 44px; height: 44px; min-height: 44px; padding: 0;
+    justify-content: center; gap: 0;
+    transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+  }
+  .footer-chip-icon:hover { color: var(--accent); border-color: var(--accent); }
+  .footer-chip-icon:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .social-row { gap: 0.5rem; }
+  .footer-chip:hover {
+    border-color: rgba(var(--ink-rgb),0.5);
+    background: rgba(var(--fill-rgb),0.12);
+  }
+  @media (max-width: 600px) {
+    .footer-rail { justify-content: flex-start; }
+    .footer-cta { font-size: 15px; padding: 0.65rem 1.2rem; min-height: 48px; }
+  }
+
+  /* ── Lead capture ──
+     Translucent over a blurred page rather than a solid card, so the site stays
+     visible behind it and the dialog reads as part of the same surface as the
+     nav pills and service cards. */
+  .lead-scrim {
+    position: fixed; inset: 0; z-index: 90;
+    display: grid; place-items: center;
+    padding: clamp(1rem, 4vw, 2rem);
+    background: rgba(var(--page-rgb), 0.62);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    animation: lead-in 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @keyframes lead-in { from { opacity: 0 } to { opacity: 1 } }
+
+  .lead-panel {
+    position: relative;
+    width: min(100%, 520px);
+    max-height: 92vh; overflow-y: auto;
+    border-radius: 26px;
+    padding: clamp(1.5rem, 3.4vw, 2.4rem);
+    /* Was 0.5 alpha. A form has to be read and typed into, and 50% of the
+       wallpaper coming through put moving video behind every input — which is
+       most of why nothing was legible. Near-opaque, with the blur doing the
+       glass rather than the transparency. */
+    background: rgba(var(--page-rgb), 0.94);
+    backdrop-filter: blur(30px) saturate(1.25);
+    -webkit-backdrop-filter: blur(30px) saturate(1.25);
+    border: 1px solid rgba(var(--ink-rgb), 0.14);
+    box-shadow: 0 40px 90px -30px rgba(0,0,0,0.7),
+                inset 0 1px 1px rgba(255,255,255,0.10);
+    animation: lead-rise 420ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  @keyframes lead-rise {
+    from { opacity: 0; transform: translateY(20px) scale(0.985) }
+    to   { opacity: 1; transform: none }
+  }
+
+  .lead-close {
+    position: absolute; top: 14px; right: 16px;
+    width: 38px; height: 38px; border-radius: 999px;
+    border: 1px solid rgba(var(--ink-rgb),0.2);
+    background: rgba(var(--fill-rgb),0.05); color: var(--ink);
+    font-size: 21px; line-height: 1; cursor: pointer;
+    transition: background 180ms ease, border-color 180ms ease;
+  }
+  .lead-close:hover { background: rgba(var(--fill-rgb),0.12); border-color: rgba(var(--ink-rgb),0.4); }
+
+  .lead-eyebrow {
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, sans-serif; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.16em; font-size: var(--fs-micro);
+    color: var(--accent);
+  }
+  .lead-title {
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, serif; color: var(--ink);
+    font-size: clamp(30px, 3.4vw, 40px); line-height: 1.08;
+    letter-spacing: -0.015em; margin-top: 0.45rem;
+  }
+  .lead-sub {
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, sans-serif; color: rgba(var(--ink-rgb),0.72);
+    font-size: 16px; line-height: 1.6; margin-top: 0.65rem;
+  }
+  .lead-sub a { color: var(--accent); }
+
+  /* ── Fields ──
+     Labels were 12px uppercase on 0.12em tracking. Uppercase micro-type with
+     wide tracking is the least legible setting there is at that size, and it
+     was doing it above every field. Sentence case, larger, tighter. */
+  .lead-field { display: block; margin-top: 1.15rem; }
+  .lead-field > span {
+    display: block;
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, sans-serif; font-weight: 600;
+    letter-spacing: -0.005em; font-size: 14.5px;
+    color: rgba(var(--ink-rgb),0.92); margin-bottom: 0.45rem;
+  }
+  .lead-field input,
+  .lead-field select {
+    width: 100%; min-height: 58px;
+    border-radius: 14px;
+    padding: 0.85rem 1.05rem;
+    background: rgba(var(--fill-rgb),0.06);
+    border: 1.5px solid rgba(var(--ink-rgb),0.18);
+    color: var(--ink);
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, sans-serif; font-size: 17px; font-weight: 450;
+    letter-spacing: -0.005em;
+    outline: none;
+    transition: border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
+  }
+  .lead-field input::placeholder {
+    color: rgba(var(--ink-rgb),0.4); font-weight: 400;
+  }
+  .lead-field input:hover, .lead-field select:hover {
+    border-color: rgba(var(--ink-rgb),0.32);
+  }
+  .lead-field input:focus, .lead-field select:focus {
+    border-color: var(--accent);
+    background: rgba(var(--fill-rgb),0.10);
+    box-shadow: 0 0 0 4px rgba(182,0,168,0.16);
+  }
+  /* The native menu is drawn by the OS, so its options need a real background
+     or they render as light-on-light in dark mode on Windows. */
+  .lead-field select option { background: #14181f; color: #fff; }
+  html[data-theme="light"] .lead-field select option { background: #fff; color: #0A0D12; }
+
+  .lead-submit {
+    width: 100%; min-height: 58px; margin-top: 1.5rem;
+    border: 0; border-radius: 14px; cursor: pointer;
+    background: var(--ink); color: var(--page);
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, sans-serif; font-weight: 600;
+    font-size: 17px; letter-spacing: -0.005em;
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+    transition: transform 160ms cubic-bezier(0.32,0.72,0,1), opacity 200ms ease;
+  }
+  .lead-submit:hover:not(:disabled) { transform: translateY(-1px); }
+  .lead-submit:active:not(:disabled) { transform: translateY(1px); }
+  .lead-submit:disabled { opacity: 0.55; cursor: default; }
+
+  .lead-error {
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, sans-serif; color: #ff8f8f;
+    font-size: 14.5px; margin-top: 0.85rem;
+  }
+  .lead-fine {
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, sans-serif; color: rgba(var(--ink-rgb),0.58);
+    font-size: 16px; line-height: 1.6; margin-top: 1rem;
+  }
+  .lead-done { text-align: center; padding: 0.6rem 0; }
+
+  /* Floating call. Sits opposite the scroll orb so the two never collide, and
+     stays out of the way until the hero's own call is off screen. */
+  .lead-fab {
+    position: fixed; z-index: 80;
+    right: clamp(0.9rem, 2vw, 1.6rem);
+    bottom: clamp(0.9rem, 2vw, 1.6rem);
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    min-height: 48px; padding: 0.7rem 1.15rem;
+    border: 1px solid rgba(var(--ink-rgb),0.2);
+    border-radius: 999px; cursor: pointer;
+    background: var(--ink); color: var(--page);
+    font-family: 'Barlow', sans-serif; font-weight: 600;
+    font-size: var(--fs-micro);
+    box-shadow: 0 18px 44px -20px rgba(0,0,0,0.7);
+    opacity: 0; transform: translateY(18px) scale(0.96);
+    pointer-events: none;
+    transition: opacity 320ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .lead-fab.is-in { opacity: 1; transform: none; pointer-events: auto; }
+  .lead-fab-dot {
+    width: 7px; height: 7px; border-radius: 999px;
+    background: #3ddc84; box-shadow: 0 0 0 0 rgba(61,220,132,0.6);
+    animation: lead-pulse 2.4s ease-out infinite;
+  }
+  @keyframes lead-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(61,220,132,0.55) }
+    70% { box-shadow: 0 0 0 9px rgba(61,220,132,0) }
+    100% { box-shadow: 0 0 0 0 rgba(61,220,132,0) }
+  }
+
+  .lead-fab-short { display: none; }
+
+  @media (max-width: 600px) {
+    /* On a phone the label alone is wider than the comfortable tap zone next to
+       the mobile nav, so it collapses to a compact pill. */
+    .lead-fab { padding: 0.65rem 0.95rem; font-size: 0.8rem; }
+  }
+
+  /* Roadmap form: a disc at the top of the screen instead of a pill at the
+     bottom of it. Phone only — the desktop roadmap has width to spare beside
+     the figure, so the pill never lands on the copy there. */
+  @media (max-width: 767px) {
+    .lead-fab.is-mini {
+      top: calc(var(--chrome-clear) + 0.5rem);
+      bottom: auto;
+      width: 54px; height: 54px; min-height: 0;
+      padding: 0;
+      gap: 0;
+      justify-content: center;
+      border-color: rgba(61,220,132,0.55);
+      box-shadow: 0 0 0 1px rgba(61,220,132,0.25),
+                  0 0 22px 2px rgba(61,220,132,0.38),
+                  0 14px 30px -18px rgba(0,0,0,0.8);
+      transition: opacity 320ms ease,
+                  transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+                  top 420ms cubic-bezier(0.22, 1, 0.36, 1),
+                  width 320ms ease, height 320ms ease;
+    }
+    .lead-fab.is-mini .lead-fab-label,
+    .lead-fab.is-mini .lead-fab-arrow { display: none; }
+    .lead-fab.is-mini .lead-fab-short {
+      display: block;
+      font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em;
+    }
+    /* The pulsing dot rides the corner of the disc rather than sitting beside a
+       label that is no longer there. */
+    .lead-fab.is-mini .lead-fab-dot {
+      position: absolute; top: 9px; right: 11px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lead-scrim, .lead-panel { animation: none }
+    .lead-fab { transition: none }
+    .lead-fab-dot { animation: none }
+  }
+
+  /* ── Intro card (Sevora reference) ──
+     One rounded panel holding a two-column composition: copy left, the team
+     column right. On a phone the grid collapses to a single column with the
+     copy first and the team as one compact row beneath it. */
+  .intro-card {
+    /* A flex item of the h-screen sticky wrapper, so it shrank below its own
+       content whenever the viewport was short — and then clipped the
+       difference against its own overflow. Fixed-size, the card is always
+       as tall as its content. */
+    flex: 0 0 auto;
+    border-radius: clamp(24px, 2.6vw, 40px);
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    box-shadow: 0 30px 90px -50px rgba(0,0,0,0.55);
+  }
+  .intro-card-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+    /* A floor, not a ceiling: the content drives the height, and a cap here
+       would clip it against the card's overflow. */
+    min-height: min(56vh, 480px);
+  }
+  .intro-card-copy {
+    /* Indented from the card edge and stopped short of the team column, so
+       the measure starts a little in and ends a little before it rather than
+       running the full width of the panel. */
+    padding: clamp(1.1rem, 2.4vw, 2.8rem) clamp(1.1rem, 2.2vw, 2.2rem)
+             clamp(1.1rem, 2.4vw, 2.8rem) clamp(1.9rem, 4.4vw, 5.4rem);
+    display: flex; flex-direction: column; justify-content: center;
+    min-width: 0;
+  }
+
+  .intro-card-title {
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, serif;
+    color: var(--ink);
+    font-size: clamp(2.15rem, 5.3vw, 4.7rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+  .intro-card-sub {
+    color: rgba(var(--ink-rgb),0.86);
+    font-size: clamp(0.96rem, 1.28vw, 1.2rem);
+    line-height: 1.55;
+    margin-top: clamp(0.7rem, 1.4vh, 1.1rem);
+    max-width: 52ch;
+  }
+
+  .intro-card-btns { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: clamp(1rem, 2vh, 1.6rem); }
+  .intro-btn {
+    border-radius: 12px; text-decoration: none;
+    font-size: clamp(0.92rem, 1.16vw, 1.1rem); font-weight: 600;
+    padding: 0.78rem 1.5rem; min-height: 52px;
+    display: inline-flex; align-items: center;
+  }
+  .intro-btn-solid { background: var(--ink); color: var(--page); }
+  .intro-btn-ghost { color: var(--ink); border: 1px solid rgba(var(--ink-rgb),0.3); }
+
+  .intro-card-stats {
+    display: flex; flex-wrap: wrap;
+    gap: clamp(1.1rem, 3vw, 2.6rem);
+    margin-top: clamp(1.1rem, 2.6vh, 2rem);
+  }
+  .intro-stat-v {
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, serif; color: var(--ink);
+    font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1;
+  }
+  .intro-stat-k {
+    color: rgba(var(--ink-rgb),0.72);
+    font-size: var(--fs-micro); margin-top: 0.32rem;
+  }
+
+  /* The sign-off closes the copy column: the typed statement, left-aligned
+     under the stats. */
+  .intro-card-signoff {
+    margin-top: clamp(0.9rem, 2.4vh, 1.8rem);
+    display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+  }
+  .intro-card-typed {
+    display: grid;
+    font-family: 'Kanit', sans-serif; font-weight: 900; text-transform: uppercase;
+    color: var(--ink); letter-spacing: -0.02em; line-height: 1.1;
+    font-size: clamp(0.95rem, 1.42vw, 1.32rem);
+    max-width: 30ch;
+    justify-items: start;
+  }
+  .intro-card-right {
+    display: flex; flex-direction: column; justify-content: center;
+    min-width: 0;
+  }
+  /* The team column. Sits on a slightly lifted ground inside the card so it
+     reads as its own panel. */
+  .intro-team {
+    display: flex; flex-direction: column; justify-content: center;
+    gap: clamp(0.6rem, 1.4vh, 1rem);
+    height: 100%;
+    padding: clamp(1.1rem, 2.4vw, 2.4rem) clamp(1.1rem, 2.2vw, 2.2rem);
+    border-left: 1px solid rgba(var(--ink-rgb),0.12);
+    background: rgba(var(--fill-rgb),0.025);
+  }
+  .intro-team-eyebrow {
+    color: rgba(var(--ink-rgb),0.62);
+    font-size: var(--fs-micro); font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+  .intro-team-list { display: flex; flex-direction: column; gap: clamp(0.55rem, 1.3vh, 0.9rem); }
+  .intro-member {
+    position: relative;
+    display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: start; gap: 0.8rem;
+    padding: clamp(0.7rem, 1.4vh, 0.95rem) clamp(0.75rem, 1vw, 0.95rem);
+    border-radius: 14px;
+    border: 1px solid rgba(var(--ink-rgb),0.12);
+    background: var(--panel);
+  }
+  .intro-member-avatar {
+    width: 42px; height: 42px; border-radius: 999px;
+    display: grid; place-items: center;
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, serif; font-size: 1.15rem;
+    color: var(--page); background: var(--ink);
+  }
+  .intro-member-name {
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif, serif; color: var(--ink);
+    font-size: clamp(1.15rem, 1.5vw, 1.4rem); line-height: 1.1;
+  }
+  .intro-member-role {
+    color: var(--accent);
+    font-size: var(--fs-micro); font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+  .intro-member-bio {
+    color: rgba(var(--ink-rgb),0.74);
+    font-size: var(--fs-caption); line-height: 1.5;
+    margin-top: 0.3rem;
+  }
+  .intro-member-link {
+    position: relative;
+    width: 32px; height: 32px; border-radius: 8px;
+    display: grid; place-items: center;
+    color: rgba(var(--ink-rgb),0.7);
+    border: 1px solid rgba(var(--ink-rgb),0.16);
+    text-decoration: none;
+  }
+  .intro-member-link:hover { color: var(--ink); border-color: rgba(var(--ink-rgb),0.4); }
+  .intro-member-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  /* Touch screens get a 44px hit area around the 32px mark, so the button
+     keeps its size on the card but is not a fiddly target on a tablet. */
+  @media (pointer: coarse) {
+    .intro-member-link::after { content: ''; position: absolute; inset: -6px; }
+  }
+
+  /* Tablet: the two-column card survives, but its right column is too narrow
+     for avatar, copy and link side by side — the bios collapsed to a word per
+     line. The column widens and the initials step out so the copy gets the
+     width. */
+  @media (min-width: 768px) and (max-width: 1099px) {
+    .intro-member { grid-template-columns: minmax(0, 1fr) auto; }
+    .intro-member-avatar { display: none; }
+  }
+
+  /* Small Phase 0 rectangle — heads the team column, two lines + arrow only. */
+  .intro-avail {
+    position: relative; z-index: 2;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    width: auto;
+    max-width: 200px;
+    border-radius: 6px;
+    padding: 0.38rem 0.4rem 0.38rem 0.5rem;
+    background: rgba(10,13,18,0.78);
+    box-sizing: border-box;
+  }
+  html[data-theme="light"] .intro-avail { background: rgba(10,13,18,0.86); }
+  .intro-avail-copy { min-width: 0; flex: 1; }
+  .intro-avail-eyebrow {
+    color: rgba(255,255,255,0.68);
+    font-size: var(--fs-micro);
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .intro-avail-title {
+    color: #fff; font-weight: 600;
+    font-size: var(--fs-micro);
+    line-height: 1.2;
+    margin: 0.12rem 0 0;
+  }
+  .intro-avail-body { display: none; }
+  .intro-avail-btn {
+    position: static;
+    flex-shrink: 0;
+    width: 22px; height: 22px; border-radius: 5px;
+    background: #fff; color: #0A0D12;
+    display: grid; place-items: center; text-decoration: none;
+  }
+  .intro-avail-btn svg { width: 11px; height: 11px; }
+
+  /* Platform strip — one continuous pass, names beside the marks. */
+  .platform-track { animation: ticker-left 44s linear infinite; }
+  .intro-plat {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    margin-right: clamp(2.2rem, 4.8vw, 4.4rem);
+    color: rgba(var(--ink-rgb),0.94);
+    font-size: clamp(0.98rem, 1.28vw, 1.22rem); font-weight: 600;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+  }
+  .intro-plat img { height: clamp(30px, 3vw, 42px); width: auto; display: block; }
+
+  /* Soft frame around the platform marquee — present, not loud. */
+  .platform-band-frame {
+    border: 1px solid rgba(var(--ink-rgb), 0.14);
+    border-radius: 18px;
+    padding: clamp(0.85rem, 1.6vh, 1.25rem) clamp(0.5rem, 1.2vw, 1rem);
+    background: rgba(var(--fill-rgb), 0.02);
+    box-shadow: 0 1px 0 rgba(var(--ink-rgb), 0.04), inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+  html[data-theme="light"] .platform-band-frame {
+    border-color: rgba(10, 13, 18, 0.12);
+    background: rgba(255,255,255,0.55);
+    box-shadow: 0 8px 28px -18px rgba(10,13,18,0.22), inset 0 1px 0 rgba(255,255,255,0.8);
+  }
+
+  /* Camouflage correction, applied only on the ground where the mark fails.
+     `plat-dark` marks are near-black: inverted on the dark page, untouched on
+     white. `plat-light` marks are very light: darkened on white, untouched on
+     the dark page. Everything else ships in its own brand colour. */
+  /* Near-black artwork: inverted on the dark page, untouched on white. */
+  .plat-dark { filter: invert(1); }
+  html[data-theme="light"] .plat-dark { filter: none; }
+  /* Near-white artwork: the mirror case — untouched on the dark page, inverted
+     on white. Inverting is right here rather than darkening, because these
+     marks are achromatic and invert cleanly to black. */
+  .plat-white { filter: none; }
+  html[data-theme="light"] .plat-white { filter: invert(1); }
+  /* Light but chromatic: inverting Snapchat yellow would turn it blue, so the
+     hue is kept and only the value drops. */
+  .plat-light { filter: none; }
+  html[data-theme="light"] .plat-light { filter: brightness(0.62) saturate(1.5); }
+
+  /* Below 900px the intro stacks to one column, but it stays a PINNED stage.
+   *
+   * It was previously unpinned here — #intro got height:auto and the sticky
+   * frame position:static — on the reasoning that the animations "read section
+   * progress, which works the same whether the stage is pinned or not". They do
+   * not. useSectionProgress divides by (section height - viewport height), and
+   * returns 0 whenever that budget is not positive. height:auto made the
+   * section 804px tall inside an 844px viewport, so the budget was -40px and
+   * progress was pinned at exactly 0 for the entire section. Every element in
+   * the card is revealed from that progress, so all of them stayed at opacity 0
+   * and the phone rendered an empty card — no portrait, no copy, no signature.
+   * An id selector with !important also outranks .track-intro's own !important
+   * height, so the vh budgets set for phones never had any effect.
+   *
+   * The original reason for unpinning was that the stacked card could not fit a
+   * fixed-height screen. That is no longer true: the card has since been
+   * compacted to 630px against roughly 690px of frame on a 390x844 phone, and
+   * the availability panel drops out below 720px of height. So the stage is
+   * pinned again, which is also what makes the phone behave like the desktop —
+   * the team slides in from the right, the copy rises behind it, and the
+   * section holds the reader until the card has finished assembling.
+   *
+   * Stacking starts at 767 rather than 899 so that it lines up with the phone
+   * compaction below and with useIsPhone. At 899 the 768-899 band stacked into
+   * one column but kept desktop type and a full-size portrait, which overflowed
+   * the pinned frame by more than 500px. A tablet has the width for the real
+   * two-column card, so it keeps it. */
+  @media (max-width: 767px) {
+    .intro-card-grid { grid-template-columns: 1fr; min-height: 0; }
+    .intro-card-copy { padding: clamp(1.1rem, 4vw, 1.8rem); }
+  }
+
+  /* On a phone the two columns become one stack inside a sticky screen, so
+     everything decorative gives ground: the team drops to one compact row, the
+     availability panel goes, and the sign-off shrinks under the copy. */
+  @media (max-width: 767px) {
+    /* The card has to close inside one screen, so on a phone it is budgeted
+       against viewport height rather than left to add up to whatever it adds up
+       to. The team drops to one compact row under the copy — initials, name and
+       role — and the bios and links wait for a wider screen. */
+    .intro-team {
+      padding: 0 clamp(0.9rem, 4vw, 1.4rem) clamp(0.8rem, 2vh, 1.1rem);
+      border-left: 0; background: none; gap: 0.4rem;
+    }
+    .intro-team-eyebrow { font-size: var(--fs-micro); margin-top: 0; }
+    .intro-team-list { flex-direction: row; gap: 0.45rem; }
+    .intro-member {
+      flex: 1 1 0; min-width: 0;
+      grid-template-columns: 1fr; justify-items: center; text-align: center;
+      gap: 0.3rem; padding: 0.5rem 0.35rem; border-radius: 12px;
+    }
+    .intro-member-avatar { width: 32px; height: 32px; font-size: 0.9rem; }
+    .intro-member-name { font-size: 0.92rem; }
+    .intro-member-role { font-size: var(--fs-micro); letter-spacing: 0.04em; margin-top: 0.1rem; }
+    .intro-member-bio { display: none; }
+    /* No room for a separate button, so the link stretches invisibly over the
+       whole compact card: tapping a name opens that profile. */
+    .intro-member-link {
+      position: absolute; inset: 0; width: auto; height: auto;
+      border: 0; border-radius: inherit; color: transparent;
+    }
+    .intro-member-link svg { display: none; }
+    .intro-member-link::after { content: none; }
+    /* Air between the bar and the top of the card. Without it the headline
+       starts hard against the chrome and reads as clipped. */
+    .intro-card-grid { padding-top: clamp(0.6rem, 1.8vh, 1.1rem); }
+    .intro-card-copy { padding: clamp(0.7rem, 2.4vw, 1.1rem) clamp(0.9rem, 4vw, 1.4rem) clamp(0.9rem, 2vh, 1.2rem); }
+    .intro-card-title { font-size: clamp(1.6rem, 8.2vw, 2.3rem); line-height: 1.04; }
+    .intro-card-sub {
+      font-size: 1rem;
+      line-height: 1.42;
+      margin-top: clamp(0.35rem, 1vh, 0.6rem);
+    }
+    .intro-card-btns { gap: 0.5rem; margin-top: clamp(0.5rem, 1.3vh, 0.85rem); }
+    .intro-btn { min-height: 44px; padding: 0.6rem 1.1rem; font-size: 0.88rem; border-radius: 10px; }
+    .intro-card-stats { gap: 0.6rem 1.4rem; margin-top: clamp(0.55rem, 1.5vh, 0.95rem); }
+    .intro-stat-v { font-size: clamp(1.35rem, 6vw, 1.85rem); }
+    .intro-stat-k { font-size: 0.75rem; margin-top: 0.15rem; }
+    .intro-card-signoff { margin-top: clamp(0.5rem, 1.4vh, 0.9rem); }
+
+    /* The availability panel heads the team column on desktop. On a phone it
+       costs a block of height we do not have — the card already says the same
+       thing with "Get in touch" and the floating Phase 0 button — so it is
+       dropped and the claim, figures, typed line and team close in one view. */
+    .intro-avail { display: none; }
+    .intro-card-grid { align-items: start; }
+    .intro-card-signoff {
+      align-items: flex-start; text-align: left;
+      margin-top: 0.5rem;
+    }
+    .intro-card-typed { justify-items: start; max-width: 26ch; }
+
+    /* Anchor the card under the bar instead of centring it in the frame. When
+       the card is taller than the space, centring splits the overflow evenly and
+       sends the top of it — the headline — up behind the chrome. Starting from
+       the top means any remaining overflow is at the bottom, where it is visible
+       and can be trimmed, rather than hidden under the nav. */
+    .track-intro > .sticky { justify-content: flex-start; }
+  }
+
+  /* Short phones. The card still has to close inside one screen at 640px, and
+     at that height the budget genuinely does not stretch to every block, so the
+     availability panel goes: it is a call to action that the card already makes
+     twice, in "Get in touch" and in the floating button. Everything that
+     carries information — claim, figures, typed line, team — stays. */
+  @media (max-width: 767px) and (max-height: 719px) {
+    .intro-avail { display: none; }
+    .intro-card-grid { padding-top: 0.4rem; }
+    .intro-card-copy { padding: 0.55rem 0.9rem 0.7rem; }
+    .intro-card-title { font-size: 1.45rem; }
+    .intro-card-sub { font-size: 0.76rem; line-height: 1.32; margin-top: 0.3rem; }
+    .intro-card-btns { gap: 0.4rem; margin-top: 0.45rem; }
+    .intro-btn { min-height: 40px; padding: 0.5rem 0.9rem; font-size: 0.82rem; }
+    .intro-card-stats { gap: 0.35rem 0.9rem; margin-top: 0.45rem; }
+    .intro-stat-v { font-size: 1.2rem; }
+    .intro-stat-k { font-size: 0.75rem; margin-top: 0.1rem; }
+    .intro-card-typed { font-size: 0.76rem; }
+    .intro-card-signoff { margin-top: 0.4rem; }
+  }
+
+  /* The smallest phones still in service — a 320x568 SE sits 48px past the
+     pinned frame even after the rules above. There is nothing left to delete
+     without losing information, so every remaining block gives back a few
+     pixels instead: the type ramp, the rhythms between blocks and the team row
+     each step down once more. Kept at 620px so the common 640px
+     Android class, which already closes with room to spare, is untouched. */
+  @media (max-width: 767px) and (max-height: 620px) {
+    .intro-card-copy { padding: 0.4rem 0.75rem 0.55rem; }
+    .intro-card-title { font-size: 1.22rem; }
+    .intro-card-sub { font-size: 0.75rem; line-height: 1.28; margin-top: 0.22rem; }
+    .intro-card-btns { gap: 0.35rem; margin-top: 0.34rem; }
+    .intro-btn { min-height: 36px; padding: 0.4rem 0.75rem; font-size: 0.76rem; }
+    .intro-card-stats { gap: 0.28rem 0.75rem; margin-top: 0.34rem; }
+    .intro-stat-v { font-size: 1.02rem; }
+    .intro-stat-k { font-size: 0.75rem; }
+    .intro-card-typed { font-size: 0.75rem; }
+    .intro-card-signoff { margin-top: 0.3rem; }
+    /* The initials are the one decorative block left in the team row; names
+       and roles carry the information, so they are what stays. */
+    .intro-member-avatar { display: none; }
+    .intro-member { padding: 0.4rem 0.25rem; gap: 0.15rem; }
+    .intro-member-name { font-size: 0.84rem; }
+    .intro-team { gap: 0.3rem; padding-bottom: 0.6rem; }
+  }
+
+  /* Roadmap on a phone. The scene and the copy are stacked rather than side by
+     side, and the scene was taking whatever height it wanted from the top of a
+     single column — which left the phase copy squeezed into the remainder and
+     pushed the stage counter off the bottom of the pinned screen. Capping the
+     figure is the trade that fits: the tower is still legible at a third of the
+     viewport, and the words describing it are the part that has to be read. */
+  @media (max-width: 767px) {
+    /* 31vh still left the copy column 35px past the pinned screen on a 390x844
+       phone, which clipped the phase description and took the 1/6 counter with
+       it. 26vh buys 43px — enough, with a little room, and the tower is still
+       legible at a quarter of the viewport. */
+    .site-stage { max-height: 26vh; }
+    .site-stage svg { max-height: 26vh; width: auto; margin: 0 auto; display: block; }
+    /* Every vertical rhythm in the copy column, tightened one step. */
+    .roadmap-copy > h3 { margin-top: 0.5rem; }
+    .roadmap-copy > p  { margin-top: 0.4rem; }
+    /* The phase-dot row is the last thing in the column, so every pixel above
+       it lands on it. 0.85rem still put it 15px past the pinned screen. */
+    .roadmap-copy > ol { margin-top: 0.45rem; margin-bottom: 0; }
+    .roadmap-copy > div:first-child { gap: 0.4rem; }
+    /* The pinned frame is exactly the viewport, so the section's own bottom
+       padding has nowhere to go but into the content. */
+    .roadmap-copy { padding-bottom: 0; }
+    /* --chrome-clear already clears the 109px mobile bar with room to spare.
+       The extra breathing gap stacked on top of it is a desktop nicety, and on
+       a phone it is the last 9px the copy column needs. !important because the
+       padding is an inline style from JSX and nothing else can reach it. */
+    #roadmap > .sticky { padding-top: var(--chrome-clear) !important; }
+  }
+
+  @media (prefers-reduced-motion: reduce) { .platform-track { animation: none; } }
+
+  /* ── Roadmap: the construction scene ──
+     The SVG carries all the geometry and colour; the stylesheet only sizes the
+     stage and styles the pre/post-launch toggle. */
+  .site-stage {
+    position: relative;
+    width: 100%;
+    /* Bounded on both axes. The previous stage sized only by height and let the
+       SVG overflow, which is how the model ended up hanging below the fold. */
+    height: min(58vh, 470px);
+    min-height: 240px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  /* meet-fitted against a viewBox that contains the world extents, so the whole
+     build is inside the frame at any stage size rather than relying on the
+     numbers happening to line up. */
+  .site-svg { width: 100%; height: 100%; display: block; overflow: hidden; }
+
+  .site-toggle {
+    display: inline-flex;
+    padding: 3px;
+    border-radius: 999px;
+    background: rgba(var(--fill-rgb),0.1);
+    border: 1px solid rgba(var(--ink-rgb),0.2);
+  }
+  .site-toggle button {
+    appearance: none; border: 0; cursor: pointer;
+    background: transparent;
+    color: rgba(var(--ink-rgb),0.7);
+    font-family: 'Barlow', sans-serif; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    font-size: var(--fs-micro);
+    padding: 0.5rem 0.95rem; min-height: 38px;
+    border-radius: 999px;
+    transition: background 220ms ease, color 220ms ease;
+  }
+  .site-toggle button.is-on { background: var(--ink); color: var(--page); }
+
+  @media (max-width: 767px) {
+    .site-stage { height: min(34vh, 260px); }
+  }
+
+  .intro-signoff { display: flex; flex-direction: column; }
+
+  /* The typed line and its hidden full-length twin occupy the same grid cell,
+     so the paragraph is always as tall as the finished sentence. */
+  .intro-statement { display: grid; }
+  .intro-statement > .tw-reserve,
+  .intro-statement > .tw-live { grid-area: 1 / 1; }
+  .tw-reserve { visibility: hidden; pointer-events: none; }
+  .intro-sign-wrap {
+    margin-top: clamp(0.5rem, 1.6vh, 1.1rem);
+    margin-left: clamp(1.5rem, 9vw, 8rem);
+    width: clamp(140px, 17vw, 250px);
+    min-height: clamp(56px, 6.9vw, 101px);
+  }
+  .intro-sign { display: block; overflow: visible; }
+
+  @media (max-width: 767px) {
+    /* On a phone the band is the tightest space on the page, so the mark drops
+       a size and tucks closer under the line rather than stepping out to the
+       right — there is no room for the diagonal. */
+    .intro-sign-wrap {
+      margin-left: clamp(0.75rem, 6vw, 2.5rem);
+      width: clamp(118px, 34vw, 150px);
+      min-height: clamp(48px, 13.7vw, 61px);
+    }
+  }
+
+  /* Dark mode only. The cutout's lower edge is a hard horizontal cut where the
+     photograph was cropped, which reads as a pasted-on sticker against the
+     page. A mask fades the bottom eighth to nothing so it dissolves into the
+     ground instead. A gradient overlay would have done the same job only while
+     the page colour behind it stayed constant — the wallpaper moves, so the
+     fade has to be cut out of the figure rather than painted over it. */
+  .intro-fig-fade {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 84%, rgba(0,0,0,0.55) 93%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 84%, rgba(0,0,0,0.55) 93%, transparent 100%);
+  }
+
+  /* The statement shares the bottom band with the figure, and the figure just
+     grew into it. Two independent guards, because either one alone still fails:
+     the width cap keeps the line from reaching the cutout at all, and the halo
+     keeps it readable in the overlap a narrow-but-not-mobile viewport can still
+     force. Light mode was the visible symptom — black type over a black suit
+     swallowed the word "ADS" entirely — but the same collision exists in dark
+     mode with the polarity reversed, so both get the treatment.
+
+     The halo is painted in --page, so it is white behind black type on the
+     white ground and black behind white type on the dark one, from a single
+     declaration. Eight offsets rather than four: at this weight the diagonal
+     gaps in a four-point ring are wide enough to see through. */
+  .intro-statement {
+    text-shadow:
+      0 0 12px var(--page),
+      1.5px 0 0 var(--page), -1.5px 0 0 var(--page),
+      0 1.5px 0 var(--page), 0 -1.5px 0 var(--page),
+      1.1px 1.1px 0 var(--page), -1.1px 1.1px 0 var(--page),
+      1.1px -1.1px 0 var(--page), -1.1px -1.1px 0 var(--page);
+  }
+
+  /* Ends before the cutout begins, less a clear gutter. Below md the figure is
+     centred above the statement rather than beside it, so there is nothing to
+     avoid and the cap would only starve the line — hence the media query.
+
+     Deliberately expressed against the figure's WIDEST permitted width (40vw,
+     so its left edge is never nearer than 30vw) rather than against --fig-w
+     itself. Reading the live width would close a loop: --fig-w sets this cap,
+     the cap changes how many lines the statement wraps to, the line count
+     changes the band height, and the band height is what --fig-w is measured
+     from. A static bound clears the figure at every size and cannot oscillate.
+
+     Doubled selector: max-w-[22ch] is Tailwind's, same specificity, later. */
+  @media (min-width: 768px) {
+    .intro-signoff { max-width: min(30ch, calc(30vw - 100px)); }
+    .intro-statement.intro-statement { max-width: min(22ch, calc(30vw - 160px)); }
+  }
+
+  /* Short phones — a 667px screen has to fit the ticker, a three-line headline,
+     a paragraph, two buttons, two stat cards and the client row. At the default
+     sizes that stack was taller than the viewport, so the centred column spilled
+     upward and the headline printed straight over the live ticker.
+
+     !important is unavoidable here: these values are set as inline styles from
+     JSX, and an inline style beats any selector. The alternative was to thread a
+     viewport-height branch through the component, which puts layout rules in
+     two places. */
+  @media (max-width: 767px) and (max-height: 720px) {
+    .hero-stack.hero-stack { row-gap: 0.75rem !important; padding-top: 0.55rem !important; }
+    .hero-ticker.hero-ticker { padding-top: calc(var(--chrome-clear) + 0.35rem) !important; }
+    .hero-stack.hero-stack h1,
+    .hero-dark-h1 { font-size: 2.05rem !important; }
+    .hero-stack.hero-stack > p,
+    .hero-dark-sub { font-size: 0.88rem !important; line-height: 1.4 !important; }
+    .hero-proof.hero-proof {
+      gap: 0.6rem 1.5rem !important;
+      row-gap: 0.6rem !important;
+    }
+    .hero-proof.hero-proof span[class*="font-heading"] { font-size: 1.95rem !important; }
+    .hero-proof.hero-proof span[class*="font-body"] { font-size: 0.75rem !important; }
+  }
+
+  /* Phone hero locks — light + dark. Laptop/desktop unchanged. */
+  @media (max-width: 767px) {
+    .hero-brands { padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+    .hero-brands .clients-track { padding-top: 2px; padding-bottom: 2px; }
+
+    /* Dark: fill Live → brand with even gaps; wider/bigger hooks; CTAs in one row. */
+    .hero-stack.hero-stack {
+      justify-content: space-evenly !important;
+      row-gap: 1.05rem !important;
+      padding-top: 0.8rem !important;
+      padding-bottom: 0.9rem !important;
+    }
+    .hero-dark-eyebrow {
+      font-size: 0.75rem !important;
+      letter-spacing: 0.12em !important;
+      max-width: 15.2rem !important;
+      margin-inline: auto !important;
+      text-align: center !important;
+    }
+    .hero-dark-h1 {
+      font-size: 2.15rem !important;
+      max-width: 23.2rem !important;
+      width: 100% !important;
+      letter-spacing: -0.035em !important;
+    }
+    .hero-dark-sub {
+      font-size: 1rem !important;
+      line-height: 1.45 !important;
+      max-width: 20.8rem !important;
+      padding-left: 0 !important;
+    }
+    .hero-proof.hero-proof { gap: 1.4rem 1.85rem !important; }
+    .hero-proof.hero-proof span[class*="font-heading"] { font-size: 2.2rem !important; }
+    .hero-proof.hero-proof span[class*="font-body"] { font-size: 0.75rem !important; }
+    .hero-dark-ctas.hero-dark-ctas {
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.55rem !important;
+      margin-top: 0.15rem !important;
+      width: 100% !important;
+    }
+    .hero-dark-ctas.hero-dark-ctas > button,
+    .hero-dark-ctas.hero-dark-ctas > a {
+      padding: 0.55rem 0.9rem !important;
+      font-size: 0.8rem !important;
+      white-space: nowrap !important;
+      flex: 0 1 auto !important;
+    }
+
+    /* Light: 37Cr above; 6L+ and 51% on one line — center-right cluster. */
+    .hero-light-stats {
+      padding-top: 1.15rem !important;
+      padding-bottom: 0.4rem !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+    }
+    .hero-light-stats-row {
+      display: grid !important;
+      grid-template-columns: auto auto;
+      grid-template-areas:
+        "pipeline pipeline"
+        "spend ready";
+      column-gap: 1.45rem;
+      row-gap: 1.15rem;
+      justify-items: end;
+      align-items: start;
+      margin-left: auto;
+      margin-right: 0.15rem;
+      max-width: 82%;
+      gap: 1.15rem 1.45rem !important;
+    }
+    .hero-light-stat-1 { grid-area: pipeline; }
+    .hero-light-stat-2 { grid-area: spend; }
+    .hero-light-stat-3 { grid-area: ready; }
+    .hero-light-stat-n { font-size: 1.65rem !important; }
+    .hero-light-stat .tracking-widest,
+    .hero-light-stat > div:last-child {
+      font-size: 0.75rem !important;
+      margin-top: 0.35rem !important;
+    }
+    .hero-light-h1 { font-size: 1.85rem !important; }
+    .hero-light-desc { font-size: 0.75rem !important; width: min(40vw, 128px) !important; }
+    .hero-light-bottom { gap: 0.32rem !important; }
+  }
+
+  /* The mobile nav scrolls sideways; a visible scrollbar under a 38px bar is
+     all chrome and no signal. */
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
+  /* The nav moved to the top, so the bottom-left corner is free again and the
+     orb comes back on phones. Anchor jumps need to clear the fixed bar, or
+     "#faq" lands with its heading tucked underneath it. */
+  @media (max-width: 767px) {
+    section[id] { scroll-margin-top: 56px; }
+  }
+
+  /* ── Touch hit areas ──
+     Measured on a 375px phone, the primary CTA was 36px tall, "See the System"
+     20px, and the contact icons 16-18px square. All well under the 44px that
+     Apple's HIG and WCAG 2.5.8 both land on.
+
+     Growing the elements would have meant re-tuning the hero, which fits the
+     fold by a small margin. So the hit area is expanded with a centred
+     pseudo-element instead: it is out of flow, so nothing moves and nothing
+     grows, but the finger gets a 44px target. Desktop is untouched — this only
+     applies to a coarse pointer. */
+  @media (pointer: coarse) {
+    #top a:not(.brush-stroke),
+    #contact a:not(.brush-stroke) { position: relative; }
+
+    /* The phone and WhatsApp marks sit 12px apart, so expanding each to 44px
+       with a pseudo-element would have made their hit areas overlap and sent
+       edge taps to the wrong link. Crowding is not something a bigger invisible
+       box can fix, so these two get real size and real spacing instead, and the
+       pill gives back the horizontal padding to pay for it. */
+    .tap-icon { min-width: 44px; min-height: 44px; justify-content: center; }
+    .contact-pill { gap: 0.5rem; padding-left: 1rem; padding-right: 1rem; }
+
+    #top a:not(.brush-stroke)::after,
+    #contact a:not(.brush-stroke):not(.tap-icon)::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      min-width: 44px;
+      min-height: 44px;
+    }
+  }
+
+  /* ── Very small and very short screens ──
+     Below ~340px (a folded phone, or a watch-class browser if one ever loads
+     this) the horizontal padding alone eats the line. And a phone held sideways
+     is only ~375px tall, where 24 units of top padding is a third of the fold. */
+  @media (max-width: 340px) {
+    #services, #projects, #roadmap, #faq, #contact { padding-left: 0.75rem; padding-right: 0.75rem; }
+  }
+  @media (max-height: 460px) and (orientation: landscape) {
+    .track-intro > .sticky, .track-about > .sticky {
+      padding-top: 3.5rem;
+      padding-bottom: 0.75rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .orb-shell, .orb-meridian, .orb-sheen, .orb-star { animation: none; }
+  }
+
+.intro-member-bio { font-size:12px; line-height:1.4; }
+.intro-member-name { font-size:19px; }
+/* Real team photographs: originals preserved; framing is presentation-only. */
+.intro-member { grid-template-columns: 70px minmax(0,1fr) 24px; align-items:center; }
+.intro-member-avatar { display:block; position:relative; overflow:hidden; width:70px; height:84px; border-radius:12px; background:#e7eaf0; }
+.intro-member-avatar img { position:absolute; max-width:none; width:100%; height:100%; object-fit:cover; }
+.portrait-sai img { width:160%; height:auto; left:-30%; top:-5%; }
+.portrait-adarsh img { width:380%; height:auto; left:-125%; top:-192%; }
+.portrait-vinayak img { width:260%; height:auto; left:-88%; top:-108%; }
+@media (min-width:768px) and (max-width:1099px) {
+ .intro-member { grid-template-columns:58px minmax(0,1fr) 24px; gap:0.5rem; }
+ .intro-member-avatar { width:58px; height:70px; }
+}
+@media (max-width:767px) {
+ .intro-member { grid-template-columns:minmax(0,1fr); gap:0.4rem; align-content:start; }
+ .intro-member-name { font-size:0.92rem; }
+ .intro-member-role { font-size:0.65rem; }
+ .intro-member-avatar { display:block; width:58px; height:70px; }
+}
+
+/* Portfolio refresh 2026-09-23 */
+.metrics-attribution{font:400 11px/1.5 system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,sans-serif;text-align:right;padding:0 3vw;margin:.4rem 0;color:var(--ink);opacity:.8}
+.intro-card-sub{line-height:1.7;letter-spacing:.006em;margin-top:1.15rem}
+.intro-card-title{line-height:1.1}
+.intro-card-stats{gap:1.5rem 2rem}
+.intro-stat-k{max-width:15ch;line-height:1.55}
+.intro-metrics-note{font-size:11px;line-height:1.6;opacity:.7;margin-top:1rem;max-width:55ch}
+.intro-member-name{line-height:1.3}.intro-member-role{margin-top:.25rem}.intro-member-bio{line-height:1.55;margin-top:.4rem}
+.intro-member-avatar{background:#ececf1}
+.portrait-adarsh img{width:145%;height:auto;left:-22.5%;top:-5%}
+.portrait-vinayak img{width:135%;height:auto;left:-22%;top:-2%}
+.portrait-sai img{width:130%;height:auto;left:-23%;top:0}
+@media(max-width:767px){.intro-card-sub{font-size:.86rem;line-height:1.65;margin-top:.8rem}.intro-card-stats{gap:.8rem;margin-top:1rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.intro-stat-v{font-size:1.65rem}.intro-stat-k{font-size:.64rem;line-height:1.45}.intro-metrics-note{font-size:.62rem;margin-top:.7rem}.intro-card-signoff{display:none}.intro-team{gap:.7rem}.intro-member-name{font-size:.83rem}.intro-member-role{font-size:.6rem}.metrics-attribution{font-size:9px;line-height:1.4;padding:0 1.25rem}.hero-light-stat-n{font-size:clamp(2.4rem,12vw,4rem)!important}}
+
+
+.project-source-note{font-size:11px!important;line-height:1.45!important}
+@media(max-width:1023px){.split-body{grid-template-columns:1fr!important}.split-body>div:last-child{display:none}.project-source-note{display:block;font-size:10px!important}.split-body>div:first-child{padding-top:12px;padding-bottom:12px}}
+
+/* Owner spacing and developer-preview correction — 23 Sep 2026 */
+.vajram-logo-frame{display:inline-block;position:relative;overflow:hidden;flex-shrink:0;border-radius:9px;background:#18251d;border:1px solid #55634a;box-shadow:0 1px 4px #0002;vertical-align:middle}
+.vajram-logo-frame img{position:absolute;width:100%;height:auto;max-width:none;top:-29%;left:0;filter:none!important}
+.hero-light-stats-row{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);width:min(43vw,730px);column-gap:clamp(24px,2.6vw,44px)!important;row-gap:clamp(20px,2.7vh,34px)!important;align-items:start}
+.hero-light-stat-3{grid-column:2}
+.hero-light-stat-n{font-size:clamp(64px,min(6.6vw,10.3vh),116px)!important;letter-spacing:-.045em}
+.hero-light-stat .tracking-widest{font-size:clamp(11px,1vw,15px)!important;line-height:1.5!important;margin-top:12px!important}
+.hero-light-stats{padding-top:20px!important;padding-bottom:20px!important}
+.hero-light .metrics-attribution{margin:8px 0 22px;padding-right:3vw;line-height:1.6}
+.hero-light-bottom{gap:24px!important;padding-bottom:18px!important}
+.hero-light-h1{font-size:clamp(42px,min(5vw,7.3vh),84px)!important}
+.intro-card-stats{display:grid;grid-template-columns:1.12fr 1fr 1fr;width:100%;gap:clamp(18px,2vw,36px);margin-top:32px}
+.intro-stat-v{font-size:clamp(42px,4.1vw,70px);white-space:nowrap;letter-spacing:-.025em}
+.intro-stat-k{font-size:clamp(11px,.9vw,14px);line-height:1.55;max-width:18ch;margin-top:12px}
+.intro-card-sub{margin-top:26px;line-height:1.7}
+.intro-card-btns{margin-top:24px}.intro-metrics-note{margin-top:20px}.intro-card-signoff{margin-top:28px}
+.intro-card-copy{padding-top:30px;padding-bottom:30px}
+@media(min-width:768px) and (max-height:800px){.intro-card-title{font-size:clamp(36px,4.3vw,58px)}.intro-card-sub{font-size:14px;margin-top:18px;line-height:1.6}.intro-card-btns{margin-top:18px}.intro-card-stats{margin-top:24px}.intro-stat-v{font-size:clamp(38px,3.7vw,60px)}.intro-card-signoff{margin-top:20px}.intro-metrics-note{margin-top:16px}.intro-card-copy{padding-top:24px;padding-bottom:24px}}
+@media(max-width:767px){
+ .hero-light-stats-row{width:100%;column-gap:28px!important;row-gap:24px!important;grid-template-columns:1fr 1fr}
+ .hero-light-stat-n{font-size:clamp(45px,13vw,68px)!important}
+ .hero-light-stat .tracking-widest{font-size:10px!important;line-height:1.5!important;margin-top:8px!important}
+ .hero-light .metrics-attribution{margin:8px 0 20px;padding:0 20px;font-size:9px}
+ .hero-light-bottom{gap:22px!important;padding-bottom:16px!important}
+ .hero-light-h1{font-size:clamp(36px,10vw,52px)!important}
+ .intro-card-stats{grid-template-columns:1.12fr 1fr 1fr;gap:12px;margin-top:20px}
+ .intro-stat-v{font-size:clamp(29px,8.3vw,40px)}.intro-stat-k{font-size:10px;margin-top:9px;line-height:1.5}
+ .intro-card-copy{padding-top:22px;padding-bottom:20px}.intro-card-sub{margin-top:14px;font-size:13px;line-height:1.65}.intro-card-btns{margin-top:16px}.intro-metrics-note{margin-top:14px;font-size:9px}
+}
+@media(max-width:767px) and (max-height:740px){.hero-light-stats-row{row-gap:14px!important}.hero-light-stat-n{font-size:44px!important}.hero-light-bottom{gap:14px!important}.hero-light .metrics-attribution{margin-bottom:14px}.intro-card-sub{font-size:12px}.intro-stat-v{font-size:28px}}
+
+
+.hero-light-stat-1{grid-column:1!important;grid-row:1!important}.hero-light-stat-2{grid-column:2!important;grid-row:1!important}.hero-light-stat-3{grid-column:2!important;grid-row:2!important}
+@media(max-width:767px){.split-body{display:grid!important;grid-template-columns:1fr!important;grid-template-rows:minmax(0,1fr) 145px}.split-body>div:last-child{display:block!important;padding:0 12px 12px!important}.split-body>div:first-child{gap:10px;padding-top:10px!important;padding-bottom:10px!important}.split-body>div:first-child>div{gap:12px!important}}
+
+/* 2026-09-24 hero metrics: more air; ₹725 Cr + 43+ on row one, 60%+ under 43+ (both themes) */
+.hero-light-stats-row{width:min(46vw,820px)!important;column-gap:clamp(44px,5vw,96px)!important;row-gap:clamp(30px,4.6vh,64px)!important}
+.hero-light-stats{padding-top:clamp(20px,3vh,40px)!important;padding-bottom:clamp(20px,3vh,40px)!important}
+.hero-light .metrics-attribution{margin-top:clamp(10px,1.6vh,18px)}
+.hero-proof.hero-proof{display:grid!important;grid-template-columns:repeat(2,max-content);justify-content:center;
+  column-gap:clamp(44px,6vw,104px)!important;row-gap:clamp(24px,3.6vh,44px)!important;margin-top:clamp(10px,2vh,22px)}
+.hero-proof.hero-proof>span:nth-child(1){grid-column:1;grid-row:1}
+.hero-proof.hero-proof>span:nth-child(2){grid-column:2;grid-row:1}
+.hero-proof.hero-proof>span:nth-child(3){grid-column:2;grid-row:2}
+.intro-card-stats{column-gap:clamp(28px,3.4vw,56px)!important;row-gap:22px!important}
+@media(max-width:767px){
+ .hero-light-stats-row{width:100%!important;column-gap:34px!important;row-gap:30px!important}
+ .hero-proof.hero-proof{grid-template-columns:repeat(2,minmax(0,1fr));width:100%;max-width:360px;
+   margin-inline:auto;column-gap:22px!important;row-gap:22px!important}
+ .hero-proof.hero-proof>span{min-width:0!important}
+ .hero-proof.hero-proof span[class*="font-body"]{white-space:normal!important}
+ .intro-card-stats{column-gap:18px!important}
+}
+@media(max-width:767px) and (max-height:740px){
+ .hero-light-stats-row{row-gap:20px!important}
+}
+/* Short laptop screens: the stat box is height-bound (flex-1, min-h-0). Scale numerals and
+   gaps with viewport height so both rows fit instead of overflowing into the ticker/footnote. */
+@media(min-width:768px) and (max-height:860px){
+ .hero-light-stat-n{font-size:clamp(46px,7vh,96px)!important}
+ .hero-light-stats-row{row-gap:clamp(14px,2.3vh,28px)!important}
+ .hero-light-stats{padding-top:6px!important;padding-bottom:6px!important}
+ .hero-light-stat .tracking-widest{margin-top:7px!important;font-size:clamp(10px,.85vw,12px)!important}
+}
+
+/* 2026-09-26 hero metrics — equal visible gaps: ₹725 Cr ↔ 43+ equals 43+ ↕ 60%+ */
+.hero-light-stats-row{--sn:clamp(64px,min(6.6vw,10.3vh),116px);--sg:clamp(30px,4.6vh,64px);
+  grid-template-columns:max-content max-content!important;width:auto!important;
+  row-gap:var(--sg)!important;column-gap:calc(var(--sg) + 0.204 * var(--sn))!important}
+.hero-light-stats-row .hero-light-stat-n{font-size:var(--sn)!important}
+.hero-light-stats-row .hero-light-stat-3{grid-column:1 / -1!important;grid-row:2!important;justify-self:end}
+@media(min-width:768px) and (max-height:860px){
+ .hero-light-stats-row{--sn:clamp(46px,7vh,96px);--sg:clamp(14px,2.3vh,28px)}
+}
+@media(max-width:767px){
+ .hero-light-stats-row{--sn:clamp(34px,10.5vw,68px);--sg:clamp(14px,5vw,30px);max-width:none!important;margin-left:auto!important}
+ .hero-light-stats-row .hero-light-stat > div:last-child{font-size:clamp(9px,2.6vw,11px)!important}
+}
+
+/* 2026-09-26 About removed — Roadmap flows straight into FAQ */
+@media(max-width:767px){ #faq{padding-top:88px!important} }
+/* Dubai hero headline — fits 3–4 lines on a 360–390px phone */
+@media(max-width:767px){ .hero-light-h1{font-size:clamp(30px,8.6vw,46px)!important} }
