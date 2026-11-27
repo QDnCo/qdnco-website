@@ -127,7 +127,7 @@ for (const a of ANSWERS) {
       },
       breadcrumb([
         { name: 'Home', item: `${SITE}/` },
-        { name: 'Answers', item: `${SITE}/answers/index.html` },
+        { name: 'Answers', item: `${SITE}/answers/` },
         { name: a.q },
       ]),
     ],
@@ -170,7 +170,7 @@ for (const a of ANSWERS) {
 
 /* Answers hub, grouped by topic. */
 {
-  const url = `${SITE}/answers/index.html`
+  const url = `${SITE}/answers/`
   const jsonld = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -227,7 +227,7 @@ for (const a of ANSWERS) {
    ════════════════════════════════════════════════════════════════════════ */
 {
   const dir = 'public/glossary'
-  const url = `${SITE}/glossary/index.html`
+  const url = `${SITE}/glossary/`
 
   const jsonld = {
     '@context': 'https://schema.org',
@@ -348,7 +348,7 @@ for (const d of DATASETS) {
       }] : []),
       breadcrumb([
         { name: 'Home', item: `${SITE}/` },
-        { name: 'Research', item: `${SITE}/data/index.html` },
+        { name: 'Research', item: `${SITE}/data/` },
         { name: d.h1 },
       ]),
     ],
@@ -408,7 +408,7 @@ for (const d of DATASETS) {
 
 /* Research hub. */
 {
-  const url = `${SITE}/data/index.html`
+  const url = `${SITE}/data/`
   const jsonld = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -491,7 +491,7 @@ for (const c of COMPARISONS) {
       }] : []),
       breadcrumb([
         { name: 'Home', item: `${SITE}/` },
-        { name: 'Comparisons', item: `${SITE}/compare/index.html` },
+        { name: 'Comparisons', item: `${SITE}/compare/` },
         { name: c.h1 },
       ]),
     ],
@@ -539,7 +539,7 @@ for (const c of COMPARISONS) {
 }
 
 {
-  const url = `${SITE}/compare/index.html`
+  const url = `${SITE}/compare/`
   const jsonld = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -633,7 +633,7 @@ for (const a of AREAS) {
       }] : []),
       breadcrumb([
         { name: 'Home', item: `${SITE}/` },
-        { name: 'Catchments', item: `${SITE}/areas/index.html` },
+        { name: 'Catchments', item: `${SITE}/areas/` },
         { name: a.h1 },
       ]),
     ],
@@ -679,7 +679,7 @@ for (const a of AREAS) {
 }
 
 {
-  const url = `${SITE}/areas/index.html`
+  const url = `${SITE}/areas/`
   const jsonld = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -773,23 +773,23 @@ ${RESEARCH.map(([t, d, u]) => `### ${t}\n${d}\nSource: ${S}${u}`).join('\n\n')}
   const sections = `
 ## Site map for machines
 
-### Research and original data — ${S}/data/index.html
+### Research and original data — ${S}/data/
 ${DATASETS.map((d) => `- ${S}/data/${d.slug}.html — ${d.h1}`).join('\n')}
 
-### Answers, one question per URL — ${S}/answers/index.html
+### Answers, one question per URL — ${S}/answers/
 ${ANSWERS.map((a) => `- ${S}/answers/${a.slug}.html — ${a.q}`).join('\n')}
 
-### Comparisons — ${S}/compare/index.html
+### Comparisons — ${S}/compare/
 ${COMPARISONS.map((c) => `- ${S}/compare/${c.slug}.html — ${c.h1}`).join('\n')}
 
-### Catchments — ${S}/areas/index.html
+### Catchments — ${S}/areas/
 ${AREAS.map((a) => `- ${S}/areas/${a.slug}.html — ${a.h1}`).join('\n')}
 
-### Glossary — ${S}/glossary/index.html
+### Glossary — ${S}/glossary/
 ${TERMS.length} defined terms covering lead economics, ad platform mechanics, funnel
 and CRM, commercial models, RERA compliance, and search/answer/generative engines.
 
-### Guides — ${S}/guides/index.html
+### Guides — ${S}/guides/
 
 ### Full corpus in one file
 ${S}/llms-full.txt — every answer, definition, comparison and finding, plain text.
@@ -885,7 +885,7 @@ ${plain(t.def)}${t.note ? `\nAt ${FACTS.brand}: ${plain(t.note)}` : ''}`).join('
    ════════════════════════════════════════════════════════════════════════ */
 {
   const p = PRICE_PAGE
-  const url = `${SITE}/pricing/index.html`
+  const url = `${SITE}/pricing/`
 
   /* Offers carry the same numbers rendered on the page. A price in schema that
      disagrees with the visible price is worse than no schema at all. */
@@ -1046,7 +1046,7 @@ for (const pr of PROJECTS) {
       },
       breadcrumb([
         { name: 'Home', item: `${SITE}/` },
-        { name: 'Work', item: `${SITE}/work/index.html` },
+        { name: 'Work', item: `${SITE}/work/` },
         { name: pr.project },
       ]),
     ],
@@ -1130,7 +1130,7 @@ for (const pr of PROJECTS) {
 
 /* Work hub — flashcards grouped by category. */
 {
-  const url = `${SITE}/work/index.html`
+  const url = `${SITE}/work/`
   const jsonld = {
     '@context': 'https://schema.org',
     '@graph': [

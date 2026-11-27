@@ -13,7 +13,7 @@ for p in data:
     pdf=f'qdnco-objection-handling-{region}.pdf'
     home='/dubai/' if region=='dubai' else '/'
     other='dubai' if region=='india' else 'india'
-    body=f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/guides/index.html">Guides</a> / {region.title()} objection handling</nav>
+    body=f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / {region.title()} objection handling</nav>
 <p class="eyebrow">{E(p['audience'])}</p><h1>{E(p['title'])}</h1>
 <p class="updated">Updated 1 October 2026 · By QDnCo</p>
 <p class="lede">A buyer objection is a request for clarity. Use these ten conversations to identify the concern, show the right evidence and agree a useful next step.</p>
@@ -32,7 +32,7 @@ for p in data:
 <h2>Official verification resources</h2><p>Check the relevant current authority records and project documents. This is a communication framework; obtain qualified advice on legal, tax or financing questions.</p><ul>''' + ''.join(f'<li><a href="{E(u)}">{E(t)}</a></li>' for t,u in p['sources'])+'</ul>'
     body+=f'''<h2>Related resources</h2><ul><li><a href="real-estate-objection-handling-{other}.html">The {other.title()} objection-handling playbook</a></li><li><a href="/tools/real-estate-lead-cost-calculator.html">Real estate lead cost calculator</a></li><li><a href="{home}">QDnCo real estate marketing in {region.title()}</a></li></ul>
 <div class="cta-band"><h2>Make your next campaign answer the questions buyers actually ask.</h2><p>QDnCo connects research, positioning, creative testing and lead generation with your team's feedback. Bring your recurring objections to a Phase 0 call.</p><a href="{home}#contact">Book a Phase 0 call ↗</a></div>'''
-    graph={'@context':'https://schema.org','@graph':[{'@type':'Article','headline':p['title'],'description':desc,'datePublished':'2026-10-01','dateModified':'2026-10-01','mainEntityOfPage':url,'author':{'@type':'Organization','name':'QDnCo','url':'https://qdnco.com/'},'audience':{'@type':'BusinessAudience','audienceType':p['audience']}},{'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':'https://qdnco.com/'},{'@type':'ListItem','position':2,'name':'Guides','item':'https://qdnco.com/guides/index.html'},{'@type':'ListItem','position':3,'name':p['title'],'item':url}]}]}
+    graph={'@context':'https://schema.org','@graph':[{'@type':'Article','headline':p['title'],'description':desc,'datePublished':'2026-10-01','dateModified':'2026-10-01','mainEntityOfPage':url,'author':{'@type':'Organization','name':'QDnCo','url':'https://qdnco.com/'},'audience':{'@type':'BusinessAudience','audienceType':p['audience']}},{'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':'https://qdnco.com/'},{'@type':'ListItem','position':2,'name':'Guides','item':'https://qdnco.com/guides/'},{'@type':'ListItem','position':3,'name':p['title'],'item':url}]}]}
     page=T
     for pattern,value in [(r'<title>.*?</title>',f'<title>{E(p["title"])} | QDnCo</title>'),(r'<meta name="description" content="[^"]*"\s*/?>',f'<meta name="description" content="{E(desc)}">'),(r'<link rel="canonical" href="[^"]*"\s*/?>',f'<link rel="canonical" href="{url}">')]:
         page,n=re.subn(pattern,lambda m:value,page,count=1,flags=re.S); assert n==1

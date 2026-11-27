@@ -164,7 +164,7 @@ RBODY = f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">
 
 # ─────────────────────────── FLAGSHIP ───────────────────────────
 WHY = [
- ('Indian real-estate acquisition experience', 'Fourteen residential campaigns across ten developer brands, each with an evidence ledger.', '/work/index.html', 'Case studies'),
+ ('Indian real-estate acquisition experience', 'Fourteen residential campaigns across ten developer brands, each with an evidence ledger.', '/work/', 'Case studies'),
  ('Indian buyer understanding', 'Campaigns built around how Indian buyers decide: price bands, payment plans, family decision-making and trust signals.', '/guides/real-estate-leads-for-channel-partners.html', 'Our India buyer guides'),
  ('India-city segmentation', f'Targeting planned from where interest actually concentrates: Trends puts {", ".join(s for s, _ in ST[:4])} at the top.', REPORT + '#s1', 'The state and city data'),
  ('Dubai-specific research', f'Our own audits of {NU:,} Dubai property ads in the UAE and {NC} shown in India.', REPORT, 'The report'),
@@ -230,7 +230,7 @@ FBODY = f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="../../index.htm
 <ul>
 <li><a href="{REPORT}">India → Dubai Buyer Acquisition Report 2026 &rarr;</a></li>
 <li><a href="{AUD}">Dubai Ad Library research &rarr;</a></li>
-<li><a href="/work/index.html">India real estate case studies &rarr;</a></li>
+<li><a href="/work/">India real estate case studies &rarr;</a></li>
 <li><a href="/dubai/trakheesi-permit-guide/">DLD advertising guide &rarr;</a></li>
 <li><a href="/about/editorial-policy.html">How we label every number &rarr;</a></li>
 <li><a href="/about/">About QDnCo and the team &rarr;</a></li>
@@ -238,7 +238,7 @@ FBODY = f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="../../index.htm
 </ul>
 
 <h2 id="pricing">Pricing</h2>
-<p>Dubai clients: AED 200 per qualified lead (100-lead monthly minimum) or a flat AED 20,000 monthly retainer, minimum three months, published on <a href="/dubai/#pricing">QDnCo Dubai</a>. Indian brokers and developers are quoted in rupees on the <a href="/pricing/index.html">India pricing page</a>. Media is always paid by you, directly to Meta and Google.</p>
+<p>Dubai clients: AED 200 per qualified lead (100-lead monthly minimum) or a flat AED 20,000 monthly retainer, minimum three months, published on <a href="/dubai/#pricing">QDnCo Dubai</a>. Indian brokers and developers are quoted in rupees on the <a href="/pricing/">India pricing page</a>. Media is always paid by you, directly to Meta and Google.</p>
 {faq_html(FFAQ, "Questions Dubai developers and brokers ask")}
 {rel_except(FLAG)}{cta("Want Indian buyers for your Dubai inventory?")}'''
 
@@ -504,7 +504,7 @@ rg = {"@context": "https://schema.org", "@graph": [
      "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://qdnco.com/data/downloads/india-dubai-2026-09-29-ads.csv"},
                       {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://qdnco.com/data/downloads/india-dubai-2026-09-29-search.json"},
                       {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://qdnco.com/data/downloads/india-dubai-2026-09-29-method.json"}]},
-    crumbs(RU, 'India → Dubai buyer report', ('Research', 'https://qdnco.com/data/index.html')), faqpage(RU, RFAQ)]}
+    crumbs(RU, 'India → Dubai buyer report', ('Research', 'https://qdnco.com/data/')), faqpage(RU, RFAQ)]}
 build('dist' + REPORT, RU, RT, RD, RBODY, rg, 1)
 
 dl = Path('dist/data/downloads')

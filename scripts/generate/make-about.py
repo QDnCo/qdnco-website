@@ -32,7 +32,7 @@ ABOUT = f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">
 
 <h2 id="markets">Where we work</h2>
 <div class="tablewrap"><table><thead><tr><th>Market</th><th>What we have done</th><th>Evidence</th></tr></thead><tbody>
-<tr><td>India</td><td>Residential marketing for developers and channel partners in Bengaluru, Mysore and Chennai, including Brigade, Godrej, Kumar, Vaishnavi, Nambiar and Vajram projects</td><td><a href="../work/index.html">Case studies with evidence ledgers</a></td></tr>
+<tr><td>India</td><td>Residential marketing for developers and channel partners in Bengaluru, Mysore and Chennai, including Brigade, Godrej, Kumar, Vaishnavi, Nambiar and Vajram projects</td><td><a href="../work/">Case studies with evidence ledgers</a></td></tr>
 <tr><td>Dubai (India→Dubai corridor)</td><td>Research into how Dubai property is advertised in the UAE and to Indian buyers, and DLD permit requirements. We have not yet run a Dubai campaign.</td><td><a href="../data/india-dubai-buyer-acquisition-report.html">India→Dubai buyer report</a> · <a href="../data/meta-ad-library-audit-dubai-real-estate.html">Dubai ad audit</a></td></tr>
 </tbody></table></div>
 <p>We have no Dubai office and hold no RERA broker licence. Dubai work is delivered remotely under the client's own DLD permits.</p>
@@ -46,7 +46,7 @@ ABOUT = f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">
 <p>Every figure we publish is labelled as observed, client-reported, a client-supplied project fact, owner-reported, a model or a market estimate. Read the <a href="editorial-policy.html">editorial policy</a>.</p>
 
 <h2 id="how">How to work with us</h2>
-<p>Pay per qualified lead or a flat monthly retainer (minimum three months), published on the <a href="../pricing/index.html">India pricing page</a> and in AED on <a href="../dubai/#pricing">QDnCo Dubai</a>. Every engagement starts with Phase 0, a paid market read.</p>
+<p>Pay per qualified lead or a flat monthly retainer (minimum three months), published on the <a href="../pricing/">India pricing page</a> and in AED on <a href="../dubai/#pricing">QDnCo Dubai</a>. Every engagement starts with Phase 0, a paid market read.</p>
 
 <h2 id="contact">Contact and profiles</h2>
 <p>15A, 4th Cross, Varanasi Main Road, Bell Town Layout, Jinkethimmanahalli, Ramamurthy Nagar, Bengaluru, Karnataka 560036, India · <a href="tel:+918861179992">+91 88611 79992</a> · <a href="mailto:qdnco01@gmail.com">qdnco01@gmail.com</a></p>
@@ -81,8 +81,8 @@ POLICY = f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html"
 <h2 id="corrections">Corrections</h2>
 <p>If a figure or statement on this site is wrong, email <a href="mailto:qdnco01@gmail.com">qdnco01@gmail.com</a> with the page and the source. We correct confirmed errors, date the change and, where a published claim was withdrawn, say so on the page, as we did on our Bangalore Meta audit.</p>
 <div class="related"><h2>See it applied</h2><ul>
-<li><a href="../work/index.html">Case studies<small>Each with an evidence ledger.</small></a></li>
-<li><a href="../data/index.html">Research<small>Methods, samples, limits and downloads.</small></a></li>
+<li><a href="../work/">Case studies<small>Each with an evidence ledger.</small></a></li>
+<li><a href="../data/">Research<small>Methods, samples, limits and downloads.</small></a></li>
 <li><a href="index.html">About QDnCo<small>Who we are and where we work.</small></a></li>
 </ul></div>
 '''

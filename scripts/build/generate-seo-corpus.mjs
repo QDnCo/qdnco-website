@@ -29,12 +29,12 @@ const coverage = [
   ['creative', 'Creative direction', '/guides/ai-creative-volume-vs-traditional-agency.html', ['real estate ad creative', 'AI creative real estate marketing'], 'commercial'],
   ['sales-follow-up', 'CRM and sales follow-up', '/guides/real-estate-crm-and-lead-funnel.html', ['real estate CRM lead funnel', 'real estate lead follow-up process'], 'informational'],
   ['budget', 'Campaign budget planning', '/answers/minimum-budget-real-estate-marketing.html', ['real estate marketing budget', 'property advertising budget'], 'informational'],
-  ['pricing', 'Agency scope and pricing', '/pricing/index.html', ['real estate marketing agency pricing', 'real estate marketing retainer'], 'commercial'],
+  ['pricing', 'Agency scope and pricing', '/pricing/', ['real estate marketing agency pricing', 'real estate marketing retainer'], 'commercial'],
   ['ad-research', 'Ad research methodology', '/data/meta-ad-library-audit-bangalore-agencies.html', ['real estate Meta Ad Library audit', 'property marketing competitor research'], 'informational'],
   ['market-research', 'Market-sizing methodology', '/data/bangalore-developer-marketing-market-size.html', ['Bengaluru developer marketing market size', 'real estate marketing market research'], 'informational'],
   ['channel-partners', 'Channel partners and direct demand', '/guides/channel-partner-vs-direct-demand.html', ['channel partner versus direct demand', 'developer demand generation'], 'informational'],
-  ['catchments', 'Local catchment planning', '/areas/index.html', ['Bengaluru property marketing catchment', 'Mysore real estate marketing'], 'local'],
-  ['research-library', 'Real estate marketing research', '/data/index.html', ['real estate marketing research', 'property marketing data'], 'informational'],
+  ['catchments', 'Local catchment planning', '/areas/', ['Bengaluru property marketing catchment', 'Mysore real estate marketing'], 'local'],
+  ['research-library', 'Real estate marketing research', '/data/', ['real estate marketing research', 'property marketing data'], 'informational'],
 ]
 const clusters = coverage.map(([id, pillar, target, keywords, intent], index) => ({
   id, pillar, intent, priority: index < 4 ? 'P0' : 'P1', targetUrl: SITE + target,
@@ -59,7 +59,7 @@ json('entity-graph.json', {
   _meta: { site: SITE, generated: updated, notes: 'Brand identity mirrors the maintained site. Public business contacts only. Service areas are not office addresses. This graph makes no direct-client relationship assertions.' },
   organizations: [organization], people: [person], services,
   relationships: services.map(service => ({ from: organization['@id'], to: service.id, type: 'offersCapability' })),
-  portfolioSource: SITE + '/work/index.html',
+  portfolioSource: SITE + '/work/',
   experienceNotes: PROOF,
 })
 

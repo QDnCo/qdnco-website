@@ -277,11 +277,11 @@ s = s[:a] + f'''const FOOTER_NAV = [
     links: [
       {{ l: 'QDnCo India', h: '/' }},
       {{ l: 'About QDnCo', h: '/about/' }},
-      {{ l: 'All case studies', h: '/work/index.html' }},
+      {{ l: 'All case studies', h: '/work/' }},
       {{ l: 'Indium — ₹266 CPL at 51%', h: '/work/indium-north-bangalore.html' }},
       {{ l: 'Kumar Platina', h: '/work/kumar-platina.html' }},
       {{ l: 'Meta Ad Library audit — 41 agencies', h: '/data/meta-ad-library-audit-bangalore-agencies.html' }},
-      {{ l: 'All guides', h: '/guides/index.html' }},
+      {{ l: 'All guides', h: '/guides/' }},
     ],
   }},
   {{
@@ -351,7 +351,7 @@ const CORRIDOR = [
 ];
 
 const WHY_QD = [
-  { t: 'Indian real-estate acquisition', d: 'Fourteen residential campaigns across ten developer brands, each with an evidence ledger.', h: '/work/index.html', l: 'Case studies' },
+  { t: 'Indian real-estate acquisition', d: 'Fourteen residential campaigns across ten developer brands, each with an evidence ledger.', h: '/work/', l: 'Case studies' },
   { t: 'Indian buyer understanding', d: 'Campaigns built around how Indian buyers decide: price bands, payment plans and trust signals.', h: '/guides/real-estate-leads-for-channel-partners.html', l: 'India guides' },
   { t: 'India-city segmentation', d: 'Targeting planned from where interest concentrates: Delhi, Haryana, Goa, Maharashtra, Karnataka.', h: '/data/india-dubai-buyer-acquisition-report.html#s1', l: 'State and city data' },
   { t: 'Dubai-specific research', d: 'Our own audits of 984 Dubai property ads in the UAE and 521 shown in India.', h: '/data/india-dubai-buyer-acquisition-report.html', l: 'The report' },

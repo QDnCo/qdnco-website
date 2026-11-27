@@ -333,7 +333,7 @@ def build(p):
        "audience": {"@type": "BusinessAudience", "audienceType": "Real estate channel partners and brokers in India"}},
       {"@type": "BreadcrumbList", "@id": url + "#crumbs", "itemListElement": [
          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qdnco.com/"},
-         {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://qdnco.com/guides/index.html"},
+         {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://qdnco.com/guides/"},
          {"@type": "ListItem", "position": 3, "name": p['label'], "item": url}]},
       {"@type": "FAQPage", "@id": url + "#faq", "mainEntity": [
          {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in p['faq']]},

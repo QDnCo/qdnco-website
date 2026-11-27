@@ -85,13 +85,13 @@ document.documentElement.dataset.theme=t}catch(e){}})();
 const tail = () => `
     <footer class="foot">
       <nav aria-label="Sections"><a href="index.html">All guides</a>
-        <a href="../work/index.html">Work</a>
-        <a href="../answers/index.html">Answers</a>
-        <a href="../data/index.html">Research</a>
-        <a href="../compare/index.html">Comparisons</a>
-        <a href="../areas/index.html">Catchments</a>
-        <a href="../glossary/index.html">Glossary</a>
-        <a href="../pricing/index.html">Pricing</a>
+        <a href="../work/">Work</a>
+        <a href="../answers/">Answers</a>
+        <a href="../data/">Research</a>
+        <a href="../compare/">Comparisons</a>
+        <a href="../areas/">Catchments</a>
+        <a href="../glossary/">Glossary</a>
+        <a href="../pricing/">Pricing</a>
         <a href="../legal/privacy.html">Privacy</a>
         <a href="../legal/disclaimer.html">Disclaimer</a>
       </nav>
@@ -181,7 +181,7 @@ const renderGuide = (g) => {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-          { '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE}/guides/index.html` },
+          { '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE}/guides/` },
           { '@type': 'ListItem', position: 3, name: g.h1 },
         ],
       },
@@ -214,7 +214,7 @@ const renderIndex = () => {
     '@graph': [
       {
         '@type': 'CollectionPage',
-        '@id': `${SITE}/guides/index.html#page`,
+        '@id': `${SITE}/guides/#page`,
         name: HUB.title,
         description: HUB.desc,
         inLanguage: 'en-IN',

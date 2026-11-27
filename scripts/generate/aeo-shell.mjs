@@ -149,13 +149,13 @@ document.documentElement.dataset.theme=t}catch(e){}})();
 export const tail = (depth = '..') => `
     <footer class="foot">
       <nav aria-label="Sections">
-        <a href="${depth}/work/index.html">Work</a>
-        <a href="${depth}/guides/index.html">Guides</a>
-        <a href="${depth}/answers/index.html">Answers</a>
+        <a href="${depth}/work/">Work</a>
+        <a href="${depth}/guides/">Guides</a>
+        <a href="${depth}/answers/">Answers</a>
         <a href="${depth}/dubai/real-estate-marketing/">Dubai</a>
-        <a href="${depth}/data/index.html">Data</a>
-        <a href="${depth}/glossary/index.html">Glossary</a>
-        <a href="${depth}/pricing/index.html">Pricing</a>
+        <a href="${depth}/data/">Data</a>
+        <a href="${depth}/glossary/">Glossary</a>
+        <a href="${depth}/pricing/">Pricing</a>
         <a href="${depth}/legal/privacy.html">Privacy</a>
         <a href="${depth}/legal/disclaimer.html">Disclaimer</a>
       </nav>

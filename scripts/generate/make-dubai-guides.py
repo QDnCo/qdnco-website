@@ -282,11 +282,11 @@ BODY3 = crumbs('Indian buyers') + f'''<p class="eyebrow">Dubai · The India corr
 </ol>
 
 <h2>Why an India-based team</h2>
-<p>We run property campaigns to Indian buyers every week: 43+ projects are active across our India work, with method and labelled numbers published in <a href="../../work/index.html">our case studies</a>. For Dubai developers and brokers, that means the India pool is built by people who already know how Indian buyers respond to price, payment-plan and trust signals. We have not yet run a Dubai campaign; every engagement starts with a market read you can judge before a retainer.</p>
+<p>We run property campaigns to Indian buyers every week: 43+ projects are active across our India work, with method and labelled numbers published in <a href="../../work/">our case studies</a>. For Dubai developers and brokers, that means the India pool is built by people who already know how Indian buyers respond to price, payment-plan and trust signals. We have not yet run a Dubai campaign; every engagement starts with a market read you can judge before a retainer.</p>
 {faq_html(FAQ3)}{related([
  ('../real-estate-lead-generation/', 'Lead generation for Dubai brokers', 'Portals, Meta, Google and speed to lead.'),
  ('../trakheesi-permit-guide/', 'Trakheesi permits for marketers', 'What every Dubai property ad needs.'),
- ('../../work/index.html', 'Our India case studies', 'Method and labelled numbers for each project.'),
+ ('../../work/', 'Our India case studies', 'Method and labelled numbers for each project.'),
  ('../', 'QDnCo Dubai', 'Services, AED pricing and how we work.'),
 ])}{CTA.format(h='Selling Dubai inventory to buyers in India?')}'''
 PAGES.append(dict(slug='indian-buyers', label='Indian buyers',
@@ -421,7 +421,7 @@ def hrep(old, new):
     assert h.count(old) == 1, old[:80]; h = h.replace(old, new)
 hrep('<a href="../../index.html">Home</a><span>/</span>Dubai<span>/</span>',
      '<a href="../../index.html">Home</a><span>/</span><a href="../">Dubai</a><span>/</span>')
-hrep('<p>Pricing is published in rupees on <a href="../../pricing/index.html">the pricing page</a>; Dubai engagements are quoted in AED on request.</p>',
+hrep('<p>Pricing is published in rupees on <a href="../../pricing/">the pricing page</a>; Dubai engagements are quoted in AED on request.</p>',
      '<p>Dubai pricing is published in AED on <a href="../#pricing">QDnCo Dubai</a>: a fee per qualified lead, or a monthly retainer, with media paid by you directly to Meta and Google.</p>')
 hrep('<div class="related"><h2>Related</h2><ul>\n',
      '<div class="related"><h2>Related</h2><ul>\n'
