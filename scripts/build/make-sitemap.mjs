@@ -25,6 +25,10 @@ const OUT_FILE = path.join(SITE_DIR, 'sitemap.xml')
 const MECHANICAL_REWRITES = [
   // 2026-11-28: hub URLs moved from /x/index.html to /x/.
   [/(?<![\w-])(pricing|work|guides|answers|data|compare|areas|glossary)\/index\.html/g, '$1/'],
+  // 2026-11-28: images re-encoded as WebP (same picture, new file format).
+  [/\b((?:shots|brands|adreel)\/[\w-]+)\.(?:png|jpe?g|webp)\b/g, '$1.img'],
+  // Cache-busting ?v= tags on our own scripts and stylesheets.
+  [/(\/(?:js|css)\/[\w./-]+\.(?:js|css)\?v=)[\w-]+/g, '$1v'],
 ]
 const SKIP_DIRS = new Set(['growth-status', 'creative-review', 'togethired', '.well-known', 'seo'])
 const HOME = 'https://qdnco.com/'
