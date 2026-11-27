@@ -216,7 +216,7 @@
       "pillar": "Agency scope and pricing",
       "intent": "commercial",
       "priority": "P1",
-      "targetUrl": "https://qdnco.com/pricing/index.html",
+      "targetUrl": "https://qdnco.com/pricing/",
       "keywords": [
         {
           "keyword": "real estate marketing agency pricing",
@@ -304,7 +304,7 @@
       "pillar": "Local catchment planning",
       "intent": "local",
       "priority": "P1",
-      "targetUrl": "https://qdnco.com/areas/index.html",
+      "targetUrl": "https://qdnco.com/areas/",
       "keywords": [
         {
           "keyword": "Bengaluru property marketing catchment",
@@ -326,7 +326,7 @@
       "pillar": "Real estate marketing research",
       "intent": "informational",
       "priority": "P1",
-      "targetUrl": "https://qdnco.com/data/index.html",
+      "targetUrl": "https://qdnco.com/data/",
       "keywords": [
         {
           "keyword": "real estate marketing research",

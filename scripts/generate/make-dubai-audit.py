@@ -157,7 +157,7 @@ GRAPH = {"@context": "https://schema.org", "@graph": [
     + [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": f"https://qdnco.com/data/downloads/dubai-meta-audit-{SNAP}-method.json"}]},
  {"@type": "BreadcrumbList", "@id": URL + "#crumbs", "itemListElement": [
    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qdnco.com/"},
-   {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://qdnco.com/data/index.html"},
+   {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://qdnco.com/data/"},
    {"@type": "ListItem", "position": 3, "name": "Dubai property ads on Meta", "item": URL}]},
  {"@type": "FAQPage", "@id": URL + "#faq", "mainEntity": [
    {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]},

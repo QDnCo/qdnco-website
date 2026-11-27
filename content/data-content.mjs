@@ -66,7 +66,7 @@ export const DATASETS = [
       {
         "id": "pricing",
         "h2": "What we can say about transparency",
-        "html": "This snapshot does not establish that no agency publishes prices, sells research or defines a qualified lead. Captured ad excerpts are not an exhaustive review of websites, proposals or commercial terms. Earlier wording made that unsupported inference; this revision withdraws it.|||Our own commitments remain concrete: <a href=\"/pricing/index.html\">published commercial terms</a>, a documented research process and <a href=\"/answers/what-counts-as-qualified-lead.html\">a written qualified-lead definition</a>. Buyers can assess these directly without a claim that competitors lack them."
+        "html": "This snapshot does not establish that no agency publishes prices, sells research or defines a qualified lead. Captured ad excerpts are not an exhaustive review of websites, proposals or commercial terms. Earlier wording made that unsupported inference; this revision withdraws it.|||Our own commitments remain concrete: <a href=\"/pricing/\">published commercial terms</a>, a documented research process and <a href=\"/answers/what-counts-as-qualified-lead.html\">a written qualified-lead definition</a>. Buyers can assess these directly without a claim that competitors lack them."
       },
       {
         "id": "reuse",
