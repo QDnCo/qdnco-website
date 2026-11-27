@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import re
 import shutil
+import subprocess
 
 SOURCE = Path('site')
 OUTPUT = Path('release')
@@ -42,7 +43,13 @@ def validate(root):
     return files
 
 
+def refresh_sitemap():
+    """Rewrite site/sitemap.xml with lastmod from git history (needs fetch-depth: 0)."""
+    subprocess.run(['node', 'scripts/build/make-sitemap.mjs'], check=True)
+
+
 if __name__ == '__main__':
+    refresh_sitemap()
     files = validate(SOURCE)
     if OUTPUT.exists():
         shutil.rmtree(OUTPUT)
