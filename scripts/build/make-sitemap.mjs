@@ -6,8 +6,10 @@
    - <lastmod> is the date of the last git commit that changed the file's content.
      A commit whose diff to the file disappears once MECHANICAL_REWRITES are
      applied to both sides (e.g. /pricing/index.html -> /pricing/) is not a
-     content change and is skipped. This works on diffs, not commit hashes, so it
-     survives squash merges.
+     content change and is skipped. So is a commit after which the page's text
+     (title, meta description, JSON-LD and visible body text) is unchanged, e.g.
+     moving inline scripts or styles into files. Both tests work on file content,
+     not commit hashes, so they survive squash merges.
    - A page with no commit yet (new, uncommitted) gets today's date.
 
    Needs full git history. In CI the checkout uses fetch-depth: 0.
@@ -65,24 +67,56 @@ function isMechanical(removed, added) {
   return removed.every((line, i) => normalize(line) === normalize(added[i]))
 }
 
-/** @param {string} file @returns {{ date: string, removed: string[], added: string[] }[]} newest first */
+/** @param {string} file @returns {{ hash: string, date: string, removed: string[], added: string[] }[]} newest first */
 function fileHistory(file) {
-  const log = execFileSync('git', ['log', '--format=@@commit %cs', '-p', '--unified=0', '--no-color', '--', file], {
+  const log = execFileSync('git', ['log', '--format=@@commit %H %cs', '-p', '--unified=0', '--no-color', '--', file], {
     cwd: ROOT, encoding: 'utf8', maxBuffer: 256 * 1024 * 1024,
   })
   const commits = []
   for (const line of log.split('\n')) {
-    if (line.startsWith('@@commit ')) commits.push({ date: line.slice(9), removed: [], added: [] })
+    if (line.startsWith('@@commit ')) {
+      const [hash, date] = line.slice(9).split(' ')
+      commits.push({ hash, date, removed: [], added: [] })
+    }
     else if (line.startsWith('-') && !line.startsWith('---')) commits.at(-1)?.removed.push(line.slice(1))
     else if (line.startsWith('+') && !line.startsWith('+++')) commits.at(-1)?.added.push(line.slice(1))
   }
   return commits
 }
 
+/** @param {string} html @returns {string} what a reader or a search engine reads */
+function pageText(html) {
+  const meta = (html.match(/<title>[\s\S]*?<\/title>|<meta\b[^>]*name="description"[^>]*>/gi) ?? []).join('\n')
+  const ld = (html.match(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi) ?? []).join('\n')
+  const body = html
+    .replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<[^>]*\balt="([^"]*)"[^>]*>/gi, ' $1 ') // alt text is content too
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+  return normalize(`${meta}\n${ld}\n${body}`)
+}
+
+/** @param {string} rev @param {string} file @returns {string | null} */
+function showAt(rev, file) {
+  try {
+    const rel = path.relative(ROOT, file)
+    return execFileSync('git', ['show', `${rev}:${rel}`], { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'] })
+  } catch {
+    return null // file did not exist at that revision
+  }
+}
+
+/** @param {{ hash: string }} commit @param {string} file @returns {boolean} */
+function textUnchanged(commit, file) {
+  const before = showAt(`${commit.hash}^`, file)
+  const after = showAt(commit.hash, file)
+  return before !== null && after !== null && pageText(before) === pageText(after)
+}
+
 /** @param {string} file @returns {string} YYYY-MM-DD */
 function lastContentDate(file) {
   const commits = fileHistory(file)
-  const real = commits.find((c) => !isMechanical(c.removed, c.added))
+  const real = commits.find((c) => !isMechanical(c.removed, c.added) && !textUnchanged(c, file))
   return (real ?? commits.at(-1))?.date ?? new Date().toISOString().slice(0, 10)
 }
 
