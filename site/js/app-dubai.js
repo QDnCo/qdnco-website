@@ -115,17 +115,17 @@ const riseIn = (delay) => ({
    mark therefore gets an explicit box. `scale` balances tall marks against wide
    ones so the logo wall reads evenly. */
 const BRANDS = {
-bhartiya: {"name": "Bhartiya City", "logo": "/brands/bhartiya.png", "ar": 1.956989247311828, "scale": 1, "site": "https://bhartiyacity.com/", "domain": "bhartiyacity.com", "shot": "/shots/bhartiya-hero.png", "invert": false} ,
-nambiar: {"name": "Nambiar Builders", "logo": "/brands/nambiar.svg", "ar": 3, "scale": 1, "site": "https://nambiarbuilders.com/", "domain": "nambiarbuilders.com", "shot": "/shots/nambiar-hero.png?v=20260923-hero", "invert": false} ,
-urbanrise: {"name": "Urbanrise", "logo": "/brands/urbanrise.png", "ar": 3, "scale": 1, "site": "https://www.urbanrise.in/", "domain": "urbanrise.in", "shot": "/shots/urbanrise-hero.png", "invert": false} ,
-vajram: {"name": "Vajram Group", "logo": "/brands/vajram.webp", "ar": 3, "scale": 1, "site": "https://www.vajramgroup.com/", "domain": "vajramgroup.com", "shot": "/shots/vajram-hero.png", "invert": false} ,
+bhartiya: {"name": "Bhartiya City", "logo": "/brands/bhartiya.png", "ar": 1.956989247311828, "scale": 1, "site": "https://bhartiyacity.com/", "domain": "bhartiyacity.com", "shot": "/shots/bhartiya-hero.webp", "invert": false} ,
+nambiar: {"name": "Nambiar Builders", "logo": "/brands/nambiar.svg", "ar": 3, "scale": 1, "site": "https://nambiarbuilders.com/", "domain": "nambiarbuilders.com", "shot": "/shots/nambiar-hero.webp?v=20260923-hero", "invert": false} ,
+urbanrise: {"name": "Urbanrise", "logo": "/brands/urbanrise.png", "ar": 3, "scale": 1, "site": "https://www.urbanrise.in/", "domain": "urbanrise.in", "shot": "/shots/urbanrise-hero.webp", "invert": false} ,
+vajram: {"name": "Vajram Group", "logo": "/brands/vajram.webp", "ar": 3, "scale": 1, "site": "https://www.vajramgroup.com/", "domain": "vajramgroup.com", "shot": "/shots/vajram-hero.webp", "invert": false} ,
 
-  indium:     { name: 'Indium Group',         logo: '/brands/indium.png',     logoWhite: '/brands/indium-white.png',         ar: 378/133,     scale: 1.05, site: 'https://indiumgroup.com/',          domain: 'indiumgroup.com',      shot: '/shots/indium.jpg',            invert: false },
-  brigade:    { name: 'Brigade Group',        logo: '/brands/brigade.png',    ar: 88/101,      scale: 1.35, site: 'https://www.brigadegroup.com/',     domain: 'brigadegroup.com',     shot: '/shots/brigade.jpg',           invert: true },
-  kumar:      { name: 'Kumar Properties',     logo: '/brands/kumar.png',      ar: 4500/867,    scale: 0.85, site: 'https://kumarsproperties.com/',     domain: 'kumarsproperties.com', shot: '/shots/kumar.jpg',             invert: true },
-  woodscapes: { name: 'Godrej Properties',    logo: '/brands/godrej.svg',     ar: 213/44,      scale: 0.92, site: 'https://www.godrejproperties.com/bengaluru/residential/godrej-woodscapes',        domain: 'godrejproperties.com', shot: '/shots/godrej-woodscapes.jpg', invert: true },
-  tiara:      { name: 'Godrej Properties',    logo: '/brands/godrej.svg',     ar: 213/44,      scale: 0.92, site: 'https://www.godrejproperties.com/bengaluru/residential/godrej-tiara',             domain: 'godrejproperties.com', shot: '/shots/godrej-tiara.jpg',      invert: true },
-  msr:        { name: 'Godrej Properties',    logo: '/brands/godrej.svg',     ar: 213/44,      scale: 0.92, site: 'https://www.godrejproperties.com/bengaluru/residential/barca-at-godrej-msr-city', domain: 'godrejproperties.com', shot: '/shots/godrej-msr.jpg',        invert: true },
+  indium:     { name: 'Indium Group',         logo: '/brands/indium.png',     logoWhite: '/brands/indium-white.png',         ar: 378/133,     scale: 1.05, site: 'https://indiumgroup.com/',          domain: 'indiumgroup.com',      shot: '/shots/indium.webp',            invert: false },
+  brigade:    { name: 'Brigade Group',        logo: '/brands/brigade.png',    ar: 88/101,      scale: 1.35, site: 'https://www.brigadegroup.com/',     domain: 'brigadegroup.com',     shot: '/shots/brigade.webp',           invert: true },
+  kumar:      { name: 'Kumar Properties',     logo: '/brands/kumar.webp',      ar: 4500/867,    scale: 0.85, site: 'https://kumarsproperties.com/',     domain: 'kumarsproperties.com', shot: '/shots/kumar.webp',             invert: true },
+  woodscapes: { name: 'Godrej Properties',    logo: '/brands/godrej.svg',     ar: 213/44,      scale: 0.92, site: 'https://www.godrejproperties.com/bengaluru/residential/godrej-woodscapes',        domain: 'godrejproperties.com', shot: '/shots/godrej-woodscapes.webp', invert: true },
+  tiara:      { name: 'Godrej Properties',    logo: '/brands/godrej.svg',     ar: 213/44,      scale: 0.92, site: 'https://www.godrejproperties.com/bengaluru/residential/godrej-tiara',             domain: 'godrejproperties.com', shot: '/shots/godrej-tiara.webp',      invert: true },
+  msr:        { name: 'Godrej Properties',    logo: '/brands/godrej.svg',     ar: 213/44,      scale: 0.92, site: 'https://www.godrejproperties.com/bengaluru/residential/barca-at-godrej-msr-city', domain: 'godrejproperties.com', shot: '/shots/godrej-msr.webp',        invert: true },
   /* Ships as a dark-background lockup — the wordmark is white in the source art.
      Forcing it onto the light chip means inverting the wordmark to ink while the
      icon block keeps its own colours, and the result reads wrong. `darkLockup`
@@ -134,13 +134,13 @@ vajram: {"name": "Vajram Group", "logo": "/brands/vajram.webp", "ar": 3, "scale"
      monochrome cuts, ink and white, with the tick knocked out of the plate so
      the page shows through it — neither theme needs a CSS filter: darkLockup
      keeps it off the light chip, and logoWhite is chosen on dark grounds. */
-  vaishnavi:  { name: 'Vaishnavi Group',      logo: '/brands/vaishnavi.svg',  logoWhite: '/brands/vaishnavi-white.svg',      ar: 4.8659,      scale: 0.72, site: 'https://www.vaishnavigroup.com/', domain: 'vaishnavigroup.com', shot: '/shots/vaishnavi.jpg',        invert: false, darkLockup: true },
-  roboprenr:  { name: 'Roboprenr',            logo: '/brands/roboprenr.png',  ar: 500/146,     scale: 1.00, site: 'https://roboprenr.com/',            domain: 'roboprenr.com',        shot: '/shots/roboprenr.jpg',         invert: true },
+  vaishnavi:  { name: 'Vaishnavi Group',      logo: '/brands/vaishnavi.svg',  logoWhite: '/brands/vaishnavi-white.svg',      ar: 4.8659,      scale: 0.72, site: 'https://www.vaishnavigroup.com/', domain: 'vaishnavigroup.com', shot: '/shots/vaishnavi.webp',        invert: false, darkLockup: true },
+  roboprenr:  { name: 'Roboprenr',            logo: '/brands/roboprenr.png',  ar: 500/146,     scale: 1.00, site: 'https://roboprenr.com/',            domain: 'roboprenr.com',        shot: '/shots/roboprenr.webp',         invert: true },
   /* logo_white.png is already white — inverting it would turn it black. */
-  logic:      { name: 'Logic Launch',         logo: '/brands/logiclaunch.png', logoWhite: '/brands/logiclaunch-white.png', ar: 1580/632,   scale: 1.30, site: 'https://logiclaunch.in/en-us/',     domain: 'logiclaunch.in',       shot: '/shots/logiclaunch.jpg',       invert: false },
+  logic:      { name: 'Logic Launch',         logo: '/brands/logiclaunch.webp', logoWhite: '/brands/logiclaunch-white.webp', ar: 1580/632,   scale: 1.30, site: 'https://logiclaunch.in/en-us/',     domain: 'logiclaunch.in',       shot: '/shots/logiclaunch.webp',       invert: false },
   /* Netri's logo asset 404s on their host, so this one renders as a wordmark. */
-  marga:      { name: 'Marga Education',      logo: '/brands/marga.png',      logoWhite: '/brands/marga-white.png',          ar: 536/324,     scale: 1.12, site: null,                                domain: null,                   shot: null },
-  netri:      { name: 'Netri Academy',        logo: '/brands/netri.png',      logoWhite: '/brands/netri-white.png',          ar: 900/247,     scale: 1.00, invert: true,                                                   site: 'https://netriacademy.com/',         domain: 'netriacademy.com',     shot: '/shots/netri.jpg' },
+  marga:      { name: 'Marga Education',      logo: '/brands/marga.webp',      logoWhite: '/brands/marga-white.png',          ar: 536/324,     scale: 1.12, site: null,                                domain: null,                   shot: null },
+  netri:      { name: 'Netri Academy',        logo: '/brands/netri.png',      logoWhite: '/brands/netri-white.png',          ar: 900/247,     scale: 1.00, invert: true,                                                   site: 'https://netriacademy.com/',         domain: 'netriacademy.com',     shot: '/shots/netri.webp' },
 };
 
 /**
@@ -2390,7 +2390,7 @@ function ProjectTile({ p, ghost, plain, pos }) {
         , p.brand.shot && !plain ? React.createElement('img', { src: p.brand.shot, alt: ghost ? '' : p.brand.name + ' website', loading: "lazy", draggable: false, style: { objectPosition: pos },} ) : null
         , React.createElement('span', { className: "qd-card-n",}, p.n)
         , React.createElement('span', { className: "qd-card-logo",}
-          , React.createElement('img', { src: p.brand.logo.replace('vajram.webp', 'vajram-dark-on-white.png'), alt: ghost ? '' : p.brand.name, loading: "lazy", draggable: false,} )
+          , React.createElement('img', { src: p.brand.logo.replace('vajram.webp', 'vajram-dark-on-white.webp'), alt: ghost ? '' : p.brand.name, loading: "lazy", draggable: false,} )
         )
       )
       , React.createElement('div', { className: "qd-card-body",}
@@ -4445,17 +4445,17 @@ function HeroBridge() {
 const AD_REEL = [
   /* All 9:16, all 620x1102. The frame ratio equals the artwork ratio, so
      cover fills the tile corner to corner and trims nothing. */
-  { f: 'ad-01.jpg', w: 620, h: 1102 },
-  { f: 'ad-02.jpg', w: 620, h: 1102 },
-  { f: 'ad-03.jpg', w: 620, h: 1102 },
-  { f: 'ad-04.jpg', w: 620, h: 1102 },
-  { f: 'ad-05.jpg', w: 620, h: 1102 },
-  { f: 'ad-06.jpg', w: 620, h: 1102 },
-  { f: 'ad-07.jpg', w: 620, h: 1102 },
-  { f: 'ad-08.jpg', w: 620, h: 1102 },
-  { f: 'ad-09.jpg', w: 620, h: 1102 },
-  { f: 'ad-10.jpg', w: 620, h: 1102 },
-  { f: 'ad-11.jpg', w: 620, h: 1102 },
+  { f: 'ad-01.webp', w: 620, h: 1102 },
+  { f: 'ad-02.webp', w: 620, h: 1102 },
+  { f: 'ad-03.webp', w: 620, h: 1102 },
+  { f: 'ad-04.webp', w: 620, h: 1102 },
+  { f: 'ad-05.webp', w: 620, h: 1102 },
+  { f: 'ad-06.webp', w: 620, h: 1102 },
+  { f: 'ad-07.webp', w: 620, h: 1102 },
+  { f: 'ad-08.webp', w: 620, h: 1102 },
+  { f: 'ad-09.webp', w: 620, h: 1102 },
+  { f: 'ad-10.webp', w: 620, h: 1102 },
+  { f: 'ad-11.webp', w: 620, h: 1102 },
 ];
 
 /* Placeholder tiles until the real creatives land. Each carries its spec so the
