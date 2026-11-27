@@ -11,15 +11,13 @@ Allow: /compare/
 Allow: /areas/
 Allow: /glossary/
 Allow: /guides/
-Allow: /seo/
 Allow: /legal/
 
 # Answer engines & AI crawlers — explicitly welcomed for AEO/GEO visibility.
 # LLM-facing site map:  https://qdnco.com/llms.txt
 # Full corpus, one file: https://qdnco.com/llms-full.txt
 # Original research:     https://qdnco.com/data/
-# Extended SEO/AEO/GEO corpus: https://qdnco.com/seo/
-# Last updated: 2026-09-05
+# Last updated: 2026-11-28
 
 User-agent: GPTBot
 Allow: /
