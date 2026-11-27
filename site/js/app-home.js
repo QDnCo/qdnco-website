@@ -2378,7 +2378,7 @@ const CASE_SLUG = {
   'Vajram KGF 2.0': 'vajram-kogilu',
 };
 function projectHeadline(p) { return p.points.find((pt) => /cost per|cpl/i.test(pt[1])) || p.points[0]; }
-function projectHref(p) { return CASE_SLUG[p.name] ? WORK_BASE + CASE_SLUG[p.name] + '.html' : WORK_BASE + 'index.html'; }
+function projectHref(p) { return CASE_SLUG[p.name] ? WORK_BASE + CASE_SLUG[p.name] + '.html' : WORK_BASE; }
 
 function ProjectTile({ p, ghost, plain, pos }) {
   const [value, label] = projectHeadline(p);
@@ -2427,7 +2427,7 @@ function ProjectsSection() {
             style: { fontSize: 'clamp(2.4rem, min(11vw, 13.5vh), 150px)' },}, "Projects")
         , React.createElement('p', { className: "text-center mb-8 font-body font-light max-w-xl mx-auto"     , style: { color: 'rgba(var(--ink-rgb),0.74)', fontSize: 'var(--fs-text-lg)' },}, "Selected real-estate project work across client and agency portfolios. Developer logos identify the projects; they do not imply direct appointment or endorsement. Campaign figures show their reporting period; project inventory is not units sold."
                                            , ' '
-          , React.createElement('a', { href: WORK_BASE + "index.html", style: { color: 'var(--accent)' },}, "Read the full case studies →"     )
+          , React.createElement('a', { href: WORK_BASE, style: { color: 'var(--accent)' },}, "Read the full case studies →"     )
         )
       )
       , React.createElement('div', { className: "qd-rail", 'data-paused': paused ? 'true' : 'false', role: "region", 'aria-label': "Projects, scrolling",}
@@ -2441,7 +2441,7 @@ function ProjectsSection() {
         )
       )
       , React.createElement('div', { className: "qd-actions px-4" ,}
-        , React.createElement('a', { className: "qd-all", href: WORK_BASE + "index.html",}, "View all " + list.length + " projects", React.createElement('span', { 'aria-hidden': "true",}, " →"))
+        , React.createElement('a', { className: "qd-all", href: WORK_BASE,}, "View all " + list.length + " projects", React.createElement('span', { 'aria-hidden': "true",}, " →"))
         , React.createElement('button', { type: "button", className: "qd-pause", 'aria-pressed': paused, onClick: () => setPaused(!paused),}
           , paused ? 'Play' : 'Pause', React.createElement('span', { className: "sr-only",}, " project scrolling")
         )
